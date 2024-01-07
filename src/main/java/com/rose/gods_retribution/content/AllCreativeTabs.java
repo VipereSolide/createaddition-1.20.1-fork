@@ -47,13 +47,15 @@ public class AllCreativeTabs
             {
                 if (!REGISTRATE.isInCreativeTab(entry, tab))
                     continue;
-                Item item = entry.get()
-                        .asItem();
+
+                Item item = entry.get().asItem();
                 if (item == Items.AIR)
                     continue;
+
                 if (!exclusionPredicate.test(item))
                     items.add(item);
             }
+
             items = new ReferenceArrayList<>(new ReferenceLinkedOpenHashSet<>(items));
             return items;
         }
@@ -66,21 +68,22 @@ public class AllCreativeTabs
             {
                 if (!REGISTRATE.isInCreativeTab(entry, tab))
                     continue;
+
                 Item item = entry.get();
                 if (item instanceof BlockItem)
                     continue;
+
                 if (!exclusionPredicate.test(item))
                     items.add(item);
             }
+
             return items;
         }
 
         private static void outputAll(CreativeModeTab.Output output, List<Item> items)
         {
             for (Item item : items)
-            {
                 output.accept(item);
-            }
         }
 
         List<Item> exclude = new ArrayList<>();
