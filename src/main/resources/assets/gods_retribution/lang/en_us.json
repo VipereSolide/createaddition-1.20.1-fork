@@ -5,8 +5,10 @@
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renames_ items contained in a _labelling machine_.",
   "item.gods_retribution.labelling_tag.tooltip.condition1": "When R-Clicked",
   "item.gods_retribution.labelling_tag.tooltip.behaviour1": "Opens the renaming _Interface_.",
+  "item.gods_retribution.labelling_tag.tooltip.current_label": "Current Label: ",
 
   "block.gods_retribution.wood": "Woody!",
 
-  "creative_tab.gods_retribution.gods_retribution_tab": "Gods' Retribution"
+  "creative_tab.gods_retribution.gods_retribution_tab": "Gods' Retribution",
+  "gui.gods_retribution.labelling_tag.title": "Labelling Tag"
 }
