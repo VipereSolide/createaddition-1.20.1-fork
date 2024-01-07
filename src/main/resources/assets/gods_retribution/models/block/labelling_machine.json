@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "down": "gods_retribution:block/labelling_machine_top",
+    "up": "gods_retribution:block/labelling_machine_top",
+    "north": "gods_retribution:block/labelling_machine_front",
+    "east": "gods_retribution:block/labelling_machine_side",
+    "south": "gods_retribution:block/labelling_machine_front",
+    "west": "gods_retribution:block/labelling_machine_side",
+    "particle": "gods_retribution:block/labelling_machine_top"
+  }
+}
