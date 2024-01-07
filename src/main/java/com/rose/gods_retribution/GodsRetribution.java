@@ -1,5 +1,8 @@
 package com.rose.gods_retribution;
 
+import com.rose.gods_retribution.content.AllBlocks;
+import com.rose.gods_retribution.content.AllCreativeTabs;
+import com.rose.gods_retribution.content.AllItems;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipHelper;
@@ -61,6 +64,10 @@ public class GodsRetribution
         AE2_ACTIVE = ModList.get().isLoaded("ae2");
 
         REGISTRATE.registerEventListeners(eventBus);
+
+        AllCreativeTabs.register(eventBus);
+        AllBlocks.register();
+        AllItems.register();
     }
 
     private void setup(final FMLCommonSetupEvent event) {
