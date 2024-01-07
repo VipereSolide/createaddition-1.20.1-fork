@@ -9,7 +9,7 @@ modLoader="javafml" #mandatory
 loaderVersion="[40,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="MIT License, Copyright 2022 MRH0"
+license="MIT License, Copyright 2022 888Roses"
 # A URL to refer people to when problems occur with this mod
 issueTrackerURL="https://github.com/mrh0/createaddition/issues" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
@@ -21,7 +21,7 @@ modId="gods_retribution" #mandatory
 # see the associated build.gradle script for how to populate this completely automatically during a build
 version="${file.jarVersion}" #mandatory
  # A display name for the mod
-displayName="Create Crafts & Additions" #mandatory
+displayName="Gods' Retribution" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -29,19 +29,15 @@ displayURL="https://github.com/mrh0/createaddition" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="createaddition.png" #optional
 # A text field displayed in the mod UI
-credits="Special Thanks to the Forge Discord and the Create Team." #optional
+credits="Thanks to me hehe" #optional
 # A text field displayed in the mod UI
-authors="MRH0" #optional
+authors="888Roses" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Create Crafts & Additions extends Create and acts as a bridge between electric and kinetic energy from Create.
-Join the Discord: https://discord.gg/mRbNnyKTEu
-Special thanks to:
-the Create team, the Forge team, and all contributors on the CC&A discord including:
-AlphaMode, BobDole, legoatoom, StockiesLad, THEREDSTONEBRO, and Uraxys.
+Yipee
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.createaddition]] #optional
+[[dependencies.gods_retribution]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -52,31 +48,31 @@ AlphaMode, BobDole, legoatoom, StockiesLad, THEREDSTONEBRO, and Uraxys.
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
-[[dependencies.createaddition]]
+[[dependencies.gods_retribution]]
     modId="create"
     mandatory=true
     versionRange="[0.5.1.e,0.5.2)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.createaddition]]
+[[dependencies.gods_retribution]]
     modId="flywheel"
     mandatory=true
     versionRange="[0.6.9.a,0.7)"
     ordering="AFTER"
     side="CLIENT"
-[[dependencies.createaddition]]
+[[dependencies.gods_retribution]]
     modId="jei"
     mandatory=false
     versionRange="[15.0.0.0,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.createaddition]]
+[[dependencies.gods_retribution]]
     modId="computercraft"
     mandatory=false
     versionRange="[0,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.createaddition]]
+[[dependencies.gods_retribution]]
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version

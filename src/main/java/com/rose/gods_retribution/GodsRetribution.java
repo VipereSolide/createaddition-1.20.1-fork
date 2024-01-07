@@ -9,14 +9,11 @@ import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 
@@ -26,17 +23,17 @@ import org.apache.logging.log4j.Logger;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.TooltipModifier;
 
-@Mod(CreateAddition.MOD_ID)
-public class CreateAddition {
+@Mod(GodsRetribution.MOD_ID)
+public class GodsRetribution
+{
     public static final Logger LOGGER = LogManager.getLogger();
-
     public static final String MOD_ID = "gods_retribution";
 
     public static boolean IMMERSIVE_ENGINEERING_ACTIVE = false;
     public static boolean COMPUTER_CRAFT_ACTIVE = false;
     public static boolean AE2_ACTIVE = false;
 
-    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(CreateAddition.MOD_ID);
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(GodsRetribution.MOD_ID);
 
     private static final String PROTOCOL = "1";
 	public static final SimpleChannel Network = NetworkRegistry.ChannelBuilder.named(new ResourceLocation(MOD_ID, "main"))
@@ -50,7 +47,7 @@ public class CreateAddition {
                 .andThen(TooltipModifier.mapNull(KineticStats.create(item))));
     }
 
-    public CreateAddition() {
+    public GodsRetribution() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::postInit);
@@ -58,9 +55,6 @@ public class CreateAddition {
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
-
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
-        Config.loadConfig(Config.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve("createaddition-common.toml"));
 
         IMMERSIVE_ENGINEERING_ACTIVE = ModList.get().isLoaded("immersiveengineering");
         COMPUTER_CRAFT_ACTIVE = ModList.get().isLoaded("computercraft");
