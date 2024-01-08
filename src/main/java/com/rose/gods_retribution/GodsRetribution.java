@@ -1,5 +1,6 @@
 package com.rose.gods_retribution;
 
+import com.rose.gods_retribution.content.AllBlockEntityTypes;
 import com.rose.gods_retribution.content.AllBlocks;
 import com.rose.gods_retribution.content.AllCreativeTabs;
 import com.rose.gods_retribution.content.AllItems;
@@ -67,6 +68,7 @@ public class GodsRetribution
 
         AllCreativeTabs.register(eventBus);
         AllBlocks.register();
+        AllBlockEntityTypes.register();
         AllItems.register();
     }
 
