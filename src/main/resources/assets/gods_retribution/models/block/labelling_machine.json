@@ -3,10 +3,10 @@
   "textures": {
     "down": "gods_retribution:block/labelling_machine_top",
     "up": "gods_retribution:block/labelling_machine_top",
-    "north": "gods_retribution:block/labelling_machine_front",
-    "east": "gods_retribution:block/labelling_machine_side",
-    "south": "gods_retribution:block/labelling_machine_front",
-    "west": "gods_retribution:block/labelling_machine_side",
+    "north": "gods_retribution:block/labelling_machine_side",
+    "east": "gods_retribution:block/labelling_machine_front",
+    "south": "gods_retribution:block/labelling_machine_side",
+    "west": "gods_retribution:block/labelling_machine_front",
     "particle": "gods_retribution:block/labelling_machine_top"
   }
 }

@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "gods_retribution:block/labelling_machine",
+      "y": 90
+    },
+    "facing=north": {
       "model": "gods_retribution:block/labelling_machine"
+    },
+    "facing=south": {
+      "model": "gods_retribution:block/labelling_machine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gods_retribution:block/labelling_machine",
+      "y": 270
     }
   }
 }

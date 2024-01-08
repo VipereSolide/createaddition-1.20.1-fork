@@ -8,7 +8,7 @@
   "item.gods_retribution.labelling_tag.tooltip.current_label": "Current Label: ",
 
   "block.gods_retribution.labelling_machine": "Labelling Machine",
-  "block.gods_retribution.labelling_machine.summary": "_Renames_ any item _coming_ in the machine. Input the item you wish to _rename_ in the _1st slot_. Input a supply of _paper_ in the _2nd slot_ and _glue_ in the _3rd slot_. Pickup the _result_ in the _4th slot_.",
+  "item.gods_retribution.labelling_machine.summary": "_Renames_ any item _coming_ in the machine. Input the item you wish to _rename_ in the _1st slot_. Input a supply of _paper_ in the _2nd slot_ and _glue_ in the _3rd slot_. Pickup the _result_ in the _4th slot_.",
 
   "block.gods_retribution.wood": "Woody!",
 
