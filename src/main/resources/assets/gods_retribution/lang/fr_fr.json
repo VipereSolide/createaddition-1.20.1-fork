@@ -1,0 +1,24 @@
+{
+  "item.gods_retribution.screw": "Vis",
+
+  "item.gods_retribution.labelling_tag": "Gabarit d'étiquetage",
+  "item.gods_retribution.labelling_tag.tooltip.summary": "_Renomme_ les items contenus dans une _étiqueteuse_.",
+  "item.gods_retribution.labelling_tag.tooltip.condition1": "Quand Clic droit",
+  "item.gods_retribution.labelling_tag.tooltip.behaviour1": "Ouvre _l'interface_",
+  "item.gods_retribution.labelling_tag.tooltip.current_label": "Nom : ",
+
+  "block.gods_retribution.labelling_machine": "Etiqueteuse",
+  "item.gods_retribution.labelling_machine.summary":  "_Renomme_ tout item _arrivant_ dans la machine. Insérer l'item à _renommer_ dans le _1er slot_. Insérer du _papier_ dans le _2ème slot_ et de la _colle_ dans le _3ème_. Récupérer le _résultat_ dans le _4ème_ slot.",
+
+  "item.gods_retribution.fluid_vacuum": "Hexa-Seau",
+  "item.gods_retribution.fluid_vacuum.tooltip.summary": "Peut contenir jusqu'à _8 seaux_ d'un fluide.",
+  "item.gods_retribution.fluid_vacuum.tooltip.condition1": "Quand Clic droit",
+  "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbe_ le fluide visé.",
+
+  "block.gods_retribution.wood": "Woody !",
+  "block.gods_retribution.plastic_moss": "Bloc de Mousse Plastique",
+
+  "creative_tab.gods_retribution.gods_retribution_tab": "Les Divines Représailles",
+
+  "gui.gods_retribution.labelling_tag.title": "Gabarit d'étiquetage"
+}
