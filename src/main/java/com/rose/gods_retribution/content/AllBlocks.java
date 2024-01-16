@@ -3,32 +3,20 @@ package com.rose.gods_retribution.content;
 import com.rose.gods_retribution.content.block.AirVentBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
-import com.rose.gods_retribution.fundation.blocks.RegisteredHorizontalDirectionalBlock;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
-import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.SharedProperties;
-import com.simibubi.create.foundation.utility.Couple;
 import com.tterrag.registrate.util.entry.BlockEntry;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.common.Tags;
 import net.minecraft.world.level.material.MapColor;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 import static com.simibubi.create.foundation.data.BlockStateGen.simpleCubeAll;
-import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
-import static com.simibubi.create.foundation.data.TagGen.tagBlockAndItem;
-import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
-import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
-
-import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
+import static com.simibubi.create.foundation.data.TagGen.*;
 
 public class AllBlocks
 {
@@ -38,7 +26,7 @@ public class AllBlocks
     }
 
     public static final BlockEntry<Block> WOOD = REGISTRATE.block("wood", Block::new)
-            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .initialProperties(() -> Blocks.DIRT)
             .properties(p -> p.mapColor(MapColor.TERRACOTTA_YELLOW).requiresCorrectToolForDrops())
             .transform(pickaxeOnly())
             .blockstate(simpleCubeAll("brass_block"))
@@ -84,6 +72,14 @@ public class AllBlocks
             .properties(p -> p
                     .mapColor(MapColor.COLOR_GRAY)
                     .noOcclusion())
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build().register();
+
+    public static final BlockEntry<Block> STEEL_BLOCK = REGISTRATE.block("steel_block", Block::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .properties(p -> p.requiresCorrectToolForDrops())
+            .transform(axeOrPickaxe())
             .item()
             .tab(AllCreativeTabs.MAIN.getKey())
             .build().register();
