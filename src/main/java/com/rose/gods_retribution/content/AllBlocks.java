@@ -1,7 +1,9 @@
 package com.rose.gods_retribution.content;
 
+import com.rose.gods_retribution.content.block.AirVentBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
+import com.rose.gods_retribution.fundation.blocks.RegisteredHorizontalDirectionalBlock;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -12,6 +14,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.common.Tags;
 import net.minecraft.world.level.material.MapColor;
 
@@ -66,6 +71,22 @@ public class AllBlocks
                     .tab(AllCreativeTabs.MAIN.getKey())
                     .transform(customItemModel())
                     .register();
+
+    public static final BlockEntry<Block> AERATION_BLOCK = REGISTRATE.block("aeration_block", Block::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .properties(p -> p.mapColor(MapColor.COLOR_GRAY))
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build().register();
+
+    public static final BlockEntry<AirVentBlock> AIR_VENT = REGISTRATE.block("air_vent", AirVentBlock::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .properties(p -> p
+                    .mapColor(MapColor.COLOR_GRAY)
+                    .noOcclusion())
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build().register();
 
     /**
      * Loads this class

@@ -18,6 +18,8 @@ public class AllShapes
                     .add(ofSize(3, 15, 3, 10, 1, 10))
                     .forDirectional(Direction.NORTH);
 
+    public static final VoxelShaper AIR_VENT = shape(ofSize(3, 3, 14, 10, 10, 2)).forDirectional(Direction.NORTH);
+
     // From create:AllShapes
     public static Builder shape(VoxelShape shape)
     {
