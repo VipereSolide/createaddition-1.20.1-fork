@@ -10,7 +10,13 @@
   "block.gods_retribution.labelling_machine": "Labelling Machine",
   "item.gods_retribution.labelling_machine.summary": "_Renames_ any item _coming_ in the machine. Input the item you wish to _rename_ in the _1st slot_. Input a supply of _paper_ in the _2nd slot_ and _glue_ in the _3rd slot_. Pickup the _result_ in the _4th slot_.",
 
+  "item.gods_retribution.fluid_vacuum": "Fluid Vacuum",
+  "item.gods_retribution.fluid_vacuum.tooltip.summary": "_Recipient_ holding up to _8 buckets_ of _any fluid_ inside it.",
+  "item.gods_retribution.fluid_vacuum.tooltip.condition1": "When R-Clicked",
+  "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbs_ the _clicked fluid_.",
+
   "block.gods_retribution.wood": "Woody!",
+  "block.gods_retribution.plastic_moss": "Plastic Moss",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Gods' Retribution",
   "gui.gods_retribution.labelling_tag.title": "Labelling Tag"

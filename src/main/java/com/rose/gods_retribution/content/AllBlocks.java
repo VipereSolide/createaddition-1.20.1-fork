@@ -1,6 +1,7 @@
 package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
+import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -45,12 +46,24 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<PlasticMossBlock> PLASTIC_MOSS =
+            REGISTRATE.block("plastic_moss", PlasticMossBlock::new)
+                    .initialProperties(() -> Blocks.WHITE_WOOL)
+                    .properties(p -> p.mapColor(MapColor.COLOR_YELLOW))
+                    .blockstate(simpleCubeAll("plastic_moss"))
+                    .item()
+                    .tab(AllCreativeTabs.MAIN.getKey())
+                    .build()
+                    .register();
+
     public static final BlockEntry<LabellingMachineBlock> LABELLING_MACHINE =
             REGISTRATE.block("labelling_machine", LabellingMachineBlock::new)
                     .initialProperties(SharedProperties::softMetal)
+                    .properties(p -> p.noOcclusion().mapColor(MapColor.PODZOL))
                     .tag(AllTags.AllBlockTags.SAFE_NBT.tag) // Dunno what this tag means (contraption safe?).
                     .transform(BlockStressDefaults.setImpact(4))
                     .item()
+                    .tab(AllCreativeTabs.MAIN.getKey())
                     .transform(customItemModel())
                     .register();
 
