@@ -22,6 +22,10 @@ public class AllItems
             .item("fluid_vacuum", FluidVacuumItem::new)
             .register();
 
+    public static final ItemEntry<Item> PLASTIC_BALL = REGISTRATE.item("plastic_ball", Item::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
     /**
      * Loads this class
      */
