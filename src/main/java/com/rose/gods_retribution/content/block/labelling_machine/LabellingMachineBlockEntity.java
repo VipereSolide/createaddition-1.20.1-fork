@@ -3,21 +3,15 @@ package com.rose.gods_retribution.content.block.labelling_machine;
 import com.rose.gods_retribution.fundation.CompoundTagHelper;
 import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
-import com.simibubi.create.content.kinetics.belt.behaviour.DirectBeltInputBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
-import com.simibubi.create.foundation.utility.VecHelper;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -25,7 +19,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -229,17 +222,11 @@ public class LabellingMachineBlockEntity extends KineticBlockEntity implements M
     // SYNCING
 
     @Override
-    public CompoundTag getUpdateTag()
+    public @NotNull CompoundTag getUpdateTag()
     {
         var nbt = super.getUpdateTag();
         saveAdditional(nbt);
         return nbt;
-    }
-
-    @Override
-    public ClientboundBlockEntityDataPacket getUpdatePacket()
-    {
-        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     // END SYNCING
@@ -294,7 +281,7 @@ public class LabellingMachineBlockEntity extends KineticBlockEntity implements M
     }
 
     @Override
-    public Component getDisplayName()
+    public @NotNull Component getDisplayName()
     {
         return LabellingMachineScreen.title;
     }
@@ -307,7 +294,7 @@ public class LabellingMachineBlockEntity extends KineticBlockEntity implements M
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer)
+    public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pPlayerInventory, @NotNull Player pPlayer)
     {
         return LabellingMachineMenu.create(pContainerId, pPlayerInventory, this);
     }
