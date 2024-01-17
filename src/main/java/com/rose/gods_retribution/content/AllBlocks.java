@@ -5,6 +5,7 @@ import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachin
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
+import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.tags.BlockTags;
@@ -83,6 +84,25 @@ public class AllBlocks
             .properties(p -> p.mapColor(MapColor.COLOR_GRAY))
             .item()
             .build().register();
+
+    public static final BlockEntry<Block> CONCRETE =
+            REGISTRATE.block("concrete", Block::new)
+                    .initialProperties(() -> Blocks.WHITE_CONCRETE)
+                    .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GRAY))
+                    .item()
+                    .build().register();
+
+    public static final DyedBlockList<Block> CONCRETE_COLOURS = new DyedBlockList<>(colour ->
+    {
+        String colourName = colour.getSerializedName();
+        return REGISTRATE.block("concrete_" + colourName, Block::new)
+                .initialProperties(AllBlocks.CONCRETE::get)
+                .properties(p -> p.mapColor(colour))
+                .item()
+                .tab(AllCreativeTabs.DECORATION.getKey())
+                .build()
+                .register();
+    });
 
     /**
      * Loads this class

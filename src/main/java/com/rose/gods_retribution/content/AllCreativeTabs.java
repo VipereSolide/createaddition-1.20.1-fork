@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -60,6 +61,8 @@ public class AllCreativeTabs
                                 output.accept(AllBlocks.AERATION_BLOCK);
                                 output.accept(AllBlocks.AIR_VENT);
                                 output.accept(AllBlocks.TILES_BATHROOM);
+
+                                output.accept(AllBlocks.CONCRETE);
                             })
                             .build()
             );
