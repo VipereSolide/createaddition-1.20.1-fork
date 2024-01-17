@@ -84,6 +84,12 @@ public class AllBlocks
             .tab(AllCreativeTabs.MAIN.getKey())
             .build().register();
 
+    public static final BlockEntry<Block> TILES_BATHROOM = REGISTRATE.block("tiles_bathroom_block", Block::new)
+            .initialProperties(() -> Blocks.BONE_BLOCK)
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build().register();
+
     /**
      * Loads this class
      */
