@@ -1,9 +1,6 @@
 package com.rose.gods_retribution;
 
-import com.rose.gods_retribution.content.AllBlockEntityTypes;
-import com.rose.gods_retribution.content.AllBlocks;
-import com.rose.gods_retribution.content.AllCreativeTabs;
-import com.rose.gods_retribution.content.AllItems;
+import com.rose.gods_retribution.content.*;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipHelper;
@@ -40,18 +37,20 @@ public class GodsRetribution
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(GodsRetribution.MOD_ID);
 
     private static final String PROTOCOL = "1";
-	public static final SimpleChannel Network = NetworkRegistry.ChannelBuilder.named(new ResourceLocation(MOD_ID, "main"))
+    public static final SimpleChannel Network = NetworkRegistry.ChannelBuilder.named(new ResourceLocation(MOD_ID, "main"))
             .clientAcceptedVersions(PROTOCOL::equals)
             .serverAcceptedVersions(PROTOCOL::equals)
             .networkProtocolVersion(() -> PROTOCOL)
             .simpleChannel();
 
-    static {
+    static
+    {
         REGISTRATE.setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, TooltipHelper.Palette.STANDARD_CREATE)
                 .andThen(TooltipModifier.mapNull(KineticStats.create(item))));
     }
 
-    public GodsRetribution() {
+    public GodsRetribution()
+    {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::postInit);
@@ -70,23 +69,29 @@ public class GodsRetribution
         AllBlocks.register();
         AllBlockEntityTypes.register();
         AllItems.register();
+        AllMenuTypes.register();
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
+    private void setup(final FMLCommonSetupEvent event)
+    {
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
+    private void doClientStuff(final FMLClientSetupEvent event)
+    {
     }
 
-    public void postInit(FMLLoadCompleteEvent evt) {
-    	System.out.println("Gods' Retribution Initialized!");
+    public void postInit(FMLLoadCompleteEvent evt)
+    {
+        System.out.println("Gods' Retribution Initialized!");
     }
 
     @SubscribeEvent
-    public void onRegisterCommandEvent(RegisterCommandsEvent event) {
+    public void onRegisterCommandEvent(RegisterCommandsEvent event)
+    {
     }
 
-    public static ResourceLocation asResource(String path) {
+    public static ResourceLocation asResource(String path)
+    {
         return new ResourceLocation(MOD_ID, path);
     }
 }
