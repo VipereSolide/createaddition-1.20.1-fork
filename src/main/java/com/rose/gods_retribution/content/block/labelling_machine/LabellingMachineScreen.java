@@ -61,14 +61,19 @@ public class LabellingMachineScreen extends AbstractSimiContainerScreen<Labellin
 
     private void renderProgression(GuiGraphics pGuiGraphics)
     {
+        var inventory = menu.contentHolder.inventory;
+        boolean isInputSlotEmpty = inventory.getStackInSlot(LabellingMachineBlockEntity.INPUT_SLOT_ID).isEmpty();
+        boolean isPaperSlotEmpty = inventory.getStackInSlot(LabellingMachineBlockEntity.PAPER_SLOT_ID).isEmpty();
+        boolean isLabellingTagSlotEmpty = inventory.getStackInSlot(LabellingMachineBlockEntity.LABELLING_TAG_SLOT_ID).isEmpty();
+
+        if (isInputSlotEmpty || isPaperSlotEmpty || isLabellingTagSlotEmpty)
+            return;
+
         int x = leftPos;
         int y = topPos;
 
         float progression = 1 - ((float) menu.contentHolder.timer / menu.contentHolder.getProcessingDuration());
         int width = (int) (Math.floor(progression * 16));
-
-        if (menu.contentHolder.inventory.getStackInSlot(LabellingMachineBlockEntity.INPUT_SLOT_ID).isEmpty())
-            width = 0;
 
         pGuiGraphics.blit(background, x + 113, y + 39, 177, 1, width, 16);
     }
