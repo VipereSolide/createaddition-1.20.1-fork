@@ -22,81 +22,50 @@ import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
 public class AllCreativeTabs
 {
+    public static final Component MAIN_TAB_TITLE =
+            Component.translatable("creative_tab.gods_retribution.gods_retribution_tab");
+
+    public static final Component DECORATION_TAB_TITLE =
+            Component.translatable("creative_tab.gods_retribution.gods_retribution_decoration_tab");
+
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GodsRetribution.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_TABS.register("main_creative_tab",
-            () -> CreativeModeTab.builder()
-                    .title(Component.translatable("creative_tab.gods_retribution.gods_retribution_tab"))
-                    .icon(() -> new ItemStack(AllItems.SCREW.get()))
-                    .displayItems(new RegistrateDisplayItemsGenerator())
-                    .build()
-    );
+    public static final RegistryObject<CreativeModeTab> MAIN =
+            CREATIVE_TABS.register("main_creative_tab",
+                    () -> CreativeModeTab.builder()
+                            .title(MAIN_TAB_TITLE)
+                            .icon(() -> new ItemStack(AllItems.LABELLING_TAG.get()))
+                            .displayItems((displayParams, output) ->
+                            {
+                                output.accept(AllItems.LABELLING_TAG);
+                                output.accept(AllBlocks.LABELLING_MACHINE);
+
+                                output.accept(AllBlocks.PLASTIC_MOSS);
+                                output.accept(AllBlocks.FLINT_BLOCK);
+
+                                output.accept(AllBlocks.WOOD);
+                                output.accept(AllItems.SCREW);
+                            })
+                            .build()
+            );
+
+    public static final RegistryObject<CreativeModeTab> DECORATION =
+            CREATIVE_TABS.register("decoration_blocks_creative_tab",
+                    () -> CreativeModeTab.builder()
+                            .title(DECORATION_TAB_TITLE)
+                            .icon(() -> new ItemStack(AllBlocks.AERATION_BLOCK.get()))
+                            .displayItems((displayParams, output) ->
+                            {
+                                output.accept(AllBlocks.AERATION_BLOCK);
+                                output.accept(AllBlocks.AIR_VENT);
+                                output.accept(AllBlocks.TILES_BATHROOM);
+                            })
+                            .build()
+            );
 
     public static void register(IEventBus eventBus)
     {
         CREATIVE_TABS.register(eventBus);
-    }
-
-    public static class RegistrateDisplayItemsGenerator implements CreativeModeTab.DisplayItemsGenerator
-    {
-        private List<Item> collectBlocks(RegistryObject<CreativeModeTab> tab, Predicate<Item> exclusionPredicate)
-        {
-            List<Item> items = new ReferenceArrayList<>();
-            for (RegistryEntry<Block> entry : REGISTRATE.getAll(Registries.BLOCK))
-            {
-                if (!REGISTRATE.isInCreativeTab(entry, tab))
-                    continue;
-
-                Item item = entry.get().asItem();
-                if (item == Items.AIR)
-                    continue;
-
-                if (!exclusionPredicate.test(item))
-                    items.add(item);
-            }
-
-            items = new ReferenceArrayList<>(new ReferenceLinkedOpenHashSet<>(items));
-            return items;
-        }
-
-        private List<Item> collectItems(RegistryObject<CreativeModeTab> tab, Predicate<Item> exclusionPredicate)
-        {
-            List<Item> items = new ReferenceArrayList<>();
-
-            for (RegistryEntry<Item> entry : REGISTRATE.getAll(Registries.ITEM))
-            {
-                if (!REGISTRATE.isInCreativeTab(entry, tab))
-                    continue;
-
-                Item item = entry.get();
-                if (item instanceof BlockItem)
-                    continue;
-
-                if (!exclusionPredicate.test(item))
-                    items.add(item);
-            }
-
-            return items;
-        }
-
-        private static void outputAll(CreativeModeTab.Output output, List<Item> items)
-        {
-            for (Item item : items)
-                output.accept(item);
-        }
-
-        List<Item> exclude = new ArrayList<>();
-
-        @Override
-        public void accept(CreativeModeTab.ItemDisplayParameters params, CreativeModeTab.Output output)
-        {
-            List<Item> items = new LinkedList<>();
-
-            items.addAll(collectBlocks(MAIN, (item) -> true));
-            items.addAll(collectItems(MAIN, (item) -> exclude.contains(item)));
-
-            outputAll(output, items);
-        }
     }
 }

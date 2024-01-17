@@ -10,11 +10,6 @@ import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
 public class AllItems
 {
-    static
-    {
-        REGISTRATE.setCreativeTab(AllCreativeTabs.MAIN);
-    }
-
     public static final ItemEntry<Item> SCREW = REGISTRATE
             .item("screw", Item::new)
             .register();
