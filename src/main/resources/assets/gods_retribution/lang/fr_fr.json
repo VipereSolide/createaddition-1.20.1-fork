@@ -22,8 +22,26 @@
   "block.gods_retribution.steel_block": "Bloc d'acier",
   "block.gods_retribution.tiles_bathroom_block": "Bloc de carreaux de salle de bain",
   "block.gods_retribution.flint_block": "Bloc de silex",
+  "block.gods_retribution.concrete": "Bloc de béton",
+  "block.gods_retribution.concrete_black": "Bloc de béton noir",
+  "block.gods_retribution.concrete_blue": "Bloc de béton bleu",
+  "block.gods_retribution.concrete_brown": "Bloc de béton marron",
+  "block.gods_retribution.concrete_cyan": "Bloc de béton cyan",
+  "block.gods_retribution.concrete_gray": "Bloc de béton gris",
+  "block.gods_retribution.concrete_green": "Bloc de béton vert",
+  "block.gods_retribution.concrete_light_blue": "Bloc de béton bleu clair",
+  "block.gods_retribution.concrete_light_gray": "Bloc de béton gris clair",
+  "block.gods_retribution.concrete_lime": "Bloc de béton vert clair",
+  "block.gods_retribution.concrete_magenta": "Bloc de béton magenta",
+  "block.gods_retribution.concrete_orange": "Bloc de béton orange",
+  "block.gods_retribution.concrete_pink": "Bloc de béton rose",
+  "block.gods_retribution.concrete_purple": "Bloc de béton violet",
+  "block.gods_retribution.concrete_red": "Bloc de béton rouge",
+  "block.gods_retribution.concrete_white": "Bloc de béton blanc",
+  "block.gods_retribution.concrete_yellow": "Bloc de béton jaune",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Les Divines Représailles",
+  "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Blocs de Construction des Divines Représailles",
 
   "gui.gods_retribution.labelling_tag.title": "Gabarit d'étiquetage"
 }
