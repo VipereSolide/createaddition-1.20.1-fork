@@ -90,6 +90,13 @@ public class AllBlocks
             .tab(AllCreativeTabs.MAIN.getKey())
             .build().register();
 
+    public static final BlockEntry<Block> FLINT_BLOCK = REGISTRATE.block("flint_block", Block::new)
+            .initialProperties(() -> Blocks.GRAVEL)
+            .properties(p -> p.mapColor(MapColor.COLOR_GRAY))
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build().register();
+
     /**
      * Loads this class
      */
