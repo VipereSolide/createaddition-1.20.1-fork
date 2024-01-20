@@ -1,4 +1,4 @@
-package com.rose.gods_retribution.fundation;
+package com.rose.gods_retribution.fundation.items;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
