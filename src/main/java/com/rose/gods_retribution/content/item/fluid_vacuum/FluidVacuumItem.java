@@ -1,6 +1,6 @@
 package com.rose.gods_retribution.content.item.fluid_vacuum;
 
-import com.rose.gods_retribution.fundation.SmartItem;
+import com.rose.gods_retribution.fundation.items.SmartItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;

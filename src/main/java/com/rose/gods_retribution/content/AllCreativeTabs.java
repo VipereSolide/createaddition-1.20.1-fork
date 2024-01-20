@@ -1,25 +1,12 @@
 package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.GodsRetribution;
-import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.function.Predicate;
-
-import it.unimi.dsi.fastutil.objects.ReferenceArrayList;
-import it.unimi.dsi.fastutil.objects.ReferenceLinkedOpenHashSet;
-import net.minecraft.world.level.block.Block;
-
-import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
 public class AllCreativeTabs
 {
@@ -47,6 +34,8 @@ public class AllCreativeTabs
 
                                 output.accept(AllBlocks.WOOD);
                                 output.accept(AllItems.SCREW);
+
+                                output.accept(AllItems.TESTING_RIFLE);
                             })
                             .build()
             );

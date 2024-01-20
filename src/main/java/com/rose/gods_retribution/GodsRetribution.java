@@ -4,7 +4,10 @@ import com.rose.gods_retribution.content.*;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipHelper;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -66,10 +69,15 @@ public class GodsRetribution
         REGISTRATE.registerEventListeners(eventBus);
 
         AllCreativeTabs.register(eventBus);
+
         AllBlocks.register();
         AllBlockEntityTypes.register();
+
         AllItems.register();
+
         AllMenuTypes.register();
+
+        AllEntities.register();
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -93,5 +101,15 @@ public class GodsRetribution
     public static ResourceLocation asResource(String path)
     {
         return new ResourceLocation(MOD_ID, path);
+    }
+
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents
+    {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event)
+        {
+            //EntityRenderers.register(AllEntities.LASER_PROJECTILE.get(), );
+        }
     }
 }
