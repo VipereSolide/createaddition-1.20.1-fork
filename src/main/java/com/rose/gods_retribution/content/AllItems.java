@@ -6,6 +6,7 @@ import com.rose.gods_retribution.content.item.fluid_vacuum.FluidVacuumItem;
 import com.rose.gods_retribution.content.item.labelling_tag.LabellingTagItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.material.Fluids;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
@@ -36,6 +37,10 @@ public class AllItems
                                     .recoverySpeed(0.016F)
                     ))
             .properties((p) -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<Item> PLASTIC_BALL = REGISTRATE.item("plastic_ball", Item::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
     /**
