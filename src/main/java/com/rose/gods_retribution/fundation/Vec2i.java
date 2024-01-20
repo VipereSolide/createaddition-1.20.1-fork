@@ -2,6 +2,9 @@ package com.rose.gods_retribution.fundation;
 
 import net.minecraft.world.phys.Vec2;
 
+/**
+ * Vector2Int
+ */
 public class Vec2i
 {
     public int x;

@@ -5,6 +5,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+/**
+ * An improved item.
+ */
 public abstract class SmartItem extends Item
 {
     protected boolean isInitialized = false;

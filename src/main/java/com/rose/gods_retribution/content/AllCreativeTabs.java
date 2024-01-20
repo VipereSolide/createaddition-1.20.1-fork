@@ -8,6 +8,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * Contains all the mod's inventory tabs.
+ */
 public class AllCreativeTabs
 {
     public static final Component MAIN_TAB_TITLE =
@@ -19,6 +22,9 @@ public class AllCreativeTabs
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GodsRetribution.MOD_ID);
 
+    /**
+     * The main inventory tab for the mod.
+     */
     public static final RegistryObject<CreativeModeTab> MAIN =
             CREATIVE_TABS.register("main_creative_tab",
                     () -> CreativeModeTab.builder()
@@ -40,6 +46,9 @@ public class AllCreativeTabs
                             .build()
             );
 
+    /**
+     * The decorations and props inventory tab for mod.
+     */
     public static final RegistryObject<CreativeModeTab> DECORATION =
             CREATIVE_TABS.register("decoration_blocks_creative_tab",
                     () -> CreativeModeTab.builder()
@@ -56,6 +65,12 @@ public class AllCreativeTabs
                             .build()
             );
 
+
+    /**
+     * Loads this class.
+     *
+     * @param eventBus
+     */
     public static void register(IEventBus eventBus)
     {
         CREATIVE_TABS.register(eventBus);

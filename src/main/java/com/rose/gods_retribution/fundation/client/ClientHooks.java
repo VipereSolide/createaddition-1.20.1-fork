@@ -7,6 +7,9 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
+/**
+ * A util class for the menus.
+ */
 public class ClientHooks
 {
     public static void OpenLabellingTagItemScreen(InteractionHand hand)

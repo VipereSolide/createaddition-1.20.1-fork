@@ -19,6 +19,11 @@ import static com.simibubi.create.foundation.data.BlockStateGen.simpleCubeAll;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.*;
 
+/**
+ * Contains all the mod's blocks.
+ *
+ * The new blocks are to be registered in here, as a public static final BlockEntry
+ */
 public class AllBlocks
 {
     public static final BlockEntry<Block> WOOD = REGISTRATE.block("wood", Block::new)

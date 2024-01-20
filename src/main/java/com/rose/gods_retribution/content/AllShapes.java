@@ -11,6 +11,9 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+/**
+ * Contains all the mod's collision boxes for the 3D-models blocks.
+ */
 public class AllShapes
 {
     public static final VoxelShaper LABELLING_MACHINE =
@@ -41,6 +44,9 @@ public class AllShapes
         return Block.box(posX, posY, posZ, sizeX + posX, sizeY + posY, sizeZ + posZ);
     }
 
+    /**
+     * Used to create a collision box.
+     */
     public static class Builder
     {
         VoxelShape shape;
@@ -50,17 +56,45 @@ public class AllShapes
             this.shape = shape;
         }
 
+        /**
+         * Add a new shape in the collision box.
+         *
+         * @param shape
+         * @return itself
+         */
         public Builder add(VoxelShape shape)
         {
             this.shape = Shapes.or(this.shape, shape);
             return this;
         }
 
+        /**
+         * Add a new shape in the collision box.
+         *
+         * @param y1 The Y-origin point
+         * @param z1 The Z-origin point
+         * @param x1 The X-origin point
+         * @param x2 The X-end point
+         * @param y2 The Y-end point
+         * @param z2 The Z-end point
+         * @return itself
+         */
         public Builder add(double x1, double y1, double z1, double x2, double y2, double z2)
         {
             return add(cuboid(x1, y1, z1, x2, y2, z2));
         }
 
+        /**
+         * Make a hole in the collision box.
+         *
+         * @param x1 The X-origin point
+         * @param y1 The Y-origin point
+         * @param z1 The Z-origin point
+         * @param x2 The X-end point
+         * @param y2 The Y-end point
+         * @param z2 The Z-end point
+         * @return itself
+         */
         public Builder erase(double x1, double y1, double z1, double x2, double y2, double z2)
         {
             this.shape =
@@ -68,21 +102,46 @@ public class AllShapes
             return this;
         }
 
+        /**
+         * Achieve the construction of the collision box and returns the shape.
+         *
+         * @return the built shape ready to be used as a collision box.
+         */
         public VoxelShape build()
         {
             return shape;
         }
 
+        /**
+         * Achieve the construction of the collision box and returns the shape.
+         *
+         * @param factory
+         * @param direction
+         * @return the built shape ready to be used as a collision box.
+         */
         public VoxelShaper build(BiFunction<VoxelShape, Direction, VoxelShaper> factory, Direction direction)
         {
             return factory.apply(shape, direction);
         }
 
+        /**
+         * Achieve the construction of the collision box and returns the shape.
+         *
+         * @param factory
+         * @param axis
+         * @return the built shape ready to be used as a collision box.
+         */
         public VoxelShaper build(BiFunction<VoxelShape, Axis, VoxelShaper> factory, Axis axis)
         {
             return factory.apply(shape, axis);
         }
 
+        /**
+         * Returns the shape oriented in the direction of our choice.
+         *
+         * @param direction
+         * @return the built shape ready to be used as a collision box.
+         */
         public VoxelShaper forDirectional(Direction direction)
         {
             return build(VoxelShaper::forDirectional, direction);

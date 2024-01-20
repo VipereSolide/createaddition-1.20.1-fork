@@ -10,6 +10,9 @@ import net.minecraft.world.entity.MobCategory;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
+/**
+ * Contains all the mod's entities.
+ */
 public class AllEntities
 {
     public static EntityEntry<LaserProjectileEntity> LASER_PROJECTILE = REGISTRATE
@@ -18,6 +21,9 @@ public class AllEntities
             .renderer(() -> LaserProjectileRenderer::new)
             .register();
 
+    /**
+     * Loads this class.
+     */
     public static void register()
     {
 

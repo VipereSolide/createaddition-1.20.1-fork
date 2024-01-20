@@ -3,6 +3,9 @@ package com.rose.gods_retribution.fundation;
 import com.rose.gods_retribution.GodsRetribution;
 import net.minecraft.nbt.CompoundTag;
 
+/**
+ * A util class for the NBT data management.
+ */
 public class CompoundTagHelper
 {
     /**

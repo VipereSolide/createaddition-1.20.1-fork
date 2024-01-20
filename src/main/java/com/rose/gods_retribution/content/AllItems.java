@@ -10,6 +10,11 @@ import net.minecraft.world.level.material.Fluids;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
+/**
+ * Contains all the mod's items.
+ *
+ * The new items are to be registered here, in the form of a public static final ItemEntry
+ */
 public class AllItems
 {
     public static final ItemEntry<Item> SCREW = REGISTRATE
@@ -44,7 +49,7 @@ public class AllItems
             .register();
 
     /**
-     * Loads this class
+     * Loads this class.
      */
     public static void register()
     {

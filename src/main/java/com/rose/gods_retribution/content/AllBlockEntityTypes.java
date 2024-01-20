@@ -8,6 +8,9 @@ import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
+/**
+ * Contains all the mod's block entities.
+ */
 public class AllBlockEntityTypes
 {
     public static final BlockEntityEntry<LabellingMachineBlockEntity> LABELLING_MACHINE = REGISTRATE
@@ -22,6 +25,9 @@ public class AllBlockEntityTypes
             .validBlocks(AllBlocks.PLASTIC_MOSS)
             .register();
 
+    /**
+     * Loads this class.
+     */
     public static void register()
     {
     }

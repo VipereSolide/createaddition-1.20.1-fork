@@ -6,6 +6,9 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
+/**
+ * A util class for the render.
+ */
 public class RenderingHelper
 {
     public static void renderItem(PoseStack ms, MultiBufferSource buffer, int light, int overlay, ItemStack stack)

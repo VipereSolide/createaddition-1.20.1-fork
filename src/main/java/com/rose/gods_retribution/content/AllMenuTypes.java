@@ -16,6 +16,11 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
+/**
+ * Contains all the mod's menus.
+ *
+ * The new menus are to be registered in here.
+ */
 public class AllMenuTypes
 {
     public static final MenuEntry<LabellingMachineMenu> LABELLING_MACHINE =
@@ -31,6 +36,9 @@ public class AllMenuTypes
                 .register();
     }
 
+    /**
+     * Loads this class.
+     */
     public static void register()
     {
     }
