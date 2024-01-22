@@ -1,15 +1,18 @@
 package com.rose.gods_retribution;
 
 import com.rose.gods_retribution.content.*;
+import com.rose.gods_retribution.content.network.PacketHandler;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipHelper;
+import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -21,6 +24,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,6 +36,7 @@ public class GodsRetribution
 {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "gods_retribution";
+    public static final String NAME = "Gods' Retribution";
 
     public static boolean IMMERSIVE_ENGINEERING_ACTIVE = false;
     public static boolean COMPUTER_CRAFT_ACTIVE = false;
@@ -74,14 +79,15 @@ public class GodsRetribution
         AllBlockEntityTypes.register();
 
         AllItems.register();
-
         AllMenuTypes.register();
-
         AllEntities.register();
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            PacketHandler.register();
+        });
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
