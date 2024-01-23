@@ -7,6 +7,12 @@
   "item.gods_retribution.labelling_tag.tooltip.behaviour1": "Ouvre _l'interface_",
   "item.gods_retribution.labelling_tag.tooltip.current_label": "Nom : ",
 
+  "item.gods_retribution.testing_rifle": "Fusil de test",
+  "item.gods_retribution.blaster.properties.attack_damage": " Dégâts",
+  "item.gods_retribution.blaster.properties.inaccuracy": " Dispersion",
+  "item.gods_retribution.blaster.properties.cooldown": " Ticks Entre Chaque Tir",
+  "item.gods_retribution.blaster.properties.velocity": " Vitesse du projectile",
+
   "block.gods_retribution.labelling_machine": "Etiqueteuse",
   "item.gods_retribution.labelling_machine.summary":  "_Renomme_ tout item _arrivant_ dans la machine. Insérer l'item à _renommer_ dans le _1er slot_. Insérer du _papier_ dans le _2ème slot_ et de la _colle_ dans le _3ème_. Récupérer le _résultat_ dans le _4ème_ slot.",
 
