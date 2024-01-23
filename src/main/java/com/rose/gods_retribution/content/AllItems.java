@@ -14,10 +14,12 @@ public class AllItems
 {
     public static final ItemEntry<Item> SCREW = REGISTRATE
             .item("screw", Item::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
     public static final ItemEntry<LabellingTagItem> LABELLING_TAG = REGISTRATE
             .item("labelling_tag", LabellingTagItem::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
     public static final ItemEntry<FluidVacuumItem> FLUID_VACUUM = REGISTRATE
@@ -37,9 +39,11 @@ public class AllItems
                                     .recoverySpeed(0.016F)
                     ))
             .properties((p) -> p.stacksTo(1))
+            .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
     public static final ItemEntry<Item> PLASTIC_BALL = REGISTRATE.item("plastic_ball", Item::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 

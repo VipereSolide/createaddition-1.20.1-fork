@@ -1,3 +1,7 @@
+tasks.withType(Copy) {
+    duplicatesStrategy = 'exclude'
+}
+
 buildscript {
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
@@ -29,8 +33,8 @@ mixin {
 }
 
 version = "${minecraft_version}-1.2.1"
-group = 'com.mrh0.createaddition' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'createaddition'
+group = 'com.rose.gods_retribution' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'gods_retribution'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -75,10 +79,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'createaddition'
+            property 'forge.enabledGameTestNamespaces', 'gods_retribution'
 
             mods {
-                createaddition {
+                gods_retribution {
                     source sourceSets.main
                 }
             }
@@ -93,10 +97,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'createaddition'
+            property 'forge.enabledGameTestNamespaces', 'gods_retribution'
 
             mods {
-                createaddition {
+                gods_retribution {
                     source sourceSets.main
                 }
             }
@@ -112,10 +116,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'createaddition'
+            property 'forge.enabledGameTestNamespaces', 'gods_retribution'
 
             mods {
-                createaddition {
+                gods_retribution {
                     source sourceSets.main
                 }
             }
@@ -125,14 +129,13 @@ minecraft {
             workingDirectory project.file('run')
 
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'createaddition', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'gods_retribution', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                createaddition {
+                gods_retribution {
                     source sourceSets.main
                 }
             }
@@ -175,37 +178,24 @@ dependencies {
     implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    jarJar("com.tterrag.registrate:Registrate:${registrate_version}") {
+        jarJar.ranged(it, '[MC1.19.3-1.1.10,)')
+    }
+    jarJar("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}") {
+        jarJar.ranged(it, '[0.6.10,0.6.11)')
+    }
 
     /* other minecraft dependencies are here */
 
-	// compile against the JEI API but do not include it at runtime
-	compileOnly(fg.deobf("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}"))
-	compileOnly(fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}"))
-	// at runtime, use the full JEI jar for Forge
-	runtimeOnly(fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge:${jei_version}"))
-    //runtimeOnly fg.deobf("curse.maven:immersive-engineering-231951:3964014")
+    // compile against the JEI API but do not include it at runtime
+    compileOnly(fg.deobf("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}"))
+    compileOnly(fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}"))
+    // at runtime, use the full JEI jar for Forge
+    runtimeOnly(fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge:${jei_version}"))
 
-    //implementation fg.deobf("curse.maven:create-328085:4341479")
-    //implementation fg.deobf("curse.maven:flywheel-486392:4341471")
-	//implementation fg.deobf("curse.maven:immersive-engineering-231951:3579169")
     implementation fg.deobf("curse.maven:cc-tweaked-282001:4740605")
-	//implementation fg.deobf("curse.maven:applied-energistics-2-223794:4013348")
-
-	runtimeOnly fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:4599236")
-	//runtimeOnly fg.deobf("curse.maven:immersive-engineering-231951:3963698")
-
-	//runtimeOnly fg.deobf("curse.maven:cofh-core-69162:4202944")
-	//runtimeOnly fg.deobf("curse.maven:thermal-foundation-222880:4112137")
-	//runtimeOnly fg.deobf("curse.maven:thermal-expansion-69163:4112130")
-	//runtimeOnly fg.deobf("curse.maven:immersive-petroleum-268250:4314934")
-
-	//runtimeOnly fg.deobf("curse.maven:tinkers-construct-74072:3389377")
-	//runtimeOnly fg.deobf("curse.maven:mantle-74924:3412365")
-
-	//runtimeOnly fg.deobf("curse.maven:simply-jetpacks-2-251792:3203659")
-
-	//annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
-	annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+    runtimeOnly fg.deobf("curse.maven:just-enough-effect-descriptions-jeed-532286:4599236")
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
 mixin {

@@ -24,7 +24,7 @@ public class AllCreativeTabs
                     () -> CreativeModeTab.builder()
                             .title(MAIN_TAB_TITLE)
                             .icon(() -> new ItemStack(AllItems.LABELLING_TAG.get()))
-                            .displayItems((displayParams, output) ->
+                            /*.displayItems((displayParams, output) ->
                             {
                                 output.accept(AllItems.LABELLING_TAG);
                                 output.accept(AllBlocks.LABELLING_MACHINE);
@@ -36,7 +36,7 @@ public class AllCreativeTabs
                                 output.accept(AllItems.SCREW);
 
                                 output.accept(AllItems.TESTING_RIFLE);
-                            })
+                            })*/
                             .build()
             );
 
@@ -45,14 +45,14 @@ public class AllCreativeTabs
                     () -> CreativeModeTab.builder()
                             .title(DECORATION_TAB_TITLE)
                             .icon(() -> new ItemStack(AllBlocks.AERATION_BLOCK.get()))
-                            .displayItems((displayParams, output) ->
+                            /*.displayItems((displayParams, output) ->
                             {
                                 output.accept(AllBlocks.AERATION_BLOCK);
                                 output.accept(AllBlocks.AIR_VENT);
                                 output.accept(AllBlocks.TILES_BATHROOM);
 
                                 output.accept(AllBlocks.CONCRETE);
-                            })
+                            })*/
                             .build()
             );
 

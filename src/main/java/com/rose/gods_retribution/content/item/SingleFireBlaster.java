@@ -221,7 +221,7 @@ public class SingleFireBlaster extends Blaster
     public MutableComponent getToolPropertyComponent(String toolPropertyName, float value)
     {
         MutableComponent property = Component.literal(String.valueOf(value).replace(".0", ""));
-        property.append(Lang.item("testing_rifle", "properties", toolPropertyName));
+        property.append(Lang.item("blaster", "properties", toolPropertyName));
         property.setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN));
 
         return property;
