@@ -1,0 +1,8 @@
+{
+  "blaster_e11_fire": {
+    "subtitle": "sounds.gods_retribution.blaster_fire",
+    "sounds": [
+      "gods_retribution:blaster_e11_fire"
+    ]
+  }
+}

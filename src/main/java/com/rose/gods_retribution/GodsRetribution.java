@@ -74,6 +74,7 @@ public class GodsRetribution
         REGISTRATE.registerEventListeners(eventBus);
 
         AllCreativeTabs.register(eventBus);
+        AllSounds.register(eventBus);
 
         AllBlocks.register();
         AllBlockEntityTypes.register();

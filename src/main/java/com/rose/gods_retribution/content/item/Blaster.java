@@ -1,5 +1,7 @@
 package com.rose.gods_retribution.content.item;
 
+import com.rose.gods_retribution.content.AllSounds;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
 
 public abstract class Blaster extends Item
@@ -20,6 +22,10 @@ public abstract class Blaster extends Item
     public void setBlasterProperties(BlasterProperties blasterProperties)
     {
         this.blasterProperties = blasterProperties;
+
+        // Just a security so it doesn't crash if you didn't pass any custom fire sound.
+        if (this.blasterProperties.fireSound == null)
+            this.blasterProperties.fireSound = AllSounds.BLASTER_E11_FIRE.get();
     }
 
     public static class BlasterProperties
@@ -65,9 +71,23 @@ public abstract class Blaster extends Item
          */
         public float overheatedRecoverySpeed = 0.005F;
 
+        /**
+         * The sound played whenever an entity shoots the blaster.
+         */
+        public SoundEvent fireSound;
+
         public BlasterProperties disableHeating()
         {
             this.heatPerShot = 0F;
+            return this;
+        }
+
+        /**
+         * Sets the sound played whenever an entity shoots the blaster.
+         */
+        public BlasterProperties fireSound(SoundEvent fireSound)
+        {
+            this.fireSound = fireSound;
             return this;
         }
 

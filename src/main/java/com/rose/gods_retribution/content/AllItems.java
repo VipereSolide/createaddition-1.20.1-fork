@@ -38,7 +38,24 @@ public class AllItems
                                     .overheatedRecoverySpeed(0.008F)
                                     .recoverySpeed(0.016F)
                     ))
-            .properties((p) -> p.stacksTo(1))
+            .properties(p -> p.stacksTo(1))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<SingleFireBlaster> BLASTER_E11 = REGISTRATE
+            .item("e11_blaster", (properties) ->
+                    new SingleFireBlaster(
+                            properties,
+                            new Blaster.BlasterProperties()
+                                    .damage(5)
+                                    .inaccuracy(0.5F)
+                                    .ticksBetweenShots(3)
+                                    .velocity(2.5F)
+                                    .overheatedRecoverySpeed(0.008F)
+                                    .recoverySpeed(0.016F)
+                                    .fireSound(AllSounds.BLASTER_E11_FIRE.get())
+                    ))
+            .properties(p -> p.stacksTo(1))
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 

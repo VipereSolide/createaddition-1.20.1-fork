@@ -13,6 +13,8 @@
   "item.gods_retribution.blaster.properties.cooldown": " Ticks Entre Chaque Tir",
   "item.gods_retribution.blaster.properties.velocity": " Vitesse du projectile",
 
+  "item.gods_retribution.e11_blaster": "Blaster E11",
+
   "block.gods_retribution.labelling_machine": "Etiqueteuse",
   "item.gods_retribution.labelling_machine.summary":  "_Renomme_ tout item _arrivant_ dans la machine. Insérer l'item à _renommer_ dans le _1er slot_. Insérer du _papier_ dans le _2ème slot_ et de la _colle_ dans le _3ème_. Récupérer le _résultat_ dans le _4ème_ slot.",
 
@@ -49,5 +51,7 @@
   "creative_tab.gods_retribution.gods_retribution_tab": "Les Divines Représailles",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Blocs de Construction des Divines Représailles",
 
-  "gui.gods_retribution.labelling_tag.title": "Gabarit d'étiquetage"
+  "gui.gods_retribution.labelling_tag.title": "Gabarit d'étiquetage",
+
+  "sounds.gods_retribution.blaster_fire": "Tir de Blaster"
 }

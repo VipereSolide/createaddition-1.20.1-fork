@@ -32,6 +32,12 @@ public class SingleFireBlaster extends Blaster
     }
 
     @Override
+    public UseAnim getUseAnimation(ItemStack pStack)
+    {
+        return UseAnim.NONE;
+    }
+
+    @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced)
     {
         MutableComponent spacing = Component.literal(" ");
@@ -135,7 +141,7 @@ public class SingleFireBlaster extends Blaster
                 player.getX(),
                 player.getY(),
                 player.getZ(),
-                SoundEvents.STONE_BREAK,
+                blasterProperties.fireSound,
                 SoundSource.PLAYERS,
                 0.5F,
                 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
