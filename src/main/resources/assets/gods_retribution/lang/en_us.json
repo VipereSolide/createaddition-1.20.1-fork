@@ -19,8 +19,9 @@
   "item.gods_retribution.sugar_packet": "Sugar Packet",
   "item.gods_retribution.empty_packet": "Empty Packet",
 
-  "item.gods_retribution.ginger_glass_flask": "Ginger Glass Flask",
-  "item.gods_retribution.empty_glass_flask": "Empty Glass Flask",
+  "item.gods_retribution.flask_item.tooltip.content": "Content: ",
+  "item.gods_retribution.flask_item.tooltip.empty": "EMPTY",
+  "item.gods_retribution.empty_glass_flask": "Glass Flask",
 
   "block.gods_retribution.labelling_machine": "Labelling Machine",
   "item.gods_retribution.labelling_machine.summary": "_Renames_ any item _coming_ in the machine. Input the item you wish to _rename_ in the _1st slot_. Input a supply of _paper_ in the _2nd slot_ and _glue_ in the _3rd slot_. Pickup the _result_ in the _4th slot_.",

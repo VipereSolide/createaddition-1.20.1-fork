@@ -2,6 +2,7 @@ package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.GodsRetribution;
 import com.rose.gods_retribution.content.item.Blaster;
+import com.rose.gods_retribution.content.item.FlaskItem;
 import com.rose.gods_retribution.content.item.ItemLookup;
 import com.rose.gods_retribution.content.item.SingleFireBlaster;
 import com.rose.gods_retribution.content.item.fluid_vacuum.FluidVacuumItem;
@@ -86,8 +87,8 @@ public class AllItems
             .model((context, provider) -> new ResourceLocation(GodsRetribution.MOD_ID, "sugar_packet"))
             .register();
 
-    public static final ItemEntry<Item> EMPTY_GLASS_FLASK = REGISTRATE
-            .item("empty_glass_flask", Item::new)
+    public static final ItemEntry<FlaskItem> EMPTY_GLASS_FLASK = REGISTRATE
+            .item("empty_glass_flask", FlaskItem::new)
             .tab(AllCreativeTabs.MAIN.getKey())
             .recipe((c, p) -> ShapelessRecipeBuilder
                     .shapeless(RecipeCategory.MISC, c.get())
@@ -99,13 +100,13 @@ public class AllItems
             .model((context, provider) -> new ResourceLocation(GodsRetribution.MOD_ID, "empty_glass_flask"))
             .register();
 
-    public static final ItemEntry<Item> GINGER_GLASS_FLASK = REGISTRATE
-            .item("ginger_glass_flask", Item::new)
+    public static final ItemEntry<FlaskItem> GINGER_GLASS_FLASK = REGISTRATE
+            .item("ginger_glass_flask", p -> new FlaskItem(p, ItemLookup.ginger()))
             .tab(AllCreativeTabs.MAIN.getKey())
             .recipe((c, p) -> ShapelessRecipeBuilder
                     .shapeless(RecipeCategory.MISC, c.get())
                     .requires(AllItems.EMPTY_GLASS_FLASK)
-                    .requires(ItemLookup.ginger(), 8)
+                    .requires(ItemLookup.ginger(), 2)
                     .unlockedBy("has_ginger", RegistrateRecipeProvider.has(ItemLookup.ginger()))
                     .save(p, new ResourceLocation(GodsRetribution.MOD_ID,
                             "crafting/" + c.getName() + "_from_glass_bottle_and_plastic")))

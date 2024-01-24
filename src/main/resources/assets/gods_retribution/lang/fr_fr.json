@@ -19,8 +19,9 @@
   "item.gods_retribution.sugar_packet": "Paquet de Sucre",
   "item.gods_retribution.empty_packet": "Paquet Vide",
 
-  "item.gods_retribution.ginger_glass_flask": "Flacon de Gingembre",
-  "item.gods_retribution.empty_glass_flask": "Flacon Vide",
+  "item.gods_retribution.flask_item.tooltip.content": "Contient: ",
+  "item.gods_retribution.flask_item.tooltip.empty": "VIDE",
+  "item.gods_retribution.empty_glass_flask": "Flacon",
 
   "block.gods_retribution.labelling_machine": "Etiqueteuse",
   "item.gods_retribution.labelling_machine.summary":  "_Renomme_ tout item _arrivant_ dans la machine. Insérer l'item à _renommer_ dans le _1er slot_. Insérer du _papier_ dans le _2ème slot_ et de la _colle_ dans le _3ème_. Récupérer le _résultat_ dans le _4ème_ slot.",
