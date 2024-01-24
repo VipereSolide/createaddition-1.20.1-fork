@@ -39,9 +39,11 @@ public class LaserProjectileRenderer extends EntityRenderer<LaserProjectileEntit
         ms.translate(-scaleRadius, -scaleRadius, -scaleRadius);
         ms.scale(scaleRadius, scaleRadius, scaleRadius);
 
+        BlockState s = Blocks.MAGMA_BLOCK.defaultBlockState();
+
         Minecraft.getInstance()
                 .getBlockRenderer()
-                .renderSingleBlock(Blocks.RED_CONCRETE.defaultBlockState(), ms, buffer, light, 0);
+                .renderSingleBlock(s, ms, buffer, light, 0);
 
         ms.popPose();
     }
