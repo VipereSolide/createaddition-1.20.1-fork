@@ -1,0 +1,21 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "fluid": "createdieselgenerators:crude_oil",
+            "nbt": {},
+            "amount": 750
+        }
+    ],
+    "results": [
+        {
+            "item": "gods_retribution:plastic_ball"
+        },
+        {
+            "item": "gods_retribution:plastic_ball",
+            "chance": 0.5
+        }
+    ],
+    "heatRequirement": "heated",
+    "processingTime": 200
+}
