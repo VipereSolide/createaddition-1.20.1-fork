@@ -32,12 +32,6 @@ public class SingleFireBlaster extends Blaster
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack pStack)
-    {
-        return UseAnim.NONE;
-    }
-
-    @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced)
     {
         MutableComponent spacing = Component.literal(" ");
@@ -67,7 +61,7 @@ public class SingleFireBlaster extends Blaster
 
         shoot(pLevel, pPlayer, itemstack);
 
-        return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
+        return InteractionResultHolder.fail(itemstack);
     }
 
     @Override
