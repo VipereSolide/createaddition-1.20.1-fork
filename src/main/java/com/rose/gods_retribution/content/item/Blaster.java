@@ -5,6 +5,8 @@ import com.rose.gods_retribution.content.entity.projectiles.LaserProjectileEntit
 import com.rose.gods_retribution.fundation.Lang;
 import com.simibubi.create.foundation.utility.Components;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -28,6 +30,8 @@ public abstract class Blaster extends Item
     protected float currentHeat;
     protected int coolingDownProcessTimer = 0;
     protected boolean hasOverheated;
+    protected int currentTickCounter;
+    protected int nextTimeToFire;
 
     public Blaster(Properties itemProperties, BlasterProperties blasterProperties)
     {
@@ -186,6 +190,14 @@ public abstract class Blaster extends Item
         }
     }
 
+    /**
+     * The key used by the player to fire the blaster.
+     */
+    protected static KeyMapping fireKey()
+    {
+        return Minecraft.getInstance().options.keyAttack;
+    }
+
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced)
     {
@@ -211,7 +223,9 @@ public abstract class Blaster extends Item
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
     {
         if (pLevel.isClientSide())
+        {
             manageHeatOnTick(pIsSelected);
+        }
     }
 
     @Override
@@ -237,7 +251,7 @@ public abstract class Blaster extends Item
      */
     protected boolean canShoot()
     {
-        return currentHeat < 1 && !hasOverheated;
+        return currentHeat < 1 && !hasOverheated && !Minecraft.getInstance().player.getCooldowns().isOnCooldown(this);
     }
 
     public int getCoolingDownProcessTimer()
@@ -298,6 +312,9 @@ public abstract class Blaster extends Item
 
         // Adding the rate of fire cool-down.
         player.getCooldowns().addCooldown(this.asItem(), blasterProperties.ticksBetweenShots);
+
+        if (level.isClientSide())
+            nextTimeToFire = currentTickCounter + blasterProperties.ticksBetweenShots;
     }
 
     protected void spawnProjectile(Level level, Player player, ItemStack stack)

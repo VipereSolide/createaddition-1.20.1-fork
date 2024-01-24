@@ -2,19 +2,18 @@ package com.rose.gods_retribution.content.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SingleFireBlaster extends Blaster
+public class AutomaticBlaster extends Blaster
 {
-    public SingleFireBlaster(Properties itemProperties, BlasterProperties blasterProperties)
+    public AutomaticBlaster(Properties itemProperties, BlasterProperties blasterProperties)
     {
         super(itemProperties, blasterProperties);
     }
@@ -26,16 +25,19 @@ public class SingleFireBlaster extends Blaster
         MutableComponent spacing = Component.literal(" ");
 
         // Adding more weapon statistics.
-        pTooltipComponents.add(getToolPropertyComponent("single_fire"));
+        pTooltipComponents.add(getToolPropertyComponent("automatic"));
     }
 
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand)
+    @Override
+    public void inventoryTick(ItemStack itemstack, Level level, Entity entity, int pSlotId, boolean isSelected)
     {
-        ItemStack itemstack = pPlayer.getItemInHand(pHand);
+        super.inventoryTick(itemstack, level, entity, pSlotId, isSelected);
 
-        if (canShoot())
-            shoot(pLevel, pPlayer, itemstack);
+        if (!isSelected)
+            return;
 
-        return InteractionResultHolder.fail(itemstack);
+        if (entity instanceof Player player)
+            if (fireKey().isDown() && canShoot())
+                shoot(level, player, itemstack);
     }
 }

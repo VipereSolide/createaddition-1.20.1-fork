@@ -12,9 +12,11 @@
   "item.gods_retribution.blaster.properties.inaccuracy": " Dispersion",
   "item.gods_retribution.blaster.properties.cooldown": " Ticks Entre Chaque Tir",
   "item.gods_retribution.blaster.properties.velocity": " Vitesse du projectile",
-  "item.gods_retribution.blaster.properties.single_fire": " Semi Automatique",
+  "item.gods_retribution.blaster.properties.single_fire": "Semi Automatique",
+  "item.gods_retribution.blaster.properties.automatic": "Automatique",
 
   "item.gods_retribution.e11_blaster": "Blaster E11",
+  "item.gods_retribution.e11_blaster_auto": "Blaster E11 (Auto)",
 
   "item.gods_retribution.sugar_packet": "Paquet de Sucre",
   "item.gods_retribution.empty_packet": "Paquet Vide",

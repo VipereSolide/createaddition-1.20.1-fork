@@ -1,10 +1,7 @@
 package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.GodsRetribution;
-import com.rose.gods_retribution.content.item.Blaster;
-import com.rose.gods_retribution.content.item.FlaskItem;
-import com.rose.gods_retribution.content.item.ItemLookup;
-import com.rose.gods_retribution.content.item.SingleFireBlaster;
+import com.rose.gods_retribution.content.item.*;
 import com.rose.gods_retribution.content.item.fluid_vacuum.FluidVacuumItem;
 import com.rose.gods_retribution.content.item.labelling_tag.LabellingTagItem;
 import com.tterrag.registrate.providers.RegistrateItemModelProvider;
@@ -49,6 +46,23 @@ public class AllItems
                                     .inaccuracy(0.1F)
                                     .ticksBetweenShots(3)
                                     .velocity(3.2F)
+                                    .overheatedRecoverySpeed(0.008F)
+                                    .recoverySpeed(0.016F)
+                                    .fireSound(AllSounds.BLASTER_E11_FIRE.get())
+                    ))
+            .properties(p -> p.stacksTo(1))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<AutomaticBlaster> BLASTER_E11_AUTO = REGISTRATE
+            .item("e11_blaster_auto", (properties) ->
+                    new AutomaticBlaster(
+                            properties,
+                            new Blaster.BlasterProperties()
+                                    .damage(3)
+                                    .inaccuracy(0.1F)
+                                    .ticksBetweenShots(2)
+                                    .velocity(4F)
                                     .overheatedRecoverySpeed(0.008F)
                                     .recoverySpeed(0.016F)
                                     .fireSound(AllSounds.BLASTER_E11_FIRE.get())
