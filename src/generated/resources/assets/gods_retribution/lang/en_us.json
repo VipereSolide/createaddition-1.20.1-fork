@@ -26,13 +26,16 @@
   "block.gods_retribution.wood": "Wood",
   "entity.gods_retribution.laser_projectile": "Laser Projectile",
   "item.gods_retribution.e11_blaster": "E11 Blaster",
+  "item.gods_retribution.e11_blaster_auto": "E11 Blaster Auto",
   "item.gods_retribution.empty_glass_flask": "Empty Glass Flask",
   "item.gods_retribution.empty_packet": "Empty Packet",
   "item.gods_retribution.fluid_vacuum": "Fluid Vacuum",
   "item.gods_retribution.ginger_glass_flask": "Ginger Glass Flask",
   "item.gods_retribution.labelling_tag": "Labelling Tag",
+  "item.gods_retribution.light_armour_boots": "Light Armour Boots",
+  "item.gods_retribution.light_armour_chestplate": "Light Armour Chestplate",
+  "item.gods_retribution.light_armour_leggings": "Light Armour Leggings",
   "item.gods_retribution.plastic_ball": "Plastic Ball",
   "item.gods_retribution.screw": "Screw",
-  "item.gods_retribution.sugar_packet": "Sugar Packet",
-  "item.gods_retribution.testing_rifle": "Testing Rifle"
+  "item.gods_retribution.sugar_packet": "Sugar Packet"
 }

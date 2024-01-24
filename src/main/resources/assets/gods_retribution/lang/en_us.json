@@ -25,6 +25,10 @@
   "item.gods_retribution.flask_item.tooltip.empty": "EMPTY",
   "item.gods_retribution.empty_glass_flask": "Glass Flask",
 
+  "item.gods_retribution.light_armour_chestplate": "Light-Plated Top",
+  "item.gods_retribution.light_armour_leggings": "Protection Leggings",
+  "item.gods_retribution.light_armour_boots": "Security Boots",
+
   "block.gods_retribution.labelling_machine": "Labelling Machine",
   "item.gods_retribution.labelling_machine.summary": "_Renames_ any item _coming_ in the machine. Input the item you wish to _rename_ in the _1st slot_. Input a supply of _paper_ in the _2nd slot_ and _glue_ in the _3rd slot_. Pickup the _result_ in the _4th slot_.",
 

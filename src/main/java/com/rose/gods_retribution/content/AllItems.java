@@ -12,6 +12,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -125,6 +126,24 @@ public class AllItems
                     .save(p, new ResourceLocation(GodsRetribution.MOD_ID,
                             "crafting/" + c.getName() + "_from_glass_bottle_and_plastic")))
             .model((context, provider) -> new ResourceLocation(GodsRetribution.MOD_ID, "ginger_glass_flask"))
+            .register();
+
+    public static final ItemEntry<LightArmourItem> LIGHT_ARMOUR_CHESTPLATE = REGISTRATE
+            .item("light_armour_chestplate", properties ->
+                    new LightArmourItem(AllArmorMaterials.LIGHT_ARMOUR, ArmorItem.Type.CHESTPLATE, properties))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<LightArmourItem> LIGHT_ARMOUR_LEGGINGS = REGISTRATE
+            .item("light_armour_leggings", properties ->
+                    new LightArmourItem(AllArmorMaterials.LIGHT_ARMOUR, ArmorItem.Type.LEGGINGS, properties))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<LightArmourItem> LIGHT_ARMOUR_BOOTS = REGISTRATE
+            .item("light_armour_boots", properties ->
+                    new LightArmourItem(AllArmorMaterials.LIGHT_ARMOUR, ArmorItem.Type.BOOTS, properties))
+            .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
     /**

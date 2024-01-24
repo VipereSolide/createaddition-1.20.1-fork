@@ -26,13 +26,16 @@
   "block.gods_retribution.wood": "pooM",
   "entity.gods_retribution.laser_projectile": "ǝןıʇɔǝظoɹԀ ɹǝsɐꞀ",
   "item.gods_retribution.e11_blaster": "ɹǝʇsɐןᗺ ƖƖƎ",
+  "item.gods_retribution.e11_blaster_auto": "oʇnⱯ ɹǝʇsɐןᗺ ƖƖƎ",
   "item.gods_retribution.empty_glass_flask": "ʞsɐןℲ ssɐן⅁ ʎʇdɯƎ",
   "item.gods_retribution.empty_packet": "ʇǝʞɔɐԀ ʎʇdɯƎ",
   "item.gods_retribution.fluid_vacuum": "ɯnnɔɐΛ pınןℲ",
   "item.gods_retribution.ginger_glass_flask": "ʞsɐןℲ ssɐן⅁ ɹǝbuı⅁",
   "item.gods_retribution.labelling_tag": "bɐ⟘ buıןןǝqɐꞀ",
+  "item.gods_retribution.light_armour_boots": "sʇooᗺ ɹnoɯɹⱯ ʇɥbıꞀ",
+  "item.gods_retribution.light_armour_chestplate": "ǝʇɐןdʇsǝɥƆ ɹnoɯɹⱯ ʇɥbıꞀ",
+  "item.gods_retribution.light_armour_leggings": "sbuıbbǝꞀ ɹnoɯɹⱯ ʇɥbıꞀ",
   "item.gods_retribution.plastic_ball": "ןןɐᗺ ɔıʇsɐןԀ",
   "item.gods_retribution.screw": "ʍǝɹɔS",
-  "item.gods_retribution.sugar_packet": "ʇǝʞɔɐԀ ɹɐbnS",
-  "item.gods_retribution.testing_rifle": "ǝןɟıᴚ buıʇsǝ⟘"
+  "item.gods_retribution.sugar_packet": "ʇǝʞɔɐԀ ɹɐbnS"
 }
