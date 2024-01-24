@@ -39,31 +39,15 @@ public class AllItems
             .item("fluid_vacuum", FluidVacuumItem::new)
             .register();
 
-    public static final ItemEntry<SingleFireBlaster> TESTING_RIFLE = REGISTRATE
-            .item("testing_rifle", (properties) ->
-                    new SingleFireBlaster(
-                            properties,
-                            new Blaster.BlasterProperties()
-                                    .damage(5)
-                                    .inaccuracy(0.5F)
-                                    .ticksBetweenShots(3)
-                                    .velocity(2.5F)
-                                    .overheatedRecoverySpeed(0.008F)
-                                    .recoverySpeed(0.016F)
-                    ))
-            .properties(p -> p.stacksTo(1))
-            .tab(AllCreativeTabs.MAIN.getKey())
-            .register();
-
     public static final ItemEntry<SingleFireBlaster> BLASTER_E11 = REGISTRATE
             .item("e11_blaster", (properties) ->
                     new SingleFireBlaster(
                             properties,
                             new Blaster.BlasterProperties()
                                     .damage(5)
-                                    .inaccuracy(0.5F)
+                                    .inaccuracy(0.1F)
                                     .ticksBetweenShots(3)
-                                    .velocity(2.5F)
+                                    .velocity(3.2F)
                                     .overheatedRecoverySpeed(0.008F)
                                     .recoverySpeed(0.016F)
                                     .fireSound(AllSounds.BLASTER_E11_FIRE.get())

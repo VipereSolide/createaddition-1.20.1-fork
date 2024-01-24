@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gods_retribution:empty_glass_flask"
+    },
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "result": {
+    "item": "gods_retribution:ginger_glass_flask"
+  }
+}

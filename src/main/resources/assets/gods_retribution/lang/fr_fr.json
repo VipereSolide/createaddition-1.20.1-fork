@@ -12,6 +12,7 @@
   "item.gods_retribution.blaster.properties.inaccuracy": " Dispersion",
   "item.gods_retribution.blaster.properties.cooldown": " Ticks Entre Chaque Tir",
   "item.gods_retribution.blaster.properties.velocity": " Vitesse du projectile",
+  "item.gods_retribution.blaster.properties.single_fire": " Semi Automatique",
 
   "item.gods_retribution.e11_blaster": "Blaster E11",
 
