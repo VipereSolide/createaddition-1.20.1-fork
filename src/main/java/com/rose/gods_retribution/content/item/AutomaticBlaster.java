@@ -1,5 +1,6 @@
 package com.rose.gods_retribution.content.item;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.Entity;
@@ -39,5 +40,11 @@ public class AutomaticBlaster extends Blaster
         if (entity instanceof Player player)
             if (fireKey().isDown() && canShoot())
                 shoot(level, player, itemstack);
+    }
+
+    @Override
+    protected boolean canShoot()
+    {
+        return currentHeat < 1 && !hasOverheated && !Minecraft.getInstance().player.getCooldowns().isOnCooldown(this);
     }
 }

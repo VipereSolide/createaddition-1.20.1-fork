@@ -32,8 +32,6 @@ public abstract class Blaster extends Item
     protected float currentHeat;
     protected int coolingDownProcessTimer = 0;
     protected boolean hasOverheated;
-    protected int currentTickCounter;
-    protected int nextTimeToFire;
 
     public Blaster(Properties itemProperties, BlasterProperties blasterProperties)
     {
@@ -265,7 +263,7 @@ public abstract class Blaster extends Item
      */
     protected boolean canShoot()
     {
-        return currentHeat < 1 && !hasOverheated && !Minecraft.getInstance().player.getCooldowns().isOnCooldown(this);
+        return currentHeat < 1 && !hasOverheated;
     }
 
     public int getCoolingDownProcessTimer()
@@ -300,6 +298,8 @@ public abstract class Blaster extends Item
 
     protected void shoot(Level level, Player player, ItemStack stack)
     {
+        // player.sendSystemMessage(Component.literal("Is Client Side: " + level.isClientSide()));
+
         // Play the weapon firing sound.
         level.playSound((Player) null,
                 player.getX(),
@@ -326,9 +326,6 @@ public abstract class Blaster extends Item
 
         // Adding the rate of fire cool-down.
         player.getCooldowns().addCooldown(this.asItem(), blasterProperties.ticksBetweenShots);
-
-        if (level.isClientSide())
-            nextTimeToFire = currentTickCounter + blasterProperties.ticksBetweenShots;
     }
 
     protected void spawnProjectile(Level level, Player player, ItemStack stack)
@@ -374,7 +371,7 @@ public abstract class Blaster extends Item
     {
         // We only do it on the selected item so having multiple of the same item type in the inventory doesn't
         // accelerate the cooling process.
-        if (isSelected)
+        if (true)
         {
             // If the weapon can cool down, decrease it's current heat by either the slow value (if the weapon was
             // overheated) or by the normal value (if the weapon just stopped firing).

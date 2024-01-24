@@ -34,7 +34,9 @@ public class SingleFireBlaster extends Blaster
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
 
         if (canShoot())
+        {
             shoot(pLevel, pPlayer, itemstack);
+        }
 
         return InteractionResultHolder.fail(itemstack);
     }
