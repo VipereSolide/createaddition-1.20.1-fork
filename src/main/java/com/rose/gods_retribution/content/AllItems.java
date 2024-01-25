@@ -43,12 +43,14 @@ public class AllItems
                     new SingleFireBlaster(
                             properties,
                             new Blaster.BlasterProperties()
-                                    .damage(5)
-                                    .inaccuracy(0.1F)
-                                    .ticksBetweenShots(3)
-                                    .velocity(3.2F)
-                                    .overheatedRecoverySpeed(0.008F)
-                                    .recoverySpeed(0.016F)
+                                    .damage(7)
+                                    .inaccuracy(0.025F)
+                                    .ticksBetweenShots(6)
+                                    .velocity(4.5F)
+                                    .overheatedRecoverySpeed(0.01F)
+                                    .recoverySpeed(0.03F)
+                                    .startRecoveryTimer(10)
+                                    .heatPerShot(0.2F)
                                     .fireSound(AllSounds.BLASTER_E11_FIRE.get())
                     ))
             .properties(p -> p.stacksTo(1))
@@ -143,6 +145,11 @@ public class AllItems
     public static final ItemEntry<LightArmourItem> LIGHT_ARMOUR_BOOTS = REGISTRATE
             .item("light_armour_boots", properties ->
                     new LightArmourItem(AllArmorMaterials.LIGHT_ARMOUR, ArmorItem.Type.BOOTS, properties))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> GELATINE = REGISTRATE
+            .item("gelatin", Item::new)
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
