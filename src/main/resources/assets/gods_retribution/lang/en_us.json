@@ -1,6 +1,8 @@
 {
   "item.gods_retribution.screw": "Screw",
 
+  "item.gods_retribution.gelatin": "Gelatin",
+
   "item.gods_retribution.labelling_tag": "Labelling Tag",
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renames_ items contained in a _labelling machine_.",
   "item.gods_retribution.labelling_tag.tooltip.condition1": "When R-Clicked",
@@ -16,7 +18,9 @@
   "item.gods_retribution.blaster.properties.automatic": "Automatic",
 
   "item.gods_retribution.e11_blaster": "E11 Blaster",
-  "item.gods_retribution.e11_blaster_auto": "Blaster E11 (Auto)",
+  "item.gods_retribution.e11_blaster.tooltip.summary": "Semi-automatic powerful blaster used by most armed groups for it's cheap price. Although cheap, it is a quite powerful weapon, firing high-penetration lasers.",
+  "item.gods_retribution.e11_blaster_auto": "E11-a Blaster",
+  "item.gods_retribution.e11_blaster_auto.tooltip.summary": "Automatic version of the E11. To reduce the overheating problem, less powerful lasers are being been used, thus also reducing the weapon's penetration power.",
 
   "item.gods_retribution.sugar_packet": "Sugar Packet",
   "item.gods_retribution.empty_packet": "Empty Packet",
@@ -38,6 +42,8 @@
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbs_ the _clicked fluid_.",
 
   "block.gods_retribution.wood": "Woody!",
+  "block.gods_retribution.industrial_iron_shingles": "Industrial Iron Shingles",
+  "block.gods_retribution.cracked_industrial_iron_shingles": "Cracked Industrial Iron Shingles",
   "block.gods_retribution.plastic_moss": "Plastic Moss",
   "block.gods_retribution.aeration_block": "Air Vent Block",
   "block.gods_retribution.air_vent": "Air Vent",

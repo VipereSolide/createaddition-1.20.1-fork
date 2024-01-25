@@ -31,6 +31,22 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<Block> INDUSTRIAL_IRON_SHINGLES = REGISTRATE
+            .block("industrial_iron_shingles", Block::new)
+            .initialProperties(() -> com.simibubi.create.AllBlocks.INDUSTRIAL_IRON_BLOCK.get())
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<Block> CRACKED_INDUSTRIAL_IRON_SHINGLES = REGISTRATE
+            .block("cracked_industrial_iron_shingles", Block::new)
+            .initialProperties(() -> com.simibubi.create.AllBlocks.INDUSTRIAL_IRON_BLOCK.get())
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
+
     public static final BlockEntry<PlasticMossBlock> PLASTIC_MOSS = REGISTRATE
             .block("plastic_moss", PlasticMossBlock::new)
             .initialProperties(() -> Blocks.WHITE_WOOL)
