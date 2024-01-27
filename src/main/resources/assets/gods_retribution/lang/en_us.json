@@ -1,6 +1,8 @@
 {
   "item.gods_retribution.screw": "Screw",
 
+  "item.gods_retribution.gelatin": "Gelatin",
+
   "item.gods_retribution.labelling_tag": "Labelling Tag",
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renames_ items contained in a _labelling machine_.",
   "item.gods_retribution.labelling_tag.tooltip.condition1": "When R-Clicked",
@@ -8,10 +10,28 @@
   "item.gods_retribution.labelling_tag.tooltip.current_label": "Current Label: ",
 
   "item.gods_retribution.testing_rifle": "Testing Rifle",
-  "item.gods_retribution.testing_rifle.properties.attack_damage": " Attack Damage",
-  "item.gods_retribution.testing_rifle.properties.inaccuracy": " Inaccuracy",
-  "item.gods_retribution.testing_rifle.properties.cooldown": " Cooldown Ticks",
-  "item.gods_retribution.testing_rifle.properties.velocity": " Projectile Velocity",
+  "item.gods_retribution.blaster.properties.attack_damage": " Attack Damage",
+  "item.gods_retribution.blaster.properties.inaccuracy": " Inaccuracy",
+  "item.gods_retribution.blaster.properties.cooldown": " Cooldown Ticks",
+  "item.gods_retribution.blaster.properties.velocity": " Projectile Velocity",
+  "item.gods_retribution.blaster.properties.single_fire": "Semi Automatic",
+  "item.gods_retribution.blaster.properties.automatic": "Automatic",
+
+  "item.gods_retribution.e11_blaster": "E11 Blaster",
+  "item.gods_retribution.e11_blaster.tooltip.summary": "Semi-automatic powerful blaster used by most armed groups for it's cheap price. Although cheap, it is a quite powerful weapon, firing high-penetration lasers.",
+  "item.gods_retribution.e11_blaster_auto": "E11-a Blaster",
+  "item.gods_retribution.e11_blaster_auto.tooltip.summary": "Automatic version of the E11. To reduce the overheating problem, less powerful lasers are being been used, thus also reducing the weapon's penetration power.",
+
+  "item.gods_retribution.sugar_packet": "Sugar Packet",
+  "item.gods_retribution.empty_packet": "Empty Packet",
+
+  "item.gods_retribution.flask_item.tooltip.content": "Content: ",
+  "item.gods_retribution.flask_item.tooltip.empty": "EMPTY",
+  "item.gods_retribution.empty_glass_flask": "Glass Flask",
+
+  "item.gods_retribution.light_armour_chestplate": "Light-Plated Top",
+  "item.gods_retribution.light_armour_leggings": "Protection Leggings",
+  "item.gods_retribution.light_armour_boots": "Security Boots",
 
   "block.gods_retribution.labelling_machine": "Labelling Machine",
   "item.gods_retribution.labelling_machine.summary": "_Renames_ any item _coming_ in the machine. Input the item you wish to _rename_ in the _1st slot_. Input a supply of _paper_ in the _2nd slot_ and _glue_ in the _3rd slot_. Pickup the _result_ in the _4th slot_.",
@@ -22,6 +42,8 @@
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbs_ the _clicked fluid_.",
 
   "block.gods_retribution.wood": "Woody!",
+  "block.gods_retribution.industrial_iron_shingles": "Industrial Iron Shingles",
+  "block.gods_retribution.cracked_industrial_iron_shingles": "Cracked Industrial Iron Shingles",
   "block.gods_retribution.plastic_moss": "Plastic Moss",
   "block.gods_retribution.aeration_block": "Air Vent Block",
   "block.gods_retribution.air_vent": "Air Vent",
@@ -50,5 +72,7 @@
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Gods' Retribution's Building Blocks",
 
   "gui.gods_retribution.labelling_tag.title": "Labelling Tag",
-  "gui.gods_retribution.labelling_machine.title": "Labelling Machine"
+  "gui.gods_retribution.labelling_machine.title": "Labelling Machine",
+
+  "sounds.gods_retribution.blaster_fire": "Blaster Fires"
 }

@@ -38,7 +38,7 @@ public class LaserProjectileEntity extends ThrowableItemProjectile
     @Override
     protected @NotNull Item getDefaultItem()
     {
-        return AllItems.TESTING_RIFLE.asItem();
+        return AllItems.BLASTER_E11.asItem();
     }
 
     @Override

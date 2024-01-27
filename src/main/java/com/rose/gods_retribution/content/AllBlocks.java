@@ -26,81 +26,113 @@ import static com.simibubi.create.foundation.data.TagGen.*;
  */
 public class AllBlocks
 {
-    public static final BlockEntry<Block> WOOD = REGISTRATE.block("wood", Block::new)
+    public static final BlockEntry<Block> WOOD = REGISTRATE
+            .block("wood", Block::new)
             .initialProperties(() -> Blocks.DIRT)
             .properties(p -> p.mapColor(MapColor.TERRACOTTA_YELLOW).requiresCorrectToolForDrops())
             .transform(pickaxeOnly())
-            .blockstate(simpleCubeAll("brass_block"))
-            .tag(BlockTags.NEEDS_IRON_TOOL)
-            .tag(Tags.Blocks.STORAGE_BLOCKS)
-            .tag(BlockTags.BEACON_BASE_BLOCKS)
-            .transform(tagBlockAndItem("storage_blocks/brass"))
-            .tag(Tags.Items.STORAGE_BLOCKS)
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
 
-    public static final BlockEntry<PlasticMossBlock> PLASTIC_MOSS =
-            REGISTRATE.block("plastic_moss", PlasticMossBlock::new)
-                    .initialProperties(() -> Blocks.WHITE_WOOL)
-                    .properties(p -> p.mapColor(MapColor.COLOR_YELLOW))
-                    .blockstate(simpleCubeAll("plastic_moss"))
-                    .item()
-                    .build()
-                    .register();
+    public static final BlockEntry<Block> INDUSTRIAL_IRON_SHINGLES = REGISTRATE
+            .block("industrial_iron_shingles", Block::new)
+            .initialProperties(() -> com.simibubi.create.AllBlocks.INDUSTRIAL_IRON_BLOCK.get())
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
 
-    public static final BlockEntry<LabellingMachineBlock> LABELLING_MACHINE =
-            REGISTRATE.block("labelling_machine", LabellingMachineBlock::new)
-                    .initialProperties(SharedProperties::softMetal)
-                    .properties(p -> p.noOcclusion().mapColor(MapColor.PODZOL))
-                    .tag(AllTags.AllBlockTags.SAFE_NBT.tag) // Dunno what this tag means (contraption safe?).
-                    .transform(BlockStressDefaults.setImpact(4))
-                    .item()
-                    .transform(customItemModel())
-                    .register();
+    public static final BlockEntry<Block> CRACKED_INDUSTRIAL_IRON_SHINGLES = REGISTRATE
+            .block("cracked_industrial_iron_shingles", Block::new)
+            .initialProperties(() -> com.simibubi.create.AllBlocks.INDUSTRIAL_IRON_BLOCK.get())
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
 
-    public static final BlockEntry<Block> AERATION_BLOCK = REGISTRATE.block("aeration_block", Block::new)
+    public static final BlockEntry<PlasticMossBlock> PLASTIC_MOSS = REGISTRATE
+            .block("plastic_moss", PlasticMossBlock::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(p -> p.mapColor(MapColor.COLOR_YELLOW))
+            .blockstate(simpleCubeAll("plastic_moss"))
+            .item()
+            .build()
+            .register();
+
+    public static final BlockEntry<LabellingMachineBlock> LABELLING_MACHINE = REGISTRATE
+            .block("labelling_machine", LabellingMachineBlock::new)
+            .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p.noOcclusion().mapColor(MapColor.PODZOL))
+            .tag(AllTags.AllBlockTags.SAFE_NBT.tag) // Dunno what this tag means (contraption safe?).
+            .transform(BlockStressDefaults.setImpact(4))
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<Block> AERATION_BLOCK = REGISTRATE
+            .block("aeration_block", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
             .properties(p -> p.mapColor(MapColor.COLOR_GRAY))
             .item()
-            .build().register();
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
 
-    public static final BlockEntry<AirVentBlock> AIR_VENT = REGISTRATE.block("air_vent", AirVentBlock::new)
+    public static final BlockEntry<AirVentBlock> AIR_VENT = REGISTRATE
+            .block("air_vent", AirVentBlock::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
             .properties(p -> p
                     .mapColor(MapColor.COLOR_GRAY)
                     .noOcclusion())
             .item()
-            .build().register();
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
 
-    public static final BlockEntry<Block> STEEL_BLOCK = REGISTRATE.block("steel_block", Block::new)
+    public static final BlockEntry<Block> STEEL_BLOCK = REGISTRATE
+            .block("steel_block", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
             .properties(p -> p.requiresCorrectToolForDrops())
             .transform(axeOrPickaxe())
             .item()
-            .build().register();
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
 
-    public static final BlockEntry<Block> TILES_BATHROOM = REGISTRATE.block("tiles_bathroom_block", Block::new)
+    public static final BlockEntry<Block> TILES_BATHROOM = REGISTRATE
+            .block("tiles_bathroom_block", Block::new)
             .initialProperties(() -> Blocks.BONE_BLOCK)
             .item()
-            .build().register();
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
 
-    public static final BlockEntry<Block> FLINT_BLOCK = REGISTRATE.block("flint_block", Block::new)
+    public static final BlockEntry<Block> FLINT_BLOCK = REGISTRATE
+            .block("flint_block", Block::new)
             .initialProperties(() -> Blocks.GRAVEL)
             .properties(p -> p.mapColor(MapColor.COLOR_GRAY))
             .item()
-            .build().register();
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build()
+            .register();
 
-    public static final BlockEntry<Block> CONCRETE =
-            REGISTRATE.block("concrete", Block::new)
-                    .initialProperties(() -> Blocks.WHITE_CONCRETE)
-                    .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GRAY))
-                    .item()
-                    .build().register();
+    public static final BlockEntry<Block> CONCRETE = REGISTRATE
+            .block("concrete", Block::new)
+            .initialProperties(() -> Blocks.WHITE_CONCRETE)
+            .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GRAY))
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
 
     public static final DyedBlockList<Block> CONCRETE_COLOURS = new DyedBlockList<>(colour ->
     {
         String colourName = colour.getSerializedName();
-        return REGISTRATE.block("concrete_" + colourName, Block::new)
+        return REGISTRATE
+                .block("concrete_" + colourName, Block::new)
                 .initialProperties(AllBlocks.CONCRETE::get)
                 .properties(p -> p.mapColor(colour))
                 .item()

@@ -1,0 +1,13 @@
+{
+    "type": "create:pressing",
+    "ingredients": [
+        {
+            "item": "gods_retribution:plastic_ball"
+        }
+    ],
+    "results": [
+        {
+            "item": "gods_retribution:plastic_bar"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:cobbled_deepslate"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:powdered_obsidian",
+      "chance": 0.07
+    }
+  ],
+  "processingTime": 250
+}

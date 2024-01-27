@@ -7,6 +7,30 @@
   "item.gods_retribution.labelling_tag.tooltip.behaviour1": "Ouvre _l'interface_",
   "item.gods_retribution.labelling_tag.tooltip.current_label": "Nom : ",
 
+  "item.gods_retribution.gelatin": "Gélatine",
+
+  "item.gods_retribution.testing_rifle": "Fusil de test",
+  "item.gods_retribution.blaster.properties.attack_damage": " Dégâts",
+  "item.gods_retribution.blaster.properties.inaccuracy": " Dispersion",
+  "item.gods_retribution.blaster.properties.cooldown": " Ticks Entre Chaque Tir",
+  "item.gods_retribution.blaster.properties.velocity": " Vitesse du projectile",
+  "item.gods_retribution.blaster.properties.single_fire": "Semi Automatique",
+  "item.gods_retribution.blaster.properties.automatic": "Automatique",
+
+  "item.gods_retribution.e11_blaster": "Blaster E11",
+  "item.gods_retribution.e11_blaster_auto": "Blaster E11 (Auto)",
+
+  "item.gods_retribution.sugar_packet": "Paquet de Sucre",
+  "item.gods_retribution.empty_packet": "Paquet Vide",
+
+  "item.gods_retribution.flask_item.tooltip.content": "Contient: ",
+  "item.gods_retribution.flask_item.tooltip.empty": "VIDE",
+  "item.gods_retribution.empty_glass_flask": "Flacon",
+
+  "item.gods_retribution.light_armour_chestplate": "Plastron Léger de Sécurité",
+  "item.gods_retribution.light_armour_leggings": "Pantalon de Sécurité",
+  "item.gods_retribution.light_armour_boots": "Bottes de Sécurité",
+
   "block.gods_retribution.labelling_machine": "Etiqueteuse",
   "item.gods_retribution.labelling_machine.summary":  "_Renomme_ tout item _arrivant_ dans la machine. Insérer l'item à _renommer_ dans le _1er slot_. Insérer du _papier_ dans le _2ème slot_ et de la _colle_ dans le _3ème_. Récupérer le _résultat_ dans le _4ème_ slot.",
 
@@ -16,6 +40,8 @@
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbe_ le fluide visé.",
 
   "block.gods_retribution.wood": "Woody !",
+  "block.gods_retribution.industrial_iron_shingles": "Plaques de Métal Industriel",
+  "block.gods_retribution.cracked_industrial_iron_shingles": "Plaques de Métal Industriel Craquelées",
   "block.gods_retribution.plastic_moss": "Bloc de mousse plastique",
   "block.gods_retribution.aeration_block": "Bloc d'aération",
   "block.gods_retribution.air_vent": "Bouche d'aération",
@@ -43,5 +69,7 @@
   "creative_tab.gods_retribution.gods_retribution_tab": "Les Divines Représailles",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Blocs de Construction des Divines Représailles",
 
-  "gui.gods_retribution.labelling_tag.title": "Gabarit d'étiquetage"
+  "gui.gods_retribution.labelling_tag.title": "Gabarit d'étiquetage",
+
+  "sounds.gods_retribution.blaster_fire": "Tir de Blaster"
 }
