@@ -1,6 +1,28 @@
 {
   "values": [
     "gods_retribution:wood",
-    "gods_retribution:steel_block"
+    "gods_retribution:industrial_iron_shingles",
+    "gods_retribution:cracked_industrial_iron_shingles",
+    "gods_retribution:aeration_block",
+    "gods_retribution:air_vent",
+    "gods_retribution:steel_block",
+    "gods_retribution:tiles_bathroom_block",
+    "gods_retribution:concrete",
+    "gods_retribution:concrete_white",
+    "gods_retribution:concrete_orange",
+    "gods_retribution:concrete_magenta",
+    "gods_retribution:concrete_light_blue",
+    "gods_retribution:concrete_yellow",
+    "gods_retribution:concrete_lime",
+    "gods_retribution:concrete_pink",
+    "gods_retribution:concrete_gray",
+    "gods_retribution:concrete_light_gray",
+    "gods_retribution:concrete_cyan",
+    "gods_retribution:concrete_purple",
+    "gods_retribution:concrete_blue",
+    "gods_retribution:concrete_brown",
+    "gods_retribution:concrete_green",
+    "gods_retribution:concrete_red",
+    "gods_retribution:concrete_black"
   ]
 }
