@@ -37,7 +37,7 @@ public class AllBlocks
 
     public static final BlockEntry<Block> INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("industrial_iron_shingles", Block::new)
-            .initialProperties(() -> com.simibubi.create.AllBlocks.INDUSTRIAL_IRON_BLOCK.get())
+            .initialProperties(() -> Blocks.IRON_BLOCK)
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())
@@ -46,7 +46,7 @@ public class AllBlocks
 
     public static final BlockEntry<Block> CRACKED_INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("cracked_industrial_iron_shingles", Block::new)
-            .initialProperties(() -> com.simibubi.create.AllBlocks.INDUSTRIAL_IRON_BLOCK.get())
+            .initialProperties(() -> Blocks.IRON_BLOCK)
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())
