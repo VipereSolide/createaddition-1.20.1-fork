@@ -3,7 +3,6 @@ package com.rose.gods_retribution.content;
 import com.rose.gods_retribution.content.block.AirVentBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
-import com.simibubi.create.AllTags;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;
@@ -16,7 +15,6 @@ import net.minecraft.world.level.material.MapColor;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 import static com.simibubi.create.foundation.data.BlockStateGen.simpleCubeAll;
-import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.*;
 
 /**
@@ -30,6 +28,7 @@ public class AllBlocks
             .block("wood", Block::new)
             .initialProperties(() -> Blocks.DIRT)
             .properties(p -> p.mapColor(MapColor.TERRACOTTA_YELLOW).requiresCorrectToolForDrops())
+            .tag(AllTags.Blocks.WOODY)
             .transform(pickaxeOnly())
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())
@@ -65,7 +64,7 @@ public class AllBlocks
             .block("labelling_machine", LabellingMachineBlock::new)
             .initialProperties(SharedProperties::softMetal)
             .properties(p -> p.noOcclusion().mapColor(MapColor.PODZOL))
-            .tag(AllTags.AllBlockTags.SAFE_NBT.tag) // Dunno what this tag means (contraption safe?).
+            .tag(com.simibubi.create.AllTags.AllBlockTags.SAFE_NBT.tag) // Dunno what this tag means (contraption safe?).
             .transform(BlockStressDefaults.setImpact(4))
             .item()
             .tab(AllCreativeTabs.MAIN.getKey())
