@@ -93,7 +93,9 @@
   "block.gods_retribution.concrete_yellow": "Yellow Concrete Block",
   "block.gods_retribution.concrete_yellow_slab": "Yellow Concrete Slab",
   "block.gods_retribution.metal_wiremesh_block": "Metal Wiremesh Block",
+  "block.gods_retribution.metal_wiremesh_slab": "Metal Wiremesh Slab",
   "block.gods_retribution.metal_wiremesh_block_transparent": "Transparent Metal Wiremesh Block",
+  "block.gods_retribution.metal_wiremesh_slab_transparent": "Transparent Metal Wiremesh Slab",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Gods' Retribution",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Gods' Retribution's Building Blocks",

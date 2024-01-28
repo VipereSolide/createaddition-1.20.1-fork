@@ -307,6 +307,20 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<SlabBlock> METAL_WIREMESH_SLAB = REGISTRATE
+            .block("metal_wiremesh_slab", SlabBlock::new)
+            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK::get)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"), provider.modLoc("block/metal_wiremesh_block"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> METAL_WIREMESH_BLOCK_TRANSPARENT = REGISTRATE
             .block("metal_wiremesh_block_transparent", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -315,6 +329,21 @@ public class AllBlocks
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<SlabBlock> METAL_WIREMESH_SLAB_TRANSPARENT = REGISTRATE
+            .block("metal_wiremesh_slab_transparent", SlabBlock::new)
+            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent"), provider.modLoc("block/metal_wiremesh_block_transparent"));
+            })
             .addLayer(() -> RenderType::cutout)
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())

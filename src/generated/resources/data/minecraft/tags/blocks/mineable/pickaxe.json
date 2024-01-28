@@ -47,6 +47,8 @@
     "gods_retribution:concrete_red_slab",
     "gods_retribution:concrete_black_slab",
     "gods_retribution:metal_wiremesh_block",
-    "gods_retribution:metal_wiremesh_block_transparent"
+    "gods_retribution:metal_wiremesh_slab",
+    "gods_retribution:metal_wiremesh_block_transparent",
+    "gods_retribution:metal_wiremesh_slab_transparent"
   ]
 }
