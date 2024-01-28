@@ -3,6 +3,7 @@ package com.rose.gods_retribution.content;
 import com.rose.gods_retribution.content.block.AirVentBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
+import com.rose.gods_retribution.fundation.blocks.RegisteredHorizontalDirectionalBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;
@@ -148,6 +149,18 @@ public class AllBlocks
                 .build()
                 .register();
     });
+
+    public static final BlockEntry<Block> METAL_WIREMESH_BLOCK = REGISTRATE
+            .block("metal_wiremesh_block", Block::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .properties(p -> p
+                    .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                    .requiresCorrectToolForDrops())
+            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
 
     /**
      * Loads this class
