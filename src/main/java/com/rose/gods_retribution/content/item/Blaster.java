@@ -299,10 +299,14 @@ public abstract class Blaster extends Item
 
     protected void shoot(Level level, Player player, ItemStack stack)
     {
-        // player.sendSystemMessage(Component.literal("Is Client Side: " + level.isClientSide()));
+        if (player.getCooldowns().isOnCooldown(stack.getItem()))
+            return;
+
+        player.sendSystemMessage(Component.literal("Is Client Side: " + level.isClientSide()));
 
         // Play the weapon firing sound.
-        level.playSound((Player) null,
+        level.playSound(
+                null,
                 player.getX(),
                 player.getY(),
                 player.getZ(),
@@ -317,17 +321,17 @@ public abstract class Blaster extends Item
             manageHeatOnShot(level, player);
         }
         // We spawn the projectile on server side so all players see it and not only the player who shot the weapon.
-        else if (!Minecraft.getInstance().player.getCooldowns().isOnCooldown(this))
+        else
         {
             spawnProjectile(level, player, stack);
+
+            // Adding the rate of fire cool-down.
+            if (!hasOverheated)
+                player.getCooldowns().addCooldown(stack.getItem(), blasterProperties.ticksBetweenShots);
         }
 
         // So the game knows we used this item.
         player.awardStat(Stats.ITEM_USED.get(this));
-
-        // Adding the rate of fire cool-down.
-        if (!hasOverheated)
-            player.getCooldowns().addCooldown(this.asItem(), blasterProperties.ticksBetweenShots);
     }
 
     protected void spawnProjectile(Level level, Player player, ItemStack stack)
