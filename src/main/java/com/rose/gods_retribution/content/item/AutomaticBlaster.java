@@ -41,10 +41,4 @@ public class AutomaticBlaster extends Blaster
             if (fireKey().isDown() && canShoot())
                 shoot(level, player, itemstack);
     }
-
-    @Override
-    protected boolean canShoot()
-    {
-        return currentHeat < 1 && !hasOverheated && !Minecraft.getInstance().player.getCooldowns().isOnCooldown(this);
-    }
 }

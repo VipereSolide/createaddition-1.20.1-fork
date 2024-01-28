@@ -232,11 +232,12 @@ public abstract class Blaster extends Item
     }
 
     @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
+    public void inventoryTick(ItemStack pStack, Level level, Entity entity, int pSlotId, boolean pIsSelected)
     {
-        if (pLevel.isClientSide())
+        if (level.isClientSide())
         {
-            manageHeatOnTick(pIsSelected);
+            if (entity instanceof Player player)
+                manageHeatOnTick(pIsSelected, player);
         }
     }
 
@@ -316,7 +317,7 @@ public abstract class Blaster extends Item
             manageHeatOnShot(level, player);
         }
         // We spawn the projectile on server side so all players see it and not only the player who shot the weapon.
-        else
+        else if (!Minecraft.getInstance().player.getCooldowns().isOnCooldown(this))
         {
             spawnProjectile(level, player, stack);
         }
@@ -325,7 +326,8 @@ public abstract class Blaster extends Item
         player.awardStat(Stats.ITEM_USED.get(this));
 
         // Adding the rate of fire cool-down.
-        player.getCooldowns().addCooldown(this.asItem(), blasterProperties.ticksBetweenShots);
+        if (!hasOverheated)
+            player.getCooldowns().addCooldown(this.asItem(), blasterProperties.ticksBetweenShots);
     }
 
     protected void spawnProjectile(Level level, Player player, ItemStack stack)
@@ -350,10 +352,12 @@ public abstract class Blaster extends Item
         this.currentHeat = Math.min(1, currentHeat + blasterProperties.heatPerShot);
 
         // If we reached the overheating point...
-        if (currentHeat >= 1)
+        if (currentHeat >= 1 && !hasOverheated)
         {
             // The player has to wait for the weapon to fully cool down before being able to shoot again.
             hasOverheated = true;
+
+            player.getCooldowns().addCooldown(this, 1500);
 
             // Play the lava extinguishing sound to mimic a weapon overheating.
             level.playSound((Player) null,
@@ -367,7 +371,7 @@ public abstract class Blaster extends Item
         }
     }
 
-    protected void manageHeatOnTick(boolean isSelected)
+    protected void manageHeatOnTick(boolean isSelected, Player player)
     {
         // We only do it on the selected item so having multiple of the same item type in the inventory doesn't
         // accelerate the cooling process.
@@ -388,7 +392,10 @@ public abstract class Blaster extends Item
 
         // Stop waiting for the weapon to cool down if the heat has reached zero again.
         if (currentHeat <= 0 && hasOverheated)
+        {
             hasOverheated = false;
+            player.getCooldowns().removeCooldown(this);
+        }
 
         // Decrease the time it takes before cooling down the weapon again until it reaches zero.
         if (coolingDownProcessTimer > 0)
