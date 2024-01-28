@@ -202,7 +202,7 @@ public class AllBlocks
             .properties(p -> p.mapColor(MapColor.COLOR_GRAY))
             .tag(BlockTags.MINEABLE_WITH_SHOVEL)
             .item()
-            .tab(AllCreativeTabs.MAIN.getKey())
+            .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
 
