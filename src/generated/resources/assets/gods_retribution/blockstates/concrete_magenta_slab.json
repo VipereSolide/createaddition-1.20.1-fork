@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gods_retribution:block/concrete_magenta_slab"
+    },
+    "type=double": {
+      "model": "gods_retribution:block/concrete_magenta"
+    },
+    "type=top": {
+      "model": "gods_retribution:block/concrete_magenta_slab_top"
+    }
+  }
+}

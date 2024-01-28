@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gods_retribution:block/concrete_purple_slab"
+    },
+    "type=double": {
+      "model": "gods_retribution:block/concrete_purple"
+    },
+    "type=top": {
+      "model": "gods_retribution:block/concrete_purple_slab_top"
+    }
+  }
+}

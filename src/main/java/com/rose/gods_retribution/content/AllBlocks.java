@@ -1,5 +1,6 @@
 package com.rose.gods_retribution.content;
 
+import com.mojang.datafixers.TypeRewriteRule;
 import com.rose.gods_retribution.content.block.AirVentBlock;
 import com.rose.gods_retribution.content.block.AutomatedRedstoneSwitch;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
@@ -230,6 +231,21 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<SlabBlock> CONCRETE_SLAB = REGISTRATE
+            .block("concrete_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.WHITE_CONCRETE)
+            .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GRAY))
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete"), provider.modLoc("block/concrete"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final DyedBlockList<Block> CONCRETE_COLOURS = new DyedBlockList<>(colour ->
     {
         String colourName = colour.getSerializedName();
@@ -242,6 +258,24 @@ public class AllBlocks
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build()
                 .register();
+    });
+
+    public static final DyedBlockList<SlabBlock> CONCRETE_COLOURS_SLABS = new DyedBlockList<>(colour -> {
+        String colourName = colour.getSerializedName();
+        return REGISTRATE
+                .block("concrete_" + colourName + "_slab", SlabBlock::new)
+                .initialProperties(AllBlocks.CONCRETE_SLAB::get)
+                .properties(p -> p.mapColor(colour))
+                .tag(
+                        BlockTags.MINEABLE_WITH_PICKAXE,
+                        BlockTags.SLABS
+                )
+                .blockstate((ctx, provider) -> {
+                    provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName), provider.modLoc("block/concrete_" + colourName));
+                })
+                .item()
+                .tab(AllCreativeTabs.DECORATION.getKey())
+                .build().register();
     });
 
     public static final BlockEntry<Block> CLEAR_GLASS = REGISTRATE
