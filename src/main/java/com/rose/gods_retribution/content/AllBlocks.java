@@ -68,6 +68,20 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<SlabBlock> INDUSTRIAL_IRON_SHINGLES_SLAB = REGISTRATE
+            .block("industrial_iron_shingles_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"), provider.modLoc("block/industrial_iron_shingles"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> CRACKED_INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("cracked_industrial_iron_shingles", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
