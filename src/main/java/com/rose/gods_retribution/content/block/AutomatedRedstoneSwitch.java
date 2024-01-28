@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import org.jetbrains.annotations.NotNull;
 
 public class AutomatedRedstoneSwitch extends Block
 {
@@ -32,7 +33,7 @@ public class AutomatedRedstoneSwitch extends Block
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context)
+    public BlockState getStateForPlacement(@NotNull BlockPlaceContext context)
     {
         Direction preferred = getPreferredFacing(context);
         if (preferred == null || (context.getPlayer() != null && context.getPlayer()
@@ -47,7 +48,7 @@ public class AutomatedRedstoneSwitch extends Block
 
     public Direction getPreferredFacing(BlockPlaceContext context)
     {
-        Direction prefferedSide = null;
+        Direction preferredSide = null;
         for (Direction side : Iterate.directions)
         {
             BlockState blockState = context.getLevel()
@@ -57,29 +58,29 @@ public class AutomatedRedstoneSwitch extends Block
             {
                 if (((IRotate) blockState.getBlock()).hasShaftTowards(context.getLevel(), context.getClickedPos()
                         .relative(side), blockState, side.getOpposite()))
-                    if (prefferedSide != null && prefferedSide.getAxis() != side.getAxis())
+                    if (preferredSide != null && preferredSide.getAxis() != side.getAxis())
                     {
-                        prefferedSide = null;
+                        preferredSide = null;
                         break;
                     }
                     else
                     {
-                        prefferedSide = side;
+                        preferredSide = side;
                     }
             }
         }
-        return prefferedSide;
+        return preferredSide;
     }
 
     @Override
-    public BlockState rotate(BlockState state, Rotation rot)
+    public @NotNull BlockState rotate(BlockState state, Rotation rot)
     {
         return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
     }
 
     @Override
     @SuppressWarnings("deprecation")
-    public BlockState mirror(BlockState state, Mirror mirrorIn)
+    public @NotNull BlockState mirror(BlockState state, Mirror mirrorIn)
     {
         return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
     }
@@ -97,42 +98,44 @@ public class AutomatedRedstoneSwitch extends Block
     }
 
     @Override
-    public boolean isSignalSource(BlockState pState)
+    public boolean isSignalSource(BlockState blockstate)
     {
-        return pState.getValue(POWERED);
+        return blockstate.getValue(POWERED);
     }
 
     @Override
-    public int getSignal(BlockState pState, BlockGetter pLevel, BlockPos pPos, Direction pDirection)
+    public int getSignal(@NotNull BlockState blockstate,
+                         @NotNull BlockGetter world,
+                         @NotNull BlockPos position,
+                         @NotNull Direction direction)
     {
-        return pDirection == Direction.NORTH ? pState.getValue(POWERING) ? 15 : 0 : 0;
+        return direction == Direction.NORTH ? blockstate.getValue(POWERING) ? 15 : 0 : 0;
     }
 
     @Override
-    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving)
+    public void neighborChanged(@NotNull BlockState blockstate,
+                                Level world,
+                                @NotNull BlockPos position,
+                                @NotNull Block block,
+                                @NotNull BlockPos fromPosition,
+                                boolean isMoving)
     {
-        if (!pLevel.isClientSide)
+        if (!world.isClientSide)
         {
-            boolean flag = pState.getValue(POWERED);
+            boolean flag = blockstate.getValue(POWERED);
 
-            if (flag != pLevel.hasNeighborSignal(pPos))
+            if (flag != world.hasNeighborSignal(position))
             {
                 if (flag)
                 {
-                    pLevel.scheduleTick(pPos, this, 4);
+                    world.scheduleTick(position, this, 4);
                 }
                 else
                 {
-                    pLevel.setBlock(pPos, pState.cycle(POWERED), 2);
+                    world.setBlock(position, blockstate.cycle(POWERED), 2);
                 }
             }
 
         }
-    }
-
-    private void updateNeighbours(BlockState pState, Level pLevel, BlockPos pPos)
-    {
-        pLevel.updateNeighborsAt(pPos, this);
-        pLevel.updateNeighborsAt(pPos.relative(pState.getValue(FACING)), this);
     }
 }

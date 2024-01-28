@@ -6,7 +6,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -45,7 +44,11 @@ public class PlasticMossBlockEntity extends SmartBlockEntity
 
     public void destroy()
     {
-        if (level instanceof ServerLevel serverLevel)
+        var world = getLevel();
+        if (world == null)
+            return;
+
+        if (world instanceof ServerLevel serverLevel)
         {
             double x = getBlockPos().getX();
             double y = getBlockPos().getY();
@@ -62,7 +65,7 @@ public class PlasticMossBlockEntity extends SmartBlockEntity
                     0);
         }
 
-        level.destroyBlock(getBlockPos(), false);
+        world.destroyBlock(getBlockPos(), false);
     }
 
     public int getCurrentLifetime()

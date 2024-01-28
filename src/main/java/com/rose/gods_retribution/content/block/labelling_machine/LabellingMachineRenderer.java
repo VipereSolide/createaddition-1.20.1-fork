@@ -36,28 +36,28 @@ public class LabellingMachineRenderer extends KineticBlockEntityRenderer
     }
 
     @Override
-    protected void renderSafe(KineticBlockEntity te, float partialTicks, PoseStack ms, MultiBufferSource buffer,
+    protected void renderSafe(KineticBlockEntity blockEntity, float partialTicks, PoseStack ms, MultiBufferSource buffer,
                               int light, int overlay)
     {
-        super.renderSafe(te, partialTicks, ms, buffer, light, overlay);
+        super.renderSafe(blockEntity, partialTicks, ms, buffer, light, overlay);
 
-        if (Backend.canUseInstancing(te.getLevel()))
+        if (Backend.canUseInstancing(blockEntity.getLevel()))
             return;
 
-        BlockState blockState = te.getBlockState();
-        BlockPos pos = te.getBlockPos();
+        BlockState blockState = blockEntity.getBlockState();
+        BlockPos pos = blockEntity.getBlockPos();
 
         VertexConsumer vb = buffer.getBuffer(RenderType.solid());
 
-        int packedLightmapCoordinates = LevelRenderer.getLightColor(te.getLevel(), pos);
+        int packedLightmapCoordinates = LevelRenderer.getLightColor(blockEntity.getLevel(), pos);
         // SuperByteBuffer shaft = AllBlockPartials.SHAFT_HALF.renderOn(blockState);
         SuperByteBuffer shaft = CachedBufferer.partial(AllPartialModels.SHAFT_HALF, blockState);
-        Axis axis = getRotationAxisOf(te);
+        Axis axis = getRotationAxisOf(blockEntity);
 
         shaft
                 .rotateCentered(Direction.UP, axis == Axis.Z ? 0 : 90 * (float) Math.PI / 180f)
                 .translate(0, 4f / 16f, 0)
-                .rotateCentered(Direction.NORTH, getAngleForTe(te, pos, axis))
+                .rotateCentered(Direction.NORTH, getAngleForTe(blockEntity, pos, axis))
                 .light(packedLightmapCoordinates)
                 .renderInto(ms, vb);
     }

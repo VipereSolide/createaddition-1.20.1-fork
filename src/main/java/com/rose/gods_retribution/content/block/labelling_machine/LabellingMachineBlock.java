@@ -23,6 +23,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
+import org.jetbrains.annotations.NotNull;
 
 public class LabellingMachineBlock extends HorizontalKineticBlock implements IBE<LabellingMachineBlockEntity>
 {
@@ -32,9 +33,12 @@ public class LabellingMachineBlock extends HorizontalKineticBlock implements IBE
     }
 
     @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext)
+    public @NotNull VoxelShape getShape(BlockState blockstate,
+                                        @NotNull BlockGetter world,
+                                        @NotNull BlockPos position,
+                                        @NotNull CollisionContext collisionContext)
     {
-        return AllShapes.LABELLING_MACHINE.get(pState.getValue(HORIZONTAL_FACING));
+        return AllShapes.LABELLING_MACHINE.get(blockstate.getValue(HORIZONTAL_FACING));
     }
 
     @Override
@@ -62,7 +66,10 @@ public class LabellingMachineBlock extends HorizontalKineticBlock implements IBE
     }
 
     @Override
-    public boolean isPathfindable(BlockState state, BlockGetter reader, BlockPos pos, PathComputationType type)
+    public boolean isPathfindable(@NotNull BlockState state,
+                                  @NotNull BlockGetter reader,
+                                  @NotNull BlockPos pos,
+                                  @NotNull PathComputationType type)
     {
         return false;
     }
@@ -86,71 +93,32 @@ public class LabellingMachineBlock extends HorizontalKineticBlock implements IBE
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level world, BlockPos pos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit)
+    public @NotNull InteractionResult use(@NotNull BlockState blockstate,
+                                          @NotNull Level world,
+                                          @NotNull BlockPos position,
+                                          @NotNull Player player,
+                                          @NotNull InteractionHand hand,
+                                          @NotNull BlockHitResult hitResult)
     {
-        if (pPlayer instanceof ServerPlayer serverPlayer)
-            withBlockEntityDo(world, pos, labellingMachine -> NetworkHooks.openScreen(serverPlayer, labellingMachine, labellingMachine::sendToMenu));
+        if (player instanceof ServerPlayer serverPlayer)
+            withBlockEntityDo(world, position, labellingMachine ->
+                    NetworkHooks.openScreen(serverPlayer, labellingMachine, labellingMachine::sendToMenu));
 
         return InteractionResult.SUCCESS;
-
-        /*
-        if (pLevel.isClientSide())
-        {
-            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientHooks.OpenLabellingMachineScreen(pHand));
-        }
-        */
-
-        /*
-        // We only want to perform inventory actions on server side.
-        if (pLevel.isClientSide())
-            return InteractionResult.FAIL;
-
-        // Querying the labelling machine block entity at the given position.
-        BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-        if (blockEntity instanceof LabellingMachineBlockEntity machine)
-        {
-            ItemStack inHand = pPlayer.getItemInHand(pHand);
-            var inventory = machine.getInventory();
-
-            // If the player's hand is empty, retrieve {64 item if crouching; 1 otherwise} from the inventory.
-            if (inHand.isEmpty())
-            {
-                if (inventory.getStackInSlot(0).isEmpty())
-                {
-                    pPlayer.sendSystemMessage(Component.literal("No item in block entity!"));
-                    return InteractionResult.SUCCESS;
-                }
-
-                var extracted = inventory.extractItem(0, pPlayer.isCrouching() ? inventory.getSlotLimit(0) : 1, false);
-                pPlayer.setItemInHand(pHand, extracted);
-            }
-            // Otherwise, input 1 item inside the inventory.
-            else
-            {
-                var toInsert = inHand.copy();
-                toInsert.setCount(1);
-
-                var leftover = inventory.insertItem(0, toInsert, false);
-                var remainder = inHand.copy();
-                remainder.setCount(remainder.getCount() - 1);
-                remainder.grow(leftover.getCount());
-                pPlayer.setItemInHand(pHand, remainder);
-            }
-
-            return InteractionResult.SUCCESS;
-        }*/
-
-        // return InteractionResult.FAIL;
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving)
+    public void onRemove(BlockState blockstate,
+                         Level world,
+                         BlockPos position,
+                         BlockState newBlockstate,
+                         boolean isMoving)
     {
         // We only want to perform inventory actions on server side.
-        if (!pLevel.isClientSide())
+        if (!world.isClientSide())
         {
             // Querying the labelling machine block entity at the given position.
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            BlockEntity blockEntity = world.getBlockEntity(position);
             if (blockEntity instanceof LabellingMachineBlockEntity machine)
             {
                 // Spawning the content of the machine on the floor.
@@ -158,16 +126,16 @@ public class LabellingMachineBlock extends HorizontalKineticBlock implements IBE
                 for (int index = 0; index < inventory.getSlots(); index++)
                 {
                     var stack = inventory.getStackInSlot(index);
-                    var entity = new ItemEntity(pLevel,
-                            pPos.getX() + .5,
-                            pPos.getY() + .5,
-                            pPos.getZ() + .5,
+                    var entity = new ItemEntity(world,
+                            position.getX() + .5,
+                            position.getY() + .5,
+                            position.getZ() + .5,
                             stack);
-                    pLevel.addFreshEntity(entity);
+                    world.addFreshEntity(entity);
                 }
             }
         }
 
-        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+        super.onRemove(blockstate, world, position, newBlockstate, isMoving);
     }
 }

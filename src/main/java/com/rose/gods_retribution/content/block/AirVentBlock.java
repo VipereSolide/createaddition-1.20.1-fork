@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class AirVentBlock extends HorizontalDirectionalBlock {
 
@@ -18,7 +19,7 @@ public class AirVentBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
 		builder.add(FACING);
 	}
@@ -29,8 +30,11 @@ public class AirVentBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext)
+	public @NotNull VoxelShape getShape(BlockState blockstate,
+										@NotNull BlockGetter world,
+										@NotNull BlockPos position,
+										@NotNull CollisionContext collisionContext)
 	{
-		return AllShapes.AIR_VENT.get(pState.getValue(FACING));
+		return AllShapes.AIR_VENT.get(blockstate.getValue(FACING));
 	}
 }

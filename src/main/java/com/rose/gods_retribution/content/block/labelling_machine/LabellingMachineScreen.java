@@ -1,10 +1,5 @@
 package com.rose.gods_retribution.content.block.labelling_machine;
 
-import com.simibubi.create.content.schematics.table.SchematicTableMenu;
-import com.simibubi.create.content.schematics.table.SchematicTableScreen;
-import com.simibubi.create.foundation.gui.AbstractSimiScreen;
-import com.simibubi.create.foundation.gui.element.GuiGameElement;
-import com.simibubi.create.foundation.gui.element.ScreenElement;
 import com.simibubi.create.foundation.gui.menu.AbstractSimiContainerScreen;
 import com.simibubi.create.foundation.gui.widget.Label;
 import net.minecraft.client.gui.GuiGraphics;
@@ -39,7 +34,7 @@ public class LabellingMachineScreen extends AbstractSimiContainerScreen<Labellin
         int x = leftPos;
         int y = topPos;
 
-        player = this.minecraft.player;
+        player = this.getMinecraft().player;
         createScreenNameLabel(x, y);
     }
 

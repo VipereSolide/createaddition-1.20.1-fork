@@ -60,27 +60,40 @@ public class LabellingMachineMenu extends MenuBase<LabellingMachineBlockEntity>
     protected LabellingMachineBlockEntity createOnClient(FriendlyByteBuf extraData)
     {
         ClientLevel world = Minecraft.getInstance().level;
-        BlockEntity blockEntity = world.getBlockEntity(extraData.readBlockPos());
-        if (blockEntity instanceof LabellingMachineBlockEntity labellingMachine)
+        if (world != null)
         {
-            labellingMachine.readClient(extraData.readNbt());
-            return labellingMachine;
+            BlockEntity blockEntity = world.getBlockEntity(extraData.readBlockPos());
+            if (blockEntity instanceof LabellingMachineBlockEntity labellingMachine)
+            {
+                var nbt = extraData.readNbt();
+
+                if (nbt != null)
+                    labellingMachine.readClient(nbt);
+
+                return labellingMachine;
+            }
         }
+
         return null;
     }
 
     @Override
     protected void initAndReadInventory(LabellingMachineBlockEntity contentHolder)
     {
-
     }
 
     @Override
     protected void addSlots()
     {
-        inputSlot = new SlotItemHandler(contentHolder.inventory, INPUT_SLOT_ID, INPUT_SLOT_POSITION.x, INPUT_SLOT_POSITION.y);
+        inputSlot = new SlotItemHandler(contentHolder.inventory,
+                INPUT_SLOT_ID,
+                INPUT_SLOT_POSITION.x,
+                INPUT_SLOT_POSITION.y);
 
-        paperSlot = new SlotItemHandler(contentHolder.inventory, PAPER_SLOT_ID, PAPER_SLOT_POSITION.x, PAPER_SLOT_POSITION.y)
+        paperSlot = new SlotItemHandler(contentHolder.inventory,
+                PAPER_SLOT_ID,
+                PAPER_SLOT_POSITION.x,
+                PAPER_SLOT_POSITION.y)
         {
             @Override
             public boolean mayPlace(@NotNull ItemStack stack)
@@ -89,7 +102,10 @@ public class LabellingMachineMenu extends MenuBase<LabellingMachineBlockEntity>
             }
         };
 
-        labellingTagSlot = new SlotItemHandler(contentHolder.inventory, LABELLING_TAG_SLOT_ID, LABELLING_TAG_SLOT_POSITION.x, LABELLING_TAG_SLOT_POSITION.y)
+        labellingTagSlot = new SlotItemHandler(contentHolder.inventory,
+                LABELLING_TAG_SLOT_ID,
+                LABELLING_TAG_SLOT_POSITION.x,
+                LABELLING_TAG_SLOT_POSITION.y)
         {
             @Override
             public boolean mayPlace(@NotNull ItemStack stack)
@@ -98,7 +114,10 @@ public class LabellingMachineMenu extends MenuBase<LabellingMachineBlockEntity>
             }
         };
 
-        outputSlot = new SlotItemHandler(contentHolder.inventory, OUTPUT_SLOT_ID, OUTPUT_SLOT_POSITION.x, OUTPUT_SLOT_POSITION.y)
+        outputSlot = new SlotItemHandler(contentHolder.inventory,
+                OUTPUT_SLOT_ID,
+                OUTPUT_SLOT_POSITION.x,
+                OUTPUT_SLOT_POSITION.y)
         {
             @Override
             public boolean mayPlace(@NotNull ItemStack stack)
@@ -122,14 +141,14 @@ public class LabellingMachineMenu extends MenuBase<LabellingMachineBlockEntity>
     }
 
     @Override
-    public ItemStack quickMoveStack(Player pPlayer, int pIndex)
+    public @NotNull ItemStack quickMoveStack(@NotNull Player player, int index)
     {
-        Slot clickedSlot = getSlot(pIndex);
+        Slot clickedSlot = getSlot(index);
         if (!clickedSlot.hasItem())
             return ItemStack.EMPTY;
 
         ItemStack stack = clickedSlot.getItem();
-        if (pIndex < 2)
+        if (index < 2)
             moveItemStackTo(stack, 2, slots.size(), false);
         else
             moveItemStackTo(stack, 0, 1, false);
