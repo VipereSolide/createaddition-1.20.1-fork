@@ -16,13 +16,17 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 import java.util.List;
 
@@ -324,7 +328,7 @@ public abstract class Blaster extends Item
         // We spawn the projectile on server side so all players see it and not only the player who shot the weapon.
         else
         {
-            spawnProjectile(level, player, stack);
+            spawnProjectile(level, player, stack, this, 0);
 
             // Adding the rate of fire cool-down.
             if (!hasOverheated)
@@ -335,16 +339,42 @@ public abstract class Blaster extends Item
         player.awardStat(Stats.ITEM_USED.get(this));
     }
 
-    protected void spawnProjectile(Level level, Player player, ItemStack stack)
+    /**
+     * Shoots a blaster laser from the livingEntity position using a horizontal angle at which the projectile should be
+     * rotated.
+     *
+     * @param level        The world the livingEntity is in.
+     * @param livingEntity The livingEntity shooting the projectile.
+     * @param stack        What stack the livingEntity is currently using.
+     * @param parent       What blaster is shooting this projectile.
+     *                                   TODO: Change this to use some kind of LaserProjectileProperties middle-man class so non-blaster weapons can also shoot lasers.
+     * @param shootAngle   What horizontal angle should the projectile be rotated at? Used to create multi-shot weapons
+     *                     such as the crossbow in vanilla minecraft.
+     */
+    public static void spawnProjectile(Level level, LivingEntity livingEntity, ItemStack stack, Blaster parent, int shootAngle)
     {
         // Creating the projectile and setting up the required variables.
-        LaserProjectileEntity projectile = new LaserProjectileEntity(level, player, this);
-        projectile.properties = this.blasterProperties;
+        LaserProjectileEntity projectile = new LaserProjectileEntity(level, livingEntity, parent);
+        projectile.properties = parent.blasterProperties;
         projectile.setItem(stack);
-        // Shooting the new projectile from the player orientation with the blaster properties of the weapon.
-        projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, blasterProperties.velocity, blasterProperties.inaccuracy);
 
-        // Registering the new entity.
+        // Shooting the new projectile from the livingEntity orientation with the blaster properties of the weapon.
+        // Getting the rotated projectile angle.
+        Vec3 playerUp = livingEntity.getUpVector(1.0F);
+        Quaternionf rotated = (new Quaternionf()).setAngleAxis(shootAngle * ((float) Math.PI / 180F),
+                playerUp.x,
+                playerUp.y,
+                playerUp.z);
+        Vec3 playerForward = livingEntity.getViewVector(1.0F);
+        Vector3f rotatedForward = playerForward.toVector3f().rotate(rotated);
+        // Shooting the projectile.
+        projectile.shoot(rotatedForward.x(),
+                rotatedForward.y(),
+                rotatedForward.z(),
+                parent.blasterProperties.velocity,
+                parent.blasterProperties.inaccuracy);
+
+        // Registering the new projectile entity.
         level.addFreshEntity(projectile);
     }
 
