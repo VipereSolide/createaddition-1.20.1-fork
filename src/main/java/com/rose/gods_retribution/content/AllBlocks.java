@@ -90,6 +90,19 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
+    public static final BlockEntry<SlabBlock> CRACKED_INDUSTRIAL_IRON_SHINGLES_SLAB = REGISTRATE
+            .block("cracked_industrial_iron_shingles_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"), provider.modLoc("block/cracked_industrial_iron_shingles"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
 
     public static final BlockEntry<PlasticMossBlock> PLASTIC_MOSS = REGISTRATE
             .block("plastic_moss", PlasticMossBlock::new)
