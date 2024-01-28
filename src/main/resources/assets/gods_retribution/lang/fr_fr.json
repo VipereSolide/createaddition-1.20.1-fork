@@ -21,16 +21,16 @@
   "item.gods_retribution.e11_blaster": "Blaster E11",
   "item.gods_retribution.e11_blaster_auto": "Blaster E11 (Auto)",
 
-  "item.gods_retribution.sugar_packet": "Paquet de Sucre",
-  "item.gods_retribution.empty_packet": "Paquet Vide",
+  "item.gods_retribution.sugar_packet": "Paquet de sucre",
+  "item.gods_retribution.empty_packet": "Paquet vide",
 
   "item.gods_retribution.flask_item.tooltip.content": "Contient: ",
   "item.gods_retribution.flask_item.tooltip.empty": "VIDE",
   "item.gods_retribution.empty_glass_flask": "Flacon",
 
-  "item.gods_retribution.light_armour_chestplate": "Plastron Léger de Sécurité",
-  "item.gods_retribution.light_armour_leggings": "Pantalon de Sécurité",
-  "item.gods_retribution.light_armour_boots": "Bottes de Sécurité",
+  "item.gods_retribution.light_armour_chestplate": "Plastron léger de sécurité",
+  "item.gods_retribution.light_armour_leggings": "Pantalon de sécurité",
+  "item.gods_retribution.light_armour_boots": "Bottes de sécurité",
 
   "block.gods_retribution.labelling_machine": "Etiqueteuse",
   "item.gods_retribution.labelling_machine.summary":  "_Renomme_ tout item _arrivant_ dans la machine. Insérer l'item à _renommer_ dans le _1er slot_. Insérer du _papier_ dans le _2ème slot_ et de la _colle_ dans le _3ème_. Récupérer le _résultat_ dans le _4ème_ slot.",
@@ -41,8 +41,8 @@
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbe_ le fluide visé.",
 
   "block.gods_retribution.wood": "Woody !",
-  "block.gods_retribution.industrial_iron_shingles": "Plaques de Métal Industriel",
-  "block.gods_retribution.cracked_industrial_iron_shingles": "Plaques de Métal Industriel Craquelées",
+  "block.gods_retribution.industrial_iron_shingles": "Plaques de métal industriel",
+  "block.gods_retribution.cracked_industrial_iron_shingles": "Plaques de métal industriel craquelées",
   "block.gods_retribution.plastic_moss": "Bloc de mousse plastique",
   "block.gods_retribution.aeration_block": "Bloc d'aération",
   "block.gods_retribution.air_vent": "Bouche d'aération",
