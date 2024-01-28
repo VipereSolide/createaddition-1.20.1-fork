@@ -7,47 +7,79 @@ import net.minecraft.world.item.Item;
 import static com.rose.gods_retribution.GodsRetribution.MOD_ID;
 
 /**
- * An util class used to get an item's name in the language files' format.
+ * Utility methods concerning lang files.
  */
 public class Lang
 {
     /**
-     * @param name the item's ID
-     * @return
+     * Gets a key for the mod using a category and a key name (example: category = "item" and keyName = "example_item"
+     * will return "item.gods_retribution.exampleItem").
+     *
+     * @param category What type of key you wish to get (example: "item", "block", "gui", etc.).
+     * @param keyName  The name of the key in the given category (example: "my_example_item", "my_example_block", etc.).
+     * @return A String containing the key from that category and with the given key name.
      */
-    public static MutableComponent item(String name)
+    public static String keyFromCategory(String category, String keyName)
     {
-        return Component.translatable("item." + MOD_ID + "." + name);
+        return category + "." + MOD_ID + "." + keyName;
     }
 
     /**
-     * For the "sub-folders" of an item.
+     * Gets a key for the mod using a category and a key name (example: category = "item" and keyName = "example_item"
+     * will return "item.gods_retribution.exampleItem"), with followup extensions.
      *
-     * @param name the item's ID
-     * @param other the "sub-folders" names
-     * @return
+     * @param extensions All the extensions you want to add at the end of the key (example: "tooltip", "summary").
+     * @param category   What type of key you wish to get (example: "item", "block", "gui", etc.).
+     * @param keyName    The name of the key in the given category (example: "my_example_item", "my_example_block", etc.).
+     * @return A String containing the key from that category and with the given key name.
+     * @apiNote In this example, we first give the category of the item, then it's ID name, and after that, all the other
+     * strings are extensions:
+     * <br />
+     * {@code String myItemTooltipKey = keyFromCategory("item", "my_example_item", "tooltip", "summary"); }
+     * <br />
+     * The output will then be: "item.gods_retribution.my_example_item.tooltip.summary".
+     * </code>
      */
-    public static MutableComponent item(String name, String... other)
+    public static String keyFromCategory(String category, String keyName, String... extensions)
     {
-        String s = "item." + MOD_ID + "." + name;
-        for (var o : other)
-            s += "." + o;
+        StringBuilder itemKey = new StringBuilder(keyFromCategory(category, keyName));
+        for (var extension : extensions)
+            itemKey.append(".").append(extension);
 
-        return Component.translatable(s);
+        return itemKey.toString();
     }
 
+    /**
+     * Gets the translation of a given item's name using its ID.
+     *
+     * @param itemName The ID of the item you wish to get the translation for.
+     * @return A MutableComponent containing the translation for the item's ID.
+     */
+    public static MutableComponent item(String itemName)
+    {
+        return Component.translatable(keyFromCategory("item", itemName));
+    }
+
+    /**
+     * Gets the translation of a given item's name, followed up by a list of given extensions. For more information on
+     * what are the extensions, see {@link Lang#keyFromCategory(String, String, String...) Lang.keyFromCategory}.
+     * @param itemName The name of the item you want to get the translation for.
+     * @param extensions What extensions will follow the item's translation key (example: "tooltip", "summary" to get a
+     *                   Create summary of the item).
+     * @return A MutableComponent containing the translation of the given item's name followed by the extensions.
+     */
+    public static MutableComponent item(String itemName, String... extensions)
+    {
+        return Component.translatable(keyFromCategory("item", itemName, extensions));
+    }
+
+    /**
+     * Gets the translation of an item's name using a given Item.
+     * @param item What item you wish to get the name of.
+     * @return A MutableComponent containing the translation of the given item's name.
+     */
     public static MutableComponent item(Item item)
     {
         return (MutableComponent) item.getDescription();
-    }
-
-    public static MutableComponent item(Item item, String... other)
-    {
-        String s = item.getDescriptionId();
-
-        for (var o : other)
-            s += "." + o;
-
-        return Component.translatable(s);
     }
 }

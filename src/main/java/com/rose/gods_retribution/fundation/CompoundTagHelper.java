@@ -4,7 +4,7 @@ import com.rose.gods_retribution.GodsRetribution;
 import net.minecraft.nbt.CompoundTag;
 
 /**
- * A util class for the NBT data management.
+ * Utility methods for managing NBT data.
  */
 public class CompoundTagHelper
 {
