@@ -302,7 +302,8 @@ public abstract class Blaster extends Item
         if (player.getCooldowns().isOnCooldown(stack.getItem()))
             return;
 
-        player.sendSystemMessage(Component.literal("Is Client Side: " + level.isClientSide()));
+        // Enable this when you want to see if this is called on both client and server side.
+        // player.sendSystemMessage(Component.literal("Is Client Side: " + level.isClientSide()));
 
         // Play the weapon firing sound.
         level.playSound(
