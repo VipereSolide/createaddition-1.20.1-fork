@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"group": "sugar",
+	"ingredients": [
+		{
+			"item": "gods_retribution:sugar_packet"
+		}
+	],
+	"result": {
+		"item": "minecraft:sugar",
+		"count": 8
+	}
+}

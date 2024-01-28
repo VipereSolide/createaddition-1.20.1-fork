@@ -2,10 +2,7 @@ package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineMenu;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineScreen;
-import com.simibubi.create.content.schematics.table.SchematicTableMenu;
-import com.simibubi.create.content.schematics.table.SchematicTableScreen;
 import com.tterrag.registrate.builders.MenuBuilder;
-import com.tterrag.registrate.builders.MenuBuilder.ForgeMenuFactory;
 import com.tterrag.registrate.builders.MenuBuilder.ScreenFactory;
 import com.tterrag.registrate.util.entry.MenuEntry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;

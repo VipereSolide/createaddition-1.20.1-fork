@@ -170,6 +170,30 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<Block> METAL_WIREMESH_BLOCK = REGISTRATE
+            .block("metal_wiremesh_block", Block::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .properties(p -> p
+                    .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                    .requiresCorrectToolForDrops())
+            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<Block> METAL_WIREMESH_BLOCK_TRANSPARENT = REGISTRATE
+            .block("metal_wiremesh_block_transparent", Block::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .properties(p -> p
+                    .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                    .requiresCorrectToolForDrops()
+                    .noOcclusion())
+            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     /**
      * Loads this class
      */

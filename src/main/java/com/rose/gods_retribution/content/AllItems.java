@@ -4,21 +4,14 @@ import com.rose.gods_retribution.GodsRetribution;
 import com.rose.gods_retribution.content.item.*;
 import com.rose.gods_retribution.content.item.fluid_vacuum.FluidVacuumItem;
 import com.rose.gods_retribution.content.item.labelling_tag.LabellingTagItem;
-import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
