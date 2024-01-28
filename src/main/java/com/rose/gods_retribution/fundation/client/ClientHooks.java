@@ -1,24 +1,20 @@
 package com.rose.gods_retribution.fundation.client;
 
-import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineScreen;
 import com.rose.gods_retribution.content.item.labelling_tag.LabellingTagItemScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
 
 /**
- * A util class for the menus.
+ * Utility class for managing menus and opening screens.
  */
 public class ClientHooks
 {
+    /**
+     * Opens the labelling tag screen using the player's hand.
+     * @param hand What hand is the player holding the labelling tag item with.
+     */
     public static void OpenLabellingTagItemScreen(InteractionHand hand)
     {
         Minecraft.getInstance().setScreen(new LabellingTagItemScreen(hand));
-    }
-
-    public static void OpenLabellingMachineScreen(InteractionHand hand)
-    {
-        // Minecraft.getInstance().setScreen(new LabellingMachineScreen());
     }
 }

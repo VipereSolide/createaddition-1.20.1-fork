@@ -16,13 +16,17 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 import java.util.List;
 
@@ -232,11 +236,12 @@ public abstract class Blaster extends Item
     }
 
     @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
+    public void inventoryTick(ItemStack pStack, Level level, Entity entity, int pSlotId, boolean pIsSelected)
     {
-        if (pLevel.isClientSide())
+        if (level.isClientSide())
         {
-            manageHeatOnTick(pIsSelected);
+            if (entity instanceof Player player)
+                manageHeatOnTick(pIsSelected, player);
         }
     }
 
@@ -298,10 +303,15 @@ public abstract class Blaster extends Item
 
     protected void shoot(Level level, Player player, ItemStack stack)
     {
+        if (player.getCooldowns().isOnCooldown(stack.getItem()))
+            return;
+
+        // Enable this when you want to see if this is called on both client and server side.
         // player.sendSystemMessage(Component.literal("Is Client Side: " + level.isClientSide()));
 
         // Play the weapon firing sound.
-        level.playSound((Player) null,
+        level.playSound(
+                null,
                 player.getX(),
                 player.getY(),
                 player.getZ(),
@@ -318,26 +328,53 @@ public abstract class Blaster extends Item
         // We spawn the projectile on server side so all players see it and not only the player who shot the weapon.
         else
         {
-            spawnProjectile(level, player, stack);
+            spawnProjectile(level, player, stack, this, 0);
+
+            // Adding the rate of fire cool-down.
+            if (!hasOverheated)
+                player.getCooldowns().addCooldown(stack.getItem(), blasterProperties.ticksBetweenShots);
         }
 
         // So the game knows we used this item.
         player.awardStat(Stats.ITEM_USED.get(this));
-
-        // Adding the rate of fire cool-down.
-        player.getCooldowns().addCooldown(this.asItem(), blasterProperties.ticksBetweenShots);
     }
 
-    protected void spawnProjectile(Level level, Player player, ItemStack stack)
+    /**
+     * Shoots a blaster laser from the livingEntity position using a horizontal angle at which the projectile should be
+     * rotated.
+     *
+     * @param level        The world the livingEntity is in.
+     * @param livingEntity The livingEntity shooting the projectile.
+     * @param stack        What stack the livingEntity is currently using.
+     * @param parent       What blaster is shooting this projectile.
+     *                                   TODO: Change this to use some kind of LaserProjectileProperties middle-man class so non-blaster weapons can also shoot lasers.
+     * @param shootAngle   What horizontal angle should the projectile be rotated at? Used to create multi-shot weapons
+     *                     such as the crossbow in vanilla minecraft.
+     */
+    public static void spawnProjectile(Level level, LivingEntity livingEntity, ItemStack stack, Blaster parent, int shootAngle)
     {
         // Creating the projectile and setting up the required variables.
-        LaserProjectileEntity projectile = new LaserProjectileEntity(level, player, this);
-        projectile.properties = this.blasterProperties;
+        LaserProjectileEntity projectile = new LaserProjectileEntity(level, livingEntity, parent);
+        projectile.properties = parent.blasterProperties;
         projectile.setItem(stack);
-        // Shooting the new projectile from the player orientation with the blaster properties of the weapon.
-        projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, blasterProperties.velocity, blasterProperties.inaccuracy);
 
-        // Registering the new entity.
+        // Shooting the new projectile from the livingEntity orientation with the blaster properties of the weapon.
+        // Getting the rotated projectile angle.
+        Vec3 playerUp = livingEntity.getUpVector(1.0F);
+        Quaternionf rotated = (new Quaternionf()).setAngleAxis(shootAngle * ((float) Math.PI / 180F),
+                playerUp.x,
+                playerUp.y,
+                playerUp.z);
+        Vec3 playerForward = livingEntity.getViewVector(1.0F);
+        Vector3f rotatedForward = playerForward.toVector3f().rotate(rotated);
+        // Shooting the projectile.
+        projectile.shoot(rotatedForward.x(),
+                rotatedForward.y(),
+                rotatedForward.z(),
+                parent.blasterProperties.velocity,
+                parent.blasterProperties.inaccuracy);
+
+        // Registering the new projectile entity.
         level.addFreshEntity(projectile);
     }
 
@@ -350,10 +387,12 @@ public abstract class Blaster extends Item
         this.currentHeat = Math.min(1, currentHeat + blasterProperties.heatPerShot);
 
         // If we reached the overheating point...
-        if (currentHeat >= 1)
+        if (currentHeat >= 1 && !hasOverheated)
         {
             // The player has to wait for the weapon to fully cool down before being able to shoot again.
             hasOverheated = true;
+
+            player.getCooldowns().addCooldown(this, 1500);
 
             // Play the lava extinguishing sound to mimic a weapon overheating.
             level.playSound((Player) null,
@@ -367,7 +406,7 @@ public abstract class Blaster extends Item
         }
     }
 
-    protected void manageHeatOnTick(boolean isSelected)
+    protected void manageHeatOnTick(boolean isSelected, Player player)
     {
         // We only do it on the selected item so having multiple of the same item type in the inventory doesn't
         // accelerate the cooling process.
@@ -388,7 +427,10 @@ public abstract class Blaster extends Item
 
         // Stop waiting for the weapon to cool down if the heat has reached zero again.
         if (currentHeat <= 0 && hasOverheated)
+        {
             hasOverheated = false;
+            player.getCooldowns().removeCooldown(this);
+        }
 
         // Decrease the time it takes before cooling down the weapon again until it reaches zero.
         if (coolingDownProcessTimer > 0)

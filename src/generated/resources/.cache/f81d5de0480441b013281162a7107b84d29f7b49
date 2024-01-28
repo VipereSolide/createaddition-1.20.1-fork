@@ -1,6 +1,8 @@
-// 1.20.1	2024-01-25T09:11:37.0459785	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-01-28T10:02:53.2580909	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 9d1eee779b778f747b8f01632c3e2664f1228b27 assets/gods_retribution/blockstates/air_vent.json
+d8a45946bf1c5ccb6f958626a49f3c575f0fd6e1 assets/gods_retribution/blockstates/automated_redstone_switch.json
+1937d58ed4bd9d1955c10e390c4627887c31f74c assets/gods_retribution/blockstates/clear_glass.json
 c55dbe4d8178d108a21a847c44de1f024722f403 assets/gods_retribution/blockstates/concrete.json
 611a18a755056c3ab4f2b14a9fa85baad2dd8a06 assets/gods_retribution/blockstates/concrete_black.json
 24023fae870c990c7d1f516c58e8fd6e56bc4718 assets/gods_retribution/blockstates/concrete_blue.json
@@ -26,10 +28,12 @@ c1301a929358b8769a565aa51be82ec548387fc1 assets/gods_retribution/blockstates/ind
 44bf97538ca0ea9809b0d3cee1091d0b386dc056 assets/gods_retribution/blockstates/steel_block.json
 d527bf6a496c97f5e1060b3b7fa95391cb63d11d assets/gods_retribution/blockstates/tiles_bathroom_block.json
 98698b13b07769a17ce464e374a5ef363c87fdd4 assets/gods_retribution/blockstates/wood.json
-6e42b6d34d520223ff74bf409d098109d46fcc35 assets/gods_retribution/lang/en_ud.json
-bf66a9c9817a841afa1b7bfb7936f33d38411125 assets/gods_retribution/lang/en_us.json
+d4e25b03aace317d958c447d5ff7ad1c6e557cbc assets/gods_retribution/lang/en_ud.json
+fc6c6587a92a3b3e4f12a22a4262abd2f79e3841 assets/gods_retribution/lang/en_us.json
 889003677116806ffbc37bfa130ea02746f49190 assets/gods_retribution/models/block/aeration_block.json
 2acc0b0bdf9823db4fa87fc00defd50e5ed91d23 assets/gods_retribution/models/block/air_vent.json
+025e962d2aa876c8d684849e1624dc99244fbf62 assets/gods_retribution/models/block/automated_redstone_switch.json
+14561c0df8fbde3eed9530d831265dd93184ff96 assets/gods_retribution/models/block/clear_glass.json
 006022cc15c6baefeb7c43fcae3d2a6daa65f4d0 assets/gods_retribution/models/block/concrete.json
 39ac5696a17d61a6c8c95e4140be8cc4eef708b7 assets/gods_retribution/models/block/concrete_black.json
 9c8d0f9814c98064f5a4f9202693c6184059006d assets/gods_retribution/models/block/concrete_blue.json
@@ -57,6 +61,8 @@ dc24f458ae2e7296de9f712366a02ba57938d167 assets/gods_retribution/models/block/st
 c432956fed221a97eca840f4b554c5a3955d148c assets/gods_retribution/models/block/wood.json
 dc2879e79fd8815456985ff9ae6a26b05cb861ac assets/gods_retribution/models/item/aeration_block.json
 0f8297a1e48d7902e6fec09a5322eefef24d28e8 assets/gods_retribution/models/item/air_vent.json
+474f6e86336e7172f5c2cf6fac41dbbe947fb53c assets/gods_retribution/models/item/automated_redstone_switch.json
+796be16fda222a5c5601b325bf914886a47d5b44 assets/gods_retribution/models/item/clear_glass.json
 06beeb6702b87be08cd8d594fe1134ccd1a62396 assets/gods_retribution/models/item/concrete.json
 9c098e78366bbdd2684616c7939a2cd63bd98c4f assets/gods_retribution/models/item/concrete_black.json
 ef78d9d70573e1145b966a9a6594caa089f5a48e assets/gods_retribution/models/item/concrete_blue.json
@@ -99,6 +105,8 @@ f6cdf5913d494b6fbc8f0c4339eff3357b9dafa4 data/gods_retribution/advancements/reci
 8b5dfa2e45abc9f7aea3ff4d4aebbf5e4ad6c70d data/gods_retribution/advancements/recipes/misc/crafting/sugar_packet_from_empty_packet.json
 3b070ae5d8ddf4e45d7dc11b7ce20421a13fccc5 data/gods_retribution/loot_tables/blocks/aeration_block.json
 469f8c178a15cc80bcaa3e1c3cf182b95e403fe5 data/gods_retribution/loot_tables/blocks/air_vent.json
+b52399bc0c68a06c0fe8149c77ce7f1fa93293df data/gods_retribution/loot_tables/blocks/automated_redstone_switch.json
+195f7a635beeb663348e5c440efadc0154daa05c data/gods_retribution/loot_tables/blocks/clear_glass.json
 3ad8fe2a5805cf4b81d25407c9544700a6c7de8f data/gods_retribution/loot_tables/blocks/concrete.json
 2e830344713c0529b65f33ffd021d643460802c9 data/gods_retribution/loot_tables/blocks/concrete_black.json
 9a25a29c33dc5dc60404cf3e384ed2ead312742e data/gods_retribution/loot_tables/blocks/concrete_blue.json
@@ -128,5 +136,7 @@ b68d2712ad11743c5d6ea3f2a5277abcd2b7a8db data/gods_retribution/loot_tables/block
 467a19d57a4795d8b312589fee6f46abdb250651 data/gods_retribution/recipes/crafting/empty_packet_from_paper.json
 db9c17d4e0db98720ce2622862d9a1ee0a5d6726 data/gods_retribution/recipes/crafting/ginger_glass_flask_from_glass_bottle_and_plastic.json
 cca9918529a9c7145e7933e4c8f592c7715ba2dc data/gods_retribution/recipes/crafting/sugar_packet_from_empty_packet.json
+daf9428d79a727213a728b0bf4002b0c07b69416 data/gods_retribution/tags/blocks/woody.json
 00600c4aeec74c20f44426e86500c707db8180a7 data/minecraft/tags/blocks/mineable/axe.json
-a868ea0b177d5bc80b5fc4dc4fb2a8cc264fc6e0 data/minecraft/tags/blocks/mineable/pickaxe.json
+f7a17022cbb883256ca7226fa1fe13e8e6f920fd data/minecraft/tags/blocks/mineable/pickaxe.json
+a82bb092965ac6d5264dea6224516949bd30b749 data/minecraft/tags/blocks/mineable/shovel.json
