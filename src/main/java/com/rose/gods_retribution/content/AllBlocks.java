@@ -205,6 +205,21 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<SlabBlock> FLINT_SLAB = REGISTRATE
+            .block("flint_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.GRAVEL)
+            .properties(p -> p.mapColor(MapColor.COLOR_GRAY))
+            .tag(
+                    BlockTags.MINEABLE_WITH_SHOVEL,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/flint_block"), provider.modLoc("block/flint_block"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> CONCRETE = REGISTRATE
             .block("concrete", Block::new)
             .initialProperties(() -> Blocks.WHITE_CONCRETE)
