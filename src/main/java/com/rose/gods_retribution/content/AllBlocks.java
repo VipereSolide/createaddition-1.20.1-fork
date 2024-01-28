@@ -5,12 +5,16 @@ import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachin
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
+import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.SharedProperties;
+import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.Tags;
 import net.minecraft.world.level.material.MapColor;
 
@@ -115,6 +119,20 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
+
+    public static final BlockEntry<SlabBlock> TILES_BATHROOM_SLAB = REGISTRATE
+            .block("tiles_bathroom_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.SANDSTONE_SLAB)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, p) -> {
+                p.slabBlock(ctx.getEntry(), p.modLoc("block/tiles_bathroom_block"), p.modLoc("block/" + ctx.getName()));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
 
     public static final BlockEntry<Block> FLINT_BLOCK = REGISTRATE
             .block("flint_block", Block::new)

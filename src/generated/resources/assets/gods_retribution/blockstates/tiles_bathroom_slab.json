@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gods_retribution:block/tiles_bathroom_slab"
+    },
+    "type=double": {
+      "model": "gods_retribution:block/tiles_bathroom_block"
+    },
+    "type=top": {
+      "model": "gods_retribution:block/tiles_bathroom_slab_top"
+    }
+  }
+}
