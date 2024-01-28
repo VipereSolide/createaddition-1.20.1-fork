@@ -3,7 +3,6 @@ package com.rose.gods_retribution.content;
 import com.rose.gods_retribution.content.block.AirVentBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
-import com.rose.gods_retribution.fundation.blocks.RegisteredHorizontalDirectionalBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;

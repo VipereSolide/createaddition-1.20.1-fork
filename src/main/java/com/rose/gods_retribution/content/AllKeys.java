@@ -1,7 +1,6 @@
 package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.GodsRetribution;
-import com.rose.gods_retribution.content.key_handlers.SwitchGamemodeKeyHandlers;
 import com.rose.gods_retribution.content.network.PacketHandler;
 import com.rose.gods_retribution.content.network.SSwitchGamemodeToSpectatorFromKeyPressedPacket;
 import com.rose.gods_retribution.content.network.SSwitchGamemodeToSurvivalFromKeyPressedPacket;
