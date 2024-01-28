@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gods_retribution:block/metal_wiremesh_slab"
+    },
+    "type=double": {
+      "model": "gods_retribution:block/metal_wiremesh_block"
+    },
+    "type=top": {
+      "model": "gods_retribution:block/metal_wiremesh_slab_top"
+    }
+  }
+}

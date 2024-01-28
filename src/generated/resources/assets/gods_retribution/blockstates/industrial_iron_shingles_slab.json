@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gods_retribution:block/industrial_iron_shingles_slab"
+    },
+    "type=double": {
+      "model": "gods_retribution:block/industrial_iron_shingles"
+    },
+    "type=top": {
+      "model": "gods_retribution:block/industrial_iron_shingles_slab_top"
+    }
+  }
+}

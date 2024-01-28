@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "gods_retribution:block/wood",
+    "side": "gods_retribution:block/wood",
+    "top": "gods_retribution:block/wood"
+  }
+}

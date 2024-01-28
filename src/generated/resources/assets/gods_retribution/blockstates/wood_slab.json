@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gods_retribution:block/wood_slab"
+    },
+    "type=double": {
+      "model": "gods_retribution:block/wood"
+    },
+    "type=top": {
+      "model": "gods_retribution:block/wood_slab_top"
+    }
+  }
+}

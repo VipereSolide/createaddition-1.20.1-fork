@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "gods_retribution:block/concrete_gray",
+    "side": "gods_retribution:block/concrete_gray",
+    "top": "gods_retribution:block/concrete_gray"
+  }
+}
