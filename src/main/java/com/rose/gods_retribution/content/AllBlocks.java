@@ -111,6 +111,21 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<SlabBlock> STEEL_SLAB = REGISTRATE
+            .block("steel_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .properties(p -> p.requiresCorrectToolForDrops())
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/steel_block"), provider.modLoc("block/steel_block"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> TILES_BATHROOM = REGISTRATE
             .block("tiles_bathroom_block", Block::new)
             .initialProperties(() -> Blocks.BONE_BLOCK)
