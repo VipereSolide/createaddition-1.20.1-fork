@@ -8,6 +8,7 @@ import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -159,8 +160,20 @@ public class AllBlocks
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())
-            .build()
-            .register();
+            .build().register();
+
+    public static final BlockEntry<Block> METAL_WIREMESH_BLOCK_TRANSPARENT = REGISTRATE
+            .block("metal_wiremesh_block_transparent", Block::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .properties(p -> p
+                    .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                    .requiresCorrectToolForDrops()
+                    .noOcclusion())
+            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
 
     /**
      * Loads this class
