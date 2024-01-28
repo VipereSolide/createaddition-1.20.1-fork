@@ -42,6 +42,7 @@
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbs_ the _clicked fluid_.",
 
   "block.gods_retribution.wood": "Woody!",
+  "block.gods_retribution.wood_slab": "Woody! Slab",
   "block.gods_retribution.clear_glass": "Clear Glass",
   "block.gods_retribution.automated_redstone_switch": "Automated Redstone Switch",
   "block.gods_retribution.industrial_iron_shingles": "Industrial Iron Shingles",

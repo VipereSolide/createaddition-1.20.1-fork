@@ -41,6 +41,24 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<SlabBlock> WOOD_SLAB = REGISTRATE
+            .block("wood_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.DIRT)
+            .properties(p -> p
+                    .mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .requiresCorrectToolForDrops())
+            .tag(
+                    AllTags.Blocks.WOODY,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/wood"), provider.modLoc("block/wood"));
+            })
+            .transform(pickaxeOnly())
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("industrial_iron_shingles", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
