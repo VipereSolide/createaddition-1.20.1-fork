@@ -1,12 +1,15 @@
 package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.content.block.AirVentBlock;
+import com.rose.gods_retribution.content.block.AutomatedRedstoneSwitch;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
+import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -148,6 +151,24 @@ public class AllBlocks
                 .build()
                 .register();
     });
+
+    public static final BlockEntry<Block> CLEAR_GLASS = REGISTRATE
+            .block("clear_glass", Block::new)
+            .initialProperties(() -> Blocks.GLASS)
+            .properties(properties -> properties.noOcclusion())
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<AutomatedRedstoneSwitch> AUTOMATED_REDSTONE_SWITCH = REGISTRATE
+            .block("automated_redstone_switch", AutomatedRedstoneSwitch::new)
+            .initialProperties(() -> com.simibubi.create.AllBlocks.ANDESITE_CASING.get())
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build()
+            .register();
 
     /**
      * Loads this class
