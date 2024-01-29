@@ -1,23 +1,18 @@
 package com.rose.gods_retribution.content;
 
-import com.mojang.datafixers.TypeRewriteRule;
 import com.rose.gods_retribution.content.block.AirVentBlock;
-import com.rose.gods_retribution.content.block.AutomatedRedstoneSwitch;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
-import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.SharedProperties;
-import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.common.Tags;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.material.MapColor;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
@@ -196,6 +191,20 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<StairBlock> TILES_BATHROOM_STAIRS = REGISTRATE
+            .block("tiles_bathroom_stairs", (p) -> new StairBlock(AllBlocks.TILES_BATHROOM.getDefaultState(), p))
+            .initialProperties(() -> Blocks.BONE_BLOCK)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.STAIRS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> FLINT_BLOCK = REGISTRATE
             .block("flint_block", Block::new)
             .initialProperties(() -> Blocks.GRAVEL)
@@ -288,13 +297,13 @@ public class AllBlocks
             .build()
             .register();
 
-    public static final BlockEntry<AutomatedRedstoneSwitch> AUTOMATED_REDSTONE_SWITCH = REGISTRATE
+    /*public static final BlockEntry<AutomatedRedstoneSwitch> AUTOMATED_REDSTONE_SWITCH = REGISTRATE
             .block("automated_redstone_switch", AutomatedRedstoneSwitch::new)
             .initialProperties(() -> com.simibubi.create.AllBlocks.ANDESITE_CASING.get())
             .item()
             .tab(AllCreativeTabs.MAIN.getKey())
             .build()
-            .register();
+            .register();*/
 
     public static final BlockEntry<Block> METAL_WIREMESH_BLOCK = REGISTRATE
             .block("metal_wiremesh_block", Block::new)

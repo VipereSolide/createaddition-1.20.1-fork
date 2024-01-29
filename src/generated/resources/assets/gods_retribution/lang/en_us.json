@@ -1,7 +1,6 @@
 {
   "block.gods_retribution.aeration_block": "Aeration Block",
   "block.gods_retribution.air_vent": "Air Vent",
-  "block.gods_retribution.automated_redstone_switch": "Automated Redstone Switch",
   "block.gods_retribution.clear_glass": "Clear Glass",
   "block.gods_retribution.concrete": "Concrete",
   "block.gods_retribution.concrete_black": "Concrete Black",
@@ -53,6 +52,7 @@
   "block.gods_retribution.steel_slab": "Steel Slab",
   "block.gods_retribution.tiles_bathroom_block": "Tiles Bathroom Block",
   "block.gods_retribution.tiles_bathroom_slab": "Tiles Bathroom Slab",
+  "block.gods_retribution.tiles_bathroom_stairs": "Tiles Bathroom Stairs",
   "block.gods_retribution.wood": "Wood",
   "block.gods_retribution.wood_slab": "Wood Slab",
   "entity.gods_retribution.laser_projectile": "Laser Projectile",

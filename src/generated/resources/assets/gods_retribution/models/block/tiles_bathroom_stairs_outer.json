@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "gods_retribution:block/tiles_bathroom_block",
+    "side": "gods_retribution:block/tiles_bathroom_block",
+    "top": "gods_retribution:block/tiles_bathroom_block"
+  }
+}

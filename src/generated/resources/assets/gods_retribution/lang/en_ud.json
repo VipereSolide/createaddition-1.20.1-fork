@@ -1,7 +1,6 @@
 {
   "block.gods_retribution.aeration_block": "ʞɔoןᗺ uoıʇɐɹǝⱯ",
   "block.gods_retribution.air_vent": "ʇuǝΛ ɹıⱯ",
-  "block.gods_retribution.automated_redstone_switch": "ɥɔʇıʍS ǝuoʇspǝᴚ pǝʇɐɯoʇnⱯ",
   "block.gods_retribution.clear_glass": "ssɐן⅁ ɹɐǝןƆ",
   "block.gods_retribution.concrete": "ǝʇǝɹɔuoƆ",
   "block.gods_retribution.concrete_black": "ʞɔɐןᗺ ǝʇǝɹɔuoƆ",
@@ -53,6 +52,7 @@
   "block.gods_retribution.steel_slab": "qɐןS ןǝǝʇS",
   "block.gods_retribution.tiles_bathroom_block": "ʞɔoןᗺ ɯooɹɥʇɐᗺ sǝןı⟘",
   "block.gods_retribution.tiles_bathroom_slab": "qɐןS ɯooɹɥʇɐᗺ sǝןı⟘",
+  "block.gods_retribution.tiles_bathroom_stairs": "sɹıɐʇS ɯooɹɥʇɐᗺ sǝןı⟘",
   "block.gods_retribution.wood": "pooM",
   "block.gods_retribution.wood_slab": "qɐןS pooM",
   "entity.gods_retribution.laser_projectile": "ǝןıʇɔǝظoɹԀ ɹǝsɐꞀ",

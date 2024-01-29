@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "gods_retribution:automated_redstone_switch"
+          "name": "gods_retribution:tiles_bathroom_stairs"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "gods_retribution:blocks/automated_redstone_switch"
+  "random_sequence": "gods_retribution:blocks/tiles_bathroom_stairs"
 }
