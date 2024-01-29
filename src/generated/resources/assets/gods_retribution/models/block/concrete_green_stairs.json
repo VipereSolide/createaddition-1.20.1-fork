@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "gods_retribution:block/concrete_green",
+    "side": "gods_retribution:block/concrete_green",
+    "top": "gods_retribution:block/concrete_green"
+  }
+}
