@@ -24,6 +24,10 @@ public class AllTags
 		 * Only for demonstration purposes.
 		 */
 		public static final TagKey<Block> WOODY = tag("woody");
+		/**
+		 * Contains all the concrete blocks and their variants.
+		 */
+		public static final TagKey<Block> CONCRETE = tag("concrete");
 
 		/**
 		 * Helper method used to create the blocks' tags in this very class.

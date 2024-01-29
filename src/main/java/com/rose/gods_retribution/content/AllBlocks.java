@@ -306,7 +306,10 @@ public class AllBlocks
             .block("concrete", Block::new)
             .initialProperties(() -> Blocks.WHITE_CONCRETE)
             .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GRAY))
-            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .tag(
+					BlockTags.MINEABLE_WITH_PICKAXE,
+					AllTags.Blocks.CONCRETE
+			)
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
@@ -318,7 +321,8 @@ public class AllBlocks
             .properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GRAY))
             .tag(
                     BlockTags.MINEABLE_WITH_PICKAXE,
-                    BlockTags.SLABS
+                    BlockTags.SLABS,
+					AllTags.Blocks.CONCRETE
             )
             .blockstate((ctx, provider) -> {
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete"), provider.modLoc("block/concrete"));
@@ -332,7 +336,8 @@ public class AllBlocks
 			.initialProperties(() -> AllBlocks.CONCRETE.get())
 			.tag(
 					BlockTags.MINEABLE_WITH_PICKAXE,
-					BlockTags.STAIRS
+					BlockTags.STAIRS,
+					AllTags.Blocks.CONCRETE
 			)
 			.blockstate((ctx, provider) -> {
 				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
@@ -348,7 +353,10 @@ public class AllBlocks
                 .block("concrete_" + colourName, Block::new)
                 .initialProperties(AllBlocks.CONCRETE::get)
                 .properties(p -> p.mapColor(colour))
-                .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .tag(
+						BlockTags.MINEABLE_WITH_PICKAXE,
+						AllTags.Blocks.CONCRETE
+				)
                 .item()
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build()
@@ -363,7 +371,8 @@ public class AllBlocks
                 .properties(p -> p.mapColor(colour))
                 .tag(
                         BlockTags.MINEABLE_WITH_PICKAXE,
-                        BlockTags.SLABS
+                        BlockTags.SLABS,
+						AllTags.Blocks.CONCRETE
                 )
                 .blockstate((ctx, provider) -> {
                     provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName), provider.modLoc("block/concrete_" + colourName));
@@ -381,7 +390,8 @@ public class AllBlocks
 				.properties(p -> p.mapColor(colour))
 				.tag(
 						BlockTags.MINEABLE_WITH_PICKAXE,
-						BlockTags.STAIRS
+						BlockTags.STAIRS,
+						AllTags.Blocks.CONCRETE
 				)
 				.blockstate((ctx, provider) -> {
 					provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName));
