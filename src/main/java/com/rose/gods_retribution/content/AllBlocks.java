@@ -411,6 +411,30 @@ public class AllBlocks
             .build()
             .register();
 
+	public static final BlockEntry<StairBlock> CLEAR_GLASS_STAIRS = REGISTRATE
+			.block("clear_glass_stairs", (p) -> new StairBlock(AllBlocks.CLEAR_GLASS.getDefaultState(), p))
+			.initialProperties(AllBlocks.CLEAR_GLASS::get)
+			.tag(BlockTags.STAIRS)
+			.blockstate((ctx, provider) -> {
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/clear_glass"));
+			})
+			.addLayer(() -> RenderType::cutout)
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
+
+	public static final BlockEntry<SlabBlock> CLEAR_GLASS_SLAB = REGISTRATE
+			.block("clear_glass_slab", SlabBlock::new)
+			.initialProperties(AllBlocks.CLEAR_GLASS::get)
+			.tag(BlockTags.SLABS)
+			.blockstate((ctx, provider) -> {
+				provider.slabBlock(ctx.getEntry(), provider.modLoc("block/clear_glass"), provider.modLoc("block/clear_glass"));
+			})
+			.addLayer(() -> RenderType::cutout)
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
+
     /*public static final BlockEntry<AutomatedRedstoneSwitch> AUTOMATED_REDSTONE_SWITCH = REGISTRATE
             .block("automated_redstone_switch", AutomatedRedstoneSwitch::new)
             .initialProperties(() -> com.simibubi.create.AllBlocks.ANDESITE_CASING.get())
