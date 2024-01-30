@@ -38,6 +38,21 @@ public class AllBlocks
             .build()
             .register();
 
+	public static final BlockEntry<StairBlock> WOOD_STAIRS = REGISTRATE
+			.block("wood_stairs", (p) -> new StairBlock(AllBlocks.WOOD.getDefaultState(), p))
+			.initialProperties(() -> AllBlocks.WOOD.get())
+			.tag(
+					BlockTags.STAIRS,
+					AllTags.Blocks.WOODY
+			)
+			.blockstate((ctx, provider) -> {
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/wood"));
+			})
+			.transform(pickaxeOnly())
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
+
     public static final BlockEntry<SlabBlock> WOOD_SLAB = REGISTRATE
             .block("wood_slab", SlabBlock::new)
             .initialProperties(() -> Blocks.DIRT)
@@ -56,21 +71,6 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
-	public static final BlockEntry<StairBlock> WOOD_STAIRS = REGISTRATE
-			.block("wood_stairs", (p) -> new StairBlock(AllBlocks.WOOD.getDefaultState(), p))
-			.initialProperties(() -> AllBlocks.WOOD.get())
-			.tag(
-					BlockTags.STAIRS,
-					AllTags.Blocks.WOODY
-			)
-			.blockstate((ctx, provider) -> {
-				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/wood"));
-			})
-			.transform(pickaxeOnly())
-			.item()
-			.tab(AllCreativeTabs.DECORATION.getKey())
-			.build().register();
-
     public static final BlockEntry<Block> INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("industrial_iron_shingles", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -79,20 +79,6 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
-
-    public static final BlockEntry<SlabBlock> INDUSTRIAL_IRON_SHINGLES_SLAB = REGISTRATE
-            .block("industrial_iron_shingles_slab", SlabBlock::new)
-            .initialProperties(() -> Blocks.IRON_BLOCK)
-            .tag(
-                    BlockTags.MINEABLE_WITH_PICKAXE,
-                    BlockTags.SLABS
-            )
-            .blockstate((ctx, provider) -> {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"), provider.modLoc("block/industrial_iron_shingles"));
-            })
-            .item()
-            .tab(AllCreativeTabs.DECORATION.getKey())
-            .build().register();
 
 	public static final BlockEntry<StairBlock> INDUSTRIAL_IRON_SHINGLES_STAIRS = REGISTRATE
 			.block("industrial_iron_shingles_stairs", (p) -> new StairBlock(AllBlocks.INDUSTRIAL_IRON_SHINGLES.getDefaultState(), p))
@@ -108,6 +94,20 @@ public class AllBlocks
 			.tab(AllCreativeTabs.DECORATION.getKey())
 			.build().register();
 
+    public static final BlockEntry<SlabBlock> INDUSTRIAL_IRON_SHINGLES_SLAB = REGISTRATE
+            .block("industrial_iron_shingles_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"), provider.modLoc("block/industrial_iron_shingles"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> CRACKED_INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("cracked_industrial_iron_shingles", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -116,6 +116,21 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
+
+	public static final BlockEntry<StairBlock> INDUSTRIAL_IRON_SHINGLES_STAIRS = REGISTRATE
+			.block("industrial_iron_shingles_stairs", (p) -> new StairBlock(AllBlocks.INDUSTRIAL_IRON_SHINGLES.getDefaultState(), p))
+			.initialProperties(() -> AllBlocks.INDUSTRIAL_IRON_SHINGLES.get())
+			.tag(
+					BlockTags.MINEABLE_WITH_PICKAXE,
+					BlockTags.STAIRS
+			)
+			.blockstate((ctx, provider) -> {
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"));
+			})
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
+
     public static final BlockEntry<SlabBlock> CRACKED_INDUSTRIAL_IRON_SHINGLES_SLAB = REGISTRATE
             .block("cracked_industrial_iron_shingles_slab", SlabBlock::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -129,20 +144,6 @@ public class AllBlocks
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
-
-	public static final BlockEntry<StairBlock> CRACKED_INDUSTRIAL_IRON_SHINGLES_STAIRS = REGISTRATE
-			.block("cracked_industrial_iron_shingles_stairs", (p) -> new StairBlock(AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES.getDefaultState(), p))
-			.initialProperties(() -> AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES.get())
-			.tag(
-					BlockTags.MINEABLE_WITH_PICKAXE,
-					BlockTags.STAIRS
-			)
-			.blockstate((ctx, provider) -> {
-				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"));
-			})
-			.item()
-			.tab(AllCreativeTabs.DECORATION.getKey())
-			.build().register();
 
     public static final BlockEntry<PlasticMossBlock> PLASTIC_MOSS = REGISTRATE
             .block("plastic_moss", PlasticMossBlock::new)
@@ -197,6 +198,20 @@ public class AllBlocks
             .build()
             .register();
 
+	public static final BlockEntry<StairBlock> STEEL_STAIRS = REGISTRATE
+			.block("steel_stairs", (p) -> new StairBlock(AllBlocks.STEEL_BLOCK.getDefaultState(), p))
+			.initialProperties(() -> AllBlocks.STEEL_BLOCK.get())
+			.tag(
+					BlockTags.STAIRS,
+					BlockTags.MINEABLE_WITH_PICKAXE
+			)
+			.blockstate((ctx, provider) -> {
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/steel_block"));
+			})
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
+
     public static final BlockEntry<SlabBlock> STEEL_SLAB = REGISTRATE
             .block("steel_slab", SlabBlock::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -212,20 +227,6 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
-	public static final BlockEntry<StairBlock> STEEL_STAIRS = REGISTRATE
-			.block("steel_stairs", (p) -> new StairBlock(AllBlocks.STEEL_BLOCK.getDefaultState(), p))
-			.initialProperties(() -> AllBlocks.STEEL_BLOCK.get())
-			.tag(
-					BlockTags.STAIRS,
-					BlockTags.MINEABLE_WITH_PICKAXE
-			)
-			.blockstate((ctx, provider) -> {
-				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/steel_block"));
-			})
-			.item()
-			.tab(AllCreativeTabs.DECORATION.getKey())
-			.build().register();
-
     public static final BlockEntry<Block> TILES_BATHROOM = REGISTRATE
             .block("tiles_bathroom_block", Block::new)
             .initialProperties(() -> Blocks.BONE_BLOCK)
@@ -234,6 +235,20 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
+
+	public static final BlockEntry<StairBlock> TILES_BATHROOM_STAIRS = REGISTRATE
+			.block("tiles_bathroom_stairs", (p) -> new StairBlock(AllBlocks.TILES_BATHROOM.getDefaultState(), p))
+			.initialProperties(() -> Blocks.BONE_BLOCK)
+			.tag(
+					BlockTags.MINEABLE_WITH_PICKAXE,
+					BlockTags.STAIRS
+			)
+			.blockstate((ctx, provider) -> {
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block"));
+			})
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
 
     public static final BlockEntry<SlabBlock> TILES_BATHROOM_SLAB = REGISTRATE
             .block("tiles_bathroom_slab", SlabBlock::new)
@@ -249,20 +264,6 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
-    public static final BlockEntry<StairBlock> TILES_BATHROOM_STAIRS = REGISTRATE
-            .block("tiles_bathroom_stairs", (p) -> new StairBlock(AllBlocks.TILES_BATHROOM.getDefaultState(), p))
-            .initialProperties(() -> Blocks.BONE_BLOCK)
-            .tag(
-                    BlockTags.MINEABLE_WITH_PICKAXE,
-                    BlockTags.STAIRS
-            )
-            .blockstate((ctx, provider) -> {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block"));
-            })
-            .item()
-            .tab(AllCreativeTabs.DECORATION.getKey())
-            .build().register();
-
     public static final BlockEntry<Block> FLINT_BLOCK = REGISTRATE
             .block("flint_block", Block::new)
             .initialProperties(() -> Blocks.GRAVEL)
@@ -272,6 +273,20 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
+
+	public static final BlockEntry<StairBlock> FLINT_STAIRS = REGISTRATE
+			.block("flint_stairs", (p) -> new StairBlock(AllBlocks.FLINT_BLOCK.getDefaultState(), p))
+			.initialProperties(() -> AllBlocks.FLINT_BLOCK.get())
+			.tag(
+					BlockTags.STAIRS,
+					BlockTags.MINEABLE_WITH_SHOVEL
+			)
+			.blockstate((ctx, provider) -> {
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/flint_block"));
+			})
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
 
     public static final BlockEntry<SlabBlock> FLINT_SLAB = REGISTRATE
             .block("flint_slab", SlabBlock::new)
@@ -288,20 +303,6 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
-	public static final BlockEntry<StairBlock> FLINT_STAIRS = REGISTRATE
-			.block("flint_stairs", (p) -> new StairBlock(AllBlocks.FLINT_BLOCK.getDefaultState(), p))
-			.initialProperties(() -> AllBlocks.FLINT_BLOCK.get())
-			.tag(
-					BlockTags.STAIRS,
-					BlockTags.MINEABLE_WITH_SHOVEL
-			)
-			.blockstate((ctx, provider) -> {
-				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/flint_block"));
-			})
-			.item()
-			.tab(AllCreativeTabs.DECORATION.getKey())
-			.build().register();
-
     public static final BlockEntry<Block> CONCRETE = REGISTRATE
             .block("concrete", Block::new)
             .initialProperties(() -> Blocks.WHITE_CONCRETE)
@@ -314,6 +315,21 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
+
+	public static final BlockEntry<StairBlock> CONCRETE_STAIRS = REGISTRATE
+			.block("concrete_stairs", (p) -> new StairBlock(AllBlocks.CONCRETE.getDefaultState(), p))
+			.initialProperties(() -> AllBlocks.CONCRETE.get())
+			.tag(
+					BlockTags.MINEABLE_WITH_PICKAXE,
+					BlockTags.STAIRS,
+					AllTags.Blocks.CONCRETE
+			)
+			.blockstate((ctx, provider) -> {
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
+			})
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
 
     public static final BlockEntry<SlabBlock> CONCRETE_SLAB = REGISTRATE
             .block("concrete_slab", SlabBlock::new)
@@ -331,21 +347,6 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
-	public static final BlockEntry<StairBlock> CONCRETE_STAIRS = REGISTRATE
-			.block("concrete_stairs", (p) -> new StairBlock(AllBlocks.CONCRETE.getDefaultState(), p))
-			.initialProperties(() -> AllBlocks.CONCRETE.get())
-			.tag(
-					BlockTags.MINEABLE_WITH_PICKAXE,
-					BlockTags.STAIRS,
-					AllTags.Blocks.CONCRETE
-			)
-			.blockstate((ctx, provider) -> {
-				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
-			})
-			.item()
-			.tab(AllCreativeTabs.DECORATION.getKey())
-			.build().register();
-
     public static final DyedBlockList<Block> CONCRETE_COLOURS = new DyedBlockList<>(colour ->
     {
         String colourName = colour.getSerializedName();
@@ -361,25 +362,6 @@ public class AllBlocks
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build()
                 .register();
-    });
-
-    public static final DyedBlockList<SlabBlock> CONCRETE_COLOURS_SLABS = new DyedBlockList<>(colour -> {
-        String colourName = colour.getSerializedName();
-        return REGISTRATE
-                .block("concrete_" + colourName + "_slab", SlabBlock::new)
-                .initialProperties(AllBlocks.CONCRETE_SLAB::get)
-                .properties(p -> p.mapColor(colour))
-                .tag(
-                        BlockTags.MINEABLE_WITH_PICKAXE,
-                        BlockTags.SLABS,
-						AllTags.Blocks.CONCRETE
-                )
-                .blockstate((ctx, provider) -> {
-                    provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName), provider.modLoc("block/concrete_" + colourName));
-                })
-                .item()
-                .tab(AllCreativeTabs.DECORATION.getKey())
-                .build().register();
     });
 
 	public static final DyedBlockList<StairBlock> CONCRETE_COLOURS_STAIRS = new DyedBlockList<>(colour -> {
@@ -400,6 +382,25 @@ public class AllBlocks
 				.tab(AllCreativeTabs.DECORATION.getKey())
 				.build().register();
 	});
+
+    public static final DyedBlockList<SlabBlock> CONCRETE_COLOURS_SLABS = new DyedBlockList<>(colour -> {
+        String colourName = colour.getSerializedName();
+        return REGISTRATE
+                .block("concrete_" + colourName + "_slab", SlabBlock::new)
+                .initialProperties(AllBlocks.CONCRETE_SLAB::get)
+                .properties(p -> p.mapColor(colour))
+                .tag(
+                        BlockTags.MINEABLE_WITH_PICKAXE,
+                        BlockTags.SLABS,
+						AllTags.Blocks.CONCRETE
+                )
+                .blockstate((ctx, provider) -> {
+                    provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName), provider.modLoc("block/concrete_" + colourName));
+                })
+                .item()
+                .tab(AllCreativeTabs.DECORATION.getKey())
+                .build().register();
+    });
 
     public static final BlockEntry<Block> CLEAR_GLASS = REGISTRATE
             .block("clear_glass", Block::new)
@@ -454,20 +455,6 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
-    public static final BlockEntry<SlabBlock> METAL_WIREMESH_SLAB = REGISTRATE
-            .block("metal_wiremesh_slab", SlabBlock::new)
-            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK::get)
-            .tag(
-                    BlockTags.SLABS,
-                    BlockTags.MINEABLE_WITH_PICKAXE
-            )
-            .blockstate((ctx, provider) -> {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"), provider.modLoc("block/metal_wiremesh_block"));
-            })
-            .item()
-            .tab(AllCreativeTabs.DECORATION.getKey())
-            .build().register();
-
 	public static final BlockEntry<StairBlock> METAL_WIREMESH_STAIRS = REGISTRATE
 			.block("metal_wiremesh_stairs", (p) -> new StairBlock(AllBlocks.METAL_WIREMESH_BLOCK.getDefaultState(), p))
 			.initialProperties(AllBlocks.METAL_WIREMESH_BLOCK::get)
@@ -482,6 +469,20 @@ public class AllBlocks
 			.tab(AllCreativeTabs.DECORATION.getKey())
 			.build().register();
 
+    public static final BlockEntry<SlabBlock> METAL_WIREMESH_SLAB = REGISTRATE
+            .block("metal_wiremesh_slab", SlabBlock::new)
+            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK::get)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"), provider.modLoc("block/metal_wiremesh_block"));
+            })
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> METAL_WIREMESH_BLOCK_TRANSPARENT = REGISTRATE
             .block("metal_wiremesh_block_transparent", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -490,21 +491,6 @@ public class AllBlocks
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
-            .addLayer(() -> RenderType::cutout)
-            .item()
-            .tab(AllCreativeTabs.DECORATION.getKey())
-            .build().register();
-
-    public static final BlockEntry<SlabBlock> METAL_WIREMESH_SLAB_TRANSPARENT = REGISTRATE
-            .block("metal_wiremesh_slab_transparent", SlabBlock::new)
-            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT::get)
-            .tag(
-                    BlockTags.MINEABLE_WITH_PICKAXE,
-                    BlockTags.SLABS
-            )
-            .blockstate((ctx, provider) -> {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent"), provider.modLoc("block/metal_wiremesh_block_transparent"));
-            })
             .addLayer(() -> RenderType::cutout)
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())
@@ -524,6 +510,21 @@ public class AllBlocks
 			.item()
 			.tab(AllCreativeTabs.DECORATION.getKey())
 			.build().register();
+
+    public static final BlockEntry<SlabBlock> METAL_WIREMESH_SLAB_TRANSPARENT = REGISTRATE
+            .block("metal_wiremesh_slab_transparent", SlabBlock::new)
+            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent"), provider.modLoc("block/metal_wiremesh_block_transparent"));
+            })
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
 
     /**
      * Loads this class
