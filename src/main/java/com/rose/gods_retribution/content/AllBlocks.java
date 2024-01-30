@@ -13,11 +13,9 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.common.Tags;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 import static com.simibubi.create.foundation.data.BlockStateGen.simpleCubeAll;
@@ -544,6 +542,42 @@ public class AllBlocks
             .item()
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
+
+	public static final BlockEntry<Block> LIGHT_BLOCK = REGISTRATE
+			.block("light_block", Block::new)
+			.properties((p) -> p
+					.mapColor(MapColor.QUARTZ)
+					.strength(0.3f)
+					.explosionResistance(2.0f)
+					.destroyTime(Blocks.DIRT.defaultDestroyTime())
+					.sound(SoundType.STONE)
+					.lightLevel((i) -> {return 15;}))
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
+
+	public static final BlockEntry<StairBlock> LIGHT_STAIRS = REGISTRATE
+			.block("light_stairs", (p) -> new StairBlock(AllBlocks.LIGHT_BLOCK.getDefaultState(), p))
+			.initialProperties(AllBlocks.LIGHT_BLOCK::get)
+			.tag(BlockTags.STAIRS)
+			.blockstate((ctx, provider) -> {
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/light_block"));
+			})
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
+
+	public static final BlockEntry<SlabBlock> LIGHT_SLAB = REGISTRATE
+			.block("light_slab", SlabBlock::new)
+			.initialProperties(AllBlocks.LIGHT_BLOCK::get)
+			.tag(BlockTags.SLABS)
+			.blockstate((ctx, provider) -> {
+				provider.slabBlock(ctx.getEntry(), provider.modLoc("block/light_block"), provider.modLoc("block/light_block"));
+			})
+			.item()
+			.tab(AllCreativeTabs.DECORATION.getKey())
+			.build().register();
+
 
     /**
      * Loads this class

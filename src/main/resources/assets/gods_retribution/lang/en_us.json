@@ -124,6 +124,9 @@
   "block.gods_retribution.metal_wiremesh_block_transparent": "Transparent Metal Wiremesh Block",
   "block.gods_retribution.metal_wiremesh_slab_transparent": "Transparent Metal Wiremesh Slab",
   "block.gods_retribution.metal_wiremesh_stairs_transparent": "Transparent Metal Wiremesh Stairs",
+  "block.gods_retribution.light_block": "Light Block",
+  "block.gods_retribution.light_stairs": "Light Stairs",
+  "block.gods_retribution.light_slab": "Light Slab",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Gods' Retribution",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Gods' Retribution's Building Blocks",

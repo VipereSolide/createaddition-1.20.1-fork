@@ -122,6 +122,9 @@
   "block.gods_retribution.metal_wiremesh_block_transparent": "Bloc de grillage métallique transparent",
   "block.gods_retribution.metal_wiremesh_slab_transparent": "Dalle de grillage métallique transparent",
   "block.gods_retribution.metal_wiremesh_stairs_transparent": "Escalier en grillage métallique transparent",
+  "block.gods_retribution.light_block": "Bloc de lumière",
+  "block.gods_retribution.light_stairs": "Escalier de lumière",
+  "block.gods_retribution.light_slab": "Dalle de lumière",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Les Divines Représailles",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Blocs de Construction des Divines Représailles",

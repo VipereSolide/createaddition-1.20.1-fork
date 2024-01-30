@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gods_retribution:block/light_slab"
+    },
+    "type=double": {
+      "model": "gods_retribution:block/light_block"
+    },
+    "type=top": {
+      "model": "gods_retribution:block/light_slab_top"
+    }
+  }
+}
