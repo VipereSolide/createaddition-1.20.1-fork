@@ -117,15 +117,15 @@ public class AllBlocks
             .build()
             .register();
 
-	public static final BlockEntry<StairBlock> INDUSTRIAL_IRON_SHINGLES_STAIRS = REGISTRATE
-			.block("industrial_iron_shingles_stairs", (p) -> new StairBlock(AllBlocks.INDUSTRIAL_IRON_SHINGLES.getDefaultState(), p))
-			.initialProperties(() -> AllBlocks.INDUSTRIAL_IRON_SHINGLES.get())
+	public static final BlockEntry<StairBlock> CRACKED_INDUSTRIAL_IRON_SHINGLES_STAIRS = REGISTRATE
+			.block("cracked_industrial_iron_shingles_stairs", (p) -> new StairBlock(AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES.getDefaultState(), p))
+			.initialProperties(() -> AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES.get())
 			.tag(
 					BlockTags.MINEABLE_WITH_PICKAXE,
 					BlockTags.STAIRS
 			)
 			.blockstate((ctx, provider) -> {
-				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"));
+				provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"));
 			})
 			.item()
 			.tab(AllCreativeTabs.DECORATION.getKey())
