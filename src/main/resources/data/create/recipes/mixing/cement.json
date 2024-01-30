@@ -1,0 +1,18 @@
+{
+	"type": "create:mixing",
+	"ingredients": [
+		{
+			"item": "clay_ball"
+		},
+		{
+			"item": "create:limestone"
+		}
+	],
+	"results": [
+		{
+			"item": "gods_retribution:cement",
+			"count": 4
+		}
+	],
+	"heatRequirement": "superheated"
+}

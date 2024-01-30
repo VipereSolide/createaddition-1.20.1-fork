@@ -152,6 +152,11 @@ public class AllItems
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
+    public static final ItemEntry<Item> CEMENT = REGISTRATE
+            .item("cement", Item::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
     /**
      * Loads this class.
      */
