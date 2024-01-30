@@ -1,0 +1,25 @@
+{
+	"type": "create:mixing",
+	"ingredients": [
+		{
+			"item": "gods_retribution:cement"
+		},
+		{
+			"tag": "forge:sand"
+		},
+		{
+			"item": "gravel"
+		},
+		{
+			"amount": 250,
+			"fluid": "minecraft:water",
+			"nbt": {}
+		}
+	],
+	"results": [
+		{
+			"item": "gods_retribution:concrete",
+			"count": 1
+		}
+	]
+}
