@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"group": "gods_retribution:cracked_industrial_iron_shingles_slab",
+	"pattern": ["###"],
+	"key": {
+		"#": {
+			"item": "gods_retribution:cracked_industrial_iron_shingles_block"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:cracked_industrial_iron_shingles_slab",
+		"count": 6
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"group": "gods_retribution:metal_wiremesh_block_transparent",
+	"pattern": [
+		"AAA",
+		"AAA",
+		"AAA"
+	],
+	"key": {
+		"A": {
+			"item": "iron_bars"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:metal_wiremesh_block_transparent",
+		"count": 1
+	}
+}

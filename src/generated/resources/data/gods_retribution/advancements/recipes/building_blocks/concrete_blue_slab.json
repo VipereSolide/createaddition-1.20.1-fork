@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_concrete_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gods_retribution:concrete_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gods_retribution:concrete_blue_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_concrete_blue",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gods_retribution:concrete_blue_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"group": "gods_retribution:tiles_bathroom_stairs",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "gods_retribution:tiles_bathroom_block"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:tiles_bathroom_stairs",
+		"count": 4
+	}
+}

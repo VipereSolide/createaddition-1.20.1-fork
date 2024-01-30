@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "gods_retribution:concrete_white"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "item": "gods_retribution:concrete_white_slab"
+  },
+  "show_notification": true
+}

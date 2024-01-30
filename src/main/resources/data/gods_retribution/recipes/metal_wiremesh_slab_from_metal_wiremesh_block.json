@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"group": "gods_retribution:metal_wiremesh_slab",
+	"pattern": [
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "gods_retribution:metal_wiremesh_block"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:metal_wiremesh_slab",
+		"count": 6
+	}
+}

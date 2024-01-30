@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"group": "gods_retribution:flint_stairs",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "gods_retribution:flint_block"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:flint_stairs",
+		"count": 4
+	}
+}

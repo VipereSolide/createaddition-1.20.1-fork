@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"group": "gods_retribution:wood_stairs",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "gods_retribution:wood"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:wood_stairs",
+		"count": 4
+	}
+}

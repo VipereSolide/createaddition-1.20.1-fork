@@ -1,6 +1,5 @@
 package com.rose.gods_retribution.content;
 
-import com.mojang.datafixers.TypeRewriteRule;
 import com.rose.gods_retribution.content.block.AirVentBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
@@ -9,7 +8,11 @@ import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
@@ -378,6 +381,15 @@ public class AllBlocks
 				.blockstate((ctx, provider) -> {
 					provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName));
 				})
+				.recipe((ctx, consumer) -> {
+					ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+							.pattern("#  ")
+							.pattern("## ")
+							.pattern("###")
+							.define('#', AllBlocks.CONCRETE_COLOURS.get(colour))
+							.unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
+							.save(consumer);
+				})
 				.item()
 				.tab(AllCreativeTabs.DECORATION.getKey())
 				.build().register();
@@ -397,6 +409,13 @@ public class AllBlocks
                 .blockstate((ctx, provider) -> {
                     provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName), provider.modLoc("block/concrete_" + colourName));
                 })
+				.recipe((ctx, consumer) -> {
+					ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+							.pattern("###")
+							.define('#', AllBlocks.CONCRETE_COLOURS.get(colour))
+							.unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
+							.save(consumer);
+				})
                 .item()
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();
