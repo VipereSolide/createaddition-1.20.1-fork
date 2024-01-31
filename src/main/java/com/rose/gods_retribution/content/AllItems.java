@@ -23,6 +23,12 @@ import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
  */
 public class AllItems
 {
+    public static final ItemEntry<EngravingChisel> ENGRAVING_CHISEL = REGISTRATE
+            .item("engraving_chisel", EngravingChisel::new)
+            .tab(AllCreativeTabs.ANCIENT.getKey())
+            .defaultModel()
+            .register();
+
     public static final ItemEntry<GoldKeyItem> GOLD_KEY = REGISTRATE
             .item("gold_key", GoldKeyItem::new)
             .tab(AllCreativeTabs.ANCIENT.getKey())

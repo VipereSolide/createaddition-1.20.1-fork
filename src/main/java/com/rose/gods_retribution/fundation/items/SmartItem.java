@@ -13,9 +13,9 @@ public abstract class SmartItem extends Item
 {
     public static final String INITIALIZED_TAG = "is_initialized";
 
-    public SmartItem(Properties pProperties)
+    public SmartItem(Properties properties)
     {
-        super(pProperties);
+        super(properties);
     }
 
     @Override

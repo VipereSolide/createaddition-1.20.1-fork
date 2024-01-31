@@ -1,6 +1,7 @@
 package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.content.block.AirVentBlock;
+import com.rose.gods_retribution.content.block.engraved_blocks.EngravedLimestoneBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.keyholes.KeyholeBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
@@ -588,6 +589,15 @@ public class AllBlocks
 
 	public static final BlockEntry<KeyholeBlock> STONE_KEYHOLE = REGISTRATE
 			.block("stone_keyhole", KeyholeBlock::new)
+			.initialProperties(() -> Blocks.STONE)
+			.tag(Tags.Blocks.STONE)
+			.item()
+			.tab(AllCreativeTabs.ANCIENT.getKey())
+			.build()
+			.register();
+
+	public static final BlockEntry<EngravedLimestoneBlock> ENGRAVED_LIMESTONE = REGISTRATE
+			.block("engraved_limestone", EngravedLimestoneBlock::new)
 			.initialProperties(() -> Blocks.STONE)
 			.tag(Tags.Blocks.STONE)
 			.item()

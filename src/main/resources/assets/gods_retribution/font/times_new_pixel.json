@@ -1,0 +1,14 @@
+{
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "gods_retribution:times_new_pixel.ttf",
+      "shift": [
+        0,
+        0
+      ],
+      "size": 12.0,
+      "oversample": 8.0
+    }
+  ]
+}

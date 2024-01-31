@@ -4,6 +4,9 @@
   "item.gods_retribution.gold_key.bound_keyhole": "Keyhole successfully bound.",
   "item.gods_retribution.gold_key.wrong_key": "Hm... it doesn't seem to be the right key.",
   "item.gods_retribution.gold_key.summary": "Use on a keyhole to link the two together.",
+  "item.gods_retribution.engraving_chisel": "Engraving Chisel",
+  "item.gods_retribution.engraving_chisel.summary1": "Use on an engraved block to write text onto it.",
+  "item.gods_retribution.engraving_chisel.summary2": "Crouch and use on an engraved block to swap the used font.",
   "item.gods_retribution.gelatin": "Gelatin",
   "item.gods_retribution.plastic_ball": "Plastic Ball",
   "item.gods_retribution.cement": "Cement",
@@ -133,6 +136,7 @@
   "block.gods_retribution.light_slab": "Light Slab",
   "block.gods_retribution.limestone_keyhole": "Limestone Keyhole",
   "block.gods_retribution.stone_keyhole": "Stone Keyhole",
+  "block.gods_retribution.engraved_limestone": "Engraved Limestone Block",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Gods' Retribution",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Gods' Retribution's Building Blocks",
