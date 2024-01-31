@@ -2,6 +2,7 @@ package com.rose.gods_retribution.content;
 
 import com.rose.gods_retribution.content.block.AirVentBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
+import com.rose.gods_retribution.content.block.keyholes.KeyholeBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
@@ -11,8 +12,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.Tags;
@@ -578,6 +577,23 @@ public class AllBlocks
 			.tab(AllCreativeTabs.DECORATION.getKey())
 			.build().register();
 
+	public static final BlockEntry<KeyholeBlock> LIMESTONE_KEYHOLE = REGISTRATE
+			.block("limestone_keyhole", KeyholeBlock::new)
+			.initialProperties(() -> Blocks.STONE)
+			.tag(Tags.Blocks.STONE)
+			.item()
+			.tab(AllCreativeTabs.ANCIENT.getKey())
+			.build()
+			.register();
+
+	public static final BlockEntry<KeyholeBlock> STONE_KEYHOLE = REGISTRATE
+			.block("stone_keyhole", KeyholeBlock::new)
+			.initialProperties(() -> Blocks.STONE)
+			.tag(Tags.Blocks.STONE)
+			.item()
+			.tab(AllCreativeTabs.ANCIENT.getKey())
+			.build()
+			.register();
 
     /**
      * Loads this class

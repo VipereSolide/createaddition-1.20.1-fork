@@ -1,5 +1,9 @@
 {
   "item.gods_retribution.screw": "Vis",
+  "item.gods_retribution.gold_key": "Clef en or",
+  "item.gods_retribution.gold_key.bound_keyhole": "La serrure a été vérouillée.",
+  "item.gods_retribution.gold_key.wrong_key": "Hm... la clef utilisée ne semble pas être la bonne.",
+  "item.gods_retribution.gold_key.summary": "Utiliser la clef sur une serrure pour lier les deux.",
   "item.gods_retribution.plastic_ball": "Boule de plastique",
   "item.gods_retribution.cement": "Ciment",
 
@@ -125,11 +129,16 @@
   "block.gods_retribution.light_block": "Bloc de lumière",
   "block.gods_retribution.light_stairs": "Escalier de lumière",
   "block.gods_retribution.light_slab": "Dalle de lumière",
+  "block.gods_retribution.limestone_keyhole": "Serrure dans du calcaire",
+  "block.gods_retribution.Stone_keyhole": "Serrure dans de la roche",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Les Divines Représailles",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Blocs de Construction des Divines Représailles",
+  "creative_tabs.gods_retribution.ancient_decoration_blocks": "Blocs de Construction Anciens",
 
   "gui.gods_retribution.labelling_tag.title": "Gabarit d'étiquetage",
 
-  "sounds.gods_retribution.blaster_fire": "Tir de Blaster"
+  "sounds.gods_retribution.blaster_fire": "Tir de blaster",
+  "sounds.gods_retribution.door_lock": "Porte que l'on vérouille",
+  "sounds.gods_retribution.door_unlock": "Porte que l'on devérouille"
 }

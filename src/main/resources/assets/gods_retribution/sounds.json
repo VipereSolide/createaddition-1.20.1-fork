@@ -4,5 +4,17 @@
     "sounds": [
       "gods_retribution:blaster_e11_fire"
     ]
+  },
+  "door_lock": {
+    "subtitle": "sounds.gods_retribution.door_lock",
+    "sounds": [
+      "gods_retribution:door_lock"
+    ]
+  },
+  "door_unlock": {
+    "subtitle": "sounds.gods_retribution.door_unlock",
+    "sounds": [
+      "gods_retribution:door_unlock"
+    ]
   }
 }

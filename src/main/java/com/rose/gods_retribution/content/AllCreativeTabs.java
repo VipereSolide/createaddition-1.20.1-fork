@@ -19,6 +19,9 @@ public class AllCreativeTabs
     public static final Component DECORATION_TAB_TITLE =
             Component.translatable("creative_tab.gods_retribution.gods_retribution_decoration_tab");
 
+    public static final Component ANCIENT_TAB_TITLE =
+            Component.translatable("creative_tabs.gods_retribution.ancient_decoration_blocks");
+
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GodsRetribution.MOD_ID);
 
@@ -62,6 +65,14 @@ public class AllCreativeTabs
 
                                 output.accept(AllBlocks.CONCRETE);
                             })*/
+                            .build()
+            );
+
+    public static final RegistryObject<CreativeModeTab> ANCIENT =
+            CREATIVE_TABS.register("ancient_decoration_blocks",
+                    () -> CreativeModeTab.builder()
+                            .title(ANCIENT_TAB_TITLE)
+                            .icon(() -> new ItemStack(AllItems.GOLD_KEY.get()))
                             .build()
             );
 

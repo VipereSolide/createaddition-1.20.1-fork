@@ -3,6 +3,7 @@ package com.rose.gods_retribution.content;
 import com.rose.gods_retribution.GodsRetribution;
 import com.rose.gods_retribution.content.item.*;
 import com.rose.gods_retribution.content.item.fluid_vacuum.FluidVacuumItem;
+import com.rose.gods_retribution.content.item.gold_key.GoldKeyItem;
 import com.rose.gods_retribution.content.item.labelling_tag.LabellingTagItem;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
@@ -22,6 +23,12 @@ import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
  */
 public class AllItems
 {
+    public static final ItemEntry<GoldKeyItem> GOLD_KEY = REGISTRATE
+            .item("gold_key", GoldKeyItem::new)
+            .tab(AllCreativeTabs.ANCIENT.getKey())
+            .defaultModel()
+            .register();
+
     public static final ItemEntry<Item> SCREW = REGISTRATE
             .item("screw", Item::new)
             .tab(AllCreativeTabs.MAIN.getKey())

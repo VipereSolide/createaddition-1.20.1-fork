@@ -16,6 +16,12 @@ public class AllSounds
     public static final RegistryObject<SoundEvent> BLASTER_E11_FIRE =
             registerSound("blaster_e11_fire");
 
+    public static final RegistryObject<SoundEvent> DOOR_LOCK =
+            registerSound("door_lock");
+
+    public static final RegistryObject<SoundEvent> DOOR_UNLOCK =
+            registerSound("door_unlock");
+
 
     private static RegistryObject<SoundEvent> registerSound(String name)
     {
