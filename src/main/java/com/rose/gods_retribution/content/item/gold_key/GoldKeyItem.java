@@ -67,7 +67,7 @@ public class GoldKeyItem extends Item
                     if (stack.getOrCreateTag().contains(BOUND_POS_TAG))
                     {
                         var boundPos = CompoundTagHelper.getBlockPos(stack.getOrCreateTag(), BOUND_POS_TAG);
-                        if (boundPos == pos)
+                        if (boundPos.getX() == pos.getX() && boundPos.getY() == pos.getY() && boundPos.getZ() == pos.getZ())
                         {
                             KeyholeBlock.setActive(world, pos, state);
                             world.playSound((Player) null, pos, AllSounds.DOOR_UNLOCK.get(), SoundSource.BLOCKS);
