@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "facing=north,powered=false": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_unpressed"
+    },
+    "facing=east,powered=false": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_unpressed",
+      "y": 90
+    },
+    "facing=south,powered=false": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_unpressed",
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_unpressed",
+      "y": 270
+    },
+    "facing=up,powered=false": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_unpressed",
+      "x": 270
+    },
+    "facing=down,powered=false": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_unpressed",
+      "x": 90
+    },
+    "facing=north,powered=true": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_pressed"
+    },
+    "facing=east,powered=true": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_pressed",
+      "y": 90
+    },
+    "facing=south,powered=true": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_pressed",
+      "y": 180
+    },
+    "facing=west,powered=true": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_pressed",
+      "y": 270
+    },
+    "facing=up,powered=true": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_pressed",
+      "x": 270
+    },
+    "facing=down,powered=true": {
+      "model": "gods_retribution:block/hidden_cobbled_limestone_button_pressed",
+      "x": 90
+    }
+  }
+}

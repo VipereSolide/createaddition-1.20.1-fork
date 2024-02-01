@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gods_retribution:block/redstone_shifter"
+    },
+    "facing=east": {
+      "model": "gods_retribution:block/redstone_shifter",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gods_retribution:block/redstone_shifter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gods_retribution:block/redstone_shifter",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "gods_retribution:block/redstone_shifter",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "gods_retribution:block/redstone_shifter",
+      "x": 90
+    }
+  }
+}

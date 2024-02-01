@@ -135,6 +135,10 @@
   "block.gods_retribution.stone_keyhole": "Serrure dans de la roche",
   "block.gods_retribution.engraved_limestone": "Bloc de calcaire gravé",
   "block.gods_retribution.limestone_wall_gutter": "Goutière murale en calcaire",
+  "block.gods_retribution.encrusted_chiseled_limestone": "Calcaire taillé incrusté",
+  "block.gods_retribution.redstone_shifter": "Inverseur de courant de redstone",
+  "block.gods_retribution.hidden_cobbled_limestone_button": "Bouton caché dans un bloc de calcaire",
+  "block.gods_retribution.limestone_rumbles": "Débris de calcaire",
 
   "block.gods_retribution.unlit_torch": "Torche éteinte",
   "block.gods_retribution.unlit_torch.summary": "Utiliser un objet inflammable pour l'allumer.",

@@ -1,0 +1,51 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "gods_retribution:block/limestone_rumbles"
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles_2"
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles_3"
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles",
+        "y": 90
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles_2",
+        "y": 90
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles_3",
+        "y": 90
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles",
+        "y": 180
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles_2",
+        "y": 180
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles_3",
+        "y": 180
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles",
+        "y": 270
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles_2",
+        "y": 270
+      },
+      {
+        "model": "gods_retribution:block/limestone_rumbles_3",
+        "y": 270
+      }
+    ]
+  }
+}

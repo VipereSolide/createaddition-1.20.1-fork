@@ -1,14 +1,13 @@
 package com.rose.gods_retribution.content;
 
-import com.rose.gods_retribution.content.block.AirVentBlock;
-import com.rose.gods_retribution.content.block.UnlitTorchBlock;
+import com.rose.gods_retribution.content.block.*;
 import com.rose.gods_retribution.content.block.engraved_blocks.EngravedLimestoneBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.keyholes.KeyholeBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
+import com.rose.gods_retribution.fundation.blocks.SmartBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
-import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
@@ -20,7 +19,6 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.Tags;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
-import static com.simibubi.create.foundation.data.BlockStateGen.simpleBlock;
 import static com.simibubi.create.foundation.data.BlockStateGen.simpleCubeAll;
 import static com.simibubi.create.foundation.data.TagGen.*;
 
@@ -655,6 +653,45 @@ public class AllBlocks
             .properties(properties -> properties
                     .lightLevel(blockstate -> 0)
                     .emissiveRendering((blockstate, blockGetter, pos) -> false))
+            .item()
+            .tab(AllCreativeTabs.ANCIENT.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<Block> ENCRUSTED_CHISELED_LIMESTONE = REGISTRATE
+            .block("encrusted_chiseled_limestone", Block::new)
+            .initialProperties(() -> Blocks.STONE)
+            .item()
+            .tab(AllCreativeTabs.ANCIENT.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<RedstoneShifterBlock> REDSTONE_SHIFTER = REGISTRATE
+            .block("redstone_shifter", RedstoneShifterBlock::new)
+            .initialProperties(() -> Blocks.PISTON)
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build()
+            .register();
+
+
+    public static final BlockEntry<HiddenCobbledLimestoneButton> HIDDEN_COBBLED_LIMESTONE_BUTTON = REGISTRATE
+            .block("hidden_cobbled_limestone_button", HiddenCobbledLimestoneButton::new)
+            .initialProperties(() -> Blocks.STONE)
+            .item()
+            .tab(AllCreativeTabs.ANCIENT.getKey())
+            .build()
+            .register();
+
+    public static final BlockEntry<SmartBlock> LIMESTONE_RUMBLES = REGISTRATE
+            .block("limestone_rumbles", p ->
+                    new SmartBlock(p, new SmartBlock.SmartProperties()
+                            .doNotShowNeighbourFaces()
+                            .noShadow()
+                            .shape(AllShapes.ofSize(0, 0, 0, 16, 4, 16))
+                    ))
+            .initialProperties(() -> Blocks.STONE)
+            .properties(properties -> properties.noOcclusion().noCollission())
             .item()
             .tab(AllCreativeTabs.ANCIENT.getKey())
             .build()
