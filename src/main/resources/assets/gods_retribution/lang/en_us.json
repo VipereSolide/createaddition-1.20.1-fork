@@ -137,6 +137,10 @@
   "block.gods_retribution.limestone_keyhole": "Limestone Keyhole",
   "block.gods_retribution.stone_keyhole": "Stone Keyhole",
   "block.gods_retribution.engraved_limestone": "Engraved Limestone Block",
+  "block.gods_retribution.limestone_wall_gutter": "Limestone Wall Gutter",
+
+  "block.gods_retribution.unlit_torch": "Unlit Torch",
+  "block.gods_retribution.unlit_torch.summary": "Use a flammable item such as a torch or a fire charge onto it to light it up.",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Gods' Retribution",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Gods' Retribution's Building Blocks",

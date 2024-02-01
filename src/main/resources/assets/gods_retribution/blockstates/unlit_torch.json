@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gods_retribution:block/unlit_torch_wall",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "gods_retribution:block/unlit_torch_wall",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "gods_retribution:block/unlit_torch_wall",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "gods_retribution:block/unlit_torch_wall",
+      "y": 90
+    },
+    "facing=down": {
+      "model": "gods_retribution:block/unlit_torch_standing"
+    },
+    "facing=up": {
+      "model": "gods_retribution:block/unlit_torch_standing"
+    }
+  }
+}

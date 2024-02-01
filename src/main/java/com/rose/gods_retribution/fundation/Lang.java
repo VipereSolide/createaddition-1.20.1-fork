@@ -63,7 +63,8 @@ public class Lang
     /**
      * Gets the translation of a given item's name, followed up by a list of given extensions. For more information on
      * what are the extensions, see {@link Lang#keyFromCategory(String, String, String...) Lang.keyFromCategory}.
-     * @param itemName The name of the item you want to get the translation for.
+     *
+     * @param itemName   The name of the item you want to get the translation for.
      * @param extensions What extensions will follow the item's translation key (example: "tooltip", "summary" to get a
      *                   Create summary of the item).
      * @return A MutableComponent containing the translation of the given item's name followed by the extensions.
@@ -75,11 +76,22 @@ public class Lang
 
     /**
      * Gets the translation of an item's name using a given Item.
+     *
      * @param item What item you wish to get the name of.
      * @return A MutableComponent containing the translation of the given item's name.
      */
     public static MutableComponent item(Item item)
     {
         return (MutableComponent) item.getDescription();
+    }
+
+    public static MutableComponent block(String blockName)
+    {
+        return Component.translatable(keyFromCategory("block", blockName));
+    }
+
+    public static MutableComponent block(String blockName, String... extensions)
+    {
+        return Component.translatable(keyFromCategory("block", blockName, extensions));
     }
 }

@@ -21,7 +21,12 @@ public class AllShapes
                     .add(ofSize(3, 15, 3, 10, 1, 10))
                     .forDirectional(Direction.NORTH);
 
-    public static final VoxelShaper AIR_VENT = shape(ofSize(3, 3, 14, 10, 10, 2)).forDirectional(Direction.NORTH);
+    public static final VoxelShaper AIR_VENT = shape(ofSize(3, 3, 14, 10, 10, 2))
+            .forDirectional(Direction.NORTH);
+    public static final VoxelShape UNLIT_TORCH_STANDING = shape(ofSize(6, 0, 6, 4, 10, 4))
+            .build();
+    public static final VoxelShaper UNLIT_TORCH_WALL = shape(ofSize(6, 3, 12, 4, 10, 4))
+            .forDirectional(Direction.SOUTH);
 
     // From create:AllShapes
     public static Builder shape(VoxelShape shape)
@@ -39,9 +44,33 @@ public class AllShapes
         return Block.box(x1, y1, z1, x2, y2, z2);
     }
 
-    public static VoxelShape ofSize(double posX, double posY, double posZ, double sizeX, double sizeY, double sizeZ)
+    public static VoxelShape ofSize(double posX,
+                                    double posY,
+                                    double posZ,
+                                    double sizeX,
+                                    double sizeY,
+                                    double sizeZ)
     {
         return Block.box(posX, posY, posZ, sizeX + posX, sizeY + posY, sizeZ + posZ);
+    }
+
+    public static VoxelShape ofSize(double posX,
+                                    double posY,
+                                    double posZ,
+                                    double sizeX,
+                                    double sizeY,
+                                    double sizeZ,
+                                    double offsetX,
+                                    double offsetY,
+                                    double offsetZ)
+    {
+        return Block.box(
+                offsetX + posX,
+                offsetY + posY,
+                offsetZ + posZ,
+                offsetX + sizeX + posX,
+                offsetY + sizeY + posY,
+                offsetZ + sizeZ + posZ);
     }
 
     /**
