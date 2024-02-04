@@ -637,8 +637,10 @@ public class AllBlocks
             .build()
             .register();
 
-    public static final BlockEntry<Block> LIMESTONE_WALL_GUTTER = REGISTRATE
-            .block("limestone_wall_gutter", Block::new)
+    public static final BlockEntry<SmartBlock> LIMESTONE_WALL_GUTTER = REGISTRATE
+            .block("limestone_wall_gutter", properties ->
+                    new SmartBlock(properties, new SmartBlock.SmartProperties()
+                            .showNeighbourFaces(true, true, true, true, true, true)))
             .initialProperties(() -> Blocks.STONE)
             .blockstate(simpleCubeAll("limestone_wall_gutter"))
             .tag(Tags.Blocks.STONE)
@@ -695,6 +697,13 @@ public class AllBlocks
             .item()
             .tab(AllCreativeTabs.ANCIENT.getKey())
             .build()
+            .register();
+
+    public static final BlockEntry<SunflowerCropBlock> SUNFLOWER_CROP = REGISTRATE
+            .block("sunflower_crop", SunflowerCropBlock::new)
+            .initialProperties(() -> Blocks.SUNFLOWER)
+            .addLayer(() -> RenderType::cutout)
+            .defaultLoot()
             .register();
 
     /**

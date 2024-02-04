@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "gods_retribution:block/sunflower_crop_0"
+    },
+    "age=1": {
+      "model": "gods_retribution:block/sunflower_crop_1"
+    },
+    "age=2": {
+      "model": "gods_retribution:block/sunflower_crop_2"
+    },
+    "age=3": {
+      "model": "gods_retribution:block/sunflower_crop_3"
+    },
+    "age=4": {
+      "model": "gods_retribution:block/sunflower_crop_4"
+    },
+    "age=5": {
+      "model": "gods_retribution:block/sunflower_crop_5"
+    },
+    "age=6": {
+      "model": "gods_retribution:block/sunflower_crop_6"
+    }
+  }
+}
