@@ -1,0 +1,6 @@
+{
+  "parent": "gods_retribution:block/stone_balustrade",
+  "textures": {
+    "main": "gods_retribution:block/polished_limestone"
+  }
+}

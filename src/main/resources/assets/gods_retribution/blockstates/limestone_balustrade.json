@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gods_retribution:block/limestone_balustrade"
+    },
+    "facing=east": {
+      "model": "gods_retribution:block/limestone_balustrade",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gods_retribution:block/limestone_balustrade",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gods_retribution:block/limestone_balustrade",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "gods_retribution:block/limestone_balustrade",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "gods_retribution:block/limestone_balustrade",
+      "x": 90
+    }
+  }
+}

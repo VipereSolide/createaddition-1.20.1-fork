@@ -640,7 +640,7 @@ public class AllBlocks
     public static final BlockEntry<SmartBlock> LIMESTONE_WALL_GUTTER = REGISTRATE
             .block("limestone_wall_gutter", properties ->
                     new SmartBlock(properties, new SmartBlock.SmartProperties()
-                            .showNeighbourFaces(true, true, true, true, true, true)))
+                            .withHiddenNeighbourFaces(true, true, true, true, true, true)))
             .initialProperties(() -> Blocks.STONE)
             .blockstate(simpleCubeAll("limestone_wall_gutter"))
             .tag(Tags.Blocks.STONE)
@@ -704,6 +704,19 @@ public class AllBlocks
             .initialProperties(() -> Blocks.SUNFLOWER)
             .addLayer(() -> RenderType::cutout)
             .defaultLoot()
+            .register();
+
+    public static final BlockEntry<BalustradeBlock> LIMESTONE_BALUSTRADE = REGISTRATE
+            .block("limestone_balustrade", properties ->
+                    new BalustradeBlock(properties, new SmartBlock.SmartProperties()
+                            .doNotShowNeighbourFaces()
+                            .noShadow()
+                    ))
+            .initialProperties(() -> Blocks.STONE)
+            .properties(properties -> properties.noOcclusion())
+            .item()
+            .tab(AllCreativeTabs.ANCIENT.getKey())
+            .build()
             .register();
 
     /**
