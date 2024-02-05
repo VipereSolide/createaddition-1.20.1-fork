@@ -47,6 +47,11 @@ public class AllTags
 	public static class Items
 	{
 		/**
+		 * Contains the items that can be used to make create's superglue.
+		 */
+		public static final TagKey<Item> GLUE_MATERIAL = tag("glue_material");
+
+		/**
 		 * Helper method used to create the items' tags in this very class.
 		 *
 		 * @param name the tag's ID

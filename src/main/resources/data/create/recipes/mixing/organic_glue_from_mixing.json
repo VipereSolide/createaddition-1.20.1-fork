@@ -1,12 +1,8 @@
 {
 	"type": "create:mixing",
 	"ingredients": [
-		{
-			"item": "minecraft:bone"
-		},
-		{
-			"item": "minecraft:bone"
-		},
+		{"tag": "gods_retribution:glue_material"},
+		{"tag": "gods_retribution:glue_material"},
 		{
 			"fluid": "minecraft:water",
 			"amount": 500,
