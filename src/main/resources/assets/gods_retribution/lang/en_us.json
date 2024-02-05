@@ -49,6 +49,8 @@
   "item.gods_retribution.fluid_vacuum.tooltip.condition1": "When R-Clicked",
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbs_ the _clicked fluid_.",
 
+  "block.gods_retribution.gold_stairs": "Gold Stairs",
+  "block.gods_retribution.gold_slab": "Gold Slab",
   "block.gods_retribution.wood": "Woody!",
   "block.gods_retribution.wood_slab": "Woody! Slab",
   "block.gods_retribution.wood_stairs": "Woody! Stairs",

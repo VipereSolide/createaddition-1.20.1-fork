@@ -47,6 +47,8 @@
   "item.gods_retribution.fluid_vacuum.tooltip.condition1": "Quand Clic droit",
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbe_ le fluide visé.",
 
+  "block.gods_retribution.gold_stairs": "Escalier en or",
+  "block.gods_retribution.gold_slab": "Dalle en or",
   "block.gods_retribution.wood": "Woody !",
   "block.gods_retribution.wood_slab": "Dalle de woody !",
   "block.gods_retribution.wood_stairs": "Escalier de woody !",

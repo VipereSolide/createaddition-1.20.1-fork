@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.Tags;
@@ -29,6 +30,42 @@ import static com.simibubi.create.foundation.data.TagGen.*;
  */
 public class AllBlocks
 {
+    // Vanilla-related blocks
+    public static final BlockEntry<StairBlock> GOLD_STAIRS = REGISTRATE
+            .block("gold_stairs", p -> new StairBlock(Blocks.GOLD_BLOCK.defaultBlockState(), p))
+            .initialProperties(() -> Blocks.GOLD_BLOCK)
+            .tag(
+                    BlockTags.STAIRS,
+                    BlockTags.NEEDS_IRON_TOOL,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.GUARDED_BY_PIGLINS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.stairsBlock(ctx.getEntry(), provider.blockTexture(Blocks.GOLD_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.PIGLIN_LOVED)
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<SlabBlock> GOLD_SLAB = REGISTRATE
+            .block("gold_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.GOLD_BLOCK)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.NEEDS_IRON_TOOL,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.GUARDED_BY_PIGLINS
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.blockTexture(Blocks.GOLD_BLOCK), provider.blockTexture(Blocks.GOLD_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.PIGLIN_LOVED)
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    // Original blocks
     public static final BlockEntry<Block> WOOD = REGISTRATE
             .block("wood", Block::new)
             .initialProperties(() -> Blocks.DIRT)
