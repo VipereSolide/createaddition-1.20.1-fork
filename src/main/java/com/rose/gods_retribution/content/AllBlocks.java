@@ -15,6 +15,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.Tags;
@@ -44,7 +45,10 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.blockTexture(Blocks.GOLD_BLOCK));
             })
             .item()
-            .tag(ItemTags.PIGLIN_LOVED)
+            .tag(
+                    ItemTags.PIGLIN_LOVED,
+                    ItemTags.STAIRS
+            )
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -61,7 +65,10 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.blockTexture(Blocks.GOLD_BLOCK), provider.blockTexture(Blocks.GOLD_BLOCK));
             })
             .item()
-            .tag(ItemTags.PIGLIN_LOVED)
+            .tag(
+                    ItemTags.PIGLIN_LOVED,
+                    ItemTags.SLABS
+            )
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -90,6 +97,10 @@ public class AllBlocks
             })
             .transform(pickaxeOnly())
             .item()
+            .tag(
+                    ItemTags.STAIRS,
+                    ItemTags.WOODEN_STAIRS
+            )
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -109,6 +120,10 @@ public class AllBlocks
             })
             .transform(pickaxeOnly())
             .item()
+            .tag(
+                    ItemTags.SLABS,
+                    ItemTags.WOODEN_SLABS
+            )
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -133,6 +148,7 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"));
             })
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -148,6 +164,7 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"), provider.modLoc("block/industrial_iron_shingles"));
             })
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -172,6 +189,7 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"));
             })
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -187,6 +205,7 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"), provider.modLoc("block/cracked_industrial_iron_shingles"));
             })
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -255,6 +274,7 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/steel_block"));
             })
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -271,6 +291,7 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/steel_block"), provider.modLoc("block/steel_block"));
             })
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -295,6 +316,7 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block"));
             })
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -310,6 +332,7 @@ public class AllBlocks
                 p.slabBlock(ctx.getEntry(), p.modLoc("block/tiles_bathroom_block"), p.modLoc("block/" + ctx.getName()));
             })
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -335,6 +358,7 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/flint_block"));
             })
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -351,6 +375,7 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/flint_block"), provider.modLoc("block/flint_block"));
             })
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -380,6 +405,7 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
             })
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -397,6 +423,7 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete"), provider.modLoc("block/concrete"));
             })
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -444,6 +471,7 @@ public class AllBlocks
                             .save(consumer);
                 })
                 .item()
+                .tag(ItemTags.STAIRS)
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();
     });
@@ -473,6 +501,7 @@ public class AllBlocks
                             .save(consumer);
                 })
                 .item()
+                .tag(ItemTags.SLABS)
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();
     });
@@ -497,6 +526,7 @@ public class AllBlocks
             })
             .addLayer(() -> RenderType::cutout)
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -510,6 +540,7 @@ public class AllBlocks
             })
             .addLayer(() -> RenderType::cutout)
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -544,6 +575,7 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"));
             })
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -559,6 +591,7 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"), provider.modLoc("block/metal_wiremesh_block"));
             })
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -588,6 +621,7 @@ public class AllBlocks
             })
             .addLayer(() -> RenderType::cutout)
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -604,6 +638,7 @@ public class AllBlocks
             })
             .addLayer(() -> RenderType::cutout)
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -632,6 +667,7 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/light_block"));
             })
             .item()
+            .tag(ItemTags.STAIRS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -644,6 +680,7 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/light_block"), provider.modLoc("block/light_block"));
             })
             .item()
+            .tag(ItemTags.SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
