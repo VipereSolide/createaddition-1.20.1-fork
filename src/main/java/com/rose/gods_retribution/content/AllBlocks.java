@@ -15,6 +15,8 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
@@ -49,7 +51,17 @@ public class AllBlocks
                     ItemTags.PIGLIN_LOVED,
                     ItemTags.STAIRS
             )
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("#  ")
+                        .pattern("## ")
+                        .pattern("###")
+                        .define('#', Blocks.GOLD_BLOCK)
+                        .unlockedBy("has_gold_block", consumer.has(Blocks.GOLD_BLOCK))
+                        .save(consumer);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
 
     public static final BlockEntry<SlabBlock> GOLD_SLAB = REGISTRATE
@@ -69,7 +81,265 @@ public class AllBlocks
                     ItemTags.PIGLIN_LOVED,
                     ItemTags.SLABS
             )
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.GOLD_BLOCK)
+                        .unlockedBy("has_gold_block", consumer.has(Blocks.GOLD_BLOCK))
+                        .save(consumer);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<StairBlock> DIAMOND_STAIRS = REGISTRATE
+            .block("diamond_stairs", p -> new StairBlock(Blocks.DIAMOND_BLOCK.defaultBlockState(), p))
+            .initialProperties(() -> Blocks.DIAMOND_BLOCK)
+            .tag(
+                    BlockTags.STAIRS,
+                    BlockTags.NEEDS_IRON_TOOL,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.stairsBlock(ctx.getEntry(), provider.blockTexture(Blocks.DIAMOND_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.STAIRS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("#  ")
+                        .pattern("## ")
+                        .pattern("###")
+                        .define('#', Blocks.DIAMOND_BLOCK)
+                        .unlockedBy("has_diamond_block", consumer.has(Blocks.DIAMOND_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<SlabBlock> DIAMOND_SLAB = REGISTRATE
+            .block("diamond_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.DIAMOND_BLOCK)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.NEEDS_IRON_TOOL,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.blockTexture(Blocks.DIAMOND_BLOCK), provider.blockTexture(Blocks.DIAMOND_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.SLABS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.DIAMOND_BLOCK)
+                        .unlockedBy("has_diamond_block", consumer.has(Blocks.DIAMOND_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<StairBlock> IRON_STAIRS = REGISTRATE
+            .block("iron_stairs", p -> new StairBlock(Blocks.IRON_BLOCK.defaultBlockState(), p))
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .tag(
+                    BlockTags.STAIRS,
+                    BlockTags.NEEDS_STONE_TOOL,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.stairsBlock(ctx.getEntry(), provider.blockTexture(Blocks.IRON_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.STAIRS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("#  ")
+                        .pattern("## ")
+                        .pattern("###")
+                        .define('#', Blocks.IRON_BLOCK)
+                        .unlockedBy("has_iron_block", consumer.has(Blocks.IRON_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<SlabBlock> IRON_SLAB = REGISTRATE
+            .block("iron_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_STONE_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.blockTexture(Blocks.IRON_BLOCK), provider.blockTexture(Blocks.IRON_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.SLABS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.IRON_BLOCK)
+                        .unlockedBy("has_iron_block", consumer.has(Blocks.IRON_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<StairBlock> LAPIS_STAIRS = REGISTRATE
+            .block("lapis_stairs", p -> new StairBlock(Blocks.LAPIS_BLOCK.defaultBlockState(), p))
+            .initialProperties(() -> Blocks.LAPIS_BLOCK)
+            .tag(
+                    BlockTags.STAIRS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_STONE_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.stairsBlock(ctx.getEntry(), provider.blockTexture(Blocks.LAPIS_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.STAIRS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("#  ")
+                        .pattern("## ")
+                        .pattern("###")
+                        .define('#', Blocks.LAPIS_BLOCK)
+                        .unlockedBy("has_lapis_block", consumer.has(Blocks.LAPIS_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<SlabBlock> LAPIS_SLAB = REGISTRATE
+            .block("lapis_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.LAPIS_BLOCK)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.NEEDS_STONE_TOOL,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.blockTexture(Blocks.LAPIS_BLOCK), provider.blockTexture(Blocks.LAPIS_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.SLABS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.LAPIS_BLOCK)
+                        .unlockedBy("has_lapis_block", consumer.has(Blocks.LAPIS_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<StairBlock> EMERALD_STAIRS = REGISTRATE
+            .block("emerald_stairs", p -> new StairBlock(Blocks.EMERALD_BLOCK.defaultBlockState(), p))
+            .initialProperties(() -> Blocks.EMERALD_BLOCK)
+            .tag(
+                    BlockTags.STAIRS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_IRON_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.stairsBlock(ctx.getEntry(), provider.blockTexture(Blocks.EMERALD_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.STAIRS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("#  ")
+                        .pattern("## ")
+                        .pattern("###")
+                        .define('#', Blocks.EMERALD_BLOCK)
+                        .unlockedBy("has_emerald_block", consumer.has(Blocks.EMERALD_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<SlabBlock> EMERALD_SLAB = REGISTRATE
+            .block("emerald_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.EMERALD_BLOCK)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.NEEDS_IRON_TOOL,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.blockTexture(Blocks.EMERALD_BLOCK), provider.blockTexture(Blocks.EMERALD_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.SLABS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.EMERALD_BLOCK)
+                        .unlockedBy("has_emerald_block", consumer.has(Blocks.EMERALD_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<StairBlock> NETHERITE_STAIRS = REGISTRATE
+            .block("netherite_stairs", p -> new StairBlock(Blocks.NETHERITE_BLOCK.defaultBlockState(), p))
+            .initialProperties(() -> Blocks.NETHERITE_BLOCK)
+            .tag(
+                    BlockTags.STAIRS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_DIAMOND_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.stairsBlock(ctx.getEntry(), provider.blockTexture(Blocks.NETHERITE_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.STAIRS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("#  ")
+                        .pattern("## ")
+                        .pattern("###")
+                        .define('#', Blocks.NETHERITE_BLOCK)
+                        .unlockedBy("has_netherite_block", consumer.has(Blocks.NETHERITE_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<SlabBlock> NETHERITE_SLAB = REGISTRATE
+            .block("netherite_slab", SlabBlock::new)
+            .initialProperties(() -> Blocks.NETHERITE_BLOCK)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.NEEDS_DIAMOND_TOOL,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.slabBlock(ctx.getEntry(), provider.blockTexture(Blocks.NETHERITE_BLOCK), provider.blockTexture(Blocks.NETHERITE_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.SLABS)
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.NETHERITE_BLOCK)
+                        .unlockedBy("has_netherite_block", consumer.has(Blocks.NETHERITE_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
 
     // Original blocks

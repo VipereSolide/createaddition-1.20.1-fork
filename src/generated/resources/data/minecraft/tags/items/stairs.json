@@ -1,6 +1,11 @@
 {
   "values": [
     "gods_retribution:gold_stairs",
+    "gods_retribution:diamond_stairs",
+    "gods_retribution:iron_stairs",
+    "gods_retribution:lapis_stairs",
+    "gods_retribution:emerald_stairs",
+    "gods_retribution:netherite_stairs",
     "gods_retribution:wood_stairs",
     "gods_retribution:industrial_iron_shingles_stairs",
     "gods_retribution:cracked_industrial_iron_shingles_stairs",

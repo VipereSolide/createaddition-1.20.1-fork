@@ -1,6 +1,11 @@
 {
   "values": [
     "gods_retribution:gold_slab",
+    "gods_retribution:diamond_slab",
+    "gods_retribution:iron_slab",
+    "gods_retribution:lapis_slab",
+    "gods_retribution:emerald_slab",
+    "gods_retribution:netherite_slab",
     "gods_retribution:wood_slab",
     "gods_retribution:industrial_iron_shingles_slab",
     "gods_retribution:cracked_industrial_iron_shingles_slab",
