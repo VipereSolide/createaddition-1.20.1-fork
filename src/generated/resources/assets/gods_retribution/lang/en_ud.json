@@ -63,6 +63,7 @@
   "block.gods_retribution.flint_block": "ʞɔoןᗺ ʇuıןℲ",
   "block.gods_retribution.flint_slab": "qɐןS ʇuıןℲ",
   "block.gods_retribution.flint_stairs": "sɹıɐʇS ʇuıןℲ",
+  "block.gods_retribution.hidden_cobbled_limestone_button": "uoʇʇnᗺ ǝuoʇsǝɯıꞀ pǝןqqoƆ uǝppıH",
   "block.gods_retribution.industrial_iron_shingles": "sǝןbuıɥS uoɹI ןɐıɹʇsnpuI",
   "block.gods_retribution.industrial_iron_shingles_slab": "qɐןS sǝןbuıɥS uoɹI ןɐıɹʇsnpuI",
   "block.gods_retribution.industrial_iron_shingles_stairs": "sɹıɐʇS sǝןbuıɥS uoɹI ןɐıɹʇsnpuI",
@@ -71,6 +72,7 @@
   "block.gods_retribution.light_slab": "qɐןS ʇɥbıꞀ",
   "block.gods_retribution.light_stairs": "sɹıɐʇS ʇɥbıꞀ",
   "block.gods_retribution.limestone_keyhole": "ǝןoɥʎǝʞ ǝuoʇsǝɯıꞀ",
+  "block.gods_retribution.limestone_rumbles": "sǝןqɯnᴚ ǝuoʇsǝɯıꞀ",
   "block.gods_retribution.limestone_wall_gutter": "ɹǝʇʇn⅁ ןןɐM ǝuoʇsǝɯıꞀ",
   "block.gods_retribution.metal_wiremesh_block": "ʞɔoןᗺ ɥsǝɯǝɹıM ןɐʇǝW",
   "block.gods_retribution.metal_wiremesh_block_transparent": "ʇuǝɹɐdsuɐɹ⟘ ʞɔoןᗺ ɥsǝɯǝɹıM ןɐʇǝW",
@@ -79,10 +81,12 @@
   "block.gods_retribution.metal_wiremesh_stairs": "sɹıɐʇS ɥsǝɯǝɹıM ןɐʇǝW",
   "block.gods_retribution.metal_wiremesh_stairs_transparent": "ʇuǝɹɐdsuɐɹ⟘ sɹıɐʇS ɥsǝɯǝɹıM ןɐʇǝW",
   "block.gods_retribution.plastic_moss": "ssoW ɔıʇsɐןԀ",
+  "block.gods_retribution.redstone_shifter": "ɹǝʇɟıɥS ǝuoʇspǝᴚ",
   "block.gods_retribution.steel_block": "ʞɔoןᗺ ןǝǝʇS",
   "block.gods_retribution.steel_slab": "qɐןS ןǝǝʇS",
   "block.gods_retribution.steel_stairs": "sɹıɐʇS ןǝǝʇS",
   "block.gods_retribution.stone_keyhole": "ǝןoɥʎǝʞ ǝuoʇS",
+  "block.gods_retribution.sunflower_crop": "doɹƆ ɹǝʍoןɟunS",
   "block.gods_retribution.tiles_bathroom_block": "ʞɔoןᗺ ɯooɹɥʇɐᗺ sǝןı⟘",
   "block.gods_retribution.tiles_bathroom_slab": "qɐןS ɯooɹɥʇɐᗺ sǝןı⟘",
   "block.gods_retribution.tiles_bathroom_stairs": "sɹıɐʇS ɯooɹɥʇɐᗺ sǝןı⟘",
@@ -107,5 +111,6 @@
   "item.gods_retribution.light_armour_leggings": "sbuıbbǝꞀ ɹnoɯɹⱯ ʇɥbıꞀ",
   "item.gods_retribution.plastic_ball": "ןןɐᗺ ɔıʇsɐןԀ",
   "item.gods_retribution.screw": "ʍǝɹɔS",
-  "item.gods_retribution.sugar_packet": "ʇǝʞɔɐԀ ɹɐbnS"
+  "item.gods_retribution.sugar_packet": "ʇǝʞɔɐԀ ɹɐbnS",
+  "item.gods_retribution.sunflower_seeds": "spǝǝS ɹǝʍoןɟunS"
 }

@@ -12,7 +12,9 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
@@ -168,6 +170,19 @@ public class AllItems
     public static final ItemEntry<Item> CEMENT = REGISTRATE
             .item("cement", Item::new)
             .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<ItemNameBlockItem> SUNFLOWER_SEEDS = REGISTRATE
+            .item("sunflower_seeds", properties ->
+                    new ItemNameBlockItem(AllBlocks.SUNFLOWER_CROP.get(), properties))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .recipe((ctx, consumer) ->
+            {
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ctx.get())
+                        .unlockedBy("has_sunflower",  consumer.has(Blocks.SUNFLOWER.asItem()))
+                        .requires(Blocks.SUNFLOWER.asItem(), 2)
+                        .save(consumer);
+            })
             .register();
 
     /**

@@ -70,7 +70,7 @@ public class SmartBlock extends Block
         public boolean usesCustomShape;
         public VoxelShape voxelShape;
 
-        public SmartProperties showNeighbourFaces(boolean north, boolean south, boolean east, boolean west, boolean up, boolean down)
+        public SmartProperties withHiddenNeighbourFaces(boolean north, boolean south, boolean east, boolean west, boolean up, boolean down)
         {
             this.hiddenNeighbourFaces = new boolean[]
                     {

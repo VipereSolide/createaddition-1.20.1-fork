@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/cross",
+	"textures": {
+		"cross": "gods_retribution:block/sunflower_age_5"
+	}
+}

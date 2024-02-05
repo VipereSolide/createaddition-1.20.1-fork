@@ -28,6 +28,10 @@ public class AllShapes
     public static final VoxelShaper UNLIT_TORCH_WALL = shape(ofSize(6, 3, 12, 4, 10, 4))
             .forDirectional(Direction.SOUTH);
 
+    public static final VoxelShaper BALUSTRADE =
+            shape(ofSize(0, 0, 1, 16, 16, 8))
+                    .forDirectional(Direction.NORTH);
+
     // From create:AllShapes
     public static Builder shape(VoxelShape shape)
     {

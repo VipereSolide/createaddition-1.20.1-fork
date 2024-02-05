@@ -63,6 +63,7 @@
   "block.gods_retribution.flint_block": "Flint Block",
   "block.gods_retribution.flint_slab": "Flint Slab",
   "block.gods_retribution.flint_stairs": "Flint Stairs",
+  "block.gods_retribution.hidden_cobbled_limestone_button": "Hidden Cobbled Limestone Button",
   "block.gods_retribution.industrial_iron_shingles": "Industrial Iron Shingles",
   "block.gods_retribution.industrial_iron_shingles_slab": "Industrial Iron Shingles Slab",
   "block.gods_retribution.industrial_iron_shingles_stairs": "Industrial Iron Shingles Stairs",
@@ -71,6 +72,7 @@
   "block.gods_retribution.light_slab": "Light Slab",
   "block.gods_retribution.light_stairs": "Light Stairs",
   "block.gods_retribution.limestone_keyhole": "Limestone Keyhole",
+  "block.gods_retribution.limestone_rumbles": "Limestone Rumbles",
   "block.gods_retribution.limestone_wall_gutter": "Limestone Wall Gutter",
   "block.gods_retribution.metal_wiremesh_block": "Metal Wiremesh Block",
   "block.gods_retribution.metal_wiremesh_block_transparent": "Metal Wiremesh Block Transparent",
@@ -79,10 +81,12 @@
   "block.gods_retribution.metal_wiremesh_stairs": "Metal Wiremesh Stairs",
   "block.gods_retribution.metal_wiremesh_stairs_transparent": "Metal Wiremesh Stairs Transparent",
   "block.gods_retribution.plastic_moss": "Plastic Moss",
+  "block.gods_retribution.redstone_shifter": "Redstone Shifter",
   "block.gods_retribution.steel_block": "Steel Block",
   "block.gods_retribution.steel_slab": "Steel Slab",
   "block.gods_retribution.steel_stairs": "Steel Stairs",
   "block.gods_retribution.stone_keyhole": "Stone Keyhole",
+  "block.gods_retribution.sunflower_crop": "Sunflower Crop",
   "block.gods_retribution.tiles_bathroom_block": "Tiles Bathroom Block",
   "block.gods_retribution.tiles_bathroom_slab": "Tiles Bathroom Slab",
   "block.gods_retribution.tiles_bathroom_stairs": "Tiles Bathroom Stairs",
@@ -107,5 +111,6 @@
   "item.gods_retribution.light_armour_leggings": "Light Armour Leggings",
   "item.gods_retribution.plastic_ball": "Plastic Ball",
   "item.gods_retribution.screw": "Screw",
-  "item.gods_retribution.sugar_packet": "Sugar Packet"
+  "item.gods_retribution.sugar_packet": "Sugar Packet",
+  "item.gods_retribution.sunflower_seeds": "Sunflower Seeds"
 }
