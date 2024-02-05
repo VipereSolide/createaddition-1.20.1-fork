@@ -1,0 +1,23 @@
+{
+	"type": "create:mixing",
+	"ingredients": [
+		{
+			"item": "minecraft:cod"
+		},
+		{
+			"item": "minecraft:cod"
+		},
+		{
+			"fluid": "minecraft:water",
+			"amount": 500,
+			"nbt": {}
+		}
+	],
+	"results": [
+		{
+			"item": "create:super_glue",
+			"count": 1
+		}
+	],
+	"heatRequirement": "heated"
+}
