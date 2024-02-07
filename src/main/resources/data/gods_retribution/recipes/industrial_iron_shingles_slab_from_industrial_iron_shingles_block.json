@@ -5,7 +5,7 @@
 	"pattern": ["###"],
 	"key": {
 		"#": {
-			"item": "gods_retribution:industrial_iron_shingles_block"
+			"item": "gods_retribution:industrial_iron_shingles"
 		}
 	},
 	"result": {
