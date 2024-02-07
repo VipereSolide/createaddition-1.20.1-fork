@@ -34,6 +34,7 @@ import static com.simibubi.create.foundation.data.TagGen.*;
 public class AllBlocks
 {
     // Vanilla-related blocks
+
     public static final BlockEntry<StairBlock> GOLD_STAIRS = REGISTRATE
             .block("gold_stairs", p -> new StairBlock(Blocks.GOLD_BLOCK.defaultBlockState(), p))
             .initialProperties(() -> Blocks.GOLD_BLOCK)
@@ -610,8 +611,16 @@ public class AllBlocks
             .block("flint_block", Block::new)
             .initialProperties(() -> Blocks.GRAVEL)
             .properties(p -> p.mapColor(MapColor.COLOR_GRAY))
-            .tag(BlockTags.MINEABLE_WITH_SHOVEL)
+            .tag(
+                    BlockTags.MINEABLE_WITH_SHOVEL,
+                    Tags.Blocks.STORAGE_BLOCKS,
+                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_FLINT
+            )
             .item()
+            .tag(
+                    Tags.Items.STORAGE_BLOCKS,
+                    AllTags.Items.FORGE_STORAGE_BLOCKS_FLINT
+            )
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
