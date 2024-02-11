@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent"
+    },
+    "facing=south": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
+      "y": 270
+    }
+  }
+}

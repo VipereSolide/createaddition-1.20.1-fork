@@ -32,6 +32,8 @@ public class AllShapes
             shape(ofSize(0, 0, 1, 16, 16, 8))
                     .forDirectional(Direction.NORTH);
 
+    public static final VoxelShaper VERTICAL_SLAB = shape(ofSize(0, 0, 8, 16, 16, 8)).forDirectional(Direction.NORTH);
+
     // From create:AllShapes
     public static Builder shape(VoxelShape shape)
     {

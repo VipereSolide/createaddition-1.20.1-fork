@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gods_retribution:block/concrete_light_blue_vertical_slab",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gods_retribution:block/concrete_light_blue_vertical_slab"
+    },
+    "facing=south": {
+      "model": "gods_retribution:block/concrete_light_blue_vertical_slab",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gods_retribution:block/concrete_light_blue_vertical_slab",
+      "y": 270
+    }
+  }
+}

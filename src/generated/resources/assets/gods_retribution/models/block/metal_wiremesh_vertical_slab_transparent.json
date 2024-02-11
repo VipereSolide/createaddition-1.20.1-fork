@@ -1,0 +1,8 @@
+{
+  "parent": "gods_retribution:block/vertical_slab",
+  "textures": {
+    "all": "gods_retribution:block/metal_wiremesh_block_transparent",
+    "main": "gods_retribution:block/metal_wiremesh_block_transparent",
+    "particle": "gods_retribution:block/metal_wiremesh_block_transparent"
+  }
+}

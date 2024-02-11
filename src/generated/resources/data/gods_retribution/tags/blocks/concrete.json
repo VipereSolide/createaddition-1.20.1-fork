@@ -4,6 +4,7 @@
     "gods_retribution:concrete_stairs",
     "gods_retribution:concrete_slab",
     "gods_retribution:concrete_wall",
+    "gods_retribution:concrete_vertical_slab",
     "gods_retribution:concrete_white",
     "gods_retribution:concrete_orange",
     "gods_retribution:concrete_magenta",
@@ -67,6 +68,22 @@
     "gods_retribution:concrete_brown_wall",
     "gods_retribution:concrete_green_wall",
     "gods_retribution:concrete_red_wall",
-    "gods_retribution:concrete_black_wall"
+    "gods_retribution:concrete_black_wall",
+    "gods_retribution:concrete_white_vertical_slab",
+    "gods_retribution:concrete_orange_vertical_slab",
+    "gods_retribution:concrete_magenta_vertical_slab",
+    "gods_retribution:concrete_light_blue_vertical_slab",
+    "gods_retribution:concrete_yellow_vertical_slab",
+    "gods_retribution:concrete_lime_vertical_slab",
+    "gods_retribution:concrete_pink_vertical_slab",
+    "gods_retribution:concrete_gray_vertical_slab",
+    "gods_retribution:concrete_light_gray_vertical_slab",
+    "gods_retribution:concrete_cyan_vertical_slab",
+    "gods_retribution:concrete_purple_vertical_slab",
+    "gods_retribution:concrete_blue_vertical_slab",
+    "gods_retribution:concrete_brown_vertical_slab",
+    "gods_retribution:concrete_green_vertical_slab",
+    "gods_retribution:concrete_red_vertical_slab",
+    "gods_retribution:concrete_black_vertical_slab"
   ]
 }

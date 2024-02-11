@@ -25,9 +25,11 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.Tags;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
+import static com.simibubi.create.foundation.data.BlockStateGen.directionalBlockProvider;
 import static com.simibubi.create.foundation.data.BlockStateGen.simpleCubeAll;
 import static com.simibubi.create.foundation.data.TagGen.*;
 
@@ -603,6 +605,25 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<VerticalSlabBlock> WOOD_VSLAB = REGISTRATE
+            .block("wood_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.WOOD::get)
+            .tag(
+                    AllTags.Blocks.VERTICAL_SLABS,
+                    AllTags.Blocks.WOODY,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((c, p) -> {
+                VerticalSlabBlock.makeBlockstate(c, p, "block/wood");
+            })
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> {
+                VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.WOOD);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("industrial_iron_shingles", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -666,6 +687,23 @@ public class AllBlocks
                         .define('#', AllBlocks.INDUSTRIAL_IRON_SHINGLES)
                         .unlockedBy("has_industrial_iron_shingles", consumer.has(AllBlocks.INDUSTRIAL_IRON_SHINGLES))
                         .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<VerticalSlabBlock> INDUSTRIAL_IRON_SHINGLES_VSLAB = REGISTRATE
+            .block("industrial_iron_shingles_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.INDUSTRIAL_IRON_SHINGLES::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.VERTICAL_SLABS
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/industrial_iron_shingles"))
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> {
+                VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES);
+                VerticalSlabBlock.makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES);
             })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -737,6 +775,23 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<VerticalSlabBlock> CRACKED_INDUSTRIAL_IRON_SHINGLES_VSLAB = REGISTRATE
+            .block("cracked_industrial_iron_shingles_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.VERTICAL_SLABS
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/cracked_industrial_iron_shingles"))
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> {
+                VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES);
+                VerticalSlabBlock.makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<PlasticMossBlock> PLASTIC_MOSS = REGISTRATE
             .block("plastic_moss", PlasticMossBlock::new)
             .initialProperties(() -> Blocks.WHITE_WOOL)
@@ -766,6 +821,25 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
+
+    public static final BlockEntry<VerticalSlabBlock> AERATION_VSLAB = REGISTRATE
+            .block("aeration_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(() -> AllBlocks.AERATION_BLOCK.get())
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.VERTICAL_SLABS
+            )
+            .blockstate((ctx, provider) -> {
+                VerticalSlabBlock.makeBlockstate(ctx, provider, "block/aeration_block");
+            })
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, consumer) -> {
+                VerticalSlabBlock.makeShapedRecipe(ctx, consumer, AllBlocks.AERATION_BLOCK);
+                VerticalSlabBlock.makeStonecuttingRecipe(ctx, consumer, AllBlocks.AERATION_BLOCK);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
 
     public static final BlockEntry<AirVentBlock> AIR_VENT = REGISTRATE
             .block("air_vent", AirVentBlock::new)
@@ -849,6 +923,23 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<VerticalSlabBlock> STEEL_VSLAB = REGISTRATE
+            .block("steel_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.STEEL_BLOCK::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.VERTICAL_SLABS
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/steel_block"))
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> {
+                VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.STEEL_BLOCK);
+                VerticalSlabBlock.makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> TILES_BATHROOM = REGISTRATE
             .block("tiles_bathroom_block", Block::new)
             .initialProperties(() -> Blocks.BONE_BLOCK)
@@ -912,6 +1003,23 @@ public class AllBlocks
                         .define('#', AllBlocks.TILES_BATHROOM)
                         .unlockedBy("has_tiles_bathroom_block", consumer.has(AllBlocks.TILES_BATHROOM))
                         .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<VerticalSlabBlock> TILES_BATHROOM_VSLAB = REGISTRATE
+            .block("tiles_bathroom_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.TILES_BATHROOM::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.VERTICAL_SLABS
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/tiles_bathroom_block"))
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> {
+                VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.TILES_BATHROOM);
+                VerticalSlabBlock.makeStonecuttingRecipe(ctx, cons, AllBlocks.TILES_BATHROOM);
             })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -990,6 +1098,20 @@ public class AllBlocks
                         .unlockedBy("has_flint_block", consumer.has(AllBlocks.FLINT_BLOCK))
                         .save(consumer);
             })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<VerticalSlabBlock> FLINT_VSLAB = REGISTRATE
+            .block("flint_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.FLINT_BLOCK::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_SHOVEL,
+                    AllTags.Blocks.VERTICAL_SLABS
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/flint_block"))
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.FLINT_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1092,6 +1214,27 @@ public class AllBlocks
                         DataIngredient.ingredient(Ingredient.of(() -> AllBlocks.CONCRETE.asItem()), () -> AllBlocks.CONCRETE.asItem()),
                         RecipeCategory.BUILDING_BLOCKS,
                         ctx::getEntry);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<VerticalSlabBlock> CONCRETE_VSLAB = REGISTRATE
+            .block("concrete_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.CONCRETE::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.VERTICAL_SLABS,
+                    AllTags.Blocks.CONCRETE
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/concrete"))
+            .item()
+            .tag(
+                    AllTags.Items.VERTICAL_SLABS,
+                    AllTags.Items.CONCRETE
+            )
+            .recipe((ctx, cons) -> {
+                VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.CONCRETE);
+                VerticalSlabBlock.makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE);
             })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -1240,6 +1383,30 @@ public class AllBlocks
                 .build().register();
     });
 
+    public static final DyedBlockList<VerticalSlabBlock> CONCRETE_COLOUR_VLSABS = new DyedBlockList<>(colour -> {
+        String colourName = colour.getSerializedName();
+        return REGISTRATE
+                .block("concrete_" + colourName + "_vertical_slab", VerticalSlabBlock::new)
+                .initialProperties(AllBlocks.CONCRETE_COLOURS.get(colour)::get)
+                .tag(
+                        BlockTags.MINEABLE_WITH_PICKAXE,
+                        AllTags.Blocks.CONCRETE,
+                        AllTags.Blocks.VERTICAL_SLABS
+                )
+                .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/concrete_" + colourName))
+                .item()
+                .tag(
+                        AllTags.Items.CONCRETE,
+                        AllTags.Items.VERTICAL_SLABS
+                )
+                .recipe((ctx, cons) -> {
+                    VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour));
+                    VerticalSlabBlock.makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour));
+                })
+                .tab(AllCreativeTabs.DECORATION.getKey())
+                .build().register();
+    });
+
     public static final BlockEntry<Block> CLEAR_GLASS = REGISTRATE
             .block("clear_glass", Block::new)
             .initialProperties(() -> Blocks.GLASS)
@@ -1299,6 +1466,18 @@ public class AllBlocks
                         .unlockedBy("has_clear_glass", consumer.has(AllBlocks.CLEAR_GLASS))
                         .save(consumer);
             })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<VerticalSlabBlock> CLEAR_GLASS_VSLAB = REGISTRATE
+            .block("clear_glass_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.CLEAR_GLASS::get)
+            .tag(AllTags.Blocks.VERTICAL_SLABS)
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/clear_glass"))
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.CLEAR_GLASS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1376,6 +1555,20 @@ public class AllBlocks
                         .unlockedBy("has_metal_wiremesh_block", consumer.has(AllBlocks.METAL_WIREMESH_BLOCK))
                         .save(consumer);
             })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<VerticalSlabBlock> METAL_WIREMESH_VSLAB = REGISTRATE
+            .block("metal_wiremesh_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.VERTICAL_SLABS
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/metal_wiremesh_block"))
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1457,6 +1650,21 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<VerticalSlabBlock> METAL_WIREMESH_VSLAB_TRANSPARENT = REGISTRATE
+            .block("metal_wiremesh_vertical_slab_transparent", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT::get)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.VERTICAL_SLABS
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/metal_wiremesh_block_transparent"))
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT))
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> LIGHT_BLOCK = REGISTRATE
             .block("light_block", Block::new)
             .properties((p) -> p
@@ -1519,6 +1727,17 @@ public class AllBlocks
                         .unlockedBy("has_light_block", consumer.has(AllBlocks.LIGHT_BLOCK))
                         .save(consumer);
             })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<VerticalSlabBlock> LIGHT_VSLAB = REGISTRATE
+            .block("light_vertical_slab", VerticalSlabBlock::new)
+            .initialProperties(AllBlocks.LIGHT_BLOCK::get)
+            .tag(AllTags.Blocks.VERTICAL_SLABS)
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/light_block"))
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
+            .recipe((ctx, cons) -> VerticalSlabBlock.makeShapedRecipe(ctx, cons, AllBlocks.LIGHT_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 

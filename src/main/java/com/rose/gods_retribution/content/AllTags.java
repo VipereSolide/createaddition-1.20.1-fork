@@ -28,6 +28,7 @@ public class AllTags
 		 * Contains all the concrete blocks and their variants.
 		 */
 		public static final TagKey<Block> CONCRETE = tag("concrete");
+		public static final TagKey<Block> VERTICAL_SLABS = tag("vertical_slabs");
 
 		/**
 		 * Used for the flint block.
@@ -73,6 +74,7 @@ public class AllTags
 		 */
 		public static final TagKey<Item> GLUE_MATERIAL = tag("glue_material");
 		public static final TagKey<Item> CONCRETE = tag("concrete");
+		public static final TagKey<Item> VERTICAL_SLABS = tag("vertical_slabs");
 
 		/**
 		 * Used by the flint block.

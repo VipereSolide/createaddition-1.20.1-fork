@@ -1,0 +1,8 @@
+{
+  "parent": "gods_retribution:block/vertical_slab",
+  "textures": {
+    "all": "gods_retribution:block/concrete_pink",
+    "main": "gods_retribution:block/concrete_pink",
+    "particle": "gods_retribution:block/concrete_pink"
+  }
+}
