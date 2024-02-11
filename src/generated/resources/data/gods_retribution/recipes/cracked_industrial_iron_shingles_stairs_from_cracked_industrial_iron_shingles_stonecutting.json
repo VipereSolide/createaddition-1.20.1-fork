@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "gods_retribution:cracked_industrial_iron_shingles"
+  },
+  "result": "gods_retribution:cracked_industrial_iron_shingles_stairs"
+}

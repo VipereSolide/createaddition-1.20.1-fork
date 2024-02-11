@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "gods_retribution:steel_block"
+  },
+  "result": "gods_retribution:steel_slab"
+}

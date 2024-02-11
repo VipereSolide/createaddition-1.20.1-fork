@@ -1,13 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "gods_retribution:wood_wall"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_wood_block": {
+    "has_required_block": {
       "conditions": {
         "items": [
           {
@@ -18,11 +12,17 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gods_retribution:wood_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_wood_block",
+      "has_required_block",
       "has_the_recipe"
     ]
   ],

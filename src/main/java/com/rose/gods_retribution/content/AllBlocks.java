@@ -10,6 +10,8 @@ import com.rose.gods_retribution.fundation.blocks.VerticalSlabBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
@@ -18,8 +20,11 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.Tags;
@@ -54,15 +59,7 @@ public class AllBlocks
                     ItemTags.PIGLIN_LOVED,
                     ItemTags.STAIRS
             )
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("#  ")
-                        .pattern("## ")
-                        .pattern("###")
-                        .define('#', Blocks.GOLD_BLOCK)
-                        .unlockedBy("has_gold_block", consumer.has(Blocks.GOLD_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, Blocks.GOLD_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -84,13 +81,7 @@ public class AllBlocks
                     ItemTags.PIGLIN_LOVED,
                     ItemTags.SLABS
             )
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .define('#', Blocks.GOLD_BLOCK)
-                        .unlockedBy("has_gold_block", consumer.has(Blocks.GOLD_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, Blocks.GOLD_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -116,14 +107,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/gold_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', Blocks.GOLD_BLOCK)
-                        .unlockedBy("has_gold_block", consumer.has(Blocks.GOLD_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, Blocks.GOLD_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -141,15 +125,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.STAIRS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("#  ")
-                        .pattern("## ")
-                        .pattern("###")
-                        .define('#', Blocks.DIAMOND_BLOCK)
-                        .unlockedBy("has_diamond_block", consumer.has(Blocks.DIAMOND_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, Blocks.DIAMOND_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -167,13 +143,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .define('#', Blocks.DIAMOND_BLOCK)
-                        .unlockedBy("has_diamond_block", consumer.has(Blocks.DIAMOND_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, Blocks.DIAMOND_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -194,14 +164,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/diamond_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', Blocks.DIAMOND_BLOCK)
-                        .unlockedBy("has_diamond_block", consumer.has(Blocks.DIAMOND_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, Blocks.DIAMOND_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -219,15 +182,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.STAIRS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("#  ")
-                        .pattern("## ")
-                        .pattern("###")
-                        .define('#', Blocks.IRON_BLOCK)
-                        .unlockedBy("has_iron_block", consumer.has(Blocks.IRON_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, Blocks.IRON_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -245,13 +200,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .define('#', Blocks.IRON_BLOCK)
-                        .unlockedBy("has_iron_block", consumer.has(Blocks.IRON_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, Blocks.IRON_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -272,14 +221,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/iron_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', Blocks.IRON_BLOCK)
-                        .unlockedBy("has_iron_block", consumer.has(Blocks.IRON_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, Blocks.IRON_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -297,15 +239,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.STAIRS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("#  ")
-                        .pattern("## ")
-                        .pattern("###")
-                        .define('#', Blocks.LAPIS_BLOCK)
-                        .unlockedBy("has_lapis_block", consumer.has(Blocks.LAPIS_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, Blocks.LAPIS_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -323,13 +257,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .define('#', Blocks.LAPIS_BLOCK)
-                        .unlockedBy("has_lapis_block", consumer.has(Blocks.LAPIS_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, Blocks.LAPIS_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -350,14 +278,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/lapis_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', Blocks.LAPIS_BLOCK)
-                        .unlockedBy("has_lapis_block", consumer.has(Blocks.LAPIS_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, Blocks.LAPIS_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -375,15 +296,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.STAIRS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("#  ")
-                        .pattern("## ")
-                        .pattern("###")
-                        .define('#', Blocks.EMERALD_BLOCK)
-                        .unlockedBy("has_emerald_block", consumer.has(Blocks.EMERALD_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, Blocks.EMERALD_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -401,13 +314,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .define('#', Blocks.EMERALD_BLOCK)
-                        .unlockedBy("has_emerald_block", consumer.has(Blocks.EMERALD_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, Blocks.EMERALD_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -428,14 +335,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/emerald_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', Blocks.EMERALD_BLOCK)
-                        .unlockedBy("has_emerald_block", consumer.has(Blocks.EMERALD_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, Blocks.EMERALD_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -453,15 +353,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.STAIRS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("#  ")
-                        .pattern("## ")
-                        .pattern("###")
-                        .define('#', Blocks.NETHERITE_BLOCK)
-                        .unlockedBy("has_netherite_block", consumer.has(Blocks.NETHERITE_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, Blocks.NETHERITE_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -479,13 +371,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .define('#', Blocks.NETHERITE_BLOCK)
-                        .unlockedBy("has_netherite_block", consumer.has(Blocks.NETHERITE_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, Blocks.NETHERITE_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -506,14 +392,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/netherite_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', Blocks.NETHERITE_BLOCK)
-                        .unlockedBy("has_netherite_block", consumer.has(Blocks.NETHERITE_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, Blocks.NETHERITE_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
@@ -589,14 +468,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/wood"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.WOOD)
-                        .unlockedBy("has_wood_block", consumer.has(AllBlocks.WOOD))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.WOOD))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -641,6 +513,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -657,6 +530,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -675,13 +549,9 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/industrial_iron_shingles"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.INDUSTRIAL_IRON_SHINGLES)
-                        .unlockedBy("has_industrial_iron_shingles", consumer.has(AllBlocks.INDUSTRIAL_IRON_SHINGLES))
-                        .save(consumer);
+            .recipe((ctx, cons) -> {
+                makeWallShapedRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES);
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS);
             })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -719,12 +589,11 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     BlockTags.STAIRS
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"));
-            })
+            .blockstate((ctx, provider) -> provider
+                    .stairsBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles")))
             .item()
             .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -741,6 +610,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -759,13 +629,9 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/cracked_industrial_iron_shingles"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES)
-                        .unlockedBy("has_cracked_industrial_iron_shingles", consumer.has(AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES))
-                        .save(consumer);
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS);
+                makeWallShapedRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES);
             })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -872,6 +738,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -889,6 +756,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -907,13 +775,9 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/steel_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.STEEL_BLOCK)
-                        .unlockedBy("has_steel_block", consumer.has(AllBlocks.STEEL_BLOCK))
-                        .save(consumer);
+            .recipe((ctx, cons) -> {
+                makeWallShapedRecipe(ctx, cons, AllBlocks.STEEL_BLOCK);
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS);
             })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -991,14 +855,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/tiles_bathroom_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.TILES_BATHROOM)
-                        .unlockedBy("has_tiles_bathroom_block", consumer.has(AllBlocks.TILES_BATHROOM))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.TILES_BATHROOM))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1085,14 +942,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/flint_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.FLINT_BLOCK)
-                        .unlockedBy("has_flint_block", consumer.has(AllBlocks.FLINT_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.FLINT_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1141,12 +991,7 @@ public class AllBlocks
                     ItemTags.STAIRS,
                     AllTags.Items.CONCRETE
             )
-            .recipe((ctx, consumer) -> {
-                consumer.stonecutting(
-                        DataIngredient.ingredient(Ingredient.of(() -> AllBlocks.CONCRETE.asItem()), () -> AllBlocks.CONCRETE.asItem()),
-                        RecipeCategory.BUILDING_BLOCKS,
-                        () -> ctx.getEntry());
-            })
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1168,12 +1013,7 @@ public class AllBlocks
                     ItemTags.SLABS,
                     AllTags.Items.CONCRETE
             )
-            .recipe((ctx, consumer) -> {
-                consumer.stonecutting(
-                        DataIngredient.ingredient(Ingredient.of(() -> AllBlocks.CONCRETE.asItem()), () -> AllBlocks.CONCRETE.asItem()),
-                        RecipeCategory.BUILDING_BLOCKS,
-                        ctx::getEntry);
-            })
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1196,19 +1036,9 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.CONCRETE)
-                        .unlockedBy("has_concrete_block", consumer.has(AllBlocks.CONCRETE))
-                        .save(consumer);
-            })
-            .recipe((ctx, consumer) -> {
-                consumer.stonecutting(
-                        DataIngredient.ingredient(Ingredient.of(() -> AllBlocks.CONCRETE.asItem()), () -> AllBlocks.CONCRETE.asItem()),
-                        RecipeCategory.BUILDING_BLOCKS,
-                        ctx::getEntry);
+            .recipe((ctx, cons) -> {
+                makeWallShapedRecipe(ctx, cons, AllBlocks.CONCRETE);
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS);
             })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -1268,29 +1098,15 @@ public class AllBlocks
                 {
                     provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName));
                 })
-                .recipe((ctx, consumer) ->
-                {
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                            .pattern("#  ")
-                            .pattern("## ")
-                            .pattern("###")
-                            .define('#', AllBlocks.CONCRETE_COLOURS.get(colour))
-                            .unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
-                            .save(consumer);
-                })
-                .recipe((ctx, consumer) -> {
-                    consumer.stonecutting(
-                            DataIngredient.ingredient(
-                                    Ingredient.of(() -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
-                                    () -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
-                            RecipeCategory.BUILDING_BLOCKS,
-                            ctx::getEntry);
-                })
                 .item()
                 .tag(
                         ItemTags.STAIRS,
                         AllTags.Items.CONCRETE
                 )
+                .recipe((ctx, cons) -> {
+                    makeStairsShapedRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour));
+                    makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour), RecipeCategory.BUILDING_BLOCKS);
+                })
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();
     });
@@ -1311,27 +1127,15 @@ public class AllBlocks
                 {
                     provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName), provider.modLoc("block/concrete_" + colourName));
                 })
-                .recipe((ctx, consumer) ->
-                {
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                            .pattern("###")
-                            .define('#', AllBlocks.CONCRETE_COLOURS.get(colour))
-                            .unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
-                            .save(consumer);
-                })
-                .recipe((ctx, consumer) -> {
-                    consumer.stonecutting(
-                            DataIngredient.ingredient(
-                                    Ingredient.of(() -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
-                                    () -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
-                            RecipeCategory.BUILDING_BLOCKS,
-                            ctx::getEntry);
-                })
                 .item()
                 .tag(
                         ItemTags.SLABS,
                         AllTags.Items.CONCRETE
                 )
+                .recipe((ctx, cons) -> {
+                    makeSlabShapedRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour));
+                    makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour), RecipeCategory.BUILDING_BLOCKS);
+                })
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();
     });
@@ -1358,21 +1162,9 @@ public class AllBlocks
                 .model((ctx, provider) -> {
                     provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete_" + colourName));
                 })
-                .recipe((ctx, consumer) -> {
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                            .pattern("###")
-                            .pattern("###")
-                            .define('#', AllBlocks.CONCRETE_COLOURS.get(colour))
-                            .unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
-                            .save(consumer);
-                })
-                .recipe((ctx, consumer) -> {
-                    consumer.stonecutting(
-                            DataIngredient.ingredient(
-                                    Ingredient.of(() -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
-                                    () -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
-                            RecipeCategory.BUILDING_BLOCKS,
-                            ctx::getEntry);
+                .recipe((ctx, cons) -> {
+                    makeWallShapedRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour));
+                    makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour), RecipeCategory.BUILDING_BLOCKS);
                 })
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();
@@ -1453,14 +1245,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/clear_glass"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.CLEAR_GLASS)
-                        .unlockedBy("has_clear_glass", consumer.has(AllBlocks.CLEAR_GLASS))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.CLEAR_GLASS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1542,14 +1327,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/metal_wiremesh_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.METAL_WIREMESH_BLOCK)
-                        .unlockedBy("has_metal_wiremesh_block", consumer.has(AllBlocks.METAL_WIREMESH_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1634,14 +1412,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/metal_wiremesh_block_transparent"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT)
-                        .unlockedBy("has_metal_wiremesh_block_transparent", consumer.has(AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1714,14 +1485,7 @@ public class AllBlocks
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/light_block"));
             })
-            .recipe((ctx, consumer) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllBlocks.LIGHT_BLOCK)
-                        .unlockedBy("has_light_block", consumer.has(AllBlocks.LIGHT_BLOCK))
-                        .save(consumer);
-            })
+            .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.LIGHT_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1850,5 +1614,88 @@ public class AllBlocks
      */
     public static void register()
     {
+    }
+
+    /**
+     * Shortcut for the datagen of the wall blocks' crafting table recipe.
+     *
+     * @param context
+     * @param consumer
+     * @param madeFrom
+     */
+    public static void makeWallShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.getEntry(), 6)
+                .pattern("###")
+                .pattern("###")
+                .define('#', madeFrom)
+                .unlockedBy("has_required_block", consumer.has(madeFrom))
+                .save(consumer);
+    }
+
+    /**
+     * Shortcut for the datagen of the stairs' crafting table recipe.
+     *
+     * @param context
+     * @param consumer
+     * @param madeFrom
+     */
+    public static void makeStairsShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.getEntry(), 4)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .define('#', madeFrom)
+                .unlockedBy("has_" + consumer.safeName(madeFrom), consumer.has(madeFrom))
+                .save(consumer);
+    }
+
+    /**
+     * Shortcut for the datagen of the stairs' crafting table recipe.
+     *
+     * @param context
+     * @param consumer
+     * @param madeFrom
+     */
+    public static void makeSlabShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.getEntry(), 6)
+                .pattern("###")
+                .define('#', madeFrom)
+                .unlockedBy("has_" + consumer.safeName(madeFrom), consumer.has(madeFrom))
+                .save(consumer);
+    }
+
+    /**
+     * Shortcut for the datagen, for stonecutting recipes.
+     *
+     * @param context
+     * @param consumer
+     * @param madeFrom
+     * @param recipeCategory
+     * @param resultCount
+     */
+    public static void makeStonecuttingRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom, RecipeCategory recipeCategory, int resultCount)
+    {
+        consumer.stonecutting(
+                DataIngredient.ingredient(
+                        Ingredient.of(() -> madeFrom.asItem()),
+                        () -> madeFrom.asItem()),
+                recipeCategory,
+                context::getEntry,
+                resultCount);
+    }
+
+    /**
+     * Shortcut for the datagen, for stonecutting recipes.
+     * @param context
+     * @param consumer
+     * @param madeFrom
+     * @param recipeCategory
+     */
+    public static void makeStonecuttingRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom, RecipeCategory recipeCategory)
+    {
+        makeStonecuttingRecipe(context, consumer, madeFrom, recipeCategory, 1);
     }
 }

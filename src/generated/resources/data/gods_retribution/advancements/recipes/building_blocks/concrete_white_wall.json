@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_required_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gods_retribution:concrete_white"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gods_retribution:concrete_white_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_required_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gods_retribution:concrete_white_wall"
+    ]
+  },
+  "sends_telemetry_event": false
+}
