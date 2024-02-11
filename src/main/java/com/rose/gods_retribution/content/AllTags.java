@@ -33,6 +33,10 @@ public class AllTags
 		 * Used for the flint block.
 		 */
 		public static final TagKey<Block> FORGE_STORAGE_BLOCKS_FLINT = foreignTag("forge", "storage_blocks/flint");
+		/**
+		 * Used for the transparent metal wiremesh block.
+		 */
+		public static final TagKey<Block> FORGE_STORAGE_BLOCKS_IRON_BARS = foreignTag("forge", "storage_blocks/iron_bars");
 
 		/**
 		 * Helper method used to create the blocks' tags in this very class.
@@ -73,6 +77,10 @@ public class AllTags
 		 * Used by the flint block.
 		 */
 		public static final TagKey<Item> FORGE_STORAGE_BLOCKS_FLINT = foreignTag("forge", "storage_blocks/flint");
+		/**
+		 * Used by the transparent metal wiremesh block.
+		 */
+		public static final TagKey<Item> FORGE_STORAGE_BLOCKS_IRON_BARS = foreignTag("forge", "storage_blocks/iron_bars");
 
 		/**
 		 * Helper method used to create the items' tags in this very class.

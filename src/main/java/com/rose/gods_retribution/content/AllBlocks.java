@@ -881,9 +881,13 @@ public class AllBlocks
                     .mapColor(MapColor.COLOR_LIGHT_GRAY)
                     .requiresCorrectToolForDrops()
                     .noOcclusion())
-            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .tag(
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_IRON_BARS
+            )
             .addLayer(() -> RenderType::cutout)
             .item()
+            .tag(AllTags.Items.FORGE_STORAGE_BLOCKS_IRON_BARS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
