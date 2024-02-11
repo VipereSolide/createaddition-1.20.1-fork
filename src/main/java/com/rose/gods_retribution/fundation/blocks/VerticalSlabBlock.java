@@ -1,4 +1,4 @@
-package com.rose.gods_retribution.content.block;
+package com.rose.gods_retribution.fundation.blocks;
 
 import com.rose.gods_retribution.content.AllShapes;
 import com.tterrag.registrate.providers.DataGenContext;
@@ -8,7 +8,6 @@ import com.tterrag.registrate.util.DataIngredient;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.BlockPlaceContext;

@@ -6,6 +6,7 @@ import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachin
 import com.rose.gods_retribution.content.block.keyholes.KeyholeBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
 import com.rose.gods_retribution.fundation.blocks.SmartBlock;
+import com.rose.gods_retribution.fundation.blocks.VerticalSlabBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;
@@ -17,19 +18,13 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.Tags;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
-import static com.simibubi.create.foundation.data.BlockStateGen.directionalBlockProvider;
 import static com.simibubi.create.foundation.data.BlockStateGen.simpleCubeAll;
 import static com.simibubi.create.foundation.data.TagGen.*;
 
