@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-11T12:17:16.9318562	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-11T12:51:56.2497411	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 9d1eee779b778f747b8f01632c3e2664f1228b27 assets/gods_retribution/blockstates/air_vent.json
 1937d58ed4bd9d1955c10e390c4627887c31f74c assets/gods_retribution/blockstates/clear_glass.json
@@ -917,6 +917,7 @@ c0b7429eb958009616bd236cfd02bfb6c4ee6f21 data/gods_retribution/recipes/sunflower
 a7f3c28efe32646f4e5f441f07ef9a320a7e7032 data/gods_retribution/recipes/wood_wall.json
 bb71cf33cbcd19e82b27a0732793b1ec33bd7345 data/gods_retribution/tags/blocks/concrete.json
 4a6542e8903bd91732e88d39559ca5c66907732d data/gods_retribution/tags/blocks/woody.json
+bb71cf33cbcd19e82b27a0732793b1ec33bd7345 data/gods_retribution/tags/items/concrete.json
 23c1a80ffe50dea41a5126a228bc1783a3f91676 data/minecraft/tags/blocks/guarded_by_piglins.json
 00600c4aeec74c20f44426e86500c707db8180a7 data/minecraft/tags/blocks/mineable/axe.json
 331df9a9b0ed7380b52997f42a9881da5068f340 data/minecraft/tags/blocks/mineable/pickaxe.json

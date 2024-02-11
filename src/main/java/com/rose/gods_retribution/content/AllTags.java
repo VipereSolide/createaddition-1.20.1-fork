@@ -72,6 +72,7 @@ public class AllTags
 		 * Contains the items that can be used to make create's superglue.
 		 */
 		public static final TagKey<Item> GLUE_MATERIAL = tag("glue_material");
+		public static final TagKey<Item> CONCRETE = tag("concrete");
 
 		/**
 		 * Used by the flint block.

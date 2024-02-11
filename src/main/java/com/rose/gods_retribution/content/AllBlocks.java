@@ -999,6 +999,7 @@ public class AllBlocks
                     AllTags.Blocks.CONCRETE
             )
             .item()
+            .tag(AllTags.Items.CONCRETE)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
@@ -1016,7 +1017,10 @@ public class AllBlocks
                 provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
             })
             .item()
-            .tag(ItemTags.STAIRS)
+            .tag(
+                    ItemTags.STAIRS,
+                    AllTags.Items.CONCRETE
+            )
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1034,7 +1038,10 @@ public class AllBlocks
                 provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete"), provider.modLoc("block/concrete"));
             })
             .item()
-            .tag(ItemTags.SLABS)
+            .tag(
+                    ItemTags.SLABS,
+                    AllTags.Items.CONCRETE
+            )
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1050,7 +1057,10 @@ public class AllBlocks
                 provider.wallBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
             })
             .item()
-            .tag(ItemTags.WALLS)
+            .tag(
+                    ItemTags.WALLS,
+                    AllTags.Items.CONCRETE
+            )
             .model((ctx, provider) -> {
                 provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete"));
             })
@@ -1077,6 +1087,7 @@ public class AllBlocks
                         AllTags.Blocks.CONCRETE
                 )
                 .item()
+                .tag(AllTags.Items.CONCRETE)
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build()
                 .register();
@@ -1109,7 +1120,10 @@ public class AllBlocks
                             .save(consumer);
                 })
                 .item()
-                .tag(ItemTags.STAIRS)
+                .tag(
+                        ItemTags.STAIRS,
+                        AllTags.Items.CONCRETE
+                )
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();
     });
@@ -1139,7 +1153,10 @@ public class AllBlocks
                             .save(consumer);
                 })
                 .item()
-                .tag(ItemTags.SLABS)
+                .tag(
+                        ItemTags.SLABS,
+                        AllTags.Items.CONCRETE
+                )
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();
     });
@@ -1159,7 +1176,10 @@ public class AllBlocks
                     provider.wallBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName));
                 })
                 .item()
-                .tag(ItemTags.WALLS)
+                .tag(
+                        ItemTags.WALLS,
+                        AllTags.Items.CONCRETE
+                )
                 .model((ctx, provider) -> {
                     provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete_" + colourName));
                 })
