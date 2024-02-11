@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "gods_retribution:block/cracked_industrial_iron_shingles"
+  }
+}

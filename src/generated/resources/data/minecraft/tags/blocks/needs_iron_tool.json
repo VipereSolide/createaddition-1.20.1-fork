@@ -2,9 +2,12 @@
   "values": [
     "gods_retribution:gold_stairs",
     "gods_retribution:gold_slab",
+    "gods_retribution:gold_wall",
     "gods_retribution:diamond_stairs",
     "gods_retribution:diamond_slab",
+    "gods_retribution:diamond_wall",
     "gods_retribution:emerald_stairs",
-    "gods_retribution:emerald_slab"
+    "gods_retribution:emerald_slab",
+    "gods_retribution:emerald_wall"
   ]
 }

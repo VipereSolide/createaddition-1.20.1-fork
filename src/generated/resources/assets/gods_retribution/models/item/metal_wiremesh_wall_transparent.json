@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "gods_retribution:block/metal_wiremesh_block_transparent"
+  }
+}

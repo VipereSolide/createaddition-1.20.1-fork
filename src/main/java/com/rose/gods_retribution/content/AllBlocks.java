@@ -13,11 +13,13 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.Tags;
@@ -93,6 +95,39 @@ public class AllBlocks
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
 
+    public static final BlockEntry<WallBlock> GOLD_WALL = REGISTRATE
+            .block("gold_wall", WallBlock::new)
+            .initialProperties(() -> Blocks.GOLD_BLOCK)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_IRON_TOOL,
+                    BlockTags.GUARDED_BY_PIGLINS
+            )
+            .blockstate((ctx, provider) -> {
+                //provider.wallBlock(ctx.getEntry(), "gold_wall", provider.blockTexture(Blocks.GOLD_BLOCK));
+                provider.wallBlock(ctx.getEntry(), provider.blockTexture(Blocks.GOLD_BLOCK));
+            })
+            .item()
+            .tag(
+                    ItemTags.WALLS,
+                    ItemTags.PIGLIN_LOVED
+            )
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/gold_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', Blocks.GOLD_BLOCK)
+                        .unlockedBy("has_gold_block", consumer.has(Blocks.GOLD_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
     public static final BlockEntry<StairBlock> DIAMOND_STAIRS = REGISTRATE
             .block("diamond_stairs", p -> new StairBlock(Blocks.DIAMOND_BLOCK.defaultBlockState(), p))
             .initialProperties(() -> Blocks.DIAMOND_BLOCK)
@@ -134,6 +169,34 @@ public class AllBlocks
             .tag(ItemTags.SLABS)
             .recipe((ctx, consumer) -> {
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.DIAMOND_BLOCK)
+                        .unlockedBy("has_diamond_block", consumer.has(Blocks.DIAMOND_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<WallBlock> DIAMOND_WALL = REGISTRATE
+            .block("diamond_wall", WallBlock::new)
+            .initialProperties(() -> Blocks.DIAMOND_BLOCK)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_IRON_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.blockTexture(Blocks.DIAMOND_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/diamond_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
                         .pattern("###")
                         .define('#', Blocks.DIAMOND_BLOCK)
                         .unlockedBy("has_diamond_block", consumer.has(Blocks.DIAMOND_BLOCK))
@@ -193,6 +256,34 @@ public class AllBlocks
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
 
+    public static final BlockEntry<WallBlock> IRON_WALL = REGISTRATE
+            .block("iron_wall", WallBlock::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_STONE_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.blockTexture(Blocks.IRON_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/iron_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', Blocks.IRON_BLOCK)
+                        .unlockedBy("has_iron_block", consumer.has(Blocks.IRON_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
     public static final BlockEntry<StairBlock> LAPIS_STAIRS = REGISTRATE
             .block("lapis_stairs", p -> new StairBlock(Blocks.LAPIS_BLOCK.defaultBlockState(), p))
             .initialProperties(() -> Blocks.LAPIS_BLOCK)
@@ -234,6 +325,34 @@ public class AllBlocks
             .tag(ItemTags.SLABS)
             .recipe((ctx, consumer) -> {
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.LAPIS_BLOCK)
+                        .unlockedBy("has_lapis_block", consumer.has(Blocks.LAPIS_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<WallBlock> LAPIS_WALL = REGISTRATE
+            .block("lapis_wall", WallBlock::new)
+            .initialProperties(() -> Blocks.LAPIS_BLOCK)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_STONE_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.blockTexture(Blocks.LAPIS_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/lapis_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
                         .pattern("###")
                         .define('#', Blocks.LAPIS_BLOCK)
                         .unlockedBy("has_lapis_block", consumer.has(Blocks.LAPIS_BLOCK))
@@ -293,6 +412,34 @@ public class AllBlocks
             .tab(CreativeModeTabs.BUILDING_BLOCKS)
             .build().register();
 
+    public static final BlockEntry<WallBlock> EMERALD_WALL = REGISTRATE
+            .block("emerald_wall", WallBlock::new)
+            .initialProperties(() -> Blocks.EMERALD_BLOCK)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_IRON_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.blockTexture(Blocks.EMERALD_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/emerald_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', Blocks.EMERALD_BLOCK)
+                        .unlockedBy("has_emerald_block", consumer.has(Blocks.EMERALD_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
     public static final BlockEntry<StairBlock> NETHERITE_STAIRS = REGISTRATE
             .block("netherite_stairs", p -> new StairBlock(Blocks.NETHERITE_BLOCK.defaultBlockState(), p))
             .initialProperties(() -> Blocks.NETHERITE_BLOCK)
@@ -334,6 +481,34 @@ public class AllBlocks
             .tag(ItemTags.SLABS)
             .recipe((ctx, consumer) -> {
                 ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .define('#', Blocks.NETHERITE_BLOCK)
+                        .unlockedBy("has_netherite_block", consumer.has(Blocks.NETHERITE_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .tab(CreativeModeTabs.BUILDING_BLOCKS)
+            .build().register();
+
+    public static final BlockEntry<WallBlock> NETHERITE_WALL = REGISTRATE
+            .block("netherite_wall", WallBlock::new)
+            .initialProperties(() -> Blocks.NETHERITE_BLOCK)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.NEEDS_DIAMOND_TOOL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.blockTexture(Blocks.NETHERITE_BLOCK));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), new ResourceLocation("minecraft", "block/netherite_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
                         .pattern("###")
                         .define('#', Blocks.NETHERITE_BLOCK)
                         .unlockedBy("has_netherite_block", consumer.has(Blocks.NETHERITE_BLOCK))
@@ -398,6 +573,33 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<WallBlock> WOOD_WALL = REGISTRATE
+            .block("wood_wall", WallBlock::new)
+            .initialProperties(() -> AllBlocks.WOOD.get())
+            .tag(
+                    BlockTags.WALLS,
+                    AllTags.Blocks.WOODY,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/wood"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/wood"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.WOOD)
+                        .unlockedBy("has_wood_block", consumer.has(AllBlocks.WOOD))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("industrial_iron_shingles", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -439,6 +641,32 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<WallBlock> INDUSTRIAL_IRON_SHINGLES_WALL = REGISTRATE
+            .block("industrial_iron_shingles_wall", WallBlock::new)
+            .initialProperties(AllBlocks.INDUSTRIAL_IRON_SHINGLES::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/industrial_iron_shingles"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.INDUSTRIAL_IRON_SHINGLES)
+                        .unlockedBy("has_industrial_iron_shingles", consumer.has(AllBlocks.INDUSTRIAL_IRON_SHINGLES))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> CRACKED_INDUSTRIAL_IRON_SHINGLES = REGISTRATE
             .block("cracked_industrial_iron_shingles", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -477,6 +705,32 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<WallBlock> CRACKED_INDUSTRIAL_IRON_SHINGLES_WALL = REGISTRATE
+            .block("cracked_industrial_iron_shingles_wall", WallBlock::new)
+            .initialProperties(AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/cracked_industrial_iron_shingles"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES)
+                        .unlockedBy("has_cracked_industrial_iron_shingles", consumer.has(AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES))
+                        .save(consumer);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -566,6 +820,32 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<WallBlock> STEEL_WALL = REGISTRATE
+            .block("steel_wall", WallBlock::new)
+            .initialProperties(AllBlocks.STEEL_BLOCK::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/steel_block"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/steel_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.STEEL_BLOCK)
+                        .unlockedBy("has_steel_block", consumer.has(AllBlocks.STEEL_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> TILES_BATHROOM = REGISTRATE
             .block("tiles_bathroom_block", Block::new)
             .initialProperties(() -> Blocks.BONE_BLOCK)
@@ -604,6 +884,32 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<WallBlock> TILES_BATHROOM_WALL = REGISTRATE
+            .block("tiles_bathroom_wall", WallBlock::new)
+            .initialProperties(AllBlocks.TILES_BATHROOM::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/tiles_bathroom_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.TILES_BATHROOM)
+                        .unlockedBy("has_tiles_bathroom_block", consumer.has(AllBlocks.TILES_BATHROOM))
+                        .save(consumer);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -658,6 +964,32 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<WallBlock> FLINT_WALL = REGISTRATE
+            .block("flint_wall", WallBlock::new)
+            .initialProperties(AllBlocks.FLINT_BLOCK::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_SHOVEL
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/flint_block"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/flint_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.FLINT_BLOCK)
+                        .unlockedBy("has_flint_block", consumer.has(AllBlocks.FLINT_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> CONCRETE = REGISTRATE
             .block("concrete", Block::new)
             .initialProperties(() -> Blocks.WHITE_CONCRETE)
@@ -703,6 +1035,33 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<WallBlock> CONCRETE_WALL = REGISTRATE
+            .block("concrete_wall", WallBlock::new)
+            .initialProperties(AllBlocks.CONCRETE::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    AllTags.Blocks.CONCRETE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.CONCRETE)
+                        .unlockedBy("has_concrete_block", consumer.has(AllBlocks.CONCRETE))
+                        .save(consumer);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -785,6 +1144,37 @@ public class AllBlocks
                 .build().register();
     });
 
+    public static final DyedBlockList<WallBlock> CONCRETE_COLOURS_WALLS = new DyedBlockList<>(colour -> {
+        String colourName = colour.getSerializedName();
+        return REGISTRATE
+                .block("concrete_" + colourName + "_wall", WallBlock::new)
+                .initialProperties(AllBlocks.CONCRETE_WALL::get)
+                .properties(p -> p.mapColor(colour))
+                .tag(
+                        BlockTags.WALLS,
+                        BlockTags.MINEABLE_WITH_PICKAXE,
+                        AllTags.Blocks.CONCRETE
+                )
+                .blockstate((ctx, provider) -> {
+                    provider.wallBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName));
+                })
+                .item()
+                .tag(ItemTags.WALLS)
+                .model((ctx, provider) -> {
+                    provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete_" + colourName));
+                })
+                .recipe((ctx, consumer) -> {
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                            .pattern("###")
+                            .pattern("###")
+                            .define('#', AllBlocks.CONCRETE_COLOURS.get(colour))
+                            .unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
+                            .save(consumer);
+                })
+                .tab(AllCreativeTabs.DECORATION.getKey())
+                .build().register();
+    });
+
     public static final BlockEntry<Block> CLEAR_GLASS = REGISTRATE
             .block("clear_glass", Block::new)
             .initialProperties(() -> Blocks.GLASS)
@@ -820,6 +1210,30 @@ public class AllBlocks
             .addLayer(() -> RenderType::cutout)
             .item()
             .tag(ItemTags.SLABS)
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<WallBlock> CLEAR_GLASS_WALL = REGISTRATE
+            .block("clear_glass_wall", WallBlock::new)
+            .initialProperties(AllBlocks.CLEAR_GLASS::get)
+            .tag(BlockTags.WALLS)
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/clear_glass"));
+            })
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/clear_glass"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.CLEAR_GLASS)
+                        .unlockedBy("has_clear_glass", consumer.has(AllBlocks.CLEAR_GLASS))
+                        .save(consumer);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -874,6 +1288,32 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<WallBlock> METAL_WIREMESH_WALL = REGISTRATE
+            .block("metal_wiremesh_wall", WallBlock::new)
+            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/metal_wiremesh_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.METAL_WIREMESH_BLOCK)
+                        .unlockedBy("has_metal_wiremesh_block", consumer.has(AllBlocks.METAL_WIREMESH_BLOCK))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> METAL_WIREMESH_BLOCK_TRANSPARENT = REGISTRATE
             .block("metal_wiremesh_block_transparent", Block::new)
             .initialProperties(() -> Blocks.IRON_BLOCK)
@@ -925,6 +1365,33 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    public static final BlockEntry<WallBlock> METAL_WIREMESH_WALL_TRANSPARENT = REGISTRATE
+            .block("metal_wiremesh_wall_transparent", WallBlock::new)
+            .initialProperties(AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent"));
+            })
+            .addLayer(() -> RenderType::cutout)
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/metal_wiremesh_block_transparent"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT)
+                        .unlockedBy("has_metal_wiremesh_block_transparent", consumer.has(AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT))
+                        .save(consumer);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<Block> LIGHT_BLOCK = REGISTRATE
             .block("light_block", Block::new)
             .properties((p) -> p
@@ -964,6 +1431,29 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<WallBlock> LIGHT_WALL = REGISTRATE
+            .block("light_wall", WallBlock::new)
+            .initialProperties(AllBlocks.LIGHT_BLOCK::get)
+            .tag(BlockTags.WALLS)
+            .blockstate((ctx, provider) -> {
+                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/light_block"));
+            })
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> {
+                provider.wallInventory(ctx.getName(), provider.modLoc("block/light_block"));
+            })
+            .recipe((ctx, consumer) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllBlocks.LIGHT_BLOCK)
+                        .unlockedBy("has_light_block", consumer.has(AllBlocks.LIGHT_BLOCK))
+                        .save(consumer);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 

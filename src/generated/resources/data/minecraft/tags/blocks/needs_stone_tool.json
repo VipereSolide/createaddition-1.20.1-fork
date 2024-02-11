@@ -2,7 +2,9 @@
   "values": [
     "gods_retribution:iron_stairs",
     "gods_retribution:iron_slab",
+    "gods_retribution:iron_wall",
     "gods_retribution:lapis_stairs",
-    "gods_retribution:lapis_slab"
+    "gods_retribution:lapis_slab",
+    "gods_retribution:lapis_wall"
   ]
 }

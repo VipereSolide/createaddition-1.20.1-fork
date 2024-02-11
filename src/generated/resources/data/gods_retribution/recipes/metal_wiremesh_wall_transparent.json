@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "gods_retribution:metal_wiremesh_block_transparent"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "gods_retribution:metal_wiremesh_wall_transparent"
+  },
+  "show_notification": true
+}

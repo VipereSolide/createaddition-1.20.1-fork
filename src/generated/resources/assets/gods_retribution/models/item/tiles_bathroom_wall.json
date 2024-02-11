@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "gods_retribution:block/tiles_bathroom_block"
+  }
+}
