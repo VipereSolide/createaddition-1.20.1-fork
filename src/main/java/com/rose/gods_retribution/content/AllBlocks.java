@@ -9,6 +9,7 @@ import com.rose.gods_retribution.fundation.blocks.SmartBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.SharedProperties;
+import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -20,6 +21,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.common.Tags;
@@ -1021,6 +1024,12 @@ public class AllBlocks
                     ItemTags.STAIRS,
                     AllTags.Items.CONCRETE
             )
+            .recipe((ctx, consumer) -> {
+                consumer.stonecutting(
+                        DataIngredient.ingredient(Ingredient.of(() -> AllBlocks.CONCRETE.asItem()), () -> AllBlocks.CONCRETE.asItem()),
+                        RecipeCategory.BUILDING_BLOCKS,
+                        () -> ctx.getEntry());
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1042,6 +1051,12 @@ public class AllBlocks
                     ItemTags.SLABS,
                     AllTags.Items.CONCRETE
             )
+            .recipe((ctx, consumer) -> {
+                consumer.stonecutting(
+                        DataIngredient.ingredient(Ingredient.of(() -> AllBlocks.CONCRETE.asItem()), () -> AllBlocks.CONCRETE.asItem()),
+                        RecipeCategory.BUILDING_BLOCKS,
+                        ctx::getEntry);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1071,6 +1086,12 @@ public class AllBlocks
                         .define('#', AllBlocks.CONCRETE)
                         .unlockedBy("has_concrete_block", consumer.has(AllBlocks.CONCRETE))
                         .save(consumer);
+            })
+            .recipe((ctx, consumer) -> {
+                consumer.stonecutting(
+                        DataIngredient.ingredient(Ingredient.of(() -> AllBlocks.CONCRETE.asItem()), () -> AllBlocks.CONCRETE.asItem()),
+                        RecipeCategory.BUILDING_BLOCKS,
+                        ctx::getEntry);
             })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -1119,6 +1140,14 @@ public class AllBlocks
                             .unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
                             .save(consumer);
                 })
+                .recipe((ctx, consumer) -> {
+                    consumer.stonecutting(
+                            DataIngredient.ingredient(
+                                    Ingredient.of(() -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
+                                    () -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
+                            RecipeCategory.BUILDING_BLOCKS,
+                            ctx::getEntry);
+                })
                 .item()
                 .tag(
                         ItemTags.STAIRS,
@@ -1151,6 +1180,14 @@ public class AllBlocks
                             .define('#', AllBlocks.CONCRETE_COLOURS.get(colour))
                             .unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
                             .save(consumer);
+                })
+                .recipe((ctx, consumer) -> {
+                    consumer.stonecutting(
+                            DataIngredient.ingredient(
+                                    Ingredient.of(() -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
+                                    () -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
+                            RecipeCategory.BUILDING_BLOCKS,
+                            ctx::getEntry);
                 })
                 .item()
                 .tag(
@@ -1190,6 +1227,14 @@ public class AllBlocks
                             .define('#', AllBlocks.CONCRETE_COLOURS.get(colour))
                             .unlockedBy("has_concrete_" + colourName, consumer.has(AllBlocks.CONCRETE_COLOURS.get(colour)))
                             .save(consumer);
+                })
+                .recipe((ctx, consumer) -> {
+                    consumer.stonecutting(
+                            DataIngredient.ingredient(
+                                    Ingredient.of(() -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
+                                    () -> AllBlocks.CONCRETE_COLOURS.get(colour).asItem()),
+                            RecipeCategory.BUILDING_BLOCKS,
+                            ctx::getEntry);
                 })
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();

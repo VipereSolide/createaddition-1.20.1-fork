@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "gods_retribution:concrete_orange"
+  },
+  "result": "gods_retribution:concrete_orange_wall"
+}

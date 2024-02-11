@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "gods_retribution:concrete_lime"
+  },
+  "result": "gods_retribution:concrete_lime_wall"
+}

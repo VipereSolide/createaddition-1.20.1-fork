@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "gods_retribution:concrete_magenta"
+  },
+  "result": "gods_retribution:concrete_magenta_slab"
+}
