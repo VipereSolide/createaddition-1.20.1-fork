@@ -22,6 +22,10 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * The class to create vertical slabs. It also contains some helper static methods to ease the creation of vertical
+ * slabs.
+ */
 public class VerticalSlabBlock extends HorizontalDirectionalBlock
 {
 	public VerticalSlabBlock(Properties properties)
@@ -50,7 +54,15 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock
 	}
 
 	/**
-	 * Shortcut for the vertical slabs' blockstate.
+	 * Shortcut for the datagen of the vertical slabs' blockstate. Use it like this :
+	 * <p>
+	 * <pre>
+	 * REGISTRATE.block(...)
+	 * ...
+	 * .blockstate((ctx, provider) -> VerticalSlabBlock.makeBlockstate(ctx, provider, "block/texture"))
+	 * ...
+	 * </pre>
+	 * </p>
 	 *
 	 * @param context
 	 * @param provider
@@ -70,7 +82,17 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock
 	}
 
 	/**
-	 * Shortcut for the vertical slabs' crafting table recipe.
+	 * Shortcut for the vertical slabs' crafting table recipe. Use it like this :
+	 * <p>
+	 * <pre>
+	 * REGISTRATE.block(...)
+	 * ...
+	 * .item()
+	 * ...
+	 * .makeShapedRecipe((ctx, consumer) -> VerticalSlabBlock.makeShapedRecipe(ctx, consumer, AllBlocks.BLOCK_OF_JOE))
+	 * ...
+	 * </pre>
+	 * </p>
 	 *
 	 * @param context
 	 * @param consumer
@@ -90,7 +112,8 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock
 	}
 
 	/**
-	 * Shortcut for the vertical slabs' stonecutting recipe, if needed.
+	 * Shortcut for the vertical slabs' stonecutting recipe, if needed. For the usage, see the documentation for the
+	 * {@code makeShapedRecipe} method.
 	 *
 	 * @param context
 	 * @param consumer
