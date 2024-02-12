@@ -56,7 +56,9 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock
 	 * @param provider
 	 * @param texture
 	 */
-	public static void makeBlockstate(DataGenContext<Block, VerticalSlabBlock> context, RegistrateBlockstateProvider provider, String texture)
+	public static void makeBlockstate(DataGenContext<Block, VerticalSlabBlock> context,
+									  RegistrateBlockstateProvider provider,
+									  String texture)
 	{
 		provider.horizontalBlock(context.getEntry(), provider
 				.models()
@@ -72,16 +74,18 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock
 	 *
 	 * @param context
 	 * @param consumer
-	 * @param madeFrom
+	 * @param madeOf
 	 */
-	public static void makeShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom)
+	public static void makeShapedRecipe(DataGenContext<Item, BlockItem> context,
+										RegistrateRecipeProvider consumer,
+										ItemLike madeOf)
 	{
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.getEntry(), 6)
 				.pattern("#")
 				.pattern("#")
 				.pattern("#")
-				.define('#', madeFrom)
-				.unlockedBy("has_required_block", consumer.has(madeFrom))
+				.define('#', madeOf)
+				.unlockedBy("has_required_block", consumer.has(madeOf))
 				.save(consumer);
 	}
 
@@ -90,12 +94,14 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock
 	 *
 	 * @param context
 	 * @param consumer
-	 * @param madeFrom
+	 * @param madeOf
 	 */
-	public static void makeStonecuttingRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom)
+	public static void makeStonecuttingRecipe(DataGenContext<Item, BlockItem> context,
+											  RegistrateRecipeProvider consumer,
+											  ItemLike madeOf)
 	{
 		consumer.stonecutting(
-				DataIngredient.ingredient(Ingredient.of(madeFrom::asItem), madeFrom::asItem),
+				DataIngredient.ingredient(Ingredient.of(madeOf::asItem), madeOf::asItem),
 				RecipeCategory.BUILDING_BLOCKS,
 				context::getEntry);
 	}

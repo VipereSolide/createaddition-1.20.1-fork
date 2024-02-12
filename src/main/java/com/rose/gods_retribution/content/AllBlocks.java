@@ -1645,15 +1645,15 @@ public class AllBlocks
      *
      * @param context
      * @param consumer
-     * @param madeFrom
+     * @param madeOf
      */
-    public static void makeWallShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom)
+    public static void makeWallShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeOf)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.getEntry(), 6)
                 .pattern("###")
                 .pattern("###")
-                .define('#', madeFrom)
-                .unlockedBy("has_required_block", consumer.has(madeFrom))
+                .define('#', madeOf)
+                .unlockedBy("has_" + consumer.safeName(madeOf), consumer.has(madeOf))
                 .save(consumer);
     }
 
@@ -1662,16 +1662,16 @@ public class AllBlocks
      *
      * @param context
      * @param consumer
-     * @param madeFrom
+     * @param madeOf
      */
-    public static void makeStairsShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom)
+    public static void makeStairsShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeOf)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.getEntry(), 4)
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
-                .define('#', madeFrom)
-                .unlockedBy("has_" + consumer.safeName(madeFrom), consumer.has(madeFrom))
+                .define('#', madeOf)
+                .unlockedBy("has_" + consumer.safeName(madeOf), consumer.has(madeOf))
                 .save(consumer);
     }
 
@@ -1680,14 +1680,14 @@ public class AllBlocks
      *
      * @param context
      * @param consumer
-     * @param madeFrom
+     * @param madeOf
      */
-    public static void makeSlabShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom)
+    public static void makeSlabShapedRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeOf)
     {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.getEntry(), 6)
                 .pattern("###")
-                .define('#', madeFrom)
-                .unlockedBy("has_" + consumer.safeName(madeFrom), consumer.has(madeFrom))
+                .define('#', madeOf)
+                .unlockedBy("has_" + consumer.safeName(madeOf), consumer.has(madeOf))
                 .save(consumer);
     }
 
@@ -1696,16 +1696,16 @@ public class AllBlocks
      *
      * @param context
      * @param consumer
-     * @param madeFrom
+     * @param madeOf
      * @param recipeCategory
      * @param resultCount
      */
-    public static void makeStonecuttingRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom, RecipeCategory recipeCategory, int resultCount)
+    public static void makeStonecuttingRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeOf, RecipeCategory recipeCategory, int resultCount)
     {
         consumer.stonecutting(
                 DataIngredient.ingredient(
-                        Ingredient.of(() -> madeFrom.asItem()),
-                        () -> madeFrom.asItem()),
+                        Ingredient.of(() -> madeOf.asItem()),
+                        () -> madeOf.asItem()),
                 recipeCategory,
                 context::getEntry,
                 resultCount);
@@ -1715,11 +1715,11 @@ public class AllBlocks
      * Shortcut for the datagen, for stonecutting recipes.
      * @param context
      * @param consumer
-     * @param madeFrom
+     * @param madeOf
      * @param recipeCategory
      */
-    public static void makeStonecuttingRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeFrom, RecipeCategory recipeCategory)
+    public static void makeStonecuttingRecipe(DataGenContext<Item, BlockItem> context, RegistrateRecipeProvider consumer, ItemLike madeOf, RecipeCategory recipeCategory)
     {
-        makeStonecuttingRecipe(context, consumer, madeFrom, recipeCategory, 1);
+        makeStonecuttingRecipe(context, consumer, madeOf, recipeCategory, 1);
     }
 }
