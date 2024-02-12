@@ -10,6 +10,7 @@
   "item.gods_retribution.gelatin": "Gélatine",
   "item.gods_retribution.plastic_ball": "Boule de plastique",
   "item.gods_retribution.cement": "Ciment",
+  "item.gods_retribution.waste": "Déchet",
 
   "item.gods_retribution.labelling_tag": "Gabarit d'étiquetage",
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renomme_ les items contenus dans une _étiqueteuse_.",
@@ -217,6 +218,7 @@
 
   "block.gods_retribution.unlit_torch": "Torche éteinte",
   "block.gods_retribution.unlit_torch.summary": "Utiliser un objet inflammable pour l'allumer.",
+  "block.gods_retribution.waste_block": "Bloc de déchets",
 
   "creative_tab.gods_retribution.gods_retribution_tab": "Les Divines Représailles",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Blocs de Construction des Divines Représailles",

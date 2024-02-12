@@ -5,15 +5,15 @@ import com.rose.gods_retribution.content.item.*;
 import com.rose.gods_retribution.content.item.fluid_vacuum.FluidVacuumItem;
 import com.rose.gods_retribution.content.item.gold_key.GoldKeyItem;
 import com.rose.gods_retribution.content.item.labelling_tag.LabellingTagItem;
+import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
@@ -185,10 +185,46 @@ public class AllItems
             })
             .register();
 
+    public static final ItemEntry<Item> WASTE = REGISTRATE
+            .item("waste", Item::new)
+            .recipe((ctx, consumer) -> makeUnpackingShapelessRecipe(ctx, consumer, AllBlocks.WASTE_BLOCK))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
     /**
      * Loads this class.
      */
     public static void register()
     {
+    }
+
+    /**
+     * Shortcut method to build an unpacking recipe (for example 1 coal block to 9 coals). Outputs 9 items.
+     *
+     * @param context
+     * @param consumer
+     * @param unpackedFrom
+     * @param category
+     */
+    public static void makeUnpackingShapelessRecipe(DataGenContext<Item, Item> context, RegistrateRecipeProvider consumer, ItemLike unpackedFrom, RecipeCategory category)
+    {
+        ShapelessRecipeBuilder.shapeless(category, context.getEntry(), 9)
+                .requires(unpackedFrom)
+                .group(context.getName())
+                .unlockedBy("has_" + consumer.safeName(unpackedFrom), consumer.has(unpackedFrom))
+                .save(consumer);
+    }
+
+    /**
+     * Shortcut method to build an unpacking recipe (for example 1 coal block to 9 coals). The recipe will be placed in
+     * the misc category.
+     *
+     * @param context
+     * @param consumer
+     * @param unpackedFrom
+     */
+    public static void makeUnpackingShapelessRecipe(DataGenContext<Item, Item> context, RegistrateRecipeProvider consumer, ItemLike unpackedFrom)
+    {
+        makeUnpackingShapelessRecipe(context, consumer, unpackedFrom, RecipeCategory.MISC);
     }
 }

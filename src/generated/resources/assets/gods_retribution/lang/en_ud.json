@@ -163,6 +163,7 @@
   "block.gods_retribution.tiles_bathroom_vertical_slab": "qɐןS ןɐɔıʇɹǝΛ ɯooɹɥʇɐᗺ sǝןı⟘",
   "block.gods_retribution.tiles_bathroom_wall": "ןןɐM ɯooɹɥʇɐᗺ sǝןı⟘",
   "block.gods_retribution.unlit_torch": "ɥɔɹo⟘ ʇıןu∩",
+  "block.gods_retribution.waste_block": "ʞɔoןᗺ ǝʇsɐM",
   "block.gods_retribution.wood": "pooM",
   "block.gods_retribution.wood_slab": "qɐןS pooM",
   "block.gods_retribution.wood_stairs": "sɹıɐʇS pooM",
@@ -186,5 +187,6 @@
   "item.gods_retribution.plastic_ball": "ןןɐᗺ ɔıʇsɐןԀ",
   "item.gods_retribution.screw": "ʍǝɹɔS",
   "item.gods_retribution.sugar_packet": "ʇǝʞɔɐԀ ɹɐbnS",
-  "item.gods_retribution.sunflower_seeds": "spǝǝS ɹǝʍoןɟunS"
+  "item.gods_retribution.sunflower_seeds": "spǝǝS ɹǝʍoןɟunS",
+  "item.gods_retribution.waste": "ǝʇsɐM"
 }

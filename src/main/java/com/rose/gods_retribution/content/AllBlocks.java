@@ -1609,6 +1609,30 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<Block> WASTE_BLOCK = REGISTRATE
+            .block("waste_block", Block::new)
+            .initialProperties(() -> Blocks.DIRT)
+            .tag(
+                    Tags.Blocks.STORAGE_BLOCKS,
+                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_WASTE
+            )
+            .item()
+            .tag(
+                    Tags.Items.STORAGE_BLOCKS,
+                    AllTags.Items.FORGE_STORAGE_BLOCKS_WASTE
+            )
+            .recipe((ctx, cons) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ctx.getEntry())
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern("###")
+                        .define('#', AllItems.WASTE)
+                        .unlockedBy("has_waste", cons.has(AllItems.WASTE))
+                        .save(cons);
+            })
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build().register();
+
     /**
      * Loads this class
      */
