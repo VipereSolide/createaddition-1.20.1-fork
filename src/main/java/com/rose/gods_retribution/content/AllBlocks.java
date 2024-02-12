@@ -17,6 +17,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -1614,22 +1615,16 @@ public class AllBlocks
             .initialProperties(() -> Blocks.DIRT)
             .tag(
                     Tags.Blocks.STORAGE_BLOCKS,
-                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_WASTE
+                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_WASTE,
+                    AllTags.Blocks.WASTE
             )
             .item()
             .tag(
                     Tags.Items.STORAGE_BLOCKS,
-                    AllTags.Items.FORGE_STORAGE_BLOCKS_WASTE
+                    AllTags.Items.FORGE_STORAGE_BLOCKS_WASTE,
+                    AllTags.Items.WASTE
             )
-            .recipe((ctx, cons) -> {
-                ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ctx.getEntry())
-                        .pattern("###")
-                        .pattern("###")
-                        .pattern("###")
-                        .define('#', AllItems.WASTE)
-                        .unlockedBy("has_waste", cons.has(AllItems.WASTE))
-                        .save(cons);
-            })
+            .recipe((ctx, cons) -> makePackingShapedRecipe3(ctx, cons, AllItems.WASTE, RecipeCategory.MISC))
             .tab(AllCreativeTabs.MAIN.getKey())
             .build().register();
 
@@ -1689,6 +1684,87 @@ public class AllBlocks
                 .define('#', madeOf)
                 .unlockedBy("has_" + consumer.safeName(madeOf), consumer.has(madeOf))
                 .save(consumer);
+    }
+
+    /**
+     * Shortcut for the datagen of a 3x3 packing recipe (like 9 iron ingots to 1 iron block, for instance). The recipe
+     * must be used on an {@code ItemBuilder} and not on a {@code BlockBuilder}. Use it like this :
+     * <p>
+     * <pre>
+     * REGISTRATE.block(...)
+     * ...
+     * .item()
+     * ...
+     * .recipe((ctx, consumer) -> makePackingShapedRecipe3(ctx, consumer, AllItems.AN_ITEM, RecipeCategory.SOMETHING))
+     * </pre>
+     * </p>
+     *
+     * @param context
+     * @param consumer
+     * @param madeOf
+     * @param category
+     */
+    public static void makePackingShapedRecipe3(DataGenContext<Item, BlockItem> context,
+                                                RegistrateRecipeProvider consumer,
+                                                ItemLike madeOf,
+                                                RecipeCategory category)
+    {
+        ShapedRecipeBuilder.shaped(category, context.getEntry())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', madeOf)
+                .unlockedBy("has_" + consumer.safeName(madeOf), consumer.has(madeOf))
+                .save(consumer);
+    }
+
+    /**
+     * The default category is {@code BUILDING_BLOCKS}.
+     *
+     * @param context
+     * @param consumer
+     * @param madeOf
+     */
+    public static void makePackingShapedRecipe3(DataGenContext<Item, BlockItem> context,
+                                                RegistrateRecipeProvider consumer,
+                                                ItemLike madeOf)
+    {
+        makePackingShapedRecipe3(context, consumer, madeOf, RecipeCategory.BUILDING_BLOCKS);
+    }
+
+    /**
+     * Same thing that the {@code makePackingShapedRecipe3} but in a 2x2 grid.
+     *
+     * @param context
+     * @param consumer
+     * @param madeOf
+     * @param category
+     */
+    public static void makePackingShapedRecipe2(DataGenContext<Item, BlockItem> context,
+                                                RegistrateRecipeProvider consumer,
+                                                ItemLike madeOf,
+                                                RecipeCategory category)
+    {
+        ShapedRecipeBuilder.shaped(category, context.getEntry())
+                .pattern("##")
+                .pattern("##")
+                .define('#', madeOf)
+                .unlockedBy("has_" + consumer.safeName(madeOf), consumer.has(madeOf))
+                .save(consumer);
+    }
+
+    /**
+     * The default category is {@code BUILDING_BLOCKS}.
+     *
+     * @param context
+     * @param consumer
+     * @param madeOf
+     */
+    public static void makePackingShapedRecipe2(DataGenContext<Item, BlockItem> context,
+                                                RegistrateRecipeProvider consumer,
+                                                ItemLike madeOf)
+    {
+        makePackingShapedRecipe2(context, consumer, madeOf, RecipeCategory.BUILDING_BLOCKS);
     }
 
     /**

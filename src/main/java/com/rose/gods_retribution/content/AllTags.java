@@ -29,6 +29,10 @@ public class AllTags
 		 */
 		public static final TagKey<Block> CONCRETE = tag("concrete");
 		public static final TagKey<Block> VERTICAL_SLABS = tag("vertical_slabs");
+		/**
+		 * Blocks marked with this tag are considered as waste, and cannot be processed by the waste processor.
+		 */
+		public static final TagKey<Block> WASTE = tag("waste");
 
 		/**
 		 * Used for the flint block.
@@ -76,6 +80,10 @@ public class AllTags
 		public static final TagKey<Item> GLUE_MATERIAL = tag("glue_material");
 		public static final TagKey<Item> CONCRETE = tag("concrete");
 		public static final TagKey<Item> VERTICAL_SLABS = tag("vertical_slabs");
+		/**
+		 * Items marked with this tag are considered as waste, and cannot be processed by the waste processor.
+		 */
+		public static final TagKey<Item> WASTE = tag("waste");
 
 		/**
 		 * Used by the flint block.

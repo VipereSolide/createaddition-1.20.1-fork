@@ -188,6 +188,7 @@ public class AllItems
     public static final ItemEntry<Item> WASTE = REGISTRATE
             .item("waste", Item::new)
             .recipe((ctx, consumer) -> makeUnpackingShapelessRecipe(ctx, consumer, AllBlocks.WASTE_BLOCK))
+            .tag(AllTags.Items.WASTE)
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
