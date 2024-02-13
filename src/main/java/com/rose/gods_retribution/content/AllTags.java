@@ -43,6 +43,7 @@ public class AllTags
 		 */
 		public static final TagKey<Block> FORGE_STORAGE_BLOCKS_IRON_BARS = foreignTag("forge", "storage_blocks/iron_bars");
 		public static final TagKey<Block> FORGE_STORAGE_BLOCKS_WASTE = foreignTag("forge", "storage_blocks/waste");
+		public static final TagKey<Block> FORGE_STORAGE_BLOCKS_ASHES = foreignTag("forge", "storage_blocks/ashes");
 
 		/**
 		 * Helper method used to create the blocks' tags in this very class.
@@ -94,6 +95,7 @@ public class AllTags
 		 */
 		public static final TagKey<Item> FORGE_STORAGE_BLOCKS_IRON_BARS = foreignTag("forge", "storage_blocks/iron_bars");
 		public static final TagKey<Item> FORGE_STORAGE_BLOCKS_WASTE = foreignTag("forge", "storage_blocks/waste");
+		public static final TagKey<Item> FORGE_STORAGE_BLOCKS_ASHES = foreignTag("forge", "storage_blocks/ashes");
 
 		/**
 		 * Helper method used to create the items' tags in this very class.

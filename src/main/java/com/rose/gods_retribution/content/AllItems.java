@@ -7,12 +7,14 @@ import com.rose.gods_retribution.content.item.gold_key.GoldKeyItem;
 import com.rose.gods_retribution.content.item.labelling_tag.LabellingTagItem;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
+import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
@@ -187,8 +189,22 @@ public class AllItems
 
     public static final ItemEntry<Item> WASTE = REGISTRATE
             .item("waste", Item::new)
-            .recipe((ctx, consumer) -> makeUnpackingShapelessRecipe(ctx, consumer, AllBlocks.WASTE_BLOCK))
+            .recipe((ctx, consumer) -> makeUnpackingShapelessRecipe3(ctx, consumer, AllBlocks.WASTE_BLOCK))
             .tag(AllTags.Items.WASTE)
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> ASHES = REGISTRATE
+            .item("ashes", Item::new)
+            .tag(AllTags.Items.WASTE)
+            .recipe((ctx, cons) -> {
+                float xpWaste = 0.5f;
+                int cookingTimeWaste = 80;
+
+                makeUnpackingShapelessRecipe3(ctx, cons, AllBlocks.ASHES_BLOCK);
+                makeCookingRecipe(ctx, cons, AllItems.WASTE, RecipeCategory.MISC, xpWaste, cookingTimeWaste);
+                makeCookingRecipe(ctx, cons, AllBlocks.WASTE_BLOCK, RecipeCategory.MISC, xpWaste * 9, cookingTimeWaste * 9);
+            })
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
@@ -200,14 +216,14 @@ public class AllItems
     }
 
     /**
-     * Shortcut method to build an unpacking recipe (for example 1 coal block to 9 coals). Outputs 9 items.
+     * Shortcut method to build a 3x3 grid unpacking recipe.
      *
      * @param context
      * @param consumer
      * @param unpackedFrom
      * @param category
      */
-    public static void makeUnpackingShapelessRecipe(DataGenContext<Item, Item> context, RegistrateRecipeProvider consumer, ItemLike unpackedFrom, RecipeCategory category)
+    public static void makeUnpackingShapelessRecipe3(DataGenContext<Item, Item> context, RegistrateRecipeProvider consumer, ItemLike unpackedFrom, RecipeCategory category)
     {
         ShapelessRecipeBuilder.shapeless(category, context.getEntry(), 9)
                 .requires(unpackedFrom)
@@ -217,15 +233,76 @@ public class AllItems
     }
 
     /**
-     * Shortcut method to build an unpacking recipe (for example 1 coal block to 9 coals). The recipe will be placed in
-     * the misc category.
+     * Shortcut method to build a 3x3 grid unpacking recipe. The recipe will be placed in the misc category by default.
      *
      * @param context
      * @param consumer
      * @param unpackedFrom
      */
-    public static void makeUnpackingShapelessRecipe(DataGenContext<Item, Item> context, RegistrateRecipeProvider consumer, ItemLike unpackedFrom)
+    public static void makeUnpackingShapelessRecipe3(DataGenContext<Item, Item> context, RegistrateRecipeProvider consumer, ItemLike unpackedFrom)
     {
-        makeUnpackingShapelessRecipe(context, consumer, unpackedFrom, RecipeCategory.MISC);
+        makeUnpackingShapelessRecipe3(context, consumer, unpackedFrom, RecipeCategory.MISC);
+    }
+
+    /**
+     * Shortcut method to build a 2x2 grid unpacking recipe.
+     *
+     * @param context
+     * @param consumer
+     * @param unpackedFrom
+     * @param category
+     */
+    public static void makeUnpackingShapelessRecipe2(DataGenContext<Item, Item> context,
+                                                     RegistrateRecipeProvider consumer,
+                                                     ItemLike unpackedFrom,
+                                                     RecipeCategory category)
+    {
+        ShapelessRecipeBuilder.shapeless(category, context.getEntry(), 4)
+                .requires(unpackedFrom)
+                .group(context.getName())
+                .unlockedBy("has_" + consumer.safeName(unpackedFrom), consumer.has(unpackedFrom))
+                .save(consumer);
+    }
+
+    /**
+     * Shortcut method to build a 2x2 grid unpacking recipe. The recipe will be placed under the misc category by
+     * default.
+     *
+     * @param context
+     * @param consumer
+     * @param unpackedFrom
+     */
+    public static void makeUnpackingShapelessRecipe2(DataGenContext<Item, Item> context,
+                                                     RegistrateRecipeProvider consumer,
+                                                     ItemLike unpackedFrom)
+    {
+        makeUnpackingShapelessRecipe2(context, consumer, unpackedFrom, RecipeCategory.MISC);
+    }
+
+    /**
+     * Shortcut to make a cooking recipe.
+     *
+     * @param context
+     * @param consumer
+     * @param cookedFrom
+     * @param category
+     * @param experience
+     * @param cookingTime
+     */
+    public static void makeCookingRecipe(DataGenContext<Item, Item> context,
+                                         RegistrateRecipeProvider consumer,
+                                         ItemLike cookedFrom,
+                                         RecipeCategory category,
+                                         float experience,
+                                         int cookingTime)
+    {
+        consumer.cooking(
+                DataIngredient.ingredient(Ingredient.of(cookedFrom::asItem), cookedFrom::asItem),
+                category,
+                context::getEntry,
+                experience,
+                cookingTime,
+                RecipeSerializer.SMELTING_RECIPE
+        );
     }
 }

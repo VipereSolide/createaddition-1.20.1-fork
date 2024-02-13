@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "ashes",
+  "ingredients": [
+    {
+      "item": "gods_retribution:ashes_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "gods_retribution:ashes"
+  }
+}

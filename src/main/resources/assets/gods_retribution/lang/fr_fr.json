@@ -11,6 +11,7 @@
   "item.gods_retribution.plastic_ball": "Boule de plastique",
   "item.gods_retribution.cement": "Ciment",
   "item.gods_retribution.waste": "Déchet",
+  "item.gods_retribution.ashes": "Cendres",
 
   "item.gods_retribution.labelling_tag": "Gabarit d'étiquetage",
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renomme_ les items contenus dans une _étiqueteuse_.",
@@ -217,6 +218,7 @@
   "block.gods_retribution.hidden_cobbled_limestone_button": "Bouton caché dans un bloc de calcaire",
   "block.gods_retribution.limestone_rumbles": "Débris de calcaire",
   "block.gods_retribution.limestone_balustrade": "Balustrade en calcaire",
+  "block.gods_retribution.ashes_block": "Bloc de cendres",
 
   "block.gods_retribution.unlit_torch": "Torche éteinte",
   "block.gods_retribution.unlit_torch.summary": "Utiliser un objet inflammable pour l'allumer.",

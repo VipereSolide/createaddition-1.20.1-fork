@@ -1,6 +1,8 @@
 {
   "values": [
     "gods_retribution:waste_block",
-    "gods_retribution:waste"
+    "gods_retribution:ashes_block",
+    "gods_retribution:waste",
+    "gods_retribution:ashes"
   ]
 }

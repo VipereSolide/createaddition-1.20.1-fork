@@ -1649,6 +1649,25 @@ public class AllBlocks
             .tab(AllCreativeTabs.MAIN.getKey())
             .build().register();
 
+    public static final BlockEntry<Block> ASHES_BLOCK = REGISTRATE
+            .block("ashes_block", Block::new)
+            .initialProperties(() -> Blocks.SAND)
+            .tag(
+                    AllTags.Blocks.WASTE,
+                    Tags.Blocks.STORAGE_BLOCKS,
+                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_WASTE,
+                    BlockTags.MINEABLE_WITH_SHOVEL
+            )
+            .item()
+            .tag(
+                    AllTags.Items.WASTE,
+                    Tags.Items.STORAGE_BLOCKS,
+                    AllTags.Items.FORGE_STORAGE_BLOCKS_WASTE
+            )
+            .recipe((ctx, cons) -> makePackingShapedRecipe3(ctx, cons, AllItems.ASHES))
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     /**
      * Loads this class
      */

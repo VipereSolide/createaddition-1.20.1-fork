@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gods_retribution:ashes_from_waste_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_waste": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gods_retribution:waste"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_waste",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gods_retribution:ashes_from_waste_smelting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

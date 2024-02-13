@@ -11,6 +11,7 @@
   "item.gods_retribution.plastic_ball": "Plastic Ball",
   "item.gods_retribution.cement": "Cement",
   "item.gods_retribution.waste": "Waste",
+  "item.gods_retribution.ashes": "Ashes",
 
   "item.gods_retribution.labelling_tag": "Labelling Tag",
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renames_ items contained in a _labelling machine_.",
@@ -220,6 +221,7 @@
   "block.gods_retribution.hidden_cobbled_limestone_button": "Hidden Cobbled Limestone Button",
   "block.gods_retribution.limestone_rumbles": "Limestone Rumbles",
   "block.gods_retribution.limestone_balustrade": "Limestone Balustrade",
+  "block.gods_retribution.ashes_block": "Block of Ashes",
 
   "block.gods_retribution.unlit_torch": "Unlit Torch",
   "block.gods_retribution.unlit_torch.summary": "Use a flammable item such as a torch or a fire charge onto it to light it up.",
