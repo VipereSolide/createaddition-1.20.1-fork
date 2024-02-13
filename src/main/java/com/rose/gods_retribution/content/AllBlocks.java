@@ -905,12 +905,14 @@ public class AllBlocks
             .tag(
                     BlockTags.MINEABLE_WITH_SHOVEL,
                     Tags.Blocks.STORAGE_BLOCKS,
-                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_FLINT
+                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_FLINT,
+                    AllTags.Blocks.WASTE
             )
             .item()
             .tag(
                     Tags.Items.STORAGE_BLOCKS,
-                    AllTags.Items.FORGE_STORAGE_BLOCKS_FLINT
+                    AllTags.Items.FORGE_STORAGE_BLOCKS_FLINT,
+                    AllTags.Items.WASTE
             )
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
@@ -1649,8 +1651,8 @@ public class AllBlocks
             .tab(AllCreativeTabs.MAIN.getKey())
             .build().register();
 
-    public static final BlockEntry<Block> ASHES_BLOCK = REGISTRATE
-            .block("ashes_block", Block::new)
+    public static final BlockEntry<FallingBlock> ASHES_BLOCK = REGISTRATE
+            .block("ashes_block", FallingBlock::new)
             .initialProperties(() -> Blocks.SAND)
             .tag(
                     AllTags.Blocks.WASTE,

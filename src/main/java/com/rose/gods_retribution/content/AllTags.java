@@ -6,6 +6,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
 /**
@@ -30,9 +31,18 @@ public class AllTags
 		public static final TagKey<Block> CONCRETE = tag("concrete");
 		public static final TagKey<Block> VERTICAL_SLABS = tag("vertical_slabs");
 		/**
-		 * Blocks marked with this tag are considered as waste, and cannot be processed by the waste processor.
+		 * Use this tag for writing only. For reading, use instead the {@code AllTags.Blocks.WASTE_EX} tag.
 		 */
 		public static final TagKey<Block> WASTE = tag("waste");
+		/**
+		 * Blocks marked with this tag are considered as waste, and cannot be processed by the waste processor.
+		 * <p>
+		 * This tag surrounds the {@code #gods_retribution:waste} tag. It is not datagenerated. The items and blocks
+		 * from the vanilla game or other mods must be added manually, in the json file of this tag
+		 * ({@code waste_ex.json}). The blocks of this mod must instead be added in the code to the
+		 * {@code AllTags.Blocks.WASTE} tag.
+		 */
+		public static final TagKey<Block> WASTE_EX = tag("waste_ex");
 
 		/**
 		 * Used for the flint block.
@@ -82,9 +92,18 @@ public class AllTags
 		public static final TagKey<Item> CONCRETE = tag("concrete");
 		public static final TagKey<Item> VERTICAL_SLABS = tag("vertical_slabs");
 		/**
-		 * Items marked with this tag are considered as waste, and cannot be processed by the waste processor.
+		 * Use this tag for writing only. For reading, use instead the {@code AllTags.Items.WASTE_EX} tag.
 		 */
 		public static final TagKey<Item> WASTE = tag("waste");
+		/**
+		 * Items marked with this tag are considered as waste, and cannot be processed by the waste processor.
+		 * <p>
+		 * This tag surrounds the {@code #gods_retribution:waste} tag. It is not datagenerated. The items and blocks
+		 * from the vanilla game or other mods must be added manually, in the json file of this tag
+		 * ({@code waste_ex.json}). The items of this mod must instead be added in the code to the
+		 * {@code AllTags.Items.WASTE} tag.
+		 */
+		public static final TagKey<Item> WASTE_EX = tag("waste_ex");
 
 		/**
 		 * Used by the flint block.

@@ -185,7 +185,7 @@ public class WasteProcessorBlockEntity extends KineticBlockEntity implements Men
 
 	private boolean hasValidInput()
 	{
-		boolean isInputProcessable = (!this.itemHandler.getStackInSlot(INPUT_SLOT).is(AllTags.Items.WASTE) && !itemHandler.getStackInSlot(INPUT_SLOT).is(ItemStack.EMPTY.getItem()));
+		boolean isInputProcessable = (!this.itemHandler.getStackInSlot(INPUT_SLOT).is(AllTags.Items.WASTE_EX) && !itemHandler.getStackInSlot(INPUT_SLOT).is(ItemStack.EMPTY.getItem()));
 		ItemStack result = new ItemStack(AllItems.WASTE.get());
 		boolean isPowered = getSpeed() != 0;
 
