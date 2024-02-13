@@ -2,11 +2,14 @@ package com.rose.gods_retribution.content.block.waste_processor;
 
 import com.rose.gods_retribution.content.AllItems;
 import com.rose.gods_retribution.content.AllTags;
+import com.simibubi.create.AllSoundEvents;
+import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.Mth;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -28,7 +31,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class WasteProcessorBlockEntity extends BlockEntity implements MenuProvider
+public class WasteProcessorBlockEntity extends KineticBlockEntity implements MenuProvider
 {
 	private final ItemStackHandler itemHandler = new ItemStackHandler(2); // the inventory
 	private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
@@ -41,7 +44,7 @@ public class WasteProcessorBlockEntity extends BlockEntity implements MenuProvid
 	 */
 	protected final ContainerData data;
 	private int progress = 0;
-	private int maxProgress = 78;
+	private int maxProgress = 60;
 
 	public WasteProcessorBlockEntity(BlockEntityType<WasteProcessorBlockEntity> blockEntityType, BlockPos pPos, BlockState pBlockState)
 	{
@@ -126,34 +129,33 @@ public class WasteProcessorBlockEntity extends BlockEntity implements MenuProvid
 
 	/**
 	 * Used to save the data when the game is saved.
-	 * @param pTag
 	 */
 	@Override
-	protected void saveAdditional(CompoundTag pTag)
+	protected void write(CompoundTag pTag, boolean clientPacket)
 	{
 		pTag.put("inventory", itemHandler.serializeNBT());
 		pTag.putInt("waste_processor.progress", progress);
-		super.saveAdditional(pTag);
+		super.write(pTag, clientPacket);
 	}
 
 	/**
 	 * Used to load the data when the game is loaded.
-	 * @param pTag
 	 */
 	@Override
-	public void load(CompoundTag pTag)
+	public void read(CompoundTag pTag, boolean clientPacket)
 	{
-		super.load(pTag);
+		super.read(pTag, clientPacket);
 		itemHandler.deserializeNBT(pTag.getCompound("inventory"));
 		progress = pTag.getInt("waste_processor.progress");
 	}
 
-	public void tick(Level lvl, BlockPos pos, BlockState blockstate)
+	@Override
+	public void tick()
 	{
+		super.tick();
 		if (hasValidInput())
 		{
-			progress++;
-			setChanged(lvl, pos, blockstate);
+			progress += getProcessingSpeed();
 
 			if (progress >= maxProgress)
 			{
@@ -165,19 +167,29 @@ public class WasteProcessorBlockEntity extends BlockEntity implements MenuProvid
 			progress = 0;
 	}
 
+	@Override
+	public @NotNull CompoundTag getUpdateTag()
+	{
+		var nbt = super.getUpdateTag();
+		saveAdditional(nbt);
+		return nbt;
+	}
+
 	private void craftOutput()
 	{
 		ItemStack result = new ItemStack(AllItems.WASTE.get(), 1);
 		itemHandler.extractItem(INPUT_SLOT, 1, false);
 		itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(), itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
+		playSound();
 	}
 
 	private boolean hasValidInput()
 	{
 		boolean isInputProcessable = (!this.itemHandler.getStackInSlot(INPUT_SLOT).is(AllTags.Items.WASTE) && !itemHandler.getStackInSlot(INPUT_SLOT).is(ItemStack.EMPTY.getItem()));
 		ItemStack result = new ItemStack(AllItems.WASTE.get());
+		boolean isPowered = getSpeed() != 0;
 
-		return isInputProcessable && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+		return isPowered && isInputProcessable && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
 	}
 
 	private boolean canInsertItemIntoOutputSlot(Item item)
@@ -189,5 +201,15 @@ public class WasteProcessorBlockEntity extends BlockEntity implements MenuProvid
 	private boolean canInsertAmountIntoOutputSlot(int count)
 	{
 		return itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + count <= itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
+	}
+
+	public void playSound()
+	{
+		AllSoundEvents.MECHANICAL_PRESS_ACTIVATION.playAt(getLevel(), worldPosition, 3, 1, true);
+	}
+
+	public int getProcessingSpeed()
+	{
+		return Mth.clamp((int) Math.abs(getSpeed() / 16f), 1, 512);
 	}
 }

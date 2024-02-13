@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-12T17:57:15.4311329	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-13T11:51:38.0144148	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 67e30168b672b163f946c33f00a557356f5bcc26 assets/gods_retribution/blockstates/aeration_vertical_slab.json
 9d1eee779b778f747b8f01632c3e2664f1228b27 assets/gods_retribution/blockstates/air_vent.json
@@ -164,7 +164,7 @@ f2fbf7d6dc803d653e6d37b66acb14a8d2d9b0f4 assets/gods_retribution/blockstates/til
 e2e2ab37046a89f29c6aba3271794502dceaed46 assets/gods_retribution/blockstates/tiles_bathroom_wall.json
 396073c736f20dbf235746778cc4b284b77c12c0 assets/gods_retribution/blockstates/unlit_torch.json
 5cca3f28b099e41d27710333520e589d0176ff6e assets/gods_retribution/blockstates/waste_block.json
-8c1585061fadb083d1ff38957bed1761416114c4 assets/gods_retribution/blockstates/waste_processor.json
+b8bf370c365e6a3de177a4f22751ad80a7657211 assets/gods_retribution/blockstates/waste_processor.json
 98698b13b07769a17ce464e374a5ef363c87fdd4 assets/gods_retribution/blockstates/wood.json
 47f085fceae519dc36bf5d68d2fbc452f6593589 assets/gods_retribution/blockstates/wood_slab.json
 c7d379fc0386dbe14cd1db9b42dc839998a3ed97 assets/gods_retribution/blockstates/wood_stairs.json
@@ -497,7 +497,6 @@ f46f6e7d0e9bcc87d15bdf2a437c9cb333bde781 assets/gods_retribution/models/block/ti
 f9ea57ef782ecfd5b18d22efe119e7f23a379e53 assets/gods_retribution/models/block/tiles_bathroom_wall_side_tall.json
 f3fa64629964be4dd6fa4a2ea683c1b9b1833b37 assets/gods_retribution/models/block/unlit_torch.json
 ddbd99bc5e6168fd7b889fab914d9734bec900f0 assets/gods_retribution/models/block/waste_block.json
-a7a1c26a7c6b0979efcf548430b04d9fca654080 assets/gods_retribution/models/block/waste_processor.json
 c432956fed221a97eca840f4b554c5a3955d148c assets/gods_retribution/models/block/wood.json
 838040b410613ed98a37f1fc0821bde80e26aa88 assets/gods_retribution/models/block/wood_slab.json
 74f5eb5c7dd59f7dd1cbcd766eb960aace3b4257 assets/gods_retribution/models/block/wood_slab_top.json
@@ -693,7 +692,7 @@ fceb07f6eb1efbc17a736a8605990bec47abb9c1 assets/gods_retribution/models/item/woo
 7d3cb11ed381ccc8cf542bf74ce8e7d0974f4893 assets/gods_retribution/models/item/wood_stairs.json
 443ae681d4b601093f983d4e7181140861ddf9d3 assets/gods_retribution/models/item/wood_vertical_slab.json
 2d283aaa637be1d0dce4169ca4348443f927c152 assets/gods_retribution/models/item/wood_wall.json
-147c7061c74673f46a50b3f111216c5da409b881 data/create/tags/blocks/safe_nbt.json
+0f35b77eb5df5deb4db470e5ffeaf5726fc22724 data/create/tags/blocks/safe_nbt.json
 90b901bb0cd782e78803f218e8355da3206c7392 data/forge/tags/blocks/stone.json
 92edea3d60580e3708c4f1fee0104d5174be36a9 data/forge/tags/blocks/storage_blocks.json
 a82bb092965ac6d5264dea6224516949bd30b749 data/forge/tags/blocks/storage_blocks/flint.json
@@ -1270,8 +1269,8 @@ cd5dd780b9de66d2c6da2cf10520436214d2a18a data/gods_retribution/tags/items/concre
 8028bfb64281a90a309f93d1dc10614acaac4523 data/gods_retribution/tags/items/vertical_slabs.json
 556b65c3ac7e0b8c4878299d751c4584883055a3 data/gods_retribution/tags/items/waste.json
 23c1a80ffe50dea41a5126a228bc1783a3f91676 data/minecraft/tags/blocks/guarded_by_piglins.json
-00600c4aeec74c20f44426e86500c707db8180a7 data/minecraft/tags/blocks/mineable/axe.json
-662f97f45072486476edfda3549bb35bcea76db8 data/minecraft/tags/blocks/mineable/pickaxe.json
+a250889eaf40d811ffb277f8fd98e9df346e6b27 data/minecraft/tags/blocks/mineable/axe.json
+ccf2b6c77296719ad8927ecdf9f4503ca63b1ba5 data/minecraft/tags/blocks/mineable/pickaxe.json
 27b6780937c90ab80991aa805899e1618388f02a data/minecraft/tags/blocks/mineable/shovel.json
 520f3b4b3bcbf4cec728024e89616cd67f1179f9 data/minecraft/tags/blocks/needs_diamond_tool.json
 d1307164a53d45098832f26585877bcf490e75ca data/minecraft/tags/blocks/needs_iron_tool.json

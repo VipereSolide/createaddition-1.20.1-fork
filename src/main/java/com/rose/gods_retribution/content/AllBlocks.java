@@ -29,6 +29,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.Tags;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
@@ -678,8 +679,17 @@ public class AllBlocks
     public static final BlockEntry<WasteProcessorBlock> WASTE_PROCESSOR = REGISTRATE
             .block("waste_processor", WasteProcessorBlock::new)
             .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p
+                    .noOcclusion()
+                    .mapColor(MapColor.PODZOL))
+            .tag(
+                    com.simibubi.create.AllTags.AllBlockTags.SAFE_NBT.tag,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    BlockTags.MINEABLE_WITH_AXE
+            )
+            .transform(BlockStressDefaults.setImpact(4))
             .blockstate((ctx, provider) -> {
-                provider.simpleBlock(ctx.getEntry(), provider.models().cubeAll(ctx.getName(), provider.blockTexture(Blocks.IRON_BLOCK)));
+                provider.horizontalBlock(ctx.getEntry(), new ModelFile.UncheckedModelFile(provider.modLoc("block/waste_processor")));
             })
             .item()
             .tab(AllCreativeTabs.MAIN.getKey())

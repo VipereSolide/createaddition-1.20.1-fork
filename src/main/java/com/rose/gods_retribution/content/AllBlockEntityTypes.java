@@ -6,6 +6,7 @@ import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachin
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineRenderer;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlockEntity;
 import com.rose.gods_retribution.content.block.waste_processor.WasteProcessorBlockEntity;
+import com.rose.gods_retribution.content.block.waste_processor.WasteProcessorRenderer;
 import com.simibubi.create.content.kinetics.base.ShaftInstance;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
@@ -25,7 +26,9 @@ public class AllBlockEntityTypes
 
     public static final BlockEntityEntry<WasteProcessorBlockEntity> WASTE_PROCESSOR = REGISTRATE
             .blockEntity("waste_processor", WasteProcessorBlockEntity::new)
+            .instance(() -> ShaftInstance::new)
             .validBlocks(AllBlocks.WASTE_PROCESSOR)
+            .renderer(() -> WasteProcessorRenderer::new)
             .register();
 
     public static final BlockEntityEntry<PlasticMossBlockEntity> PLASTIC_MOSS = REGISTRATE

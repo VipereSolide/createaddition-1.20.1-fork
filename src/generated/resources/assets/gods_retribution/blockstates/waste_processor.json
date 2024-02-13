@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "gods_retribution:block/waste_processor",
+      "y": 90
+    },
+    "facing=north": {
       "model": "gods_retribution:block/waste_processor"
+    },
+    "facing=south": {
+      "model": "gods_retribution:block/waste_processor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gods_retribution:block/waste_processor",
+      "y": 270
     }
   }
 }
