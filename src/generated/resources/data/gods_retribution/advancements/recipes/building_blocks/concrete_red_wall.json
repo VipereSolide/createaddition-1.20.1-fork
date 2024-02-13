@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_required_block": {
+    "has_concrete_red": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_required_block",
+      "has_concrete_red",
       "has_the_recipe"
     ]
   ],

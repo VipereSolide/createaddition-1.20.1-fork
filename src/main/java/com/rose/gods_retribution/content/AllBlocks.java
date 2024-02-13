@@ -5,6 +5,7 @@ import com.rose.gods_retribution.content.block.engraved_blocks.EngravedLimestone
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
 import com.rose.gods_retribution.content.block.keyholes.KeyholeBlock;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlock;
+import com.rose.gods_retribution.content.block.waste_processor.WasteProcessorBlock;
 import com.rose.gods_retribution.fundation.blocks.SmartBlock;
 import com.rose.gods_retribution.fundation.blocks.VerticalSlabBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
@@ -673,6 +674,16 @@ public class AllBlocks
             .tab(AllCreativeTabs.MAIN.getKey())
             .build()
             .register();
+
+    public static final BlockEntry<WasteProcessorBlock> WASTE_PROCESSOR = REGISTRATE
+            .block("waste_processor", WasteProcessorBlock::new)
+            .initialProperties(SharedProperties::softMetal)
+            .blockstate((ctx, provider) -> {
+                provider.simpleBlock(ctx.getEntry(), provider.models().cubeAll(ctx.getName(), provider.blockTexture(Blocks.IRON_BLOCK)));
+            })
+            .item()
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .build().register();
 
     public static final BlockEntry<Block> AERATION_BLOCK = REGISTRATE
             .block("aeration_block", Block::new)

@@ -48,6 +48,8 @@
   "item.gods_retribution.fluid_vacuum.tooltip.condition1": "Quand Clic droit",
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbe_ le fluide visé.",
 
+  "block.gods_retribution.waste_processor": "Broyeuse à déchets",
+
   "block.gods_retribution.gold_stairs": "Escalier en or",
   "block.gods_retribution.gold_slab": "Dalle en or",
   "block.gods_retribution.gold_wall": "Muret en or",

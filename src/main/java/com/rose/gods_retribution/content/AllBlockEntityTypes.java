@@ -5,6 +5,7 @@ import com.rose.gods_retribution.content.block.engraved_blocks.EngravedLimestone
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlockEntity;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineRenderer;
 import com.rose.gods_retribution.content.block.plastic_moss.PlasticMossBlockEntity;
+import com.rose.gods_retribution.content.block.waste_processor.WasteProcessorBlockEntity;
 import com.simibubi.create.content.kinetics.base.ShaftInstance;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
@@ -20,6 +21,11 @@ public class AllBlockEntityTypes
             .instance(() -> ShaftInstance::new)
             .validBlocks(AllBlocks.LABELLING_MACHINE)
             .renderer(() -> LabellingMachineRenderer::new)
+            .register();
+
+    public static final BlockEntityEntry<WasteProcessorBlockEntity> WASTE_PROCESSOR = REGISTRATE
+            .blockEntity("waste_processor", WasteProcessorBlockEntity::new)
+            .validBlocks(AllBlocks.WASTE_PROCESSOR)
             .register();
 
     public static final BlockEntityEntry<PlasticMossBlockEntity> PLASTIC_MOSS = REGISTRATE
