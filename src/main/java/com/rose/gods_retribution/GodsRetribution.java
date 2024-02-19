@@ -77,6 +77,7 @@ public class GodsRetribution
         AllBlocks.register();
         AllBlockEntityTypes.register();
 
+        AllFluids.register();
         AllItems.register();
         AllMenuTypes.register();
         AllEntities.register();

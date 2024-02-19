@@ -158,6 +158,7 @@
   "block.gods_retribution.steel_wall": "ןןɐM ןǝǝʇS",
   "block.gods_retribution.stone_keyhole": "ǝןoɥʎǝʞ ǝuoʇS",
   "block.gods_retribution.sunflower_crop": "doɹƆ ɹǝʍoןɟunS",
+  "block.gods_retribution.test_fluid": "pınןℲ ʇsǝ⟘",
   "block.gods_retribution.tiles_bathroom_block": "ʞɔoןᗺ ɯooɹɥʇɐᗺ sǝןı⟘",
   "block.gods_retribution.tiles_bathroom_slab": "qɐןS ɯooɹɥʇɐᗺ sǝןı⟘",
   "block.gods_retribution.tiles_bathroom_stairs": "sɹıɐʇS ɯooɹɥʇɐᗺ sǝןı⟘",
@@ -172,6 +173,7 @@
   "block.gods_retribution.wood_vertical_slab": "qɐןS ןɐɔıʇɹǝΛ pooM",
   "block.gods_retribution.wood_wall": "ןןɐM pooM",
   "entity.gods_retribution.laser_projectile": "ǝןıʇɔǝظoɹԀ ɹǝsɐꞀ",
+  "fluid.gods_retribution.test_fluid": "pınןℲ ʇsǝ⟘",
   "item.gods_retribution.ashes": "sǝɥsⱯ",
   "item.gods_retribution.cement": "ʇuǝɯǝƆ",
   "item.gods_retribution.e11_blaster": "ɹǝʇsɐןᗺ ƖƖƎ",
@@ -191,5 +193,6 @@
   "item.gods_retribution.screw": "ʍǝɹɔS",
   "item.gods_retribution.sugar_packet": "ʇǝʞɔɐԀ ɹɐbnS",
   "item.gods_retribution.sunflower_seeds": "spǝǝS ɹǝʍoןɟunS",
+  "item.gods_retribution.test_fluid_bucket": "ʇǝʞɔnᗺ pınןℲ ʇsǝ⟘",
   "item.gods_retribution.waste": "ǝʇsɐM"
 }

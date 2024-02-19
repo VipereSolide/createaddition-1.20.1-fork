@@ -13,6 +13,8 @@
   "item.gods_retribution.waste": "Waste",
   "item.gods_retribution.ashes": "Ashes",
 
+  "item.gods_retribution.test_fluid_bucket": "Test Fluid Bucket",
+
   "item.gods_retribution.labelling_tag": "Labelling Tag",
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renames_ items contained in a _labelling machine_.",
   "item.gods_retribution.labelling_tag.tooltip.condition1": "When R-Clicked",
@@ -236,5 +238,7 @@
 
   "sounds.gods_retribution.blaster_fire": "Blaster Fires",
   "sounds.gods_retribution.door_lock": "Door locking",
-  "sounds.gods_retribution.door_unlock": "Door unlocking"
+  "sounds.gods_retribution.door_unlock": "Door unlocking",
+
+  "fluid.gods_retribution.test_fluid": "Test Fluid"
 }

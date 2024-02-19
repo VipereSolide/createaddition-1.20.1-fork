@@ -158,6 +158,7 @@
   "block.gods_retribution.steel_wall": "Steel Wall",
   "block.gods_retribution.stone_keyhole": "Stone Keyhole",
   "block.gods_retribution.sunflower_crop": "Sunflower Crop",
+  "block.gods_retribution.test_fluid": "Test Fluid",
   "block.gods_retribution.tiles_bathroom_block": "Tiles Bathroom Block",
   "block.gods_retribution.tiles_bathroom_slab": "Tiles Bathroom Slab",
   "block.gods_retribution.tiles_bathroom_stairs": "Tiles Bathroom Stairs",
@@ -172,6 +173,7 @@
   "block.gods_retribution.wood_vertical_slab": "Wood Vertical Slab",
   "block.gods_retribution.wood_wall": "Wood Wall",
   "entity.gods_retribution.laser_projectile": "Laser Projectile",
+  "fluid.gods_retribution.test_fluid": "Test Fluid",
   "item.gods_retribution.ashes": "Ashes",
   "item.gods_retribution.cement": "Cement",
   "item.gods_retribution.e11_blaster": "E11 Blaster",
@@ -191,5 +193,6 @@
   "item.gods_retribution.screw": "Screw",
   "item.gods_retribution.sugar_packet": "Sugar Packet",
   "item.gods_retribution.sunflower_seeds": "Sunflower Seeds",
+  "item.gods_retribution.test_fluid_bucket": "Test Fluid Bucket",
   "item.gods_retribution.waste": "Waste"
 }
