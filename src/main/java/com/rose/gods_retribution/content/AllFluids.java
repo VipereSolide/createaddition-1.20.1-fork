@@ -69,6 +69,28 @@ public class AllFluids
 			//.noBucket()
 			.register();
 
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> GLUE = REGISTRATE
+			.fluid("glue",
+				   new ResourceLocation(GodsRetribution.MOD_ID, "block/glue_still"),
+				   new ResourceLocation(GodsRetribution.MOD_ID, "block/glue_flow"))
+			.properties(p -> p
+					.viscosity(3000)
+					.density(1000))
+			.source(f -> {
+				f.levelDecreasePerBlock(3);
+				f.tickRate(20);
+				f.slopeFindDistance(1);
+				f.explosionResistance(100.0f);
+				return new ForgeFlowingFluid.Source(f);
+			})
+			.bucket()
+			.model((ctx, provider) -> {
+				provider.withExistingParent(ctx.getName(), "item/generated")
+						.texture("layer0", "item/test_fluid_bucket");
+			})
+			.tab(AllCreativeTabs.MAIN.getKey())
+			.build().register();
+
 	/**
 	 * Loads this class.
 	 */

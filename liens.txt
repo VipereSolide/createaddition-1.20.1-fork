@@ -1,5 +1,6 @@
 https://ci.tterrag.com/job/Registrate/job/1.16/javadoc/overview-summary.html
 https://ci.tterrag.com/job/Registrate/job/1.20/javadoc/
+https://ci.tterrag.com/job/Registrate/job/1.20/
 https://github.com/mrh0/createaddition/tree/1.20.1
 https://github.com/tterrag1098/Registrate
 https://github.com/VipereSolide/createaddition-1.20.1-fork

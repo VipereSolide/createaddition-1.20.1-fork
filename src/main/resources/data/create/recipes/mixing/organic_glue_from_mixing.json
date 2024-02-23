@@ -5,14 +5,15 @@
 		{"tag": "gods_retribution:glue_material"},
 		{
 			"fluid": "minecraft:water",
-			"amount": 500,
+			"amount": 1000,
 			"nbt": {}
 		}
 	],
 	"results": [
 		{
-			"item": "create:super_glue",
-			"count": 1
+			"fluid": "gods_retribution:glue",
+			"amount": 1000,
+			"nbt": {}
 		}
 	],
 	"heatRequirement": "heated"

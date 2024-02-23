@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-19T13:02:57.3830309	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-23T10:21:14.2100019	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 67e30168b672b163f946c33f00a557356f5bcc26 assets/gods_retribution/blockstates/aeration_vertical_slab.json
 9d1eee779b778f747b8f01632c3e2664f1228b27 assets/gods_retribution/blockstates/air_vent.json
@@ -111,6 +111,7 @@ a03e85e52cf2588385a3f953c024e2719a296a60 assets/gods_retribution/blockstates/eng
 7b2fc8cb768a482ed9d12739745d4e942fef7360 assets/gods_retribution/blockstates/flint_stairs.json
 55b61df386e00053b4a19b472a13a08e3825c594 assets/gods_retribution/blockstates/flint_vertical_slab.json
 aabed1f5f0b4625ade52290bf7bc96fceb680c8f assets/gods_retribution/blockstates/flint_wall.json
+6e35345182427e6c531bd0e581e2f259d8381a4e assets/gods_retribution/blockstates/glue.json
 ebc2e78ea7bc1edbb7aef68ff717e879417e31bd assets/gods_retribution/blockstates/gold_slab.json
 da265f33823d94a2196ec2bc1b10030e452354bf assets/gods_retribution/blockstates/gold_stairs.json
 0e0b5215b590c82a3adb2f5c32cdd8dd0291fc2a assets/gods_retribution/blockstates/gold_wall.json
@@ -172,8 +173,8 @@ b8bf370c365e6a3de177a4f22751ad80a7657211 assets/gods_retribution/blockstates/was
 c7d379fc0386dbe14cd1db9b42dc839998a3ed97 assets/gods_retribution/blockstates/wood_stairs.json
 e6796880463fbe44a03e3130adea6a8506c38dac assets/gods_retribution/blockstates/wood_vertical_slab.json
 ded1857ce54e44a0a19a46b26613ce9c1d6ab458 assets/gods_retribution/blockstates/wood_wall.json
-7e2697101c8e8c4aadf30f2ce1f185bce9764386 assets/gods_retribution/lang/en_ud.json
-4fd293420bf2eccf6799ca3bdca6b12150ebccd1 assets/gods_retribution/lang/en_us.json
+0c331ffd11c207a80a4f3587efc06c215c6a55ea assets/gods_retribution/lang/en_ud.json
+0cd6c27e3a8fbe1d56bde8f7f20f199e59999e3f assets/gods_retribution/lang/en_us.json
 889003677116806ffbc37bfa130ea02746f49190 assets/gods_retribution/models/block/aeration_block.json
 de09cb7d30fea19a28a9b71cf10e5bb3b0124c14 assets/gods_retribution/models/block/aeration_vertical_slab.json
 2acc0b0bdf9823db4fa87fc00defd50e5ed91d23 assets/gods_retribution/models/block/air_vent.json
@@ -396,6 +397,7 @@ c421a78ecc9cd64a405a3862684ee0ac9bd2eeeb assets/gods_retribution/models/block/fl
 29b92dcde8f23f7dffc086caeead8139583c3e28 assets/gods_retribution/models/block/flint_wall_post.json
 96c7df1fd60d5df983a8d0737d6d76c6afca0185 assets/gods_retribution/models/block/flint_wall_side.json
 b3e7c88e50ea2a302dc505bf63bac49afd26a07c assets/gods_retribution/models/block/flint_wall_side_tall.json
+ede3e7a9ba3c4f0a72189d5d7df47b0a8bd2603d assets/gods_retribution/models/block/glue.json
 b785452759d502c711baedf045cbdefbef9b0371 assets/gods_retribution/models/block/gold_slab.json
 9982686918c8834489cd2b550921916ecc78a74c assets/gods_retribution/models/block/gold_slab_top.json
 92e8c925c15f784b6a77d29dbedad2d676b06d0a assets/gods_retribution/models/block/gold_stairs.json
@@ -630,6 +632,7 @@ c3706e99ce22fe00e46dd5c533e2a478c847dbc4 assets/gods_retribution/models/item/eme
 9c4b1f7b340d8314e3657fb15c631694b7a5bed1 assets/gods_retribution/models/item/flint_wall.json
 171a2d2e1534bc04b1d6f2bfbf7906d374e9542a assets/gods_retribution/models/item/fluid_vacuum.json
 c9feef4f65d8257aaa3ad87ba9d0e01793f7b36c assets/gods_retribution/models/item/gelatin.json
+65666aa67427c719f6f17823a9434c0d74d5594e assets/gods_retribution/models/item/glue_bucket.json
 584cfb1b9a1d0eb8183723b5b983e28a91f8fb62 assets/gods_retribution/models/item/gold_key.json
 412ffd8c3b3f749548007dd55e3154733494e2bb assets/gods_retribution/models/item/gold_slab.json
 683cda22578c9c45e5112212609db944f46287b9 assets/gods_retribution/models/item/gold_stairs.json
