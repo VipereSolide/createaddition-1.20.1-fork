@@ -60,7 +60,6 @@ public class AllFluids
 			})
 			.bucket()
 			.model((ctx, provider) -> {
-				//provider.withExistingParent(ctx.getName(), provider.modLoc("item/test_fluid_bucket"));
 				provider.withExistingParent(ctx.getName(), "item/generated")
 						.texture("layer0", "item/test_fluid_bucket");
 			})
@@ -88,6 +87,25 @@ public class AllFluids
 				provider.withExistingParent(ctx.getName(), "item/generated")
 						.texture("layer0", "item/test_fluid_bucket");
 			})
+			.tab(AllCreativeTabs.MAIN.getKey())
+			.build().register();
+
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> PLASTIC = REGISTRATE
+			.fluid("plastic",
+				   new ResourceLocation(GodsRetribution.MOD_ID, "block/plastic_still"),
+				   new ResourceLocation(GodsRetribution.MOD_ID, "block/plastic_flow"))
+			.properties(p -> p
+					.viscosity(3000)
+					.density(1000))
+			.source(f -> {
+				f.levelDecreasePerBlock(2);
+				f.tickRate(40);
+				f.slopeFindDistance(3);
+				f.explosionResistance(100.0f);
+				return new ForgeFlowingFluid.Source(f);
+			})
+			.bucket()
+			.model((ctx, provider) -> provider.withExistingParent(ctx.getName(), "item/generated").texture("layer0", "item/plastic_bucket"))
 			.tab(AllCreativeTabs.MAIN.getKey())
 			.build().register();
 

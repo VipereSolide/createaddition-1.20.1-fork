@@ -15,6 +15,7 @@
 
   "item.gods_retribution.test_fluid_bucket": "Seau de fluide de test",
   "item.gods_retribution.glue_bucket": "Seau de colle",
+  "item.gods_retribution.plastic_bucket": "Seau de plastique",
 
   "item.gods_retribution.labelling_tag": "Gabarit d'étiquetage",
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renomme_ les items contenus dans une _étiqueteuse_.",
@@ -238,5 +239,6 @@
   "sounds.gods_retribution.door_unlock": "Porte que l'on devérouille",
 
   "fluid.gods_retribution.test_fluid": "Fluide de test",
-  "fluid.gods_retribution.glue": "Colle"
+  "fluid.gods_retribution.glue": "Colle",
+  "fluid.gods_retribution.plastic": "Plastique"
 }

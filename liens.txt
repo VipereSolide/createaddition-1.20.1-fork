@@ -11,3 +11,4 @@ https://www.curseforge.com/minecraft/mc-mods/crafttweaker
 https://minecraft.wiki/w/Data_pack
 https://minecraft.wiki/w/Recipe#JSON_format
 https://github.com/Creators-of-Create/Create/wiki/Custom-Recipes
+https://www.youtube.com/playlist?list=PLaevjqy3XufYpmF5kvwy2Z1v-dsSUjhlx

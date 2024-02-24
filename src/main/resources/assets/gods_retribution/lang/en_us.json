@@ -15,6 +15,7 @@
 
   "item.gods_retribution.test_fluid_bucket": "Test Fluid Bucket",
   "item.gods_retribution.glue_bucket": "Glue Bucket",
+  "item.gods_retribution.plastic_bucket": "Plastic Bucket",
 
   "item.gods_retribution.labelling_tag": "Labelling Tag",
   "item.gods_retribution.labelling_tag.tooltip.summary": "_Renames_ items contained in a _labelling machine_.",
@@ -242,5 +243,6 @@
   "sounds.gods_retribution.door_unlock": "Door unlocking",
 
   "fluid.gods_retribution.test_fluid": "Test Fluid",
-  "fluid.gods_retribution.glue": "Glue"
+  "fluid.gods_retribution.glue": "Glue",
+  "fluid.gods_retribution.plastic": "Plastic"
 }

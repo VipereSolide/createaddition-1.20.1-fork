@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-23T10:21:14.2100019	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-24T11:23:24.6671787	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 67e30168b672b163f946c33f00a557356f5bcc26 assets/gods_retribution/blockstates/aeration_vertical_slab.json
 9d1eee779b778f747b8f01632c3e2664f1228b27 assets/gods_retribution/blockstates/air_vent.json
@@ -150,6 +150,7 @@ c6e1739ba759c5dee9b050d86dead65f938141fe assets/gods_retribution/blockstates/met
 eca3af931658cd3676355b4cfb0d47bb251a177e assets/gods_retribution/blockstates/netherite_slab.json
 f57d2c63b49ce91e0c34743cf789244b82d22b16 assets/gods_retribution/blockstates/netherite_stairs.json
 95eeb6493e163b8bba369d8cd0b350f4b4c01610 assets/gods_retribution/blockstates/netherite_wall.json
+b79ff8502818a680c4e00c53951f22086e8e4caa assets/gods_retribution/blockstates/plastic.json
 335c33d7d001206b91866f68db90728b21024425 assets/gods_retribution/blockstates/plastic_moss.json
 a95665094a0388a1d05c0a63f35563166efd292d assets/gods_retribution/blockstates/redstone_shifter.json
 44bf97538ca0ea9809b0d3cee1091d0b386dc056 assets/gods_retribution/blockstates/steel_block.json
@@ -173,8 +174,8 @@ b8bf370c365e6a3de177a4f22751ad80a7657211 assets/gods_retribution/blockstates/was
 c7d379fc0386dbe14cd1db9b42dc839998a3ed97 assets/gods_retribution/blockstates/wood_stairs.json
 e6796880463fbe44a03e3130adea6a8506c38dac assets/gods_retribution/blockstates/wood_vertical_slab.json
 ded1857ce54e44a0a19a46b26613ce9c1d6ab458 assets/gods_retribution/blockstates/wood_wall.json
-0c331ffd11c207a80a4f3587efc06c215c6a55ea assets/gods_retribution/lang/en_ud.json
-0cd6c27e3a8fbe1d56bde8f7f20f199e59999e3f assets/gods_retribution/lang/en_us.json
+76b592142018b4c20fe941cf3829f4adede06843 assets/gods_retribution/lang/en_ud.json
+9a6adcb3c7314ff6e06be0172dee91dcac6f6ea1 assets/gods_retribution/lang/en_us.json
 889003677116806ffbc37bfa130ea02746f49190 assets/gods_retribution/models/block/aeration_block.json
 de09cb7d30fea19a28a9b71cf10e5bb3b0124c14 assets/gods_retribution/models/block/aeration_vertical_slab.json
 2acc0b0bdf9823db4fa87fc00defd50e5ed91d23 assets/gods_retribution/models/block/air_vent.json
@@ -476,6 +477,7 @@ daebdbca9f84479153b46f84ad4d005544246679 assets/gods_retribution/models/block/ne
 85fd0e651bfdc46f805aa0651dac6feac834a9c6 assets/gods_retribution/models/block/netherite_wall_post.json
 7922f32d077878cdb7f22084334397d461d67433 assets/gods_retribution/models/block/netherite_wall_side.json
 935bccffe612edd07ff7141e91aa163537f1c4a8 assets/gods_retribution/models/block/netherite_wall_side_tall.json
+24e3403e8c5fd91b13ad88cf74a950202c1e4e40 assets/gods_retribution/models/block/plastic.json
 7dfe60b92d1052b54ac03bb47f69ac385561ef39 assets/gods_retribution/models/block/plastic_moss.json
 d9a5888ed8f23d2cb897c32b831745d34bb6b50d assets/gods_retribution/models/block/redstone_shifter.json
 dc24f458ae2e7296de9f712366a02ba57938d167 assets/gods_retribution/models/block/steel_block.json
@@ -677,6 +679,7 @@ b7f863f158dbe1123753c463600d7fca40685739 assets/gods_retribution/models/item/met
 68d8dcf7409b21c556518826987e85a4d92c6361 assets/gods_retribution/models/item/netherite_stairs.json
 7fc583f5c051f19aef191a00ea907e5aa0aa03bc assets/gods_retribution/models/item/netherite_wall.json
 4706080cb545752daa4859472914b0b4c406868d assets/gods_retribution/models/item/plastic_ball.json
+fa8c49157598b3504ed9f0887ebdc7601464b8cc assets/gods_retribution/models/item/plastic_bucket.json
 106edd174ebd9059bf3945b5bd19b5932c822c10 assets/gods_retribution/models/item/plastic_moss.json
 0d9174f9646fa486522b35ac36884657a67999ab assets/gods_retribution/models/item/redstone_shifter.json
 2f5869427d4ae609aa3dd623d5215439ad153b16 assets/gods_retribution/models/item/screw.json
