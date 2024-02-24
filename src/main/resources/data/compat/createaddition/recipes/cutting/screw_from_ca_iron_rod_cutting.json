@@ -1,0 +1,15 @@
+{
+	"type": "create:cutting",
+	"ingredients": [
+		{
+			"item": "createaddition:iron_rod"
+		}
+	],
+	"processingTime": 50,
+	"results": [
+		{
+			"item": "gods_retribution:screw",
+			"count": 4
+		}
+	]
+}

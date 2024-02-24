@@ -26,3 +26,6 @@ Gods' Retribution is compatible with many other mods.
 
 ### Create: Diesel Generators
 You can use the Create: Diesel Generators' crude oil to make plastic.
+
+### Create: Crafts & Additions
+* You can use the iron rod to make Gods' Retribution's screws
