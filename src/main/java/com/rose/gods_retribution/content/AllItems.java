@@ -17,6 +17,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 
 import static com.rose.gods_retribution.GodsRetribution.REGISTRATE;
 
@@ -205,6 +206,16 @@ public class AllItems
                 makeCookingRecipe(ctx, cons, AllItems.WASTE, RecipeCategory.MISC, xpWaste, cookingTimeWaste);
                 makeCookingRecipe(ctx, cons, AllBlocks.WASTE_BLOCK, RecipeCategory.MISC, xpWaste * 9, cookingTimeWaste * 9);
             })
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> IRON_ROD = REGISTRATE
+            .item("iron_rod", Item::new)
+            .tag(
+                    Tags.Items.RODS,
+                    AllTags.Items.FORGE_RODS_IRON,
+                    AllTags.Items.FORGE_RODS_ALL_METAL
+            )
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
