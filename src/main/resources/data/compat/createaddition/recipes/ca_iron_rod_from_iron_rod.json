@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"group": "createaddition:iron_rod",
+	"ingredients": [
+		{
+			"item": "gods_retribution:iron_rod"
+		}
+	],
+	"result": {
+		"item": "createaddition:iron_rod"
+	},
+	"showNotification": true
+}

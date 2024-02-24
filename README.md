@@ -29,3 +29,4 @@ You can use the Create: Diesel Generators' crude oil to make plastic.
 
 ### Create: Crafts & Additions
 * You can use the iron rod to make Gods' Retribution's screws
+* You can make 1 Gods' Retribution's iron rod out of 1 Create: Crafts & Additions's iron rod, and *vice versa*
