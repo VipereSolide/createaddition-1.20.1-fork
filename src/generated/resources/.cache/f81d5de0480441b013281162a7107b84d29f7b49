@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-24T11:23:24.6671787	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-24T11:27:59.8493611	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 67e30168b672b163f946c33f00a557356f5bcc26 assets/gods_retribution/blockstates/aeration_vertical_slab.json
 9d1eee779b778f747b8f01632c3e2664f1228b27 assets/gods_retribution/blockstates/air_vent.json
@@ -634,7 +634,7 @@ c3706e99ce22fe00e46dd5c533e2a478c847dbc4 assets/gods_retribution/models/item/eme
 9c4b1f7b340d8314e3657fb15c631694b7a5bed1 assets/gods_retribution/models/item/flint_wall.json
 171a2d2e1534bc04b1d6f2bfbf7906d374e9542a assets/gods_retribution/models/item/fluid_vacuum.json
 c9feef4f65d8257aaa3ad87ba9d0e01793f7b36c assets/gods_retribution/models/item/gelatin.json
-65666aa67427c719f6f17823a9434c0d74d5594e assets/gods_retribution/models/item/glue_bucket.json
+a905e3ce8ee224b9055c803636578f121aac8571 assets/gods_retribution/models/item/glue_bucket.json
 584cfb1b9a1d0eb8183723b5b983e28a91f8fb62 assets/gods_retribution/models/item/gold_key.json
 412ffd8c3b3f749548007dd55e3154733494e2bb assets/gods_retribution/models/item/gold_slab.json
 683cda22578c9c45e5112212609db944f46287b9 assets/gods_retribution/models/item/gold_stairs.json

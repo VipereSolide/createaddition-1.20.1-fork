@@ -85,7 +85,7 @@ public class AllFluids
 			.bucket()
 			.model((ctx, provider) -> {
 				provider.withExistingParent(ctx.getName(), "item/generated")
-						.texture("layer0", "item/test_fluid_bucket");
+						.texture("layer0", "item/glue_bucket");
 			})
 			.tab(AllCreativeTabs.MAIN.getKey())
 			.build().register();
