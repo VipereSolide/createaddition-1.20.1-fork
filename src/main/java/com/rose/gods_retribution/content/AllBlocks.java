@@ -533,7 +533,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS))
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS, 2))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -613,7 +613,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS))
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS, 2))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -830,7 +830,7 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS))
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS, 2))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1089,7 +1089,7 @@ public class AllBlocks
                     ItemTags.SLABS,
                     AllTags.Items.CONCRETE
             )
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS))
+            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS, 2))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1210,7 +1210,7 @@ public class AllBlocks
                 )
                 .recipe((ctx, cons) -> {
                     makeSlabShapedRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour));
-                    makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour), RecipeCategory.BUILDING_BLOCKS);
+                    makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour), RecipeCategory.BUILDING_BLOCKS, 2);
                 })
                 .tab(AllCreativeTabs.DECORATION.getKey())
                 .build().register();

@@ -126,6 +126,7 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock
 		consumer.stonecutting(
 				DataIngredient.ingredient(Ingredient.of(madeOf::asItem), madeOf::asItem),
 				RecipeCategory.BUILDING_BLOCKS,
-				context::getEntry);
+				context::getEntry,
+				2);
 	}
 }
