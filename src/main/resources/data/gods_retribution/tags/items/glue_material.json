@@ -1,7 +1,9 @@
 {
 	"values": [
 		"minecraft:rabbit_hide",
+		"minecraft:slime_ball",
 		"#minecraft:fishes",
-		"#forge:bones"
+		"#forge:bones",
+		{"id": "gugu:papa", "required": false}
 	]
 }
