@@ -1,0 +1,18 @@
+{
+	"type": "create:mixing",
+	"ingredients": [
+		{
+			"fluid": "createdieselgenerators:crude_oil",
+			"amount": 1000,
+			"nbt": {}
+		}
+	],
+	"results": [
+		{
+			"fluid": "gods_retribution:plastic",
+			"amount": 500,
+			"nbt": {}
+		}
+	],
+	"heatRequirement": "heated"
+}
