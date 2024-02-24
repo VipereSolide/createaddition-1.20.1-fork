@@ -9,6 +9,10 @@
 		{
 			"item": "gods_retribution:iron_rod",
 			"count": 4
+		},
+		{
+			"item": "gods_retribution:iron_filings",
+			"chance": 0.2
 		}
 	],
 	"processingTime": 50

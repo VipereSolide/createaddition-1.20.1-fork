@@ -219,6 +219,11 @@ public class AllItems
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
+    public static final ItemEntry<Item> IRON_FILINGS = REGISTRATE
+            .item("iron_filings", Item::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
     /**
      * Loads this class.
      */
