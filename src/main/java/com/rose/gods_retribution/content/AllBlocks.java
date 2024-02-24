@@ -705,6 +705,58 @@ public class AllBlocks
             .build()
             .register();
 
+    public static final BlockEntry<StairBlock> AERATION_STAIRS = REGISTRATE
+            .block("aeration_stairs", (p) -> new StairBlock(AllBlocks.AERATION_BLOCK.getDefaultState(), p))
+            .initialProperties(AllBlocks.AERATION_BLOCK::get)
+            .tag(
+                    BlockTags.STAIRS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/aeration_block")))
+            .item()
+            .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> {
+                makeStairsShapedRecipe(ctx, cons, AllBlocks.AERATION_BLOCK);
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.AERATION_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<SlabBlock> AERATION_SLAB = REGISTRATE
+            .block("aeration_slab", SlabBlock::new)
+            .initialProperties(AllBlocks.AERATION_BLOCK::get)
+            .tag(
+                    BlockTags.SLABS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> provider.slabBlock(ctx.getEntry(), provider.modLoc("block/aeration_block"), provider.modLoc("block/aeration_block")))
+            .item()
+            .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.AERATION_BLOCK, RecipeCategory.BUILDING_BLOCKS, 2);
+                makeSlabShapedRecipe(ctx, cons, AllBlocks.AERATION_BLOCK);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<WallBlock> AERATION_WALL = REGISTRATE
+            .block("aeration_wall", WallBlock::new)
+            .initialProperties(AllBlocks.AERATION_BLOCK::get)
+            .tag(
+                    BlockTags.WALLS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/aeration_block")))
+            .item()
+            .tag(ItemTags.WALLS)
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/aeration_block")))
+            .recipe((ctx, cons) -> {
+                makeWallShapedRecipe(ctx, cons, AllBlocks.AERATION_BLOCK);
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.AERATION_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+            })
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
     public static final BlockEntry<VerticalSlabBlock> AERATION_VSLAB = REGISTRATE
             .block("aeration_vertical_slab", VerticalSlabBlock::new)
             .initialProperties(() -> AllBlocks.AERATION_BLOCK.get())

@@ -1,6 +1,9 @@
 {
   "block.gods_retribution.aeration_block": "Aeration Block",
+  "block.gods_retribution.aeration_slab": "Aeration Slab",
+  "block.gods_retribution.aeration_stairs": "Aeration Stairs",
   "block.gods_retribution.aeration_vertical_slab": "Aeration Vertical Slab",
+  "block.gods_retribution.aeration_wall": "Aeration Wall",
   "block.gods_retribution.air_vent": "Air Vent",
   "block.gods_retribution.ashes_block": "Ashes Block",
   "block.gods_retribution.clear_glass": "Clear Glass",
