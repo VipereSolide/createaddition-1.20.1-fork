@@ -5,11 +5,14 @@ import com.rose.gods_retribution.content.item.*;
 import com.rose.gods_retribution.content.item.fluid_vacuum.FluidVacuumItem;
 import com.rose.gods_retribution.content.item.gold_key.GoldKeyItem;
 import com.rose.gods_retribution.content.item.labelling_tag.LabellingTagItem;
+import com.simibubi.create.content.fluids.transfer.FillingRecipe;
+import com.simibubi.create.foundation.data.recipe.FillingRecipeGen;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
@@ -223,6 +226,53 @@ public class AllItems
             .item("iron_filings", Item::new)
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
+
+    public static final ItemEntry<Item> BROKEN_MOLD = REGISTRATE
+            .item("broken_mold", Item::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> GLUE_BOTTLE_BLUEPRINT = REGISTRATE
+            .item("glue_bottle_blueprint", Item::new)
+            .properties(p -> p
+                    .stacksTo(64))
+            .model((ctx, provider) -> provider.generated(() -> ctx.getEntry(), provider.modLoc("item/blueprint")))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> GLUE_BOTTLE_MOLD = REGISTRATE
+            .item("glue_bottle_mold", Item::new)
+            .model((ctx, provider) -> provider.generated(() -> ctx.getEntry(), provider.modLoc("item/mold")))
+            .recipe((ctx, cons) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ctx.getEntry())
+                        .pattern("cbc")
+                        .pattern(" c ")
+                        .define('c', Items.CLAY_BALL)
+                        .define('b', AllItems.GLUE_BOTTLE_BLUEPRINT)
+                        .unlockedBy("has_glue_bottle_blueprint", cons.has(AllItems.GLUE_BOTTLE_BLUEPRINT))
+                        .unlockedBy("has_clay_ball", cons.has(Items.CLAY_BALL))
+                        .save(cons);
+            })
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> GLUE_GOTTLE_MOLD_FILLED = REGISTRATE
+            .item("glue_bottle_mold_filled", Item::new)
+            .model((ctx, provider) -> provider.generated(() -> ctx.getEntry(), provider.modLoc("item/mold")))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> GLUE_BOTTLE_EMPTY = REGISTRATE
+            .item("glue_bottle_empty", Item::new)
+            .model((ctx, prov) -> prov.generated(() -> ctx.getEntry(), prov.modLoc("item/glue_bottle")))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> GLUE_BOTTLE = REGISTRATE
+            .item("glue_bottle", Item::new)
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
 
     /**
      * Loads this class.

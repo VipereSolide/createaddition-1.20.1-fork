@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-24T13:33:09.8803522	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-28T13:15:32.2705436	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 6732d3b399ccf3f068d93642642f15c11702efef assets/gods_retribution/blockstates/aeration_slab.json
 2ad84b04d5a4ec41da3d1bc1aca4a529c40d6f98 assets/gods_retribution/blockstates/aeration_stairs.json
@@ -177,8 +177,8 @@ b8bf370c365e6a3de177a4f22751ad80a7657211 assets/gods_retribution/blockstates/was
 c7d379fc0386dbe14cd1db9b42dc839998a3ed97 assets/gods_retribution/blockstates/wood_stairs.json
 e6796880463fbe44a03e3130adea6a8506c38dac assets/gods_retribution/blockstates/wood_vertical_slab.json
 ded1857ce54e44a0a19a46b26613ce9c1d6ab458 assets/gods_retribution/blockstates/wood_wall.json
-dd17d9377f390d19a0da202f22a4072e06d29ce8 assets/gods_retribution/lang/en_ud.json
-9a4269283598e56c9da9889806159ab0da47bc01 assets/gods_retribution/lang/en_us.json
+926f544abcf02464810abe52a8be666a746e0817 assets/gods_retribution/lang/en_ud.json
+cb85836cab3aaa2c1a78342ea5cb8cc319d44d10 assets/gods_retribution/lang/en_us.json
 889003677116806ffbc37bfa130ea02746f49190 assets/gods_retribution/models/block/aeration_block.json
 a7db4ff249e24cc4abf2a53fe880c0a580eb2d74 assets/gods_retribution/models/block/aeration_slab.json
 b597e3fa35d967be526e2511e87a255dc56eef5a assets/gods_retribution/models/block/aeration_slab_top.json
@@ -534,6 +534,7 @@ ee76f2a95e55e21031d54687e0d3590a25add2f4 assets/gods_retribution/models/item/aer
 0f8297a1e48d7902e6fec09a5322eefef24d28e8 assets/gods_retribution/models/item/air_vent.json
 c1957c65999e2a152f60f59b907bb8871fc0d498 assets/gods_retribution/models/item/ashes.json
 85e303da679e0648b3b41e3a30f075f66dc0e135 assets/gods_retribution/models/item/ashes_block.json
+794b2396bb7b94c251a55a458d9305a681ca657a assets/gods_retribution/models/item/broken_mold.json
 3a6f17873152d2720ab6ad13dc5ce6a28e409887 assets/gods_retribution/models/item/cement.json
 796be16fda222a5c5601b325bf914886a47d5b44 assets/gods_retribution/models/item/clear_glass.json
 747289d1e2a1b7a2882c2a8f2380e2588ecc6817 assets/gods_retribution/models/item/clear_glass_slab.json
@@ -648,6 +649,11 @@ c3706e99ce22fe00e46dd5c533e2a478c847dbc4 assets/gods_retribution/models/item/eme
 9c4b1f7b340d8314e3657fb15c631694b7a5bed1 assets/gods_retribution/models/item/flint_wall.json
 171a2d2e1534bc04b1d6f2bfbf7906d374e9542a assets/gods_retribution/models/item/fluid_vacuum.json
 c9feef4f65d8257aaa3ad87ba9d0e01793f7b36c assets/gods_retribution/models/item/gelatin.json
+bda2d837e098f8e215d244c3103cfbe449e60b68 assets/gods_retribution/models/item/glue_bottle.json
+8e00a40262b0d69927fd322b361d2aa99e9b9133 assets/gods_retribution/models/item/glue_bottle_blueprint.json
+bda2d837e098f8e215d244c3103cfbe449e60b68 assets/gods_retribution/models/item/glue_bottle_empty.json
+98a9c1336c69bcd8c7c86a8b7c0f55c2396dc9e6 assets/gods_retribution/models/item/glue_bottle_mold.json
+98a9c1336c69bcd8c7c86a8b7c0f55c2396dc9e6 assets/gods_retribution/models/item/glue_bottle_mold_filled.json
 a905e3ce8ee224b9055c803636578f121aac8571 assets/gods_retribution/models/item/glue_bucket.json
 584cfb1b9a1d0eb8183723b5b983e28a91f8fb62 assets/gods_retribution/models/item/gold_key.json
 412ffd8c3b3f749548007dd55e3154733494e2bb assets/gods_retribution/models/item/gold_slab.json
@@ -935,6 +941,7 @@ dc629788988ea3cc17bbda0b7a0acc4342233fbc data/gods_retribution/advancements/reci
 f6cdf5913d494b6fbc8f0c4339eff3357b9dafa4 data/gods_retribution/advancements/recipes/misc/crafting/empty_packet_from_paper.json
 336e4c1ae6da15ed56b195613c85602f64438cae data/gods_retribution/advancements/recipes/misc/crafting/ginger_glass_flask_from_glass_bottle_and_plastic.json
 8b5dfa2e45abc9f7aea3ff4d4aebbf5e4ad6c70d data/gods_retribution/advancements/recipes/misc/crafting/sugar_packet_from_empty_packet.json
+24cef6b2226ab6f2ebe98c83e7a2570e783f7354 data/gods_retribution/advancements/recipes/misc/glue_bottle_mold.json
 0fbe576302c20aa66dc6e8ca1bbe082aa0e602d7 data/gods_retribution/advancements/recipes/misc/sunflower_seeds.json
 cc3313e339ed3e90254eab318d4d19b70c78f0e4 data/gods_retribution/advancements/recipes/misc/waste.json
 2156c6c6bc24c860b522a79c2b5288e873704fa9 data/gods_retribution/advancements/recipes/misc/waste_block.json
@@ -1279,6 +1286,7 @@ bf06401ac3c16f175b49518825d765487f67f9e9 data/gods_retribution/recipes/emerald_s
 5a01abd0ba1858acc6c60648b759c57b397febb0 data/gods_retribution/recipes/emerald_wall.json
 0ebfc3645fcdfe58d8798e3bcece169835286af7 data/gods_retribution/recipes/flint_vertical_slab.json
 2a5116fd857d69ad17700b024419d54f1efbeb8a data/gods_retribution/recipes/flint_wall.json
+a0b0631e6f41ecacd8e919b9ef2b0cf38801a25f data/gods_retribution/recipes/glue_bottle_mold.json
 98ad9b2a2f2b12ffb6d042bcffd7dfc30c19c5f5 data/gods_retribution/recipes/gold_slab.json
 0b7360648baea36cac91ffe1fcbd2d6772351bd9 data/gods_retribution/recipes/gold_stairs.json
 5a630b78e74e5f66b334d57468daae21c75e3bc0 data/gods_retribution/recipes/gold_wall.json

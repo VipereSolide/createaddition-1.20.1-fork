@@ -1,0 +1,17 @@
+{
+	"type": "create:filling",
+	"ingredients": [
+		{
+			"item": "gods_retribution:glue_bottle_mold"
+		},
+		{
+			"fluid": "gods_retribution:plastic",
+			"amount": 100
+		}
+	],
+	"results": [
+		{
+			"item": "gods_retribution:glue_bottle_mold_filled"
+		}
+	]
+}

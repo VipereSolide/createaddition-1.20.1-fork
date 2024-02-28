@@ -1,0 +1,15 @@
+{
+	"type": "create:emptying",
+	"ingredients": [
+		{"item": "gods_retribution:glue_bottle"}
+	],
+	"results": [
+		{
+			"item": "gods_retribution:glue_bottle_empty"
+		},
+		{
+			"fluid": "gods_retribution:glue",
+			"amount": 250
+		}
+	]
+}

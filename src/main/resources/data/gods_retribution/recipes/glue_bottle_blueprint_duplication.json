@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"group": "gods_retribution:glue_bottle_blueprint",
+	"ingredients": [
+		{"item": "gods_retribution:glue_bottle_blueprint"}
+	],
+	"result": {
+		"item": "gods_retribution:glue_bottle_blueprint",
+		"count": 2
+	}
+}

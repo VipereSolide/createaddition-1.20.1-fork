@@ -14,6 +14,8 @@
   "item.gods_retribution.ashes": "Cendres",
   "item.gods_retribution.iron_rod": "Barre métallique",
   "item.gods_retribution.iron_filings": "Limaille de fer",
+  "item.gods_retribution.glue_bottle_empty": "Bouteille de colle vide",
+  "item.gods_retribution.glue_bottle": "Bouteille de colle",
 
   "item.gods_retribution.test_fluid_bucket": "Seau de fluide de test",
   "item.gods_retribution.glue_bucket": "Seau de colle",
@@ -54,6 +56,11 @@
   "item.gods_retribution.fluid_vacuum.tooltip.summary": "Peut contenir jusqu'à _8 seaux_ d'un fluide.",
   "item.gods_retribution.fluid_vacuum.tooltip.condition1": "Quand Clic droit",
   "item.gods_retribution.fluid_vacuum.tooltip.behaviour1": "_Absorbe_ le fluide visé.",
+
+  "item.gods_retribution.broken_mold": "Moule brisé",
+  "item.gods_retribution.glue_bottle_mold": "Moule (bouteille de colle)",
+  "item.gods_retribution.glue_bottle_mold_filled": "Moule rempli (bouteille de colle)",
+  "item.gods_retribution.glue_bottle_blueprint": "Plan de moule (bouteille de colle)",
 
   "block.gods_retribution.waste_processor": "Broyeuse à déchets",
 

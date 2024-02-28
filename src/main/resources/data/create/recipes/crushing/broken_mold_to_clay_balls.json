@@ -1,0 +1,12 @@
+{
+	"type": "create:crushing",
+	"ingredients": [
+		{"item": "gods_retribution:broken_mold"}
+	],
+	"results": [
+		{"item": "clay_ball"},
+		{"item": "clay_ball", "chance": 0.5},
+		{"item": "clay_ball", "chance": 0.25}
+	],
+	"processingTime": 100
+}

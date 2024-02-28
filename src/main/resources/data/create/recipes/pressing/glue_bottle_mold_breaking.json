@@ -1,0 +1,10 @@
+{
+	"type": "create:pressing",
+	"ingredients": [
+		{"item": "gods_retribution:glue_bottle_mold_filled"}
+	],
+	"results": [
+		{"item": "gods_retribution:glue_bottle_empty"},
+		{"item": "gods_retribution:broken_mold"}
+	]
+}
