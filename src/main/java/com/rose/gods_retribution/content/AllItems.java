@@ -237,6 +237,7 @@ public class AllItems
             .properties(p -> p
                     .stacksTo(64))
             .model((ctx, provider) -> provider.generated(() -> ctx.getEntry(), provider.modLoc("item/blueprint")))
+            .tag(AllTags.Items.BLUEPRINT)
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
@@ -253,12 +254,14 @@ public class AllItems
                         .unlockedBy("has_clay_ball", cons.has(Items.CLAY_BALL))
                         .save(cons);
             })
+            .tag(AllTags.Items.MOLD)
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
     public static final ItemEntry<Item> GLUE_GOTTLE_MOLD_FILLED = REGISTRATE
             .item("glue_bottle_mold_filled", Item::new)
             .model((ctx, provider) -> provider.generated(() -> ctx.getEntry(), provider.modLoc("item/mold")))
+            .tag(AllTags.Items.MOLD_FILLED)
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 

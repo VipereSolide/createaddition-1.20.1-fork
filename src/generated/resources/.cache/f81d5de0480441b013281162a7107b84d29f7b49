@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-28T13:15:32.2705436	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-28T14:00:38.5179835	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 6732d3b399ccf3f068d93642642f15c11702efef assets/gods_retribution/blockstates/aeration_slab.json
 2ad84b04d5a4ec41da3d1bc1aca4a529c40d6f98 assets/gods_retribution/blockstates/aeration_stairs.json
@@ -1329,7 +1329,10 @@ cd5dd780b9de66d2c6da2cf10520436214d2a18a data/gods_retribution/tags/blocks/concr
 8028bfb64281a90a309f93d1dc10614acaac4523 data/gods_retribution/tags/blocks/vertical_slabs.json
 69f839e31caf06deba89694ea0c207d9cbe59f55 data/gods_retribution/tags/blocks/waste.json
 9094deede3da2ff5b1868efcd74f8a2bdac77797 data/gods_retribution/tags/blocks/woody.json
+b4da7c6cc9cffcb4a368d26ae5c941aab61c57f1 data/gods_retribution/tags/items/blueprint.json
 cd5dd780b9de66d2c6da2cf10520436214d2a18a data/gods_retribution/tags/items/concrete.json
+9f7dfd3d6585b6b6758b083a6e500960b6a19bf5 data/gods_retribution/tags/items/mold.json
+c97f6394cfd1affcd53ca5ca58bdf89fad37fc0b data/gods_retribution/tags/items/mold_filled.json
 8028bfb64281a90a309f93d1dc10614acaac4523 data/gods_retribution/tags/items/vertical_slabs.json
 de6695eace0be67f9fa689487bd3bd8fa0e194d9 data/gods_retribution/tags/items/waste.json
 23c1a80ffe50dea41a5126a228bc1783a3f91676 data/minecraft/tags/blocks/guarded_by_piglins.json

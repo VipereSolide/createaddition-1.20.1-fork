@@ -104,6 +104,9 @@ public class AllTags
 		 * {@code AllTags.Items.WASTE} tag.
 		 */
 		public static final TagKey<Item> WASTE_EX = tag("waste_ex");
+		public static final TagKey<Item> MOLD = tag("mold");
+		public static final TagKey<Item> MOLD_FILLED = tag("mold_filled");
+		public static final TagKey<Item> BLUEPRINT = tag("blueprint");
 
 		/**
 		 * Used by the flint block.
