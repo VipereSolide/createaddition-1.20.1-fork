@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "metal_wiremesh_block",
+  "key": {
+    "a": {
+      "item": "minecraft:iron_bars"
+    },
+    "b": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "result": {
+    "item": "gods_retribution:metal_wiremesh_block"
+  },
+  "show_notification": true
+}
