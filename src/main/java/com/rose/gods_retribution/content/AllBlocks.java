@@ -25,6 +25,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
@@ -429,6 +430,7 @@ public class AllBlocks
                     ItemTags.STAIRS,
                     ItemTags.WOODEN_STAIRS
             )
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, AllBlocks.WOOD))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -452,6 +454,7 @@ public class AllBlocks
                     ItemTags.SLABS,
                     ItemTags.WOODEN_SLABS
             )
+            .recipe((ctx, c) -> makeSlabShapedRecipe(ctx, c, AllBlocks.WOOD))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -516,7 +519,10 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.STAIRS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS))
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS);
+                makeStairsShapedRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -533,7 +539,10 @@ public class AllBlocks
             })
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS, 2))
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS, 2);
+                makeSlabShapedRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -544,14 +553,10 @@ public class AllBlocks
                     BlockTags.WALLS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/industrial_iron_shingles")))
             .item()
             .tag(ItemTags.WALLS)
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/industrial_iron_shingles"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/industrial_iron_shingles")))
             .recipe((ctx, cons) -> {
                 makeWallShapedRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES);
                 makeStonecuttingRecipe(ctx, cons, AllBlocks.INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS);
@@ -596,7 +601,10 @@ public class AllBlocks
                     .stairsBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles")))
             .item()
             .tag(ItemTags.STAIRS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS))
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS);
+                makeStairsShapedRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -607,13 +615,16 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     BlockTags.SLABS
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"), provider.modLoc("block/cracked_industrial_iron_shingles"));
-            })
+            .blockstate((ctx, provider) -> provider.slabBlock(
+                    ctx.getEntry(),
+                    provider.modLoc("block/cracked_industrial_iron_shingles"),
+                    provider.modLoc("block/cracked_industrial_iron_shingles")))
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS, 2))
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS, 2);
+                makeSlabShapedRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -624,14 +635,10 @@ public class AllBlocks
                     BlockTags.WALLS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/cracked_industrial_iron_shingles")))
             .item()
             .tag(ItemTags.WALLS)
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/cracked_industrial_iron_shingles"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/cracked_industrial_iron_shingles")))
             .recipe((ctx, cons) -> {
                 makeStonecuttingRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES, RecipeCategory.BUILDING_BLOCKS);
                 makeWallShapedRecipe(ctx, cons, AllBlocks.CRACKED_INDUSTRIAL_IRON_SHINGLES);
@@ -764,9 +771,7 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     AllTags.Blocks.VERTICAL_SLABS
             )
-            .blockstate((ctx, provider) -> {
-                VerticalSlabBlock.makeBlockstate(ctx, provider, "block/aeration_block");
-            })
+            .blockstate((ctx, provider) -> VerticalSlabBlock.makeBlockstate(ctx, provider, "block/aeration_block"))
             .item()
             .tag(AllTags.Items.VERTICAL_SLABS)
             .recipe((ctx, consumer) -> {
@@ -806,13 +811,13 @@ public class AllBlocks
                     BlockTags.STAIRS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/steel_block"));
-            })
+            .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/steel_block")))
             .item()
             .tag(ItemTags.STAIRS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS))
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS);
+                makeStairsShapedRecipe(ctx, cons, AllBlocks.STEEL_BLOCK);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -824,13 +829,13 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     BlockTags.SLABS
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/steel_block"), provider.modLoc("block/steel_block"));
-            })
+            .blockstate((ctx, provider) -> provider.slabBlock(ctx.getEntry(), provider.modLoc("block/steel_block"), provider.modLoc("block/steel_block")))
             .item()
             .tag(ItemTags.SLABS)
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS, 2))
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS, 2);
+                makeSlabShapedRecipe(ctx, cons, AllBlocks.STEEL_BLOCK);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -841,14 +846,10 @@ public class AllBlocks
                     BlockTags.WALLS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/steel_block"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/steel_block")))
             .item()
             .tag(ItemTags.WALLS)
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/steel_block"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/steel_block")))
             .recipe((ctx, cons) -> {
                 makeWallShapedRecipe(ctx, cons, AllBlocks.STEEL_BLOCK);
                 makeStonecuttingRecipe(ctx, cons, AllBlocks.STEEL_BLOCK, RecipeCategory.BUILDING_BLOCKS);
@@ -889,12 +890,13 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     BlockTags.STAIRS
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block"));
-            })
+            .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block")))
             .item()
             .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> {
+                makeStairsShapedRecipe(ctx, cons, AllBlocks.TILES_BATHROOM);
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.TILES_BATHROOM, RecipeCategory.BUILDING_BLOCKS);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -905,12 +907,13 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     BlockTags.SLABS
             )
-            .blockstate((ctx, p) ->
-            {
-                p.slabBlock(ctx.getEntry(), p.modLoc("block/tiles_bathroom_block"), p.modLoc("block/" + ctx.getName()));
-            })
+            .blockstate((ctx, p) -> p.slabBlock(ctx.getEntry(), p.modLoc("block/tiles_bathroom_block"), p.modLoc("block/" + ctx.getName())))
             .item()
             .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> {
+                makeSlabShapedRecipe(ctx, cons, AllBlocks.TILES_BATHROOM);
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.TILES_BATHROOM, RecipeCategory.BUILDING_BLOCKS, 2);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -921,14 +924,10 @@ public class AllBlocks
                     BlockTags.WALLS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/tiles_bathroom_block")))
             .item()
             .tag(ItemTags.WALLS)
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/tiles_bathroom_block"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/tiles_bathroom_block")))
             .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.TILES_BATHROOM))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -966,6 +965,7 @@ public class AllBlocks
                     AllTags.Items.FORGE_STORAGE_BLOCKS_FLINT,
                     AllTags.Items.WASTE
             )
+            .recipe((ctx, cons) -> makePackingShapedRecipe3(ctx, cons, Items.FLINT))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build()
             .register();
@@ -977,12 +977,10 @@ public class AllBlocks
                     BlockTags.STAIRS,
                     BlockTags.MINEABLE_WITH_SHOVEL
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/flint_block"));
-            })
+            .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/flint_block")))
             .item()
             .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, AllBlocks.FLINT_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -994,12 +992,10 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_SHOVEL,
                     BlockTags.SLABS
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/flint_block"), provider.modLoc("block/flint_block"));
-            })
+            .blockstate((ctx, provider) -> provider.slabBlock(ctx.getEntry(), provider.modLoc("block/flint_block"), provider.modLoc("block/flint_block")))
             .item()
             .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, AllBlocks.FLINT_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1010,14 +1006,10 @@ public class AllBlocks
                     BlockTags.WALLS,
                     BlockTags.MINEABLE_WITH_SHOVEL
             )
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/flint_block"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/flint_block")))
             .item()
             .tag(ItemTags.WALLS)
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/flint_block"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/flint_block")))
             .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.FLINT_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -1058,16 +1050,16 @@ public class AllBlocks
                     BlockTags.STAIRS,
                     AllTags.Blocks.CONCRETE
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
-            })
+            .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete")))
             .item()
             .tag(
                     ItemTags.STAIRS,
                     AllTags.Items.CONCRETE
             )
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS))
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS);
+                makeStairsShapedRecipe(ctx, cons, AllBlocks.CONCRETE);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1080,16 +1072,19 @@ public class AllBlocks
                     BlockTags.SLABS,
                     AllTags.Blocks.CONCRETE
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete"), provider.modLoc("block/concrete"));
-            })
+            .blockstate((ctx, provider) -> provider.slabBlock(
+                    ctx.getEntry(),
+                    provider.modLoc("block/concrete"),
+                    provider.modLoc("block/concrete")))
             .item()
             .tag(
                     ItemTags.SLABS,
                     AllTags.Items.CONCRETE
             )
-            .recipe((ctx, cons) -> makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS, 2))
+            .recipe((ctx, cons) -> {
+                makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS, 2);
+                makeSlabShapedRecipe(ctx, cons, AllBlocks.CONCRETE);
+            })
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1101,17 +1096,13 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     AllTags.Blocks.CONCRETE
             )
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/concrete"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/concrete")))
             .item()
             .tag(
                     ItemTags.WALLS,
                     AllTags.Items.CONCRETE
             )
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete")))
             .recipe((ctx, cons) -> {
                 makeWallShapedRecipe(ctx, cons, AllBlocks.CONCRETE);
                 makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE, RecipeCategory.BUILDING_BLOCKS);
@@ -1170,10 +1161,7 @@ public class AllBlocks
                         BlockTags.STAIRS,
                         AllTags.Blocks.CONCRETE
                 )
-                .blockstate((ctx, provider) ->
-                {
-                    provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName));
-                })
+                .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName)))
                 .item()
                 .tag(
                         ItemTags.STAIRS,
@@ -1199,10 +1187,10 @@ public class AllBlocks
                         BlockTags.SLABS,
                         AllTags.Blocks.CONCRETE
                 )
-                .blockstate((ctx, provider) ->
-                {
-                    provider.slabBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName), provider.modLoc("block/concrete_" + colourName));
-                })
+                .blockstate((ctx, provider) -> provider.slabBlock(
+                        ctx.getEntry(),
+                        provider.modLoc("block/concrete_" + colourName),
+                        provider.modLoc("block/concrete_" + colourName)))
                 .item()
                 .tag(
                         ItemTags.SLABS,
@@ -1227,17 +1215,17 @@ public class AllBlocks
                         BlockTags.MINEABLE_WITH_PICKAXE,
                         AllTags.Blocks.CONCRETE
                 )
-                .blockstate((ctx, provider) -> {
-                    provider.wallBlock(ctx.getEntry(), provider.modLoc("block/concrete_" + colourName));
-                })
+                .blockstate((ctx, provider) -> provider.wallBlock(
+                        ctx.getEntry(),
+                        provider.modLoc("block/concrete_" + colourName)))
                 .item()
                 .tag(
                         ItemTags.WALLS,
                         AllTags.Items.CONCRETE
                 )
-                .model((ctx, provider) -> {
-                    provider.wallInventory(ctx.getName(), provider.modLoc("block/concrete_" + colourName));
-                })
+                .model((ctx, provider) -> provider.wallInventory(
+                        ctx.getName(),
+                        provider.modLoc("block/concrete_" + colourName)))
                 .recipe((ctx, cons) -> {
                     makeWallShapedRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour));
                     makeStonecuttingRecipe(ctx, cons, AllBlocks.CONCRETE_COLOURS.get(colour), RecipeCategory.BUILDING_BLOCKS);
@@ -1284,13 +1272,11 @@ public class AllBlocks
             .block("clear_glass_stairs", (p) -> new StairBlock(AllBlocks.CLEAR_GLASS.getDefaultState(), p))
             .initialProperties(AllBlocks.CLEAR_GLASS::get)
             .tag(BlockTags.STAIRS)
-            .blockstate((ctx, provider) ->
-            {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/clear_glass"));
-            })
+            .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/clear_glass")))
             .addLayer(() -> RenderType::cutout)
             .item()
             .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, AllBlocks.CLEAR_GLASS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1298,13 +1284,14 @@ public class AllBlocks
             .block("clear_glass_slab", SlabBlock::new)
             .initialProperties(AllBlocks.CLEAR_GLASS::get)
             .tag(BlockTags.SLABS)
-            .blockstate((ctx, provider) ->
-            {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/clear_glass"), provider.modLoc("block/clear_glass"));
-            })
+            .blockstate((ctx, provider) -> provider.slabBlock(
+                    ctx.getEntry(),
+                    provider.modLoc("block/clear_glass"),
+                    provider.modLoc("block/clear_glass")))
             .addLayer(() -> RenderType::cutout)
             .item()
             .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, AllBlocks.CLEAR_GLASS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1312,15 +1299,11 @@ public class AllBlocks
             .block("clear_glass_wall", WallBlock::new)
             .initialProperties(AllBlocks.CLEAR_GLASS::get)
             .tag(BlockTags.WALLS)
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/clear_glass"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/clear_glass")))
             .addLayer(() -> RenderType::cutout)
             .item()
             .tag(ItemTags.WALLS)
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/clear_glass"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/clear_glass")))
             .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.CLEAR_GLASS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -1353,6 +1336,16 @@ public class AllBlocks
                     .requiresCorrectToolForDrops())
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
             .item()
+            .recipe((ctx, cons) -> ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ctx.getEntry())
+                    .pattern("aaa")
+                    .pattern("aba")
+                    .pattern("aaa")
+                    .define('a', Blocks.IRON_BARS)
+                    .define('b', Items.IRON_INGOT)
+                    .unlockedBy("has_iron_bars", cons.has(Blocks.IRON_BARS))
+                    .unlockedBy("has_iron_ingot", cons.has(Items.IRON_INGOT))
+                    .group(ctx.getName())
+                    .save(cons))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1363,12 +1356,10 @@ public class AllBlocks
                     BlockTags.STAIRS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"));
-            })
+            .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block")))
             .item()
             .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1379,12 +1370,13 @@ public class AllBlocks
                     BlockTags.SLABS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"), provider.modLoc("block/metal_wiremesh_block"));
-            })
+            .blockstate((ctx, provider) -> provider.slabBlock(
+                    ctx.getEntry(),
+                    provider.modLoc("block/metal_wiremesh_block"),
+                    provider.modLoc("block/metal_wiremesh_block")))
             .item()
             .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1395,14 +1387,10 @@ public class AllBlocks
                     BlockTags.WALLS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block")))
             .item()
             .tag(ItemTags.WALLS)
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/metal_wiremesh_block"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/metal_wiremesh_block")))
             .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
@@ -1435,6 +1423,7 @@ public class AllBlocks
             .addLayer(() -> RenderType::cutout)
             .item()
             .tag(AllTags.Items.FORGE_STORAGE_BLOCKS_IRON_BARS)
+            .recipe((ctx, cons) -> makePackingShapedRecipe3(ctx, cons, Blocks.IRON_BARS))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1445,13 +1434,11 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     BlockTags.STAIRS
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent"));
-            })
+            .blockstate((ctx, provider) -> provider.stairsBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent")))
             .addLayer(() -> RenderType::cutout)
             .item()
             .tag(ItemTags.STAIRS)
+            .recipe((ctx, cons) -> makeStairsShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1462,13 +1449,14 @@ public class AllBlocks
                     BlockTags.MINEABLE_WITH_PICKAXE,
                     BlockTags.SLABS
             )
-            .blockstate((ctx, provider) ->
-            {
-                provider.slabBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent"), provider.modLoc("block/metal_wiremesh_block_transparent"));
-            })
+            .blockstate((ctx, provider) -> provider.slabBlock(
+                    ctx.getEntry(),
+                    provider.modLoc("block/metal_wiremesh_block_transparent"),
+                    provider.modLoc("block/metal_wiremesh_block_transparent")))
             .addLayer(() -> RenderType::cutout)
             .item()
             .tag(ItemTags.SLABS)
+            .recipe((ctx, cons) -> makeSlabShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
@@ -1479,15 +1467,11 @@ public class AllBlocks
                     BlockTags.WALLS,
                     BlockTags.MINEABLE_WITH_PICKAXE
             )
-            .blockstate((ctx, provider) -> {
-                provider.wallBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent"));
-            })
+            .blockstate((ctx, provider) -> provider.wallBlock(ctx.getEntry(), provider.modLoc("block/metal_wiremesh_block_transparent")))
             .addLayer(() -> RenderType::cutout)
             .item()
             .tag(ItemTags.WALLS)
-            .model((ctx, provider) -> {
-                provider.wallInventory(ctx.getName(), provider.modLoc("block/metal_wiremesh_block_transparent"));
-            })
+            .model((ctx, provider) -> provider.wallInventory(ctx.getName(), provider.modLoc("block/metal_wiremesh_block_transparent")))
             .recipe((ctx, cons) -> makeWallShapedRecipe(ctx, cons, AllBlocks.METAL_WIREMESH_BLOCK_TRANSPARENT))
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
