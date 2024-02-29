@@ -200,7 +200,12 @@ public class AllItems
 
     public static final ItemEntry<Item> ASHES = REGISTRATE
             .item("ashes", Item::new)
-            .tag(AllTags.Items.WASTE)
+            .tag(
+                    AllTags.Items.WASTE,
+                    AllTags.Items.FORGE_ASH,
+                    AllTags.Items.FORGE_DUSTS,
+                    AllTags.Items.FORGE_DUSTS_ASH
+            )
             .recipe((ctx, cons) -> {
                 float xpWaste = 0.5f;
                 int cookingTimeWaste = 80;

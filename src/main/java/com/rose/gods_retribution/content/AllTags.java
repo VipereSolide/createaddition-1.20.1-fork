@@ -144,6 +144,9 @@ public class AllTags
 		public static final TagKey<Item> FORGE_STORAGE_BLOCKS_ASHES = foreignTag("forge", "storage_blocks/ashes");
 		public static final TagKey<Item> FORGE_RODS_IRON = foreignTag("forge", "rods/iron");
 		public static final TagKey<Item> FORGE_RODS_ALL_METAL = foreignTag("forge", "rods/all_metal");
+		public static final TagKey<Item> FORGE_ASH = foreignTag("forge", "ash");
+		public static final TagKey<Item> FORGE_DUSTS = foreignTag("forge", "dusts");
+		public static final TagKey<Item> FORGE_DUSTS_ASH = foreignTag("forge", "dusts/ash");
 
 		/**
 		 * Helper method used to create the items' tags in this very class.

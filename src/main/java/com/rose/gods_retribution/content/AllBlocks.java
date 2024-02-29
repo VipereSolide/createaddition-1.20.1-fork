@@ -1693,15 +1693,17 @@ public class AllBlocks
             .initialProperties(() -> Blocks.SAND)
             .tag(
                     AllTags.Blocks.WASTE,
-                    Tags.Blocks.STORAGE_BLOCKS,
                     AllTags.Blocks.FORGE_STORAGE_BLOCKS_WASTE,
+                    AllTags.Blocks.FORGE_STORAGE_BLOCKS_ASHES,
+                    Tags.Blocks.STORAGE_BLOCKS,
                     BlockTags.MINEABLE_WITH_SHOVEL
             )
             .item()
             .tag(
                     AllTags.Items.WASTE,
-                    Tags.Items.STORAGE_BLOCKS,
-                    AllTags.Items.FORGE_STORAGE_BLOCKS_WASTE
+                    AllTags.Items.FORGE_STORAGE_BLOCKS_WASTE,
+                    AllTags.Items.FORGE_STORAGE_BLOCKS_ASHES,
+                    Tags.Items.STORAGE_BLOCKS
             )
             .recipe((ctx, cons) -> makePackingShapedRecipe3(ctx, cons, AllItems.ASHES))
             .tab(AllCreativeTabs.DECORATION.getKey())
