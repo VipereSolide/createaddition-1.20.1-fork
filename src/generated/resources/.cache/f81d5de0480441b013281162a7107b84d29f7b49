@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-29T11:37:22.4111805	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-02-29T11:55:27.4274389	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 6732d3b399ccf3f068d93642642f15c11702efef assets/gods_retribution/blockstates/aeration_slab.json
 2ad84b04d5a4ec41da3d1bc1aca4a529c40d6f98 assets/gods_retribution/blockstates/aeration_stairs.json
@@ -1395,11 +1395,15 @@ fa3086e846fa6f912fe9b639c3cb38edd15f006a data/gods_retribution/recipes/wood_slab
 be712039dd752c790e35ee49fca00ecd26a20977 data/gods_retribution/recipes/wood_stairs.json
 23a2ce3fb03e38d3ee4160464a95a3ba2f515dbb data/gods_retribution/recipes/wood_vertical_slab.json
 dfc708e4153aaf3a27806a2b4a4ce8e2cec39a80 data/gods_retribution/recipes/wood_wall.json
+3e6e3c946ce7fe57edcc5884d7c716169595554c data/gods_retribution/tags/blocks/compatibility.json
+3e6e3c946ce7fe57edcc5884d7c716169595554c data/gods_retribution/tags/blocks/compatibility/meadow.json
 cd5dd780b9de66d2c6da2cf10520436214d2a18a data/gods_retribution/tags/blocks/concrete.json
 43d31d76e6621a931695988e939a14069c34b4e7 data/gods_retribution/tags/blocks/vertical_slabs.json
 69f839e31caf06deba89694ea0c207d9cbe59f55 data/gods_retribution/tags/blocks/waste.json
 9094deede3da2ff5b1868efcd74f8a2bdac77797 data/gods_retribution/tags/blocks/woody.json
 b4da7c6cc9cffcb4a368d26ae5c941aab61c57f1 data/gods_retribution/tags/items/blueprint.json
+3e6e3c946ce7fe57edcc5884d7c716169595554c data/gods_retribution/tags/items/compatibility.json
+3e6e3c946ce7fe57edcc5884d7c716169595554c data/gods_retribution/tags/items/compatibility/meadow.json
 cd5dd780b9de66d2c6da2cf10520436214d2a18a data/gods_retribution/tags/items/concrete.json
 9f7dfd3d6585b6b6758b083a6e500960b6a19bf5 data/gods_retribution/tags/items/mold.json
 c97f6394cfd1affcd53ca5ca58bdf89fad37fc0b data/gods_retribution/tags/items/mold_filled.json

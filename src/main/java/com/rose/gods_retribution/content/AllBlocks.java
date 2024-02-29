@@ -1730,11 +1730,17 @@ public class AllBlocks
                     .initialProperties(() -> Blocks.STONE_BRICKS)
                     .tag(
                             AllTags.Blocks.VERTICAL_SLABS,
+                            AllTags.Blocks.COMPATIBILITY,
+                            AllTags.Blocks.COMPATIBILITY_MEADOW,
                             BlockTags.MINEABLE_WITH_PICKAXE
                     )
                     .blockstate(simpleCubeAll("waste_block")) // will be overrode by the blockstate in main. Just here for the datagen not to shoot itself in the mouth because the texture does not exists
                     .item()
-                    .tag(AllTags.Items.VERTICAL_SLABS)
+                    .tag(
+                            AllTags.Items.VERTICAL_SLABS,
+                            AllTags.Items.COMPATIBILITY,
+                            AllTags.Items.COMPATIBILITY_MEADOW
+                    )
                     .tab(AllCreativeTabs.ANCIENT.getKey())
                     .build().register();
 
@@ -1743,11 +1749,17 @@ public class AllBlocks
                     .initialProperties(() -> Blocks.STONE_BRICKS)
                     .tag(
                             BlockTags.MINEABLE_WITH_PICKAXE,
-                            BlockTags.STAIRS
+                            BlockTags.STAIRS,
+                            AllTags.Blocks.COMPATIBILITY,
+                            AllTags.Blocks.COMPATIBILITY_MEADOW
                     )
                     .blockstate(simpleCubeAll("waste_block"))
                     .item()
-                    .tag(ItemTags.STAIRS)
+                    .tag(
+                            ItemTags.STAIRS,
+                            AllTags.Items.COMPATIBILITY,
+                            AllTags.Items.COMPATIBILITY_MEADOW
+                    )
                     .tab(AllCreativeTabs.ANCIENT.getKey())
                     .build().register();
 
@@ -1756,11 +1768,17 @@ public class AllBlocks
                     .initialProperties(() -> Blocks.STONE_BRICKS)
                     .tag(
                             BlockTags.SLABS,
-                            BlockTags.MINEABLE_WITH_PICKAXE
+                            BlockTags.MINEABLE_WITH_PICKAXE,
+                            AllTags.Blocks.COMPATIBILITY,
+                            AllTags.Blocks.COMPATIBILITY_MEADOW
                     )
                     .blockstate(simpleCubeAll("waste_block"))
                     .item()
-                    .tag(ItemTags.SLABS)
+                    .tag(
+                            ItemTags.SLABS,
+                            AllTags.Items.COMPATIBILITY,
+                            AllTags.Items.COMPATIBILITY_MEADOW
+                    )
                     .tab(AllCreativeTabs.ANCIENT.getKey())
                     .build().register();
 
@@ -1769,11 +1787,17 @@ public class AllBlocks
                     .initialProperties(() -> Blocks.STONE_BRICKS)
                     .tag(
                             BlockTags.WALLS,
-                            BlockTags.MINEABLE_WITH_PICKAXE
+                            BlockTags.MINEABLE_WITH_PICKAXE,
+                            AllTags.Blocks.COMPATIBILITY,
+                            AllTags.Blocks.COMPATIBILITY_MEADOW
                     )
                     .blockstate(simpleCubeAll("waste_block"))
                     .item()
-                    .tag(ItemTags.WALLS)
+                    .tag(
+                            ItemTags.WALLS,
+                            AllTags.Items.COMPATIBILITY,
+                            AllTags.Items.COMPATIBILITY_MEADOW
+                    )
                     .tab(AllCreativeTabs.ANCIENT.getKey())
                     .build().register();
 
@@ -1782,11 +1806,17 @@ public class AllBlocks
                     .initialProperties(() -> Blocks.STONE_BRICKS)
                     .tag(
                             BlockTags.MINEABLE_WITH_PICKAXE,
-                            AllTags.Blocks.VERTICAL_SLABS
+                            AllTags.Blocks.VERTICAL_SLABS,
+                            AllTags.Blocks.COMPATIBILITY,
+                            AllTags.Blocks.COMPATIBILITY_MEADOW
                     )
                     .blockstate(simpleCubeAll("waste_block"))
                     .item()
-                    .tag(AllTags.Items.VERTICAL_SLABS)
+                    .tag(
+                            AllTags.Items.VERTICAL_SLABS,
+                            AllTags.Items.COMPATIBILITY,
+                            AllTags.Items.COMPATIBILITY_MEADOW
+                    )
                     .tab(AllCreativeTabs.ANCIENT.getKey())
                     .build().register();
         }

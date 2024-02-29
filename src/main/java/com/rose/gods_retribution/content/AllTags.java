@@ -45,6 +45,18 @@ public class AllTags
 		public static final TagKey<Block> WASTE_EX = tag("waste_ex");
 
 		/**
+		 * Used to tag the compatibility blocks, that is blocks that will appear only if a specific mod is loaded. These
+		 * blocks are tagged with this tag and the subtag matching the mod
+		 * (e.g.: {@code #gods_retribution:compatibility/meadow}). Don't forget to put also the corresponding item tags
+		 * on the block's item.
+		 */
+		public static final TagKey<Block> COMPATIBILITY = tag("compatibility");
+		/**
+		 * Compatibility blocks with Let's Do Meadow.
+		 */
+		public static final TagKey<Block> COMPATIBILITY_MEADOW = tag("compatibility/meadow");
+
+		/**
 		 * Used for the flint block.
 		 */
 		public static final TagKey<Block> FORGE_STORAGE_BLOCKS_FLINT = foreignTag("forge", "storage_blocks/flint");
@@ -107,6 +119,18 @@ public class AllTags
 		public static final TagKey<Item> MOLD = tag("mold");
 		public static final TagKey<Item> MOLD_FILLED = tag("mold_filled");
 		public static final TagKey<Item> BLUEPRINT = tag("blueprint");
+
+		/**
+		 * Used to tag the compatibility items, that is items that will appear only if a specific mod is loaded. These
+		 * items are tagged with this tag and the subtag matching the mod
+		 * (e.g.: {@code #gods_retribution:compatibility/meadow}). Don't forget to put also the corresponding block tags
+		 * on the item's block, if it's the item of a block.
+		 */
+		public static final TagKey<Item> COMPATIBILITY = tag("compatibility");
+		/**
+		 * Compatibility items with the Let's Do Meadow mod.
+		 */
+		public static final TagKey<Item> COMPATIBILITY_MEADOW = tag("compatibility/meadow");
 
 		/**
 		 * Used by the flint block.
