@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"group": "gods_retribution:meadow_polished_limestone_stairs",
+	"show_notification": true,
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "meadow"
+		}
+	],
+	"pattern": [
+		"x  ",
+		"xx ",
+		"xxx"
+	],
+	"key": {
+		"x": {
+			"item": "meadow:polished_limestone_bricks"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:meadow_polished_limestone_stairs",
+		"count": 4
+	}
+}

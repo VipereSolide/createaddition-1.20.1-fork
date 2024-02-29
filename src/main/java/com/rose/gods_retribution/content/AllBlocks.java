@@ -1,5 +1,6 @@
 package com.rose.gods_retribution.content;
 
+import com.rose.gods_retribution.GodsRetribution;
 import com.rose.gods_retribution.content.block.*;
 import com.rose.gods_retribution.content.block.engraved_blocks.EngravedLimestoneBlock;
 import com.rose.gods_retribution.content.block.labelling_machine.LabellingMachineBlock;
@@ -1706,11 +1707,89 @@ public class AllBlocks
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 
+    // blocks depending on other mods presence. Created here, initialized in register()
+    public static BlockEntry<VerticalSlabBlock> MEADOW_LIMESTONE_BRICKS_VSLAB;
+    public static BlockEntry<StairBlock> MEADOW_POLISHED_LIMESTONE_STAIRS;
+    public static BlockEntry<SlabBlock> MEADOW_POLISHED_LIMESTONE_SLAB;
+    public static BlockEntry<WallBlock> MEADOW_POLISHED_LIMESTONE_WALL;
+    public static BlockEntry<VerticalSlabBlock> MEADOW_POLISHED_LIMESTONE_VSLAB;
+
     /**
-     * Loads this class
+     * Loads this class.
+     * <p>
+     * The blocks depending on the optional presence of other mods will be initialized here. That way, they will be in
+     * the game only if the corresponding mod is present.
      */
     public static void register()
     {
+        if (GodsRetribution.MEADOW_ACTIVE)
+        {
+            // registering the blocks depending on Let's Do Meadow mod
+            MEADOW_LIMESTONE_BRICKS_VSLAB = REGISTRATE
+                    .block("meadow_limestone_bricks_vertical_slab", VerticalSlabBlock::new)
+                    .initialProperties(() -> Blocks.STONE_BRICKS)
+                    .tag(
+                            AllTags.Blocks.VERTICAL_SLABS,
+                            BlockTags.MINEABLE_WITH_PICKAXE
+                    )
+                    .blockstate(simpleCubeAll("waste_block")) // will be overrode by the blockstate in main. Just here for the datagen not to shoot itself in the mouth because the texture does not exists
+                    .item()
+                    .tag(AllTags.Items.VERTICAL_SLABS)
+                    .tab(AllCreativeTabs.ANCIENT.getKey())
+                    .build().register();
+
+            MEADOW_POLISHED_LIMESTONE_STAIRS = REGISTRATE
+                    .block("meadow_polished_limestone_stairs", (p) -> new StairBlock(AllBlocks.WOOD.getDefaultState(), p))
+                    .initialProperties(() -> Blocks.STONE_BRICKS)
+                    .tag(
+                            BlockTags.MINEABLE_WITH_PICKAXE,
+                            BlockTags.STAIRS
+                    )
+                    .blockstate(simpleCubeAll("waste_block"))
+                    .item()
+                    .tag(ItemTags.STAIRS)
+                    .tab(AllCreativeTabs.ANCIENT.getKey())
+                    .build().register();
+
+            MEADOW_POLISHED_LIMESTONE_SLAB = REGISTRATE
+                    .block("meadow_polished_limestone_slab", SlabBlock::new)
+                    .initialProperties(() -> Blocks.STONE_BRICKS)
+                    .tag(
+                            BlockTags.SLABS,
+                            BlockTags.MINEABLE_WITH_PICKAXE
+                    )
+                    .blockstate(simpleCubeAll("waste_block"))
+                    .item()
+                    .tag(ItemTags.SLABS)
+                    .tab(AllCreativeTabs.ANCIENT.getKey())
+                    .build().register();
+
+            MEADOW_POLISHED_LIMESTONE_WALL = REGISTRATE
+                    .block("meadow_polished_limestone_wall", WallBlock::new)
+                    .initialProperties(() -> Blocks.STONE_BRICKS)
+                    .tag(
+                            BlockTags.WALLS,
+                            BlockTags.MINEABLE_WITH_PICKAXE
+                    )
+                    .blockstate(simpleCubeAll("waste_block"))
+                    .item()
+                    .tag(ItemTags.WALLS)
+                    .tab(AllCreativeTabs.ANCIENT.getKey())
+                    .build().register();
+
+            MEADOW_POLISHED_LIMESTONE_VSLAB = REGISTRATE
+                    .block("meadow_polished_limestone_vertical_slab", VerticalSlabBlock::new)
+                    .initialProperties(() -> Blocks.STONE_BRICKS)
+                    .tag(
+                            BlockTags.MINEABLE_WITH_PICKAXE,
+                            AllTags.Blocks.VERTICAL_SLABS
+                    )
+                    .blockstate(simpleCubeAll("waste_block"))
+                    .item()
+                    .tag(AllTags.Items.VERTICAL_SLABS)
+                    .tab(AllCreativeTabs.ANCIENT.getKey())
+                    .build().register();
+        }
     }
 
     /**

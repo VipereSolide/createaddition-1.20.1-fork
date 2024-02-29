@@ -1,0 +1,8 @@
+{
+	"parent": "gods_retribution:block/vertical_slab",
+	"textures": {
+		"all": "meadow:block/polished_limestone",
+		"main": "meadow:block/polished_limestone",
+		"particle": "meadow:block/polished_limestone"
+	}
+}

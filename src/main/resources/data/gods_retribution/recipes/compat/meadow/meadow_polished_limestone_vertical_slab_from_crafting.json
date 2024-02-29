@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"cateogry": "building",
+	"group": "gods_retribution:meadow_polished_limestone_vertical_slab",
+	"show_notification": true,
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "meadow"
+		}
+	],
+	"pattern": [
+		"x",
+		"x",
+		"x"
+	],
+	"key": {
+		"x": {
+			"item": "meadow:polished_limestone_bricks"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:meadow_polished_limestone_vertical_slab",
+		"count": 6
+	}
+}

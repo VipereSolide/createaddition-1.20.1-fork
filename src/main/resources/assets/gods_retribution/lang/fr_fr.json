@@ -240,6 +240,12 @@
   "block.gods_retribution.unlit_torch.summary": "Utiliser un objet inflammable pour l'allumer.",
   "block.gods_retribution.waste_block": "Bloc de déchets",
 
+  "block.gods_retribution.meadow_limestone_bricks_vertical_slab": "Dalle verticale en calcaire [Meadow]",
+  "block.gods_retribution.meadow_polished_limestone_stairs": "Escalier en calcaire poli [Meadow]",
+  "block.gods_retribution.meadow_polished_limestone_slab": "Dalle en calcaire poli [Meadow]",
+  "block.gods_retribution.meadow_polished_limestone_wall": "Muret en calcaire poli [Meadow]",
+  "block.gods_retribution.meadow_polished_limestone_vertical_slab": "Dalle verticale en calcaire poli [Meadow]",
+
   "creative_tab.gods_retribution.gods_retribution_tab": "Les Divines Représailles",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Blocs de Construction des Divines Représailles",
   "creative_tabs.gods_retribution.ancient_decoration_blocks": "Blocs de Construction Anciens",

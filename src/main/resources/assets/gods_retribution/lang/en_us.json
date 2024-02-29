@@ -243,6 +243,12 @@
   "block.gods_retribution.unlit_torch.summary": "Use a flammable item such as a torch or a fire charge onto it to light it up.",
   "block.gods_retribution.waste_block": "Waste Block",
 
+  "block.gods_retribution.meadow_limestone_bricks_vertical_slab": "Limestone Vertical Slab [Meadow]",
+  "block.gods_retribution.meadow_polished_limestone_stairs": "Polished Limestone Stairs [Meadow]",
+  "block.gods_retribution.meadow_polished_limestone_slab": "Polished Limestone Slab [Meadow]",
+  "block.gods_retribution.meadow_polished_limestone_wall": "Polished Limestone Wall [Meadow]",
+  "block.gods_retribution.meadow_polished_limestone_vertical_slab": "Polished Limestone Vertical Slab [Meadow]",
+
   "creative_tab.gods_retribution.gods_retribution_tab": "Gods' Retribution",
   "creative_tab.gods_retribution.gods_retribution_decoration_tab": "Gods' Retribution's Building Blocks",
   "creative_tabs.gods_retribution.ancient_decoration_blocks": "Ancient Decoration Blocks",

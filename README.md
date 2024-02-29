@@ -22,7 +22,8 @@ Made out of crude oil.
 
 ## Compatibilities
 
-Gods' Retribution is compatible with many other mods.
+Gods' Retribution is compatible with many other mods. These mods are not mandatory to run Gods' Retribution, but if they
+are loaded, some new blocks and items, and recipes, may appear.
 
 ### Create: Diesel Generators
 You can use the Create: Diesel Generators' crude oil to make plastic.
@@ -30,3 +31,9 @@ You can use the Create: Diesel Generators' crude oil to make plastic.
 ### Create: Crafts & Additions
 * You can use the iron rod to make Gods' Retribution's screws
 * You can make 1 Gods' Retribution's iron rod out of 1 Create: Crafts & Additions's iron rod, and *vice versa*
+
+### Let's Do Meadow
+*Requires Let's Do Meadow 1.3.4 or above.*
+* Blocks additions
+  * A vertical slab for the limestone bricks
+  * A complete set of blocks for the polished limestone (stairs, slab, wall, and vertical slab)

@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"group": "gods_retribution:meadow_polished_limestone_wall",
+	"show_notification": true,
+	"pattern": [
+		"xxx",
+		"xxx"
+	],
+	"key": {
+		"x": {
+			"item": "meadow:polished_limestone_bricks"
+		}
+	},
+	"result": {
+		"item": "gods_retribution:meadow_polished_limestone_wall",
+		"count": 6
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "meadow"
+		}
+	]
+}

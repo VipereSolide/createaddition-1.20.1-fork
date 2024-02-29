@@ -39,6 +39,7 @@ public class GodsRetribution
     public static boolean IMMERSIVE_ENGINEERING_ACTIVE = false;
     public static boolean COMPUTER_CRAFT_ACTIVE = false;
     public static boolean AE2_ACTIVE = false;
+    public static boolean MEADOW_ACTIVE = false;
 
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(GodsRetribution.MOD_ID);
 
@@ -68,6 +69,7 @@ public class GodsRetribution
         IMMERSIVE_ENGINEERING_ACTIVE = ModList.get().isLoaded("immersiveengineering");
         COMPUTER_CRAFT_ACTIVE = ModList.get().isLoaded("computercraft");
         AE2_ACTIVE = ModList.get().isLoaded("ae2");
+        MEADOW_ACTIVE = ModList.get().isLoaded("meadow");
 
         REGISTRATE.registerEventListeners(eventBus);
 

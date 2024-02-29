@@ -144,6 +144,11 @@
     "gods_retribution:metal_wiremesh_stairs_transparent",
     "gods_retribution:metal_wiremesh_slab_transparent",
     "gods_retribution:metal_wiremesh_wall_transparent",
-    "gods_retribution:metal_wiremesh_vertical_slab_transparent"
+    "gods_retribution:metal_wiremesh_vertical_slab_transparent",
+    "gods_retribution:meadow_limestone_bricks_vertical_slab",
+    "gods_retribution:meadow_polished_limestone_stairs",
+    "gods_retribution:meadow_polished_limestone_slab",
+    "gods_retribution:meadow_polished_limestone_wall",
+    "gods_retribution:meadow_polished_limestone_vertical_slab"
   ]
 }
