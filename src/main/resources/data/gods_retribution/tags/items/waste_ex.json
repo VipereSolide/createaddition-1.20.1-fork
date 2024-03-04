@@ -1,6 +1,7 @@
 {
 	"values": [
 		"minecraft:flint",
+		{"id": "supplementaries:ash", "required": false},
 		"#gods_retribution:waste"
 	]
 }

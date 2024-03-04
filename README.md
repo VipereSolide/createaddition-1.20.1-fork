@@ -37,3 +37,6 @@ You can use the Create: Diesel Generators' crude oil to make plastic.
 * Blocks additions
   * A vertical slab for the limestone bricks
   * A complete set of blocks for the polished limestone (stairs, slab, wall, and vertical slab)
+
+### Supplementaries
+* The ashes from Supplementaries are considered waste by the mod.
