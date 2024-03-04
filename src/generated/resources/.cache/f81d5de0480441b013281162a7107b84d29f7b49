@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-29T11:55:27.4274389	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-03-04T11:03:53.6717566	Registrate Provider for gods_retribution [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 217289ea6e048f4fd008e93dd62c6ceef68244b2 assets/gods_retribution/blockstates/aeration_block.json
 6732d3b399ccf3f068d93642642f15c11702efef assets/gods_retribution/blockstates/aeration_slab.json
 2ad84b04d5a4ec41da3d1bc1aca4a529c40d6f98 assets/gods_retribution/blockstates/aeration_stairs.json
@@ -745,13 +745,18 @@ fceb07f6eb1efbc17a736a8605990bec47abb9c1 assets/gods_retribution/models/item/woo
 0f35b77eb5df5deb4db470e5ffeaf5726fc22724 data/create/tags/blocks/safe_nbt.json
 90b901bb0cd782e78803f218e8355da3206c7392 data/forge/tags/blocks/stone.json
 69f839e31caf06deba89694ea0c207d9cbe59f55 data/forge/tags/blocks/storage_blocks.json
+19c8e20eedfd19143cc4454b575d05cd03b66c23 data/forge/tags/blocks/storage_blocks/ashes.json
 a82bb092965ac6d5264dea6224516949bd30b749 data/forge/tags/blocks/storage_blocks/flint.json
 4c18098be4e6d7878a26b8bae41a4cc48e58a829 data/forge/tags/blocks/storage_blocks/iron_bars.json
 00a50d8e72ba2215b1351b007a50aeb8d55af476 data/forge/tags/blocks/storage_blocks/waste.json
+7cf7beed4b1286e35036932e2a8df92e5dd618a4 data/forge/tags/items/ash.json
+7cf7beed4b1286e35036932e2a8df92e5dd618a4 data/forge/tags/items/dusts.json
+7cf7beed4b1286e35036932e2a8df92e5dd618a4 data/forge/tags/items/dusts/ash.json
 e7146bc7062302414859ce5a4a033f7a7836b3b2 data/forge/tags/items/rods.json
 e7146bc7062302414859ce5a4a033f7a7836b3b2 data/forge/tags/items/rods/all_metal.json
 e7146bc7062302414859ce5a4a033f7a7836b3b2 data/forge/tags/items/rods/iron.json
 69f839e31caf06deba89694ea0c207d9cbe59f55 data/forge/tags/items/storage_blocks.json
+19c8e20eedfd19143cc4454b575d05cd03b66c23 data/forge/tags/items/storage_blocks/ashes.json
 a82bb092965ac6d5264dea6224516949bd30b749 data/forge/tags/items/storage_blocks/flint.json
 4c18098be4e6d7878a26b8bae41a4cc48e58a829 data/forge/tags/items/storage_blocks/iron_bars.json
 00a50d8e72ba2215b1351b007a50aeb8d55af476 data/forge/tags/items/storage_blocks/waste.json
