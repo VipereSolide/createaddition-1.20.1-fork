@@ -1,0 +1,8 @@
+{
+  "parent": "gods_retribution:block/vslab_outer",
+  "textures": {
+    "particle": "gods_retribution:block/light_block",
+    "side": "gods_retribution:block/light_block",
+    "top": "gods_retribution:block/light_block"
+  }
+}

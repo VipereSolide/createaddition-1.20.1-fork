@@ -1,19 +1,94 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
-      "y": 90
-    },
-    "facing=north": {
-      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent"
-    },
-    "facing=south": {
-      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
+    "facing=east,shape=inner_left": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_inner",
+      "uvlock": true,
       "y": 180
     },
-    "facing=west": {
-      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
+    "facing=east,shape=inner_right": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_inner",
+      "uvlock": true,
       "y": 270
+    },
+    "facing=east,shape=outer_left": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,shape=outer_right": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,shape=straight": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,shape=inner_left": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,shape=inner_right": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,shape=outer_left": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,shape=outer_right": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,shape=straight": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=south,shape=inner_left": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,shape=inner_right": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_inner"
+    },
+    "facing=south,shape=outer_left": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,shape=outer_right": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_outer"
+    },
+    "facing=south,shape=straight": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent"
+    },
+    "facing=west,shape=inner_left": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_inner"
+    },
+    "facing=west,shape=inner_right": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,shape=outer_left": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_outer"
+    },
+    "facing=west,shape=outer_right": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,shape=straight": {
+      "model": "gods_retribution:block/metal_wiremesh_vertical_slab_transparent",
+      "uvlock": true,
+      "y": 90
     }
   }
 }

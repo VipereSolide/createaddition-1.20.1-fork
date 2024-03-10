@@ -213,6 +213,7 @@ public class AllItems
                 makeUnpackingShapelessRecipe3(ctx, cons, AllBlocks.ASHES_BLOCK);
                 makeCookingRecipe(ctx, cons, AllItems.WASTE, RecipeCategory.MISC, xpWaste, cookingTimeWaste);
                 makeCookingRecipe(ctx, cons, AllBlocks.WASTE_BLOCK, RecipeCategory.MISC, xpWaste * 9, cookingTimeWaste * 9);
+                makeCookingRecipe(ctx, cons, Items.STICK, RecipeCategory.MISC, xpWaste, cookingTimeWaste);
             })
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();

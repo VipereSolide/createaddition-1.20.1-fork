@@ -33,6 +33,11 @@ public class AllShapes
                     .forDirectional(Direction.NORTH);
 
     public static final VoxelShaper VERTICAL_SLAB = shape(ofSize(0, 0, 8, 16, 16, 8)).forDirectional(Direction.NORTH);
+    public static final VoxelShaper TEST_VERTICAL_SLAB = shape(ofSize(0, 0, 8, 16, 16, 8)).forDirectional(Direction.SOUTH);
+    public static final VoxelShaper TEST_VERTICAL_SLAB_OUTER = shape(ofSize(8, 0, 8, 8, 16, 8)).forDirectional(Direction.SOUTH);
+    public static final VoxelShaper TEST_VERTICAL_SLAB_INNER = shape(ofSize(0, 0, 8, 16, 16, 8))
+            .add(ofSize(8, 0, 0, 8, 16, 8))
+            .forDirectional(Direction.SOUTH);
 
     // From create:AllShapes
     public static Builder shape(VoxelShape shape)

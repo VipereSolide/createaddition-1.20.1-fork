@@ -19,7 +19,6 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -1706,6 +1705,19 @@ public class AllBlocks
                     Tags.Items.STORAGE_BLOCKS
             )
             .recipe((ctx, cons) -> makePackingShapedRecipe3(ctx, cons, AllItems.ASHES))
+            .tab(AllCreativeTabs.DECORATION.getKey())
+            .build().register();
+
+    public static final BlockEntry<VerticalSlabBlock> TEST_VSLAB = REGISTRATE
+            .block("test_vslab", VerticalSlabBlock::new)
+            .initialProperties(() -> Blocks.IRON_BLOCK)
+            .tag(
+                    AllTags.Blocks.VERTICAL_SLABS,
+                    BlockTags.MINEABLE_WITH_PICKAXE
+            )
+            .blockstate((c, p) -> VerticalSlabBlock.makeBlockstate(c, p, "block/wood"))
+            .item()
+            .tag(AllTags.Items.VERTICAL_SLABS)
             .tab(AllCreativeTabs.DECORATION.getKey())
             .build().register();
 

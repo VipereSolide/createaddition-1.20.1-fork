@@ -1,19 +1,94 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "gods_retribution:block/steel_vertical_slab",
-      "y": 90
-    },
-    "facing=north": {
-      "model": "gods_retribution:block/steel_vertical_slab"
-    },
-    "facing=south": {
-      "model": "gods_retribution:block/steel_vertical_slab",
+    "facing=east,shape=inner_left": {
+      "model": "gods_retribution:block/steel_vertical_slab_inner",
+      "uvlock": true,
       "y": 180
     },
-    "facing=west": {
-      "model": "gods_retribution:block/steel_vertical_slab",
+    "facing=east,shape=inner_right": {
+      "model": "gods_retribution:block/steel_vertical_slab_inner",
+      "uvlock": true,
       "y": 270
+    },
+    "facing=east,shape=outer_left": {
+      "model": "gods_retribution:block/steel_vertical_slab_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=east,shape=outer_right": {
+      "model": "gods_retribution:block/steel_vertical_slab_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,shape=straight": {
+      "model": "gods_retribution:block/steel_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,shape=inner_left": {
+      "model": "gods_retribution:block/steel_vertical_slab_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,shape=inner_right": {
+      "model": "gods_retribution:block/steel_vertical_slab_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,shape=outer_left": {
+      "model": "gods_retribution:block/steel_vertical_slab_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=north,shape=outer_right": {
+      "model": "gods_retribution:block/steel_vertical_slab_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,shape=straight": {
+      "model": "gods_retribution:block/steel_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=south,shape=inner_left": {
+      "model": "gods_retribution:block/steel_vertical_slab_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,shape=inner_right": {
+      "model": "gods_retribution:block/steel_vertical_slab_inner"
+    },
+    "facing=south,shape=outer_left": {
+      "model": "gods_retribution:block/steel_vertical_slab_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=south,shape=outer_right": {
+      "model": "gods_retribution:block/steel_vertical_slab_outer"
+    },
+    "facing=south,shape=straight": {
+      "model": "gods_retribution:block/steel_vertical_slab"
+    },
+    "facing=west,shape=inner_left": {
+      "model": "gods_retribution:block/steel_vertical_slab_inner"
+    },
+    "facing=west,shape=inner_right": {
+      "model": "gods_retribution:block/steel_vertical_slab_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,shape=outer_left": {
+      "model": "gods_retribution:block/steel_vertical_slab_outer"
+    },
+    "facing=west,shape=outer_right": {
+      "model": "gods_retribution:block/steel_vertical_slab_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,shape=straight": {
+      "model": "gods_retribution:block/steel_vertical_slab",
+      "uvlock": true,
+      "y": 90
     }
   }
 }

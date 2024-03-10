@@ -1,8 +1,8 @@
 {
-  "parent": "gods_retribution:block/vertical_slab",
+  "parent": "gods_retribution:block/vslab",
   "textures": {
-    "all": "gods_retribution:block/concrete_magenta",
-    "main": "gods_retribution:block/concrete_magenta",
-    "particle": "gods_retribution:block/concrete_magenta"
+    "particle": "gods_retribution:block/concrete_magenta",
+    "side": "gods_retribution:block/concrete_magenta",
+    "top": "gods_retribution:block/concrete_magenta"
   }
 }
