@@ -16,6 +16,11 @@
   "item.gods_retribution.iron_filings": "Limaille de fer",
   "item.gods_retribution.glue_bottle_empty": "Bouteille de colle vide",
   "item.gods_retribution.glue_bottle": "Bouteille de colle",
+  "item.gods_retribution.credit": "Crédit",
+  "item.gods_retribution.kilocredit": "Kilocrédit",
+  "item.gods_retribution.megacredit": "Mégacrédit",
+  "item.gods_retribution.gigacredit": "Gigacrédit",
+  "item.gods_retribution.teracredit": "Téracrédit",
 
   "item.gods_retribution.test_fluid_bucket": "Seau de fluide de test",
   "item.gods_retribution.glue_bucket": "Seau de colle",

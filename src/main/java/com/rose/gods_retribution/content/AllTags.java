@@ -119,6 +119,10 @@ public class AllTags
 		public static final TagKey<Item> MOLD = tag("mold");
 		public static final TagKey<Item> MOLD_FILLED = tag("mold_filled");
 		public static final TagKey<Item> BLUEPRINT = tag("blueprint");
+		/**
+		 * Shared by all credits (money).
+		 */
+		public static final TagKey<Item> CREDIT = tag("credit");
 
 		/**
 		 * Used to tag the compatibility items, that is items that will appear only if a specific mod is loaded. These

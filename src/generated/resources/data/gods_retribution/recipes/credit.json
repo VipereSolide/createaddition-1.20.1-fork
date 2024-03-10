@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "credit",
+  "ingredients": [
+    {
+      "item": "gods_retribution:kilocredit"
+    }
+  ],
+  "result": {
+    "count": 64,
+    "item": "gods_retribution:credit"
+  }
+}

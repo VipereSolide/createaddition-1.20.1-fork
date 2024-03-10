@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gigacredit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gods_retribution:gigacredit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gods_retribution:megacredit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gigacredit",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gods_retribution:megacredit"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -16,6 +16,11 @@
   "item.gods_retribution.iron_filings": "Iron Filings",
   "item.gods_retribution.glue_bottle_empty": "Empty Glue Bottle",
   "item.gods_retribution.glue_bottle": "Glue Bottle",
+  "item.gods_retribution.credit": "Credit",
+  "item.gods_retribution.kilocredit": "Kilocredit",
+  "item.gods_retribution.megacredit": "Megacredit",
+  "item.gods_retribution.gigacredit": "Gigacredit",
+  "item.gods_retribution.teracredit": "Teracredit",
 
   "item.gods_retribution.test_fluid_bucket": "Test Fluid Bucket",
   "item.gods_retribution.glue_bucket": "Glue Bucket",

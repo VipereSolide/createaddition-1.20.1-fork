@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "megacredit",
+  "ingredients": [
+    {
+      "item": "gods_retribution:gigacredit"
+    }
+  ],
+  "result": {
+    "count": 64,
+    "item": "gods_retribution:megacredit"
+  }
+}

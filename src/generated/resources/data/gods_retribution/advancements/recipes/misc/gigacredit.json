@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_teracredit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gods_retribution:teracredit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gods_retribution:gigacredit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_teracredit",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gods_retribution:gigacredit"
+    ]
+  },
+  "sends_telemetry_event": false
+}

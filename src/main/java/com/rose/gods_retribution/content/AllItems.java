@@ -282,6 +282,56 @@ public class AllItems
             .tab(AllCreativeTabs.MAIN.getKey())
             .register();
 
+    public static final ItemEntry<Item> CREDIT = REGISTRATE
+            .item("credit", Item::new)
+            .tag(AllTags.Items.CREDIT)
+            .recipe((ctx, cons) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ctx.getEntry(), 64)
+                    .requires(AllItems.KILOCREDIT)
+                    .group(ctx.getName())
+                    .unlockedBy("has_kilocredit", RegistrateRecipeProvider.has(AllItems.KILOCREDIT))
+                    .save(cons))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> KILOCREDIT = REGISTRATE
+            .item("kilocredit", Item::new)
+            .tag(AllTags.Items.CREDIT)
+            .recipe((ctx, cons) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ctx.getEntry(), 64)
+                    .requires(AllItems.MEGACREDIT)
+                    .group(ctx.getName())
+                    .unlockedBy("has_megacredit", RegistrateRecipeProvider.has(AllItems.MEGACREDIT))
+                    .save(cons))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> MEGACREDIT = REGISTRATE
+            .item("megacredit", Item::new)
+            .tag(AllTags.Items.CREDIT)
+            .recipe((ctx, cons) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ctx.getEntry(), 64)
+                    .requires(AllItems.GIGACREDIT)
+                    .group(ctx.getName())
+                    .unlockedBy("has_gigacredit", RegistrateRecipeProvider.has(AllItems.GIGACREDIT))
+                    .save(cons))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> GIGACREDIT = REGISTRATE
+            .item("gigacredit", Item::new)
+            .tag(AllTags.Items.CREDIT)
+            .recipe((ctx, cons) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ctx.getEntry(), 64)
+                    .requires(AllItems.TERACREDIT)
+                    .group(ctx.getName())
+                    .unlockedBy("has_teracredit", RegistrateRecipeProvider.has(AllItems.TERACREDIT))
+                    .save(cons))
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
+    public static final ItemEntry<Item> TERACREDIT = REGISTRATE
+            .item("teracredit", Item::new)
+            .tag(AllTags.Items.CREDIT)
+            .tab(AllCreativeTabs.MAIN.getKey())
+            .register();
+
 
     /**
      * Loads this class.
